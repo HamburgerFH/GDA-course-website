@@ -363,5 +363,6 @@ legend = 'bottom')
 
 ### Graphiken:
 
--   Seaborn, Matplotlib, Plotly, Bokeh, ggplot, Altair, Geoplotlib, Gleam, ***Plotnine***, Pygal, etc.
+-   Seaborn, Matplotlib, Plotly, Bokeh, ggplot, Altair, Geoplotlib, Gleam, Plotnine*, Pygal, und eine Menge weiterer
 -   Das im Studienbrief SB 01, S.38-39 vorgestellte `plotnine` ist bewusst stark an `ggplot2` angelehnt !
+- Pyt
