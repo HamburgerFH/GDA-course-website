@@ -55,8 +55,8 @@ mydf$name1
 mydf[2, ]
 
 ########################### Pakete installieren #####
-install.packages("tidyverse")
-
+#install.packages("tidyverse")
+library(tidyverse)
 ########################### Daten einlesen #####
 mydata <- readxl::read_xls("bsp_file.xlsx")
 mydata <- read.csv("bsp_file.csv")

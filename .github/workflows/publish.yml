@@ -29,5 +29,23 @@ jobs:
       - uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          extra-packages: |
+            any::knitr
+            any::rmarkdown
+            any::nnet
+            any::magrittr
+            any::rcompanion
+            any::polr
+            any::ordinal
+            any::DescTools
+            any::tidyverse
+            any::ggplot2
+            any::dplyr
+            any::PerformanceAnalytics
+            any::rugarch
+            any::tsibbledata
+            any::mFilter
+            any::FinTS
+            any::plm
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
