@@ -1,0 +1,264 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Welcome! Hier findest du Skripte, Beispiele und R‑Code für den Kurs. Starte mit einem der Bereiche oder nutze die Suche links.\n\n Kurzeinführung R und Python   Multiple Lineare Regression   Binär logistische Regression   Altklausuren \n\n\nAktuelles\n\n\n\n\n\n\nNote\n\n\n\nHinweise: Klausurtermin 01:\n\n\n\n\n\n\n\n\nNote\n\n\n\nHinweise: Klausurtermin 02:\n\n\n\n\n\n\n\n\nNote\n\n\n\nHinweise: Folien und Notebooks werden laufend ergänzt. Bei Fragen oder Fehlern bitte im GitHub-Menü (links oben) melden.\n\n\n\n\n\nIlya Zarubin (M.Sc.)\nE‑mail: ilya.zarub@campus.hamburger-fh.de\n\nKontakt Über\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "include/99_altklausuren.html",
+    "href": "include/99_altklausuren.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 1: Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\n\nFigure 2: Lösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 3: Aufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\n\nFigure 4: Lösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 5: Aufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\n\nFigure 6: Lösung zur Klausur vom 23.03.2024",
+    "crumbs": [
+      "Altklausuren",
+      "Aufgabentyp 1"
+    ]
+  },
+  {
+    "objectID": "include/99_altklausuren.html#klausuraufgaben-zu-sb-01",
+    "href": "include/99_altklausuren.html#klausuraufgaben-zu-sb-01",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 1: Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\n\nFigure 2: Lösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 3: Aufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\n\nFigure 4: Lösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 5: Aufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\n\nFigure 6: Lösung zur Klausur vom 23.03.2024",
+    "crumbs": [
+      "Altklausuren",
+      "Aufgabentyp 1"
+    ]
+  },
+  {
+    "objectID": "include/02_03_BLR.html",
+    "href": "include/02_03_BLR.html",
+    "title": "Binär logistische Regression",
+    "section": "",
+    "text": "Idee:\n\nAbhängigkeit einer dichotomen Variablen von unabhängigen Variablen / Regressoren\nbinär/dichotom: ja/nein, trifft zu/ trifft nicht zu, männlich/weiblich, Raucher/nicht Raucher\n\nDummy-Variable:\n\nEbenfalls 0/1 codiert mit Bedeutung z.B. ja/nein\nwird allgemein verwendet für unabhängige und abhängige Variablen\n\nBeispiel: Studie zur Verkehrsmittelwahl\n\nPendlerfahrten: Arbeitsplatz \\(\\ra\\) zu Hause\n\\(\\ra\\) Privatauto vs. öffentlicher Nahverkehr (ÖV)\nDatensatz verkersmittel.csv mit den Variablen\nmode: Verkehrsmittel ($0 = $ Privatauto vs. $ 1 = $ ÖV)\nzeit: Fahrzeitdifferenz zwischen ÖV und Auto\nkosten: Kostendifferenz zwischen ÖV und Auto\ngeschlecht: 1 = weiblich \\(\\ra\\) 2 = männlich\numsteigen: Zahl notwendiger Umstiege bei Nutzung der ÖV\n\nFragestellung: Von welchen Faktoren hängt die Wahl des Verkehrsmittels ab?",
+    "crumbs": [
+      "Studienbrief 2",
+      "Binär logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_03_BLR.html#idee-und-einführung",
+    "href": "include/02_03_BLR.html#idee-und-einführung",
+    "title": "Binär logistische Regression",
+    "section": "",
+    "text": "Idee:\n\nAbhängigkeit einer dichotomen Variablen von unabhängigen Variablen / Regressoren\nbinär/dichotom: ja/nein, trifft zu/ trifft nicht zu, männlich/weiblich, Raucher/nicht Raucher\n\nDummy-Variable:\n\nEbenfalls 0/1 codiert mit Bedeutung z.B. ja/nein\nwird allgemein verwendet für unabhängige und abhängige Variablen\n\nBeispiel: Studie zur Verkehrsmittelwahl\n\nPendlerfahrten: Arbeitsplatz \\(\\ra\\) zu Hause\n\\(\\ra\\) Privatauto vs. öffentlicher Nahverkehr (ÖV)\nDatensatz verkersmittel.csv mit den Variablen\nmode: Verkehrsmittel ($0 = $ Privatauto vs. $ 1 = $ ÖV)\nzeit: Fahrzeitdifferenz zwischen ÖV und Auto\nkosten: Kostendifferenz zwischen ÖV und Auto\ngeschlecht: 1 = weiblich \\(\\ra\\) 2 = männlich\numsteigen: Zahl notwendiger Umstiege bei Nutzung der ÖV\n\nFragestellung: Von welchen Faktoren hängt die Wahl des Verkehrsmittels ab?",
+    "crumbs": [
+      "Studienbrief 2",
+      "Binär logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_03_BLR.html#binär-logistische-regression---herleitungen",
+    "href": "include/02_03_BLR.html#binär-logistische-regression---herleitungen",
+    "title": "Binär logistische Regression",
+    "section": "Binär logistische Regression - Herleitungen",
+    "text": "Binär logistische Regression - Herleitungen\n\nModellgleichungen:\n\\[\n\\begin{align*}\nP(Y_i = 1)&=\\frac{e^{\\beta x_i}}{1+e^{\\beta x_i}}\\text{~~mit~~}\n\\beta x_i = \\beta_0 + \\beta_1 x_{i1} + \\ldots + \\beta_k x_{ik} \\\\\n1 - P(Y_i = 1)&=1 - \\frac{e^{\\beta x_i}}{1+e^{\\beta x_i}}=\n\\frac{1+e^{\\beta x_i}}{1+e^{\\beta x_i}} - \\frac{e^{\\beta x_i}}{1+e^{\\beta x_i}}\n= \\frac{1}{1+e^{\\beta x_i}}\n\\end{align*}\n\\]\n\n\\(P(Y_i=1)\\) ist die Wahrscheinlichkeit, dass abh. Variable \\(Y_i\\) den Wert 1 annimmt, bezogen auf die Beobachtung \\(i\\) der \\(i=1,\\ldots,n\\) Beobachtungen im Datensatz\n\\(k\\): Anzahl der unabhängigen Variablen\n\\(x_{ik}\\) der \\(i-\\)te Wert der \\(k\\)-ten unabhängigen Variablen\n\n\n\nOdds (Oddsratio) und logarithmierte Odds (log-odds / logits):\n\\[\n\\begin{align*}\nOdds_{1/0}&=\\frac{P(Y_i = 1)}{P(Y_i = 0)}=\\frac{P(Y_i = 1)}{1-P(Y_i = 1)}\n=\\frac{e^{\\beta x_i}}{1+e^{\\beta x_i}} \\times 1+e^{\\beta x_i}=e^{\\beta x_i}\\\\\nLogOdds_{1/0}&=\\log\\left(Odds_{1/0}\\right)=\\beta x_i =\n\\beta_0 + \\beta_1 x_{i1} + \\ldots + \\beta_k x_{ik}\n\\end{align*}\n\\]\n\n\n\n\n\n\nWarning\n\n\n\nEtwas andere Notation als im Studienbrief, aber derselbe Grundgedanke.",
+    "crumbs": [
+      "Studienbrief 2",
+      "Binär logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_03_BLR.html#binär-logistische-regression---umsetzung-in-r",
+    "href": "include/02_03_BLR.html#binär-logistische-regression---umsetzung-in-r",
+    "title": "Binär logistische Regression",
+    "section": "Binär logistische Regression - Umsetzung in R",
+    "text": "Binär logistische Regression - Umsetzung in R\nZuerst laden wir die Daten und schätzen zwei Modelle: Ein Nullmodell, das nur den Achsenabschnitt enthält, und ein Vollmodell, das alle relevanten unabhängigen Variablen berücksichtigt.\n\nNullmodell/Trainingsmodell vs. Testmodell\n\ndata_vkm &lt;- read.csv(\"../data/verkehrsmittel.csv\")\n# Nullmodell: 'mode' regressiert auf Konstante '1'\nmodel_0 &lt;- glm(mode ~ 1,              # glm: generalisiertes lineares Modell\n                   data = data_vkm,\n                   family = binomial())   # logistische Regresion = Binomialmodell\n  model_1 &lt;- glm(mode ~ zeit + kosten + umsteigen + geschlecht,\n                 data = data_vkm,\n                 family = binomial())\n\n\nglm(): generalisiertes lineares Modell (vorher: lm \\(\\ra\\) lineares Modell)\nNullmodell: ein Modell mit nur Achsenabschnitt ist gleich einer Mittelwertsregression: \\(\\bar{Y}=\\frac{1}{n}\\sum_{i=1}^n Y_i\\) \\(=\\frac{1}{n} (n_{1} \\times 1 + n_{0}\\times 0)=\\frac{n_1}{n}\\); Anteil Einsen an gesamten Beobachtungen; sind im Datensatz 25-Einsen und 75-Nullen dann ergibt die Nullmodell-Regression \\(0.25= 25\\%\\) der \\(n=100\\) Personen nutzen ÖV.\n\nDie Zusammenfassung des Nullmodells zeigt diesen Mittelwert.\n\nsummary(model_0)\n\n\nCall:\nglm(formula = mode ~ 1, family = binomial(), data = data_vkm)\n\nCoefficients:\n            Estimate Std. Error z value Pr(&gt;|z|)\n(Intercept)  -0.1515     0.1839  -0.824     0.41\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 164.29  on 118  degrees of freedom\nResidual deviance: 164.29  on 118  degrees of freedom\nAIC: 166.29\n\nNumber of Fisher Scoring iterations: 3\n\n\nAnschließend betrachten wir das volle Modell.\n\nsummary(model_1)\n\n\nCall:\nglm(formula = mode ~ zeit + kosten + umsteigen + geschlecht, \n    family = binomial(), data = data_vkm)\n\nCoefficients:\n            Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept) -3.38784    1.00131  -3.383 0.000716 ***\nzeit         0.09703    0.04743   2.046 0.040793 *  \nkosten      -0.01127    0.02501  -0.451 0.652134    \numsteigen    0.22231    0.55866   0.398 0.690680    \ngeschlecht   1.04516    0.46406   2.252 0.024308 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 164.29  on 118  degrees of freedom\nResidual deviance: 120.55  on 114  degrees of freedom\nAIC: 130.55\n\nNumber of Fisher Scoring iterations: 5\n\n\n\n\nInterpretation\n\nSignifikanz: Zeitdifferenz (\\(p = 0.04\\)) & Geschlecht (\\(p = 0.02\\)) sind signifikant. Umsteigezeit & Kosten sind insignifikant.\nVorzeichen: Ein positives Vorzeichen deutet auf einen positiven Effekt hin, ein negatives auf einen negativen Effekt.\nDummy-Variable Geschlecht: Die kleinere Codierung (Frau=1) ist die Referenzkategorie zu Mann=2. Der positive Koeffizient \\(\\beta_{4}=1.04516 &gt; 0\\) zeigt einen positiven Effekt für Männer. Intern codiert R dies als 0/1, sodass der Wechsel von \\(x_{4}=\\)Frau\\(=0\\) zu \\(x_{4}=\\)Mann\\(=1\\) den Logit um \\(\\beta_4 = 1.04516\\) erhöht.\nDie Wahrscheinlichkeit \\(P(Y_i =1)\\), dass eine Person \\(i\\) das Privatauto nutzt, erhöht sich bei Männern.\nAIC-Vergleich: \\(AIC_0 = 166.29 &gt; AIC_1 = 130.55\\): Je kleiner der AIC, desto besser der Modellfit. Der absolute Wert ist nicht interpretierbar, nur der Vergleich zwischen Modellen ist aussagekräftig.",
+    "crumbs": [
+      "Studienbrief 2",
+      "Binär logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_03_BLR.html#nullmodellabweichung-omnibus-test",
+    "href": "include/02_03_BLR.html#nullmodellabweichung-omnibus-test",
+    "title": "Binär logistische Regression",
+    "section": "Nullmodellabweichung: Omnibus-Test",
+    "text": "Nullmodellabweichung: Omnibus-Test\n\nIdee:\n\nVergleich zwischen Nullmodell (nur Achsenabschnitt) und Testmodell mit erklärenden Variablen.\nTestet, ob das Modell insgesamt einen signifikanten Erklärungsbeitrag leistet.\nBasis: Differenz der Abweichungen (Deviance) zwischen den Modellen.\n\nTeststatistik:\n\nChi-Quadrat-Wert: ( ^2 = - )\nFreiheitsgrade: ( df = {} - {} )\nSignifikanzbewertung: ( p = 1 - (^2, df) )\n\nR-Umsetzung:\n\n# Berechnung der Omnibus-Teststatistik\nmodel_chi2 &lt;- model_1$null.deviance - model_1$deviance\nchi2_df    &lt;- model_1$df.null - model_1$df.residual\nchi2_p     &lt;- 1 - pchisq(model_chi2, chi2_df)\nprint(cbind(model_chi2, chi2_df, chi2_p))\n\n     model_chi2 chi2_df       chi2_p\n[1,]   43.73964       4 7.266406e-09\n\n\nInterpretation:\n\nWenn ( p &lt; 0.05 ): Modell signifikant besser als das Nullmodell.\nWenn ( p ): Modell verbessert sich nicht signifikant.\nBeispielergebnisse: ( ^2 = 43.74, df = 4, p = 7.26 ^{-9} )",
+    "crumbs": [
+      "Studienbrief 2",
+      "Binär logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_03_BLR.html#modellgüte-odds-ratio",
+    "href": "include/02_03_BLR.html#modellgüte-odds-ratio",
+    "title": "Binär logistische Regression",
+    "section": "Modellgüte: Odds Ratio",
+    "text": "Modellgüte: Odds Ratio\n\nProblem und Motivation:\n\nProblem: bisherige Schätzparameter nicht aussagekräftig, bis auf VZ\nGrund: keine lineare Funktion (wo der Effekt direkt ablesbar ist), sondern \\(logits\\)\nZiel: wie stark beeinflusst unabh. Variable Ergebnis – Chancenverhältnis zwischen den Modellen\n\nOdds Ratio (OR): Begriffe und Interpretation\n\nOdds: Chance – Oddsratio: Chancenverhältnis, im Beispiel unten Chance für Verkehrsmittelwahl ÖV vs. Auto bei Frauen im vgl. zu Männern – Logit: logarithmierte Odds\n( OR &gt; 1 ) steigert Wahrscheinlichkeit, ( OR &lt; 1 ) senkt sie, ( OR = 1 ) bedeutet keine Veränderung\n\nOdds Ratio – Beispiel: \\[\nOR=\\frac{M\\text{Ö} / MA}{F\\text{Ö} / FA} = \\frac{M\\text{Ö} \\cdot FA}{MA \\cdot F\\text{Ö}}\n\\] wobei hier der erste Buchstabe Mann/Frau bezeichnet (\\(M\\) oder \\(F\\)) und der zweite das gewählte Verkehrsmittel \\(Ö\\) für ÖV und \\(A\\) für Auto, z.B. FÖ für Frauen und öffentliche Verkehrsmittel.\n\n\n\n\n\n\n\nFigure 1: Beispiel für Odds Ratio\n\n\n\n\nUmsetzung in R:\n\n# Berechnung der Odds Ratios\nexp(cbind(OR = coef(model_1)))\n\n                   OR\n(Intercept) 0.0337816\nzeit        1.1018961\nkosten      0.9887895\numsteigen   1.2489557\ngeschlecht  2.8438543\n\nmodel_wm_only &lt;- glm(mode ~ geschlecht, data = data_vkm, family = binomial())\nexp(cbind(OR = coef(model_wm_only)))\n\n                   OR\n(Intercept) 0.2373923\ngeschlecht  2.2867514\n\n\n\nZiel: Die Auswirkung einer Erhöhung von \\(x_j\\) um eine Einheit auf die Odds zu verstehen, ceteris paribus.\nDer Logit (Log-Odds) für eine Beobachtung ist: \\[\n\\ln(\\text{Odds}) = \\beta_0 + \\dots + \\beta_j x_j + \\dots\n\\]\nDer Logit, wenn \\(x_j\\) um 1 erhöht wird: \\[\n\\ln(\\text{Odds}_{\\text{neu}}) = \\beta_0 + \\dots + \\beta_j (x_j+1) + \\dots\n\\]\nDie Differenz der Log-Odds ist exakt der Koeffizient: \\[\n\\ln(\\text{Odds}_{\\text{neu}}) - \\ln(\\text{Odds}) = \\beta_j\n\\]\nDas Verhältnis der Odds (Odds Ratio) ist somit: \\[\n\\text{OR}_j = \\frac{\\text{Odds}_{\\text{neu}}}{\\text{Odds}} = e^{\\beta_j}\n\\]\n\n\n\nInterpretation:\n\nzeit: 1,1-fache höhere Chance zugunsten von Auto pro marg. höherer Zeit\ngeschlecht: 2,84-fache höhere Wskt./Chance dass ein Mann das Auto nimmt statt einer Frau\nandere Variablen: nicht signifikant, aber Interpretation sonst wäre ähnlich\nim Modell mit nur geschlecht: 2,287-fache höhere Wskt./Chance zugunsten von Mann siehe vorheriges Rechenbeispiel !",
+    "crumbs": [
+      "Studienbrief 2",
+      "Binär logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_03_BLR.html#modellgüte-pseudo-r2",
+    "href": "include/02_03_BLR.html#modellgüte-pseudo-r2",
+    "title": "Binär logistische Regression",
+    "section": "Modellgüte: Pseudo-\\(R^2\\)",
+    "text": "Modellgüte: Pseudo-\\(R^2\\)\nIm Folgenden betrachten wir weitere Bestimmtheitsmaße, die ähnlich zu \\(R^2\\) interpretiert werden können, die sogenannten Pseudo-\\(R^2\\) Maße:\n\nCox & Snell ( R^2 ): Begrenzung auf ( [0, 0.75] )\nNagelkerke ( R^2 ): normiert, interpretiert wie klassisches ( R^2 ). Die Berechnung ist im R-Code unten dargestellt.\nR-Umsetzung:\n\n# Berechnung von Pseudo-R2;  install.packages(\"DescTools\")\nn &lt;- length(model_1$residuals)\nR2_cox_snell &lt;- 1 - exp((model_1$deviance - model_1$null.deviance) / n)\nR2_nagelkerke &lt;- R2_cox_snell / (1 - exp(-(model_1$null.deviance / n)))\ncbind(R2_cox_snell = R2_cox_snell, R2_nagelkerke = R2_nagelkerke)\n\n     R2_cox_snell R2_nagelkerke\n[1,]    0.3075782     0.4108907\n\nDescTools::PseudoR2(model_1, which = \"all\")\n\n       McFadden     McFaddenAdj        CoxSnell      Nagelkerke   AldrichNelson \n      0.2662381       0.2053693       0.3075782       0.4108907       0.2687707 \nVeallZimmermann           Efron McKelveyZavoina            Tjur             AIC \n      0.4634518       0.3414064       0.4489603       0.3316623     130.5480618 \n            BIC          logLik         logLik0              G2 \n    144.4436793     -60.2740309     -82.1438532      43.7396445 \n\n\nBeispielwerte: \\(R^2_{\\text{Cox-Snell}} = 0.308, R^2_{\\text{Nagelkerke}} = 0.411\\) \\(\\hra\\) Faustregel für \\(R^2_{\\text{Nagelkerke}}\\):\n\n&lt; 0.2: Gering\n0.2 - 0.4: Akzeptabel\n0.4 - 0.5: Gut\n\n0.5: Sehr gut",
+    "crumbs": [
+      "Studienbrief 2",
+      "Binär logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_03_BLR.html#modellgüte-klassifizierungstabelle",
+    "href": "include/02_03_BLR.html#modellgüte-klassifizierungstabelle",
+    "title": "Binär logistische Regression",
+    "section": "Modellgüte: Klassifizierungstabelle",
+    "text": "Modellgüte: Klassifizierungstabelle\n\nKlassifizierungstabelle (Confusion Matrix)\nEin Schwellenwert (meist \\(\\tau=0.5\\)) entscheidet über die Klassifikation: Falls die logistische Regression eine Wahrscheinlichkeit größer als 0.5 liefert, wird die Beobachtung als 1 klassifiziert, sonst als 0.\n\n\n\n\n\n\nFigure 2: Klassifizierungstabelle / Wahrheitsmatrix / confusion matrix\n\n\n\n\\[\n\\begin{align*}\n\\text{Sensitivität} &= \\frac{\\text{Richtig Positiv (TP)}}{\\text{Richtig Positiv (TP)} + \\text{Falsch Negativ (FN)}} = \\frac{52}{52 + 17} = \\frac{52}{69} \\approx 0.7536232\\\\\n\\text{Spezifität} &= \\frac{\\text{Richtig Negativ (TN)}}{\\text{Richtig Negativ (TN)} + \\text{Falsch Positiv (FP)}} = \\frac{38}{38 + 12} = \\frac{38}{50} = 0.76\n\\end{align*}\n\\]\n\nRichtig Positive an Gesamt-Positiven: \\(52/64=81.25\\%\\)\nRichtig Negative an Gesamt-Negativen: \\(38/55=69.09\\%\\)",
+    "crumbs": [
+      "Studienbrief 2",
+      "Binär logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_03_BLR.html#modellverbesserung-und-modellvalidierung",
+    "href": "include/02_03_BLR.html#modellverbesserung-und-modellvalidierung",
+    "title": "Binär logistische Regression",
+    "section": "Modellverbesserung und Modellvalidierung",
+    "text": "Modellverbesserung und Modellvalidierung\n\nSystematischer Ein- oder Ausschluss von Variablen\nNicht signifikante Variablen können aus dem Modell entfernt werden. Neben dem p-Wert aus der Modellzusammenfassung kann hierfür auch ein Wald-Test herangezogen werden.\n\n# install.packages(\"survey\")\nsurvey::regTermTest(model_1, \"umsteigen\")\n\nWald test for umsteigen\n in glm(formula = mode ~ zeit + kosten + umsteigen + geschlecht, \n    family = binomial(), data = data_vkm)\nF =  0.1583505  on  1  and  114  df: p= 0.69142 \n\n\nSowohl der Regressionsoutput (\\(p=0.690680\\)) als auch das Wald-Testergebnis sollten in eine Gesamtevaluation einfließen.\n\n\nModellvalidierung\n\nWie gut sagt mein Modell tatsächlich die abhängige Variable voraus?\nCross-Validation: Man unterteilt den Datensatz k-fach in Test- und Trainingsdatensätze.\nDas Modell wird mit dem Trainingsdatensatz geschätzt und die Vorhersage auf dem Testdatensatz evaluiert.\nDieser Prozess wird für verschiedene Modelle wiederholt und die Ergebnisse werden verglichen.",
+    "crumbs": [
+      "Studienbrief 2",
+      "Binär logistische Regression"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n\n\n Back to top",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html",
+    "href": "include/02_04_MLR.html",
+    "title": "Multinomiale Logistische Regression",
+    "section": "",
+    "text": "Idee: Erweiterung von binär auf \\(&gt;2\\), d.h. multinomial",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html#einführung-und-beispiel",
+    "href": "include/02_04_MLR.html#einführung-und-beispiel",
+    "title": "Multinomiale Logistische Regression",
+    "section": "",
+    "text": "Idee: Erweiterung von binär auf \\(&gt;2\\), d.h. multinomial",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html#umsetzung-in-r",
+    "href": "include/02_04_MLR.html#umsetzung-in-r",
+    "title": "Multinomiale Logistische Regression",
+    "section": "Umsetzung in R:",
+    "text": "Umsetzung in R:\nReferenzkategorie: selbstein dritte Kategorie: ref='3' oder ref='eher rechts', ACHTUNG: falls ‘eher rechts’ benutzt wird, dann muss vorher die Variable mit as.factor() transformiert werden\n\n#--multinominale logistische Regression: Labels & Partition--\ndata_einsch &lt;- read.csv(\"../data/einschaetzung.csv\")\nhead(data_einsch)\n\n  selbstein schule schicht alter\n1         2      1       1     2\n2         3      1       2     1\n3         1      1       2     1\n4         2      1       1     1\n5         1      1       2     1\n6         3      1       2     2\n\nlevels (data_einsch$selbstein) &lt;- c('eher links', 'Mitte', 'eher rechts')\ndata_einsch$selbstein &lt;- as.factor(data_einsch$selbstein)\nset.seed(222)\n# Nullmodell erhält 80% der Daten, Trainingsmodell 20%: ZUFÄLLIG ausgewählt\nind &lt;-sample(2, nrow(data_einsch), replace = TRUE, prob = c(0.8, 0.2))\nmodel_0 &lt;- data_einsch[ind ==1,]\nmodel   &lt;- data_einsch[ind ==2,]\n# install.packages(\"nnet\")\nlibrary(nnet)\nmodel_0$selbstein &lt;- relevel(model_0$selbstein, ref = \"3\")\nmultinominal.model &lt;- nnet::multinom(selbstein ~ alter + schule, data = model_0)\n\n# weights:  12 (6 variable)\ninitial  value 2311.480255 \niter  10 value 2163.887112\nfinal  value 2163.886874 \nconverged\n\nsummary(multinominal.model)\n\nCall:\nnnet::multinom(formula = selbstein ~ alter + schule, data = model_0)\n\nCoefficients:\n  (Intercept)      alter      schule\n1    1.507787 -0.9693638  0.01803241\n2    2.716944 -0.7463522 -0.66243962\n\nStd. Errors:\n  (Intercept)     alter    schule\n1   0.3217004 0.1306577 0.1291727\n2   0.2912695 0.1170838 0.1174561\n\nResidual Deviance: 4327.774 \nAIC: 4339.774 \n\n\n\nInterpretation: die Ergebnisse sind stets in Relation zur Referenzkategorie zu interpretieren\nAlter: \\(-0.9694\\) negativer Wert, d.h. der Wechsel v. Alterskategorie \\(1\\) (unter 45) nach Alterskategorie \\(2\\) (über 45) wirkt sich negativ zur Zugehörigkeit \\(selbstsein=1=\\)’eher links’ aus relativ zur Basiskategorie \\(selbstsein=3=\\)’eher rechts’",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html#interpretation---fortsetzung",
+    "href": "include/02_04_MLR.html#interpretation---fortsetzung",
+    "title": "Multinomiale Logistische Regression",
+    "section": "Interpretation - Fortsetzung",
+    "text": "Interpretation - Fortsetzung",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html#p-wert",
+    "href": "include/02_04_MLR.html#p-wert",
+    "title": "Multinomiale Logistische Regression",
+    "section": "P-Wert",
+    "text": "P-Wert\n\nlibrary(magrittr)\ncoeffs &lt;- summary(multinominal.model)$coefficients\nses    &lt;- summary(multinominal.model)$standard.errors\nz &lt;- coeffs / ses\np &lt;- (1 - pnorm(abs(z), 0, 1)) * 2\np\n\n  (Intercept)        alter       schule\n1 2.77334e-06 1.179057e-13 8.889767e-01\n2 0.00000e+00 1.835458e-10 1.701566e-08\n\n\nWir sehen: alle Koeffizienten hochsignifikant.",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/01_programmierung.html",
+    "href": "include/01_programmierung.html",
+    "title": "Vorbereitung - Programmiertools",
+    "section": "",
+    "text": "Auswahl folgender Pakete sollte für die Bearbeitung der Aufgaben und das Nachimplementieren der Anwendungen aus den Studienbriefen ausreichend sein:\n#| cache: true\ninstall.packages(\n  c(\"rcompanion\", \"polr\", \"ordinal\", \"DescTools\", \"tidyverse\", \"ggplot2\", \"dplyr\",\n    \"PerformanceAnalytics\", \"rugarch\", \"tsibbledata\", \"mFilter\", \"FinTS\",\n    \"plm\")\n)\nRest der Veranstaltung: R-code – daher eine kleine Wiederholung zu Python weiter unten.\n\n########################### Allgemeine Grundlagen #####\ntest      &lt;- 5             # Kommentarbereich\ntestplus  &lt;- test + 5      # Addition\ntestminus &lt;- testplus - 3  # Subtraktion\ntestdiv   &lt;- testminus / 7 # Division\ntestmult  &lt;- testdiv * 4   # Multiplikation\n\nv &lt;- c(1, 2, 10, 5, 6, 7) # Vektor\nv[3]\nv[1:4]\nv[v &lt; 3]\nl &lt;- list(v = c(1,2), f = c(\"a\", \"b\"))\nl$v\nl[1:2]\nl[[2]]\nl[\"v\"]\n\n\nmymatrix &lt;- matrix(data = c(1,2,3,4,5,6), nrow = 2, ncol = 3)\nmymatrix[1,2]\nmymatrix[, 3]\nmymatrix[2, ]\n\nmydf &lt;- data.frame(name1 = c(1,2),name2 = c(3,4), name3 = c(5,6))\nmydf[1,2]\nmydf$name3[1]\nmydf[,3]\nmydf$name1\nmydf[2, ]\n\n########################### Pakete installieren #####\ninstall.packages(\"tidyverse\")\n\n########################### Daten einlesen #####\nmydata &lt;- readxl::read_xls(\"bsp_file.xlsx\")\nmydata &lt;- read.csv(\"bsp_file.csv\")\nmydata &lt;- foreign::read.dta(\"bsp_file.dta\")\ntestme &lt;- load(\"bsp_file.rda\")\n\n########################### Conditional Code #####\nfor (i in c(1, 3, 5)) {\n  print(i)\n}\nwhile (i &lt;= 4) {\nprint(\"i is still smaller or equal to 4\")\n}\n\n\nif (i &lt;= 4) {\n  print(i)\n} else {\n  print(\"i is not smaller 4\")\n}\n\n# Logische Operationen\na &lt;- 3\nb &lt;- 4\n\na == b\na != b\na &gt; b\na &gt;= b\na &lt;- NA\nb &lt;- \"text ist hier\"\nis.na(a)\n!is.na(b)\n\n########################### Funktionen definieren #####\nbsp_funktion &lt;- function(x, y) {\n muffin &lt;- c(x + y, x * y, x - y)\n return(muffin)\n}\n\n\n########################### Datenmanipulation #####\nhead(mtcars)\nlibrary(magrittr) # fuer den Pipe-operator\nmtcars %&gt;%\n  dplyr::select(mpg, hp)\n\nlibrary(dplyr)\nmtcars %&gt;%\n  select(mpg, hp)\n\nmtcars %&gt;% head() %&gt;% filter(cyl %in% 4:6)\n#\n\n\n\n########################### ggplot 2 Intro #####\nlibrary(ggplot2)\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\nshape = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species,\nshape = Species)) +\ngeom_point()\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti'), ],\naes(x = variable, y = value)) +\ngeom_line() +\nylim(25, 50) +\nxlim(1995, 2020)\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\nggplot(data = wb_data,\naes(x = `Country Name`)) +\ngeom_bar(stat = 'count') +\ncoord_flip()\n\nggplot(data = wb_mean,\naes(x = Mean, y = Country)) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor ='red', stat = \"identity\")\n\n\nggplot(data = wb_mean,\naes(x = Mean,\ny = reorder(Country, -Mean))) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor='red', stat = \"identity\")\n\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species))\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species),\nnrow = 3)\n\n\n\n# install.packages(\"ggpubr\")\nlibrary(ggpubr)\n\nscatter_1 &lt;- ggplot(data = iris, aes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nline_2 &lt;- ggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\n\nggarrange(scatter_1, line_2,\nlabels = c('Erster Scatterplot',\n'Zweites Liniendiagram'),\nlegend = 'bottom')",
+    "crumbs": [
+      "Studienbrief 1",
+      "Prommiergrundlagen `R` und Python"
+    ]
+  },
+  {
+    "objectID": "include/01_programmierung.html#r",
+    "href": "include/01_programmierung.html#r",
+    "title": "Vorbereitung - Programmiertools",
+    "section": "",
+    "text": "Auswahl folgender Pakete sollte für die Bearbeitung der Aufgaben und das Nachimplementieren der Anwendungen aus den Studienbriefen ausreichend sein:\n#| cache: true\ninstall.packages(\n  c(\"rcompanion\", \"polr\", \"ordinal\", \"DescTools\", \"tidyverse\", \"ggplot2\", \"dplyr\",\n    \"PerformanceAnalytics\", \"rugarch\", \"tsibbledata\", \"mFilter\", \"FinTS\",\n    \"plm\")\n)\nRest der Veranstaltung: R-code – daher eine kleine Wiederholung zu Python weiter unten.\n\n########################### Allgemeine Grundlagen #####\ntest      &lt;- 5             # Kommentarbereich\ntestplus  &lt;- test + 5      # Addition\ntestminus &lt;- testplus - 3  # Subtraktion\ntestdiv   &lt;- testminus / 7 # Division\ntestmult  &lt;- testdiv * 4   # Multiplikation\n\nv &lt;- c(1, 2, 10, 5, 6, 7) # Vektor\nv[3]\nv[1:4]\nv[v &lt; 3]\nl &lt;- list(v = c(1,2), f = c(\"a\", \"b\"))\nl$v\nl[1:2]\nl[[2]]\nl[\"v\"]\n\n\nmymatrix &lt;- matrix(data = c(1,2,3,4,5,6), nrow = 2, ncol = 3)\nmymatrix[1,2]\nmymatrix[, 3]\nmymatrix[2, ]\n\nmydf &lt;- data.frame(name1 = c(1,2),name2 = c(3,4), name3 = c(5,6))\nmydf[1,2]\nmydf$name3[1]\nmydf[,3]\nmydf$name1\nmydf[2, ]\n\n########################### Pakete installieren #####\ninstall.packages(\"tidyverse\")\n\n########################### Daten einlesen #####\nmydata &lt;- readxl::read_xls(\"bsp_file.xlsx\")\nmydata &lt;- read.csv(\"bsp_file.csv\")\nmydata &lt;- foreign::read.dta(\"bsp_file.dta\")\ntestme &lt;- load(\"bsp_file.rda\")\n\n########################### Conditional Code #####\nfor (i in c(1, 3, 5)) {\n  print(i)\n}\nwhile (i &lt;= 4) {\nprint(\"i is still smaller or equal to 4\")\n}\n\n\nif (i &lt;= 4) {\n  print(i)\n} else {\n  print(\"i is not smaller 4\")\n}\n\n# Logische Operationen\na &lt;- 3\nb &lt;- 4\n\na == b\na != b\na &gt; b\na &gt;= b\na &lt;- NA\nb &lt;- \"text ist hier\"\nis.na(a)\n!is.na(b)\n\n########################### Funktionen definieren #####\nbsp_funktion &lt;- function(x, y) {\n muffin &lt;- c(x + y, x * y, x - y)\n return(muffin)\n}\n\n\n########################### Datenmanipulation #####\nhead(mtcars)\nlibrary(magrittr) # fuer den Pipe-operator\nmtcars %&gt;%\n  dplyr::select(mpg, hp)\n\nlibrary(dplyr)\nmtcars %&gt;%\n  select(mpg, hp)\n\nmtcars %&gt;% head() %&gt;% filter(cyl %in% 4:6)\n#\n\n\n\n########################### ggplot 2 Intro #####\nlibrary(ggplot2)\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\nshape = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species,\nshape = Species)) +\ngeom_point()\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti'), ],\naes(x = variable, y = value)) +\ngeom_line() +\nylim(25, 50) +\nxlim(1995, 2020)\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\nggplot(data = wb_data,\naes(x = `Country Name`)) +\ngeom_bar(stat = 'count') +\ncoord_flip()\n\nggplot(data = wb_mean,\naes(x = Mean, y = Country)) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor ='red', stat = \"identity\")\n\n\nggplot(data = wb_mean,\naes(x = Mean,\ny = reorder(Country, -Mean))) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor='red', stat = \"identity\")\n\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species))\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species),\nnrow = 3)\n\n\n\n# install.packages(\"ggpubr\")\nlibrary(ggpubr)\n\nscatter_1 &lt;- ggplot(data = iris, aes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nline_2 &lt;- ggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\n\nggarrange(scatter_1, line_2,\nlabels = c('Erster Scatterplot',\n'Zweites Liniendiagram'),\nlegend = 'bottom')",
+    "crumbs": [
+      "Studienbrief 1",
+      "Prommiergrundlagen `R` und Python"
+    ]
+  },
+  {
+    "objectID": "include/01_programmierung.html#python",
+    "href": "include/01_programmierung.html#python",
+    "title": "Vorbereitung - Programmiertools",
+    "section": "Python",
+    "text": "Python\n\nGrundlagen\nEin Python Tupel: geordnet aber nicht veränderbar\nmytuple = (\"apple\", \"banana\", \"cherry\")\nPython Liste: geordnet und veränderbar\ntest = 5*5\na_bool = True\nb_bool = False\n# comment; like R\n\"\"\"\nthis is a longer comment\n\"\"\"\nmylist_01 = [1, \"FSM\", 3, True]       # direkte Konstruktion\nmylist_02 = list((1, \"FSM\", 3, True)) # Konstruktion über Tupel (iterable)\n# INDEXING STARTET BEI NULL vs. R BEI 1\nmylist_01[1] # wählt 2tes Element aus !\nmylist_01[1:3] # wählt 2tes bis 4tes Element aus !\nmylist_01[-1] # wählt letztes Element aus !\nmylist_01[1:] # wählt 2tes bis letztes Element aus !\nmylist_01[:3] # wählt 1tes bis 4tes Element aus !\nEine Menge: ungeordnete Sammlung der Elemente, Elemente einzigartig\nmyset = {\"apple\", \"banana\", \"cherry\"}\nEin Python dictionary: Wörterbuch ist eine Sammlung von Schlüssel-Wert-Paaren\nmydict = {\n  \"brand\": \"Ford\",\n  \"model\": \"Mustang\",\n  \"year\": 1964\n}\nBefehle auf Objekten mit .-Operator `python myset.add(2) myset.add(2).discard(3)\nPakete und skripte importieren:\nimport numpy as np\n# zugriff auf Objekte und methoden/Funktionen mittels des Kürzels\nnp.array()\n# direkter Zugriff auf Funktionen/Objekte; nur diese werden importiert\nfrom numpy import array \n\n\n\n\nDatenimport mit Python.\n\n\n\nfor und while Schleifen\nfor i in range(1,5):\n  print(i)\n  while i &lt;= 4:\n    print(\"i is still smaller or equal to 4\")\n  if i &lt;= 4:\n    print(i)\n  else:\n    print(\"i is greater than 4\")\n\n\n\n\nBoolsche Operationen mit Python.\n\n\n\nNumpy arrays und Pandas series\n\neinzelne Elemente eines Arrays sollen zum gleichen Datentyp gehören\njedem Element eines Arrays ist eine Indexnummer zugeordnet, die den Zugriff auf das Element ermöglicht\nimport numpy as np\nnp.array(data)\nmyarray = np.array([1,2,3,4,5,6])\n\n\n\n\nNumpy Operationen mit Python.\n\n\n\n\nPandas series\n\nPandas Series unterstützt u. a. folgende Datentypen: Ganzzahlen, Fließkommazahlen, Zeichenketten\nJedem Wert in einer Pandas Series ist ein Index zugewiesen\nimport pandas as pdf\nmyseries = pd.Series([1,2,3,4])\nmyseries = pd.Series([1,2,3,4], index = [“a“,“b“,“c“,“d“])\n\n\n\n\nPandas Operationen mit Python.\n\n\n\n\nPandas DataFrame\n\nPandas DataFrame: zweidimensionale Datenstruktur, bestehend aus n Zeilen und m Spalten und hat Zeilen- und Spaltenindizes.\nmydata = {\n \"Name\": [\"Shiva\", \"Tessy\", \"Detoterix Destroyer Of All\"]\n \"Dog\": [1,1,0]\n}\nmydf = pd.DataFrame(mydata)\n\n\n\n\nPandas Operationen mit Python.\n\n\n\n\nGraphiken:\n\nSeaborn, Matplotlib, Plotly, Bokeh, ggplot, Altair, Geoplotlib, Gleam, Plotnine, Pygal, etc.\nDas im Studienbrief SB 01, S.38-39 vorgestellte plotnine ist bewusst stark an ggplot2 angelehnt !",
+    "crumbs": [
+      "Studienbrief 1",
+      "Prommiergrundlagen `R` und Python"
+    ]
+  },
+  {
+    "objectID": "include/02_02_MLR.html",
+    "href": "include/02_02_MLR.html",
+    "title": "Multiple lineare Regression: Überblick",
+    "section": "",
+    "text": "Daten: gebrauchtwagen.csv aus Eurotax-Liste (Kauf/Verkauf von Gebrauchtwagen in Europa)\n\nPreis: Verkaufspreis (in Euro)\n\nKilometer: Kilometerstand (in km)\n\nService: Anzahl der Serviceintervalle (metrisch = reelle Zahlen)\n\nGarage: Garagennutzung (nominal, dichotom: ja/nein = 0/1 Codierung)\n\nFarbe: Farbe 1–3 (nominal)\nBesteht ein Zusammenhang zwischen Kilometerstand und Preis?\n\nAnalyse im Rahmen einer Regressionsanalyse — nicht Korrelationsstudie\n\nStreudiagramm / Scatterplot:\n\n\n\n\n\n\n\nFigure 1: Abbildung\n\n\n\n\n\n\n\nabhängige Variable \\(Y\\)\n\nErweiterung: mehrere (multiple) unabhängige Variablen / Kovariate\n\nunabhängigen Variable(n) = Regressore(n) = Kontrollvariable(n) = Kovariate = Prädiktoren\n\ndieselben Bezeichnungen für \\(X\\) auf der rechten Seite!\n\nstochastischer Störterm / Fehlerterm \\(\\varepsilon\\): zufälliger Fehler führt zu Abweichungen in der linearen Beziehung zwischen \\(Y\\) und \\(X\\)\n\\(Y = \\alpha + \\beta_1 \\cdot X_1 + \\ldots + \\beta_k \\cdot X_k + \\varepsilon_i\\)\n\\(Preis = \\alpha + \\beta_{1} \\cdot Kilometer + \\beta_{2} \\cdot Service + \\beta_{3} \\cdot Garage + \\varepsilon_i\\)\nErklärung der Variablenbezeichnung:\n\n\\(Y\\): abhängige Variable (Preis), auch Responsevariable genannt\n\n\\(1, X_1, \\ldots, X_k\\): Achsenabschnitt & unabhängige Variable(n) / Kovariate\n\n\\(\\alpha, \\beta_1, \\ldots, \\beta_k\\): Regressionskoeffizienten\n\nBestimmtheitsmaß \\(R^2=\\frac{TTS-RSS}{TTS}\\)\n\\(\\hookrightarrow\\) Gesamtquadratensumme (Total Sum of Squares = TTS)\n\\(\\hookrightarrow\\) Residuenquadratensumme (Residual Sum of Squares = RSS)\n\\(\\hookrightarrow\\) Anteil der durch die Regression erklärten Varianz an der Gesamtvarianz der abhängigen Variable \\(Y\\)",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multiple Lineare Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_02_MLR.html#einleitung",
+    "href": "include/02_02_MLR.html#einleitung",
+    "title": "Multiple lineare Regression: Überblick",
+    "section": "",
+    "text": "Daten: gebrauchtwagen.csv aus Eurotax-Liste (Kauf/Verkauf von Gebrauchtwagen in Europa)\n\nPreis: Verkaufspreis (in Euro)\n\nKilometer: Kilometerstand (in km)\n\nService: Anzahl der Serviceintervalle (metrisch = reelle Zahlen)\n\nGarage: Garagennutzung (nominal, dichotom: ja/nein = 0/1 Codierung)\n\nFarbe: Farbe 1–3 (nominal)\nBesteht ein Zusammenhang zwischen Kilometerstand und Preis?\n\nAnalyse im Rahmen einer Regressionsanalyse — nicht Korrelationsstudie\n\nStreudiagramm / Scatterplot:\n\n\n\n\n\n\n\nFigure 1: Abbildung\n\n\n\n\n\n\n\nabhängige Variable \\(Y\\)\n\nErweiterung: mehrere (multiple) unabhängige Variablen / Kovariate\n\nunabhängigen Variable(n) = Regressore(n) = Kontrollvariable(n) = Kovariate = Prädiktoren\n\ndieselben Bezeichnungen für \\(X\\) auf der rechten Seite!\n\nstochastischer Störterm / Fehlerterm \\(\\varepsilon\\): zufälliger Fehler führt zu Abweichungen in der linearen Beziehung zwischen \\(Y\\) und \\(X\\)\n\\(Y = \\alpha + \\beta_1 \\cdot X_1 + \\ldots + \\beta_k \\cdot X_k + \\varepsilon_i\\)\n\\(Preis = \\alpha + \\beta_{1} \\cdot Kilometer + \\beta_{2} \\cdot Service + \\beta_{3} \\cdot Garage + \\varepsilon_i\\)\nErklärung der Variablenbezeichnung:\n\n\\(Y\\): abhängige Variable (Preis), auch Responsevariable genannt\n\n\\(1, X_1, \\ldots, X_k\\): Achsenabschnitt & unabhängige Variable(n) / Kovariate\n\n\\(\\alpha, \\beta_1, \\ldots, \\beta_k\\): Regressionskoeffizienten\n\nBestimmtheitsmaß \\(R^2=\\frac{TTS-RSS}{TTS}\\)\n\\(\\hookrightarrow\\) Gesamtquadratensumme (Total Sum of Squares = TTS)\n\\(\\hookrightarrow\\) Residuenquadratensumme (Residual Sum of Squares = RSS)\n\\(\\hookrightarrow\\) Anteil der durch die Regression erklärten Varianz an der Gesamtvarianz der abhängigen Variable \\(Y\\)",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multiple Lineare Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_02_MLR.html#multiple-lineare-regression-beispiel",
+    "href": "include/02_02_MLR.html#multiple-lineare-regression-beispiel",
+    "title": "Multiple lineare Regression: Überblick",
+    "section": "Multiple lineare Regression: Beispiel",
+    "text": "Multiple lineare Regression: Beispiel\nSyntax: \\(\\hookrightarrow\\) Ergänze mit + die weiteren Regressoren\n\ndata_gw &lt;- read.csv(\"../data/gebrauchtwagen.csv\")\nmodel &lt;- lm(Preis ~ Kilometer + Service + Garage, data = data_gw)\nsummary(model)\n\n\nCall:\nlm(formula = Preis ~ Kilometer + Service + Garage, data = data_gw)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-97.343 -30.205  -1.084  26.777  97.323 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  6.187e+03  2.585e+01 239.379   &lt;2e-16 ***\nKilometer   -3.114e-02  6.359e-04 -48.966   &lt;2e-16 ***\nService      1.345e+02  3.867e+00  34.793   &lt;2e-16 ***\nGarage       1.901e+01  8.461e+00   2.247    0.027 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.64 on 96 degrees of freedom\nMultiple R-squared:  0.9754,    Adjusted R-squared:  0.9746 \nF-statistic:  1267 on 3 and 96 DF,  p-value: &lt; 2.2e-16\n\n\nInterpretation:\n\n\\(R^2=0.9754\\): 97.54 % der Varianz (im Preis) wird durch das Modell (Achsenabschnitt und alle 3 Regressoren) erklärt \\(\\hookrightarrow\\) sehr hoher Wert nahe Obergrenze 1 ! \\(R^2 \\in [0,1]\\)\n\nKilometer/Service: \\(p&lt;2e-16\\) \\(\\rightarrow\\) hoch signifikant: Sternchen ***\n\nGarage: \\(p=0.027\\) \\(\\rightarrow\\) signifikant auf Niveau 5 %: Sternchen *\n\nF-Wert:\n\nletzte Zeile des summary outputs: p-Wert p-value: &lt;2.2e-16 der F-Statistik zeigt sehr hohe Signifikanz aller drei gemeinsamen Kovariate auf den Preis\n\n\\(Preis = 6187 - 0.003114 \\cdot Kilometer + 134.5 \\cdot Service + 19.01 \\cdot Garage\\)\n\nSteigt der Kilometerstand um 1 (eine kleine/marginale Einheit), so sinkt der Preis um \\(\\beta\\) Einheiten:\n\nAchsenabschnitt 6187 EUR: Basispreis eines Gebrauchtwagens\n\nPro gefahrenem Kilometer: erwarteter Verkaufspreis sinkt um ca. 3 Cent\n\nPro getätigtem Service: erwarteter Verkaufspreis steigt um ca. 134.5 EUR\n\nGaragennutzung (vs. draußen Parken): Verkaufspreis steigt um 19 EUR",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multiple Lineare Regression"
+    ]
+  }
+]
