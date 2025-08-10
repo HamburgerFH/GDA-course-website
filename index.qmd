@@ -1,0 +1,62 @@
+---
+title: "Grundlagen der Datenanalyse (GDA)"
+subtitle: "Kursportal & Materialien"
+page-layout: full
+toc: false
+title-block-banner: true     # uses a subtle banner (we'll style it)
+title-block-banner-color: white
+---
+
+::: {.columns}
+::: {.column width="65%"}
+
+Welcome! Hier findest du Skripte, Beispiele und `R`‑Code für den Kurs.
+Starte mit einem der Bereiche oder nutze die Suche links.
+
+<div class="home-cta">
+  <a class="btn btn-primary btn-cta" href="include/01_programmierung.qmd">
+    Kurzeinführung R und Python
+  </a>
+  <a class="btn btn-outline-primary btn-cta" href="include/02_02_MLR.qmd">
+    Multiple Lineare Regression
+  </a>
+  <a class="btn btn-outline-primary btn-cta" href="include/02_03_BLR.qmd">
+    Binär logistische Regression
+  </a>
+  <a class="btn btn-outline-secondary btn-cta" href="include/99_altklausuren.qmd">
+    Altklausuren
+  </a>
+</div>
+
+
+### Aktuelles {.mt-4}
+
+::: {.callout-note}
+**Hinweise:** Klausurtermin 01:
+:::
+
+::: {.callout-note}
+**Hinweise:** Klausurtermin 02:
+:::
+
+::: {.callout-note}
+**Hinweise:** Folien und Notebooks werden laufend ergänzt. Bei Fragen oder
+Fehlern bitte im GitHub-Menü (links oben) melden.
+:::
+
+
+:::
+::: {.column width="35%"}
+
+![](assets/logo_hfh.png){.home-logo}
+
+**Ilya Zarubin (M.Sc.)**  
+E‑mail: ilya.zarub@campus.hamburger-fh.de
+
+<div class="d-flex gap-2 mt-2">
+  <a class="btn btn-sm btn-outline-secondary" href="mailto:ilya.zarub@campus.hamburger-fh.de">Kontakt</a>
+  <a class="btn btn-sm btn-outline-secondary" href="https://github.com/ilyaZar/">Über</a>
+</div>
+
+:::
+:::

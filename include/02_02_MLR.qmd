@@ -1,0 +1,88 @@
+---
+title: "Multiple lineare Regression: Überblick"
+engine: knitr
+execute:
+  eval: true
+  echo: true
+---
+
+## Einleitung
+
+### Motivation und  Beispiel--Fragestellung {.unlisted}
+
+Daten: `gebrauchtwagen.csv` aus **Eurotax-Liste** (Kauf/Verkauf von Gebrauchtwagen in Europa)
+
+
+- **Preis**: Verkaufspreis (in Euro)  
+- **Kilometer**: Kilometerstand (in km)  
+- **Service**: Anzahl der Serviceintervalle (metrisch = reelle Zahlen)  
+- **Garage**: Garagennutzung (nominal, dichotom: ja/nein = 0/1 Codierung)  
+- **Farbe**: Farbe 1–3 (nominal)  
+
+
+-   Besteht ein Zusammenhang zwischen **Kilometerstand** und **Preis**?  
+-   Analyse im Rahmen einer **Regressionsanalyse** — **nicht** Korrelationsstudie  
+-   Streudiagramm / Scatterplot:
+
+![Abbildung](/figs/02_01_reg_output.png){#fig-02_01_reg_output}
+
+
+### Idee und Notation {.unlisted}
+
+- abhängige Variable $Y$  
+- Erweiterung: mehrere (multiple) unabhängige Variablen / Kovariate  
+- unabhängigen Variable(n) = Regressore(n) = Kontrollvariable(n) = Kovariate = Prädiktoren  
+- dieselben Bezeichnungen für $X$ auf der rechten Seite!  
+- stochastischer Störterm / Fehlerterm $\varepsilon$: zufälliger Fehler führt zu Abweichungen in der linearen Beziehung zwischen $Y$ und $X$  
+
+
+
+-   $Y = \alpha + \beta_1 \cdot X_1 + \ldots + \beta_k \cdot X_k + \varepsilon_i$  
+
+    $Preis = \alpha + \beta_{1} \cdot Kilometer + \beta_{2} \cdot Service + \beta_{3} \cdot Garage + \varepsilon_i$  
+
+-   Erklärung der Variablenbezeichnung:  
+    - $Y$: abhängige Variable (Preis), auch **Responsevariable** genannt  
+    - $1, X_1, \ldots, X_k$: Achsenabschnitt & unabhängige Variable(n) / Kovariate  
+    - $\alpha, \beta_1, \ldots, \beta_k$: Regressionskoeffizienten  
+
+-   Bestimmtheitsmaß $R^2=\frac{TTS-RSS}{TTS}$  
+    $\hookrightarrow$ Gesamtquadratensumme (Total Sum of Squares = TTS)  
+    $\hookrightarrow$ Residuenquadratensumme (Residual Sum of Squares = RSS)  
+    $\hookrightarrow$ Anteil der durch die Regression erklärten Varianz an der Gesamtvarianz der abhängigen Variable $Y$  
+
+
+
+## Multiple lineare Regression: Beispiel
+
+**Syntax:** $\hookrightarrow$ Ergänze mit **+** die weiteren Regressoren  
+
+```{r}
+#| cache: true
+#| echo: true
+data_gw <- read.csv("../data/gebrauchtwagen.csv")
+model <- lm(Preis ~ Kilometer + Service + Garage, data = data_gw)
+summary(model)
+```
+
+**Interpretation:**  
+
+- $R^2=0.9754$: 97.54 % der Varianz (im Preis) wird durch das Modell (Achsenabschnitt und alle 3 Regressoren) erklärt $\hookrightarrow$ sehr hoher Wert nahe [Obergrenze 1]{.crd} ! $R^2 \in [0,1]$  
+- **Kilometer/Service**: $p<2e-16$ $\rightarrow$ hoch signifikant: Sternchen **\*\*\***  
+- **Garage**: $p=0.027$ $\rightarrow$ signifikant auf Niveau 5 %: Sternchen **\***  
+
+**F-Wert:**  
+
+- letzte Zeile des summary outputs: p-Wert [p-value: <2.2e-16]{.ctl} der F-Statistik zeigt sehr hohe Signifikanz aller [drei]{.crd} gemeinsamen Kovariate auf den Preis  
+
+
+
+$Preis = 6187 - 0.003114 \cdot Kilometer + 134.5 \cdot Service + 19.01 \cdot Garage$  
+
+
+
+- Steigt der Kilometerstand um 1 (eine kleine/marginale Einheit), so sinkt der Preis um $\beta$ Einheiten:  
+- Achsenabschnitt 6187 EUR: Basispreis eines Gebrauchtwagens  
+- Pro [gefahrenem Kilometer]{.ctl}: erwarteter Verkaufspreis [sinkt]{.crd} [um ca. 3 Cent]{.ctl}  
+- Pro [getätigtem Service]{.ctl}: erwarteter Verkaufspreis [steigt]{.crd} [um ca. 134.5 EUR]{.ctl}  
+- [Garagennutzung]{.ctl} (vs. draußen Parken): Verkaufspreis [steigt]{.crd} [um 19 EUR]{.ctl}  

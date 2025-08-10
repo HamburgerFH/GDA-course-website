@@ -1,0 +1,63 @@
+---
+title: "Multinomiale Logistische Regression"
+engine: knitr
+execute:
+  eval: true
+  echo: true
+---
+
+
+## Einführung und Beispiel:
+
+- Idee: Erweiterung von *binär* auf $>2$, d.h. multinomial
+
+![Einführung in die multinomiale logistische Regression](/figs/02_04_multinomial_intro.png){#fig-02-04-multinomial-intro} ![Jamovi Ausgabe der multinomialen logistischen Regression](/figs/02_04_jamovi_out_01.png){#fig-02-04-jamovi-out-01}
+
+
+
+## Umsetzung in `R`:
+
+Referenzkategorie: *selbstein* dritte Kategorie: `ref='3'` oder `ref='eher rechts'`, [ACHTUNG:]{.crd} falls 'eher rechts' benutzt wird, dann muss vorher die Variable mit `as.factor()` transformiert werden
+
+```{r}
+#| cache: true
+#| echo: true
+#--multinominale logistische Regression: Labels & Partition--
+data_einsch <- read.csv("../data/einschaetzung.csv")
+head(data_einsch)
+levels (data_einsch$selbstein) <- c('eher links', 'Mitte', 'eher rechts')
+data_einsch$selbstein <- as.factor(data_einsch$selbstein)
+set.seed(222)
+# Nullmodell erhält 80% der Daten, Trainingsmodell 20%: ZUFÄLLIG ausgewählt
+ind <-sample(2, nrow(data_einsch), replace = TRUE, prob = c(0.8, 0.2))
+model_0 <- data_einsch[ind ==1,]
+model   <- data_einsch[ind ==2,]
+# install.packages("nnet")
+library(nnet)
+model_0$selbstein <- relevel(model_0$selbstein, ref = "3")
+multinominal.model <- nnet::multinom(selbstein ~ alter + schule, data = model_0)
+summary(multinominal.model)
+```
+
+  - **Interpretation:** die Ergebnisse sind stets in Relation zur Referenzkategorie zu interpretieren
+  - **Alter:** $-0.9694$ negativer Wert, d.h. der Wechsel v. Alterskategorie $1$ (unter 45) nach Alterskategorie $2$ (über 45) wirkt sich negativ zur Zugehörigkeit $selbstsein=1=$'eher links' aus relativ zur Basiskategorie $selbstsein=3=$'eher rechts'
+
+## Interpretation - Fortsetzung
+
+![ ](/figs/02_04_logodds_interpretation_01.png)
+![Beispielinterpretation im Mult. Logistischen Modell](/figs/02_04_logodds_interpretation_02.png)
+
+## P-Wert
+
+```{r}
+#| cache: true
+#| echo: true
+library(magrittr)
+coeffs <- summary(multinominal.model)$coefficients
+ses    <- summary(multinominal.model)$standard.errors
+z <- coeffs / ses
+p <- (1 - pnorm(abs(z), 0, 1)) * 2
+p
+```
+
+Wir sehen: alle Koeffizienten hochsignifikant.

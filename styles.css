@@ -1,0 +1,27 @@
+/* css styles */
+/*-- scss:defaults --*/
+/*// Base document colors
+
+/* Softer hero and compact top spacing */
+.quarto-title-block .quarto-title-banner {
+  background: linear-gradient(90deg, #03497b 0%, #177bb9 100%);
+  padding: 2.5rem 1rem;
+}
+.quarto-title .title { letter-spacing: 0.2px; }
+
+/* Keep logo tidy on the right column */
+.home-logo { max-width: 260px; height: auto; margin: 0 0 1rem 0; }
+
+/* CTA buttons group */
+.home-cta .btn { margin-right: .5rem; margin-bottom: .5rem; }
+
+/* Card grid spacing on homepage */
+.home-cards .card-title { margin-bottom: .5rem; }
+.home-cards .card-text { min-height: 56px; }
+
+/* Reduce max width a touch for nicer line length */
+.page-full .page-layout-full .content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}

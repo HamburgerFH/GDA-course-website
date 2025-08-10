@@ -1,0 +1,13 @@
+<script>
+  // Define MathJax macros BEFORE MathJax loads (Quarto handles the order)
+  // Only work in math mode: use $\ra$, not plain \ra in text.
+  window.MathJax = {
+    tex: {
+      macros: {
+        ra:  "\\rightarrow",
+        hra: "\\hookrightarrow",
+        ul:  ["\\underline{#1}", 1]
+      }
+    }
+  };
+</script>
