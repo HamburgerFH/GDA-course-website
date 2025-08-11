@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multinomiale Logistische Regression – Grundlagen der Datenanalyse (GDA)</title>
+<title>ar_garch – Grundlagen der Datenanalyse (GDA)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../include/02_05_OLR.html" rel="next">
-<link href="../include/02_03_BLR.html" rel="prev">
+<link href="../include/04_01_apriori_definitions.html" rel="next">
+<link href="../include/03_04_BCA.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -160,7 +160,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/02_02_MLR.html">Studienbrief 2</a></li><li class="breadcrumb-item"><a href="../include/02_04_MLR.html">Multinomial logistische Regression</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/03_01_TZ.html">Studienbrief 3</a></li><li class="breadcrumb-item"><a href="../include/03_05_AR_GARCH.html">AR-Modelle</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -252,7 +252,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../include/02_04_MLR.html" class="sidebar-item-text sidebar-link active">
+  <a href="../include/02_04_MLR.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multinomial logistische Regression</span></a>
   </div>
 </li>
@@ -299,7 +299,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../include/03_05_AR_GARCH.html" class="sidebar-item-text sidebar-link">
+  <a href="../include/03_05_AR_GARCH.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">AR-Modelle</span></a>
   </div>
 </li>
@@ -428,122 +428,561 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#einführung-und-beispiel" id="toc-einführung-und-beispiel" class="nav-link active" data-scroll-target="#einführung-und-beispiel">Einführung und Beispiel:</a></li>
-  <li><a href="#umsetzung-in-r" id="toc-umsetzung-in-r" class="nav-link" data-scroll-target="#umsetzung-in-r">Umsetzung in <code>R</code>:</a></li>
-  <li><a href="#interpretation---fortsetzung" id="toc-interpretation---fortsetzung" class="nav-link" data-scroll-target="#interpretation---fortsetzung">Interpretation - Fortsetzung</a></li>
-  <li><a href="#p-wert" id="toc-p-wert" class="nav-link" data-scroll-target="#p-wert">P-Wert</a></li>
+  <li><a href="#ar-modelle" id="toc-ar-modelle" class="nav-link active" data-scroll-target="#ar-modelle">AR-Modelle</a></li>
+  <li><a href="#implementierung-von-arch-modellen-in-r" id="toc-implementierung-von-arch-modellen-in-r" class="nav-link" data-scroll-target="#implementierung-von-arch-modellen-in-r">Implementierung von ARCH-Modellen in <code>R</code></a></li>
+  <li><a href="#garch-modelle" id="toc-garch-modelle" class="nav-link" data-scroll-target="#garch-modelle">GARCH-Modelle</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/02_02_MLR.html">Studienbrief 2</a></li><li class="breadcrumb-item"><a href="../include/02_04_MLR.html">Multinomial logistische Regression</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Multinomiale Logistische Regression</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/03_01_TZ.html">Studienbrief 3</a></li><li class="breadcrumb-item"><a href="../include/03_05_AR_GARCH.html">AR-Modelle</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="einführung-und-beispiel" class="level2">
-<h2 class="anchored" data-anchor-id="einführung-und-beispiel">Einführung und Beispiel:</h2>
+<section id="ar-modelle" class="level2">
+<h2 class="anchored" data-anchor-id="ar-modelle">AR-Modelle</h2>
+<section id="ar-modell-einführung" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="ar-modell-einführung">AR-Modell Einführung</h3>
 <ul>
-<li>Idee: Erweiterung von <em>binär</em> auf <span class="math inline">\(&gt;2\)</span>, d.h. multinomial</li>
-</ul>
-<p><img src="../figs/02_04_multinomial_intro.png" id="fig-02-04-multinomial-intro" class="img-fluid" alt="Einführung in die multinomiale logistische Regression"> <img src="../figs/02_04_jamovi_out_01.png" id="fig-02-04-jamovi-out-01" class="img-fluid" alt="Jamovi Ausgabe der multinomialen logistischen Regression"></p>
-</section>
-<section id="umsetzung-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="umsetzung-in-r">Umsetzung in <code>R</code>:</h2>
-<p>Referenzkategorie: <em>selbstein</em> dritte Kategorie: <code>ref='3'</code> oder <code>ref='eher rechts'</code>, <span class="crd">ACHTUNG:</span> falls ‘eher rechts’ benutzt wird, dann muss vorher die Variable mit <code>as.factor()</code> transformiert werden</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--multinominale logistische Regression: Labels &amp; Partition--</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_einsch <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/einschaetzung.csv"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_einsch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  selbstein schule schicht alter
-1         2      1       1     2
-2         3      1       2     1
-3         1      1       2     1
-4         2      1       1     1
-5         1      1       2     1
-6         3      1       2     2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span> (data_einsch<span class="sc">$</span>selbstein) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'eher links'</span>, <span class="st">'Mitte'</span>, <span class="st">'eher rechts'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data_einsch<span class="sc">$</span>selbstein <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data_einsch<span class="sc">$</span>selbstein)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Nullmodell erhält 80% der Daten, Trainingsmodell 20%: ZUFÄLLIG ausgewählt</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">2</span>, <span class="fu">nrow</span>(data_einsch), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>model_0 <span class="ot">&lt;-</span> data_einsch[ind <span class="sc">==</span><span class="dv">1</span>,]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>model   <span class="ot">&lt;-</span> data_einsch[ind <span class="sc">==</span><span class="dv">2</span>,]</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("nnet")</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>model_0<span class="sc">$</span>selbstein <span class="ot">&lt;-</span> <span class="fu">relevel</span>(model_0<span class="sc">$</span>selbstein, <span class="at">ref =</span> <span class="st">"3"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>multinominal.model <span class="ot">&lt;-</span> nnet<span class="sc">::</span><span class="fu">multinom</span>(selbstein <span class="sc">~</span> alter <span class="sc">+</span> schule, <span class="at">data =</span> model_0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># weights:  12 (6 variable)
-initial  value 2311.480255 
-iter  10 value 2163.887112
-final  value 2163.886874 
-converged</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(multinominal.model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Call:
-nnet::multinom(formula = selbstein ~ alter + schule, data = model_0)
-
-Coefficients:
-  (Intercept)      alter      schule
-1    1.507787 -0.9693638  0.01803241
-2    2.716944 -0.7463522 -0.66243962
-
-Std. Errors:
-  (Intercept)     alter    schule
-1   0.3217004 0.1306577 0.1291727
-2   0.2912695 0.1170838 0.1174561
-
-Residual Deviance: 4327.774 
-AIC: 4339.774 </code></pre>
-</div>
-</div>
+<li><strong>Definition:</strong>
 <ul>
-<li><strong>Interpretation:</strong> die Ergebnisse sind stets in Relation zur Referenzkategorie zu interpretieren</li>
-<li><strong>Alter:</strong> <span class="math inline">\(-0.9694\)</span> negativer Wert, d.h. der Wechsel v. Alterskategorie <span class="math inline">\(1\)</span> (unter 45) nach Alterskategorie <span class="math inline">\(2\)</span> (über 45) wirkt sich negativ zur Zugehörigkeit <span class="math inline">\(selbstsein=1=\)</span>’eher links’ aus relativ zur Basiskategorie <span class="math inline">\(selbstsein=3=\)</span>’eher rechts’</li>
+<li>Autoregressive Modelle beschreiben Zeitreihen, bei denen der aktuelle Wert von vergangenen Werten abhängt. Die Ordnung <span class="math inline">\(q\)</span> bestimmt, wie viele vergangene Werte Einfluss haben.</li>
+<li>Beispiel: <span class="math display">\[
+x_t = \phi_1 x_{t-1} + \phi_2 x_{t-2} + \dots + \phi_q x_{t-q} + \epsilon_t
+\]</span></li>
+</ul></li>
+<li><strong>AR(q)-Modelle:</strong>
+<ul>
+<li><strong>AR(1):</strong> Nur vorheriger Wert beeinflusst aktuellen Wert.</li>
+<li><strong>AR(2):</strong> Zwei vorherige Werte bestimmen aktuellen Wert.</li>
+<li><strong>AR(q):</strong> <span class="math inline">\(q\)</span> vorherige Werte haben Einfluss.</li>
+</ul></li>
+<li><strong>Voraussetzungen:</strong> Stationarität, keine stark ausgeprägten Trends oder saisonalen Komponenten.</li>
+<li><strong>Anwendungsbereich:</strong> Finanzmarktanalysen, Wirtschaftsindikatoren, Wetterprognosen.</li>
 </ul>
 </section>
-<section id="interpretation---fortsetzung" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation---fortsetzung">Interpretation - Fortsetzung</h2>
-<p><img src="../figs/02_04_logodds_interpretation_01.png" class="img-fluid"> <img src="../figs/02_04_logodds_interpretation_02.png" class="img-fluid" alt="Beispielinterpretation im Mult. Logistischen Modell"></p>
+<section id="arch-modelle-einführung" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="arch-modelle-einführung">ARCH-Modelle Einführung</h3>
+<ul>
+<li><strong>Idee:</strong> Modellierung von Renditen als <span class="math inline">\(r_t = \mu_t + \epsilon_t\)</span>.
+<ul>
+<li>Bei täglichen Renditen meist keine Autokorrelation, sodass man einfach <span class="math inline">\(\mu_t \equiv \mu\)</span> setzt.</li>
+<li>Dann gilt <span class="math inline">\(r_t - \mu = \epsilon_t\)</span> und man modelliert weiter <span class="math inline">\(\epsilon_t = \sigma_t u_t\)</span> mit <span class="math inline">\(u_t \sim\)</span> <strong><span class="ctl">starker WN</span></strong>.</li>
+<li>Nun gilt <span class="math inline">\(Var[\epsilon_t] = Var[\sigma_t u_t] = \sigma_t^2 Var[u_t] =
+\sigma_t^2 \cdot 1 = \sigma_t^2\)</span>.</li>
+</ul></li>
+<li><strong>Definition:</strong>
+<ul>
+<li><em>Autoregressive Conditional Heteroscedasticity</em> (ARCH) modelliert die Varianz der Fehlerzeitreihe.</li>
+<li>Annahme: Varianz hängt von vergangenen Fehlerwerten ab.</li>
+</ul></li>
+<li><strong>ARCH(1)-Modell:</strong>
+<ul>
+<li>Einfachste Form: Varianz <span class="math inline">\(\sigma_t^2\)</span> hängt von vorherigem Fehlerterm <span class="math inline">\(\epsilon_{t-1}\)</span> ab.</li>
+<li>Mathematisch: <span class="math display">\[
+\sigma_t^2 = \omega + \alpha_1 \epsilon_{t-1}^2
+\]</span> wobei <span class="math inline">\(\omega\)</span> und <span class="math inline">\(\alpha_1\)</span> zu schätzen sind.</li>
+</ul></li>
+<li><strong>ARCH(q)-Modell:</strong>
+<ul>
+<li>Erweiterung auf mehrere vorherige Fehlerwerte: <span class="math display">\[
+\sigma_t^2 = \omega + \sum_{i=1}^{q} \alpha_i \epsilon_{t-i}^2
+\]</span></li>
+</ul></li>
+<li><strong>Anwendungsbereich:</strong> Finanzmärkte, Volatilitätsmodellierung, Risikoanalysen.</li>
+</ul>
 </section>
-<section id="p-wert" class="level2">
-<h2 class="anchored" data-anchor-id="p-wert">P-Wert</h2>
+</section>
+<section id="implementierung-von-arch-modellen-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="implementierung-von-arch-modellen-in-r">Implementierung von ARCH-Modellen in <code>R</code></h2>
+<section id="daten-einlesen-kapitel-3.5" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="daten-einlesen-kapitel-3.5">Daten Einlesen (Kapitel 3.5)</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>coeffs <span class="ot">&lt;-</span> <span class="fu">summary</span>(multinominal.model)<span class="sc">$</span>coefficients</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ses    <span class="ot">&lt;-</span> <span class="fu">summary</span>(multinominal.model)<span class="sc">$</span>standard.errors</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> coeffs <span class="sc">/</span> ses</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(z), <span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tsibbledata"); install.packages("PerformanceAnalytics")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: zoo</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'zoo'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PerformanceAnalytics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'PerformanceAnalytics'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:graphics':
+
+    legend</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data_gafa <span class="ot">&lt;-</span> tsibbledata<span class="sc">::</span>gafa_stock <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Date, Symbol, Close) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Symbol, <span class="at">values_from =</span> Close)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data_gafa) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="st">"Apple"</span>,<span class="st">"Amazon"</span>, <span class="st">"Facebook"</span>, <span class="st">"Google"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_gafa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  (Intercept)        alter       schule
-1 2.77334e-06 1.179057e-13 8.889767e-01
-2 0.00000e+00 1.835458e-10 1.701566e-08</code></pre>
+<pre><code># A tibble: 6 × 5
+  Date       Apple Amazon Facebook Google
+  &lt;date&gt;     &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;
+1 2014-01-02  79.0   398.     54.7   553.
+2 2014-01-03  77.3   396.     54.6   549.
+3 2014-01-06  77.7   394.     57.2   555.
+4 2014-01-07  77.1   398.     57.9   566.
+5 2014-01-08  77.6   402.     58.2   567.
+6 2014-01-09  76.6   401.     57.2   561.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data_gafa_xts <span class="ot">&lt;-</span> xts<span class="sc">::</span><span class="fu">xts</span>(data_gafa[, <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>], <span class="at">order.by =</span> data_gafa<span class="sc">$</span>Date)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>data_gafa_returns <span class="ot">&lt;-</span> PerformanceAnalytics<span class="sc">::</span><span class="fu">Return.calculate</span>(data_gafa_xts, <span class="at">method =</span> <span class="st">"log"</span>)[<span class="sc">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plotten-der-eingelesenen-daten-i" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="plotten-der-eingelesenen-daten-i">Plotten der eingelesenen Daten I</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xts)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data_gafa_xts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_05_AR_GARCH_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p>Wir sehen: alle Koeffizienten hochsignifikant.</p>
+</div>
+</section>
+<section id="plotten-der-eingelesenen-daten-ii" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="plotten-der-eingelesenen-daten-ii">Plotten der eingelesenen Daten II</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xts)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data_gafa_returns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_05_AR_GARCH_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="überprüfung-von-annahmen" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="überprüfung-von-annahmen">Überprüfung von Annahmen</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_05_annahmen_arch_garch.png" class="img-fluid figure-img"></p>
+<figcaption>Annahmen für ARCH und GARCH</figcaption>
+</figure>
+</div>
+</section>
+<section id="gibt-es-arch-effekte" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="gibt-es-arch-effekte">Gibt es ARCH-Effekte?</h3>
+<ul>
+<li>Standardabweichung als Maß für Volatilität.</li>
+<li>Hohe Standardabweichung <span class="math inline">\(\ra\)</span> große Schwankungen.</li>
+<li>Niedrige Standardabweichung <span class="math inline">\(\ra\)</span> stabile Zeitreihe.</li>
+<li>Gleitende Standardabweichung: jährliche Normierung.</li>
+<li>Berechnung für Apple-Daten über 22-Tage-Fenster: viele Werte <span class="math inline">\(&gt; 0.2\)</span> deuten auf hohe Volatilität hin.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>PerformanceAnalytics<span class="sc">::</span><span class="fu">chart.RollingPerformance</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">R =</span> data_gafa_returns<span class="sc">$</span>Apple, <span class="at">width =</span> <span class="dv">22</span>, <span class="at">FUN =</span> <span class="st">'sd.annualized'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_05_AR_GARCH_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Visuell scheint es welche zu geben, daher nun formale Tests.</li>
+<li>Vorher: Renditedaten stationarisieren (z. B. HP-Filter).</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("FinTS"); install.packages("mFilter")</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>return_data_apple_filtered <span class="ot">&lt;-</span> mFilter<span class="sc">::</span><span class="fu">mFilter</span>(<span class="fu">ts</span>(data_gafa_returns<span class="sc">$</span>Apple), <span class="at">filter =</span> <span class="st">"HP"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>return_data_apple_filtered <span class="ot">&lt;-</span> xts<span class="sc">::</span><span class="fu">as.xts</span>(return_data_apple_filtered<span class="sc">$</span>x)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>FinTS<span class="sc">::</span><span class="fu">ArchTest</span>(return_data_apple_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    ARCH LM-test; Null hypothesis: no ARCH effects
+
+data:  return_data_apple_filtered
+Chi-squared = 39.912, df = 12, p-value = 7.436e-05</code></pre>
+</div>
+</div>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: Keine ARCH-Effekte.</li>
+<li>Ergebnis: <span class="math inline">\(H_0\)</span> abgelehnt, ARCH-Effekte vorhanden.</li>
+</ul>
+</section>
+<section id="schätzung-von-arch-modellen" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="schätzung-von-arch-modellen">Schätzung von ARCH-Modellen</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rugarch")</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>model_specification_apple_arch <span class="ot">&lt;-</span> rugarch<span class="sc">::</span><span class="fu">ugarchspec</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">variance.model =</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">model =</span> <span class="st">'sGARCH'</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">garchOrder =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># Erstes Element: ARCH-Ordnung, zweites = 0 für ARCH</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    ), </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean.model =</span> <span class="fu">list</span>(</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">armaOrder =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">distribution.model =</span> <span class="st">"norm"</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>fit_ARCH_data_apple <span class="ot">&lt;-</span> rugarch<span class="sc">::</span><span class="fu">ugarchfit</span>(</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> return_data_apple_filtered,</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">spec =</span> model_specification_apple_arch</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Alle Parameter signifikant (p &lt; 0.05).</li>
+<li>Modell: <span class="math display">\[
+\sigma_t^2 = 3\times 10^{-6} + 0.999\cdot e_{t-1}^2
+\]</span></li>
+</ul>
+</section>
+<section id="ergebnisse-ausgeben" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="ergebnisse-ausgeben">Ergebnisse ausgeben</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_ARCH_data_apple)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+*---------------------------------*
+*          GARCH Model Fit        *
+*---------------------------------*
+
+Conditional Variance Dynamics   
+-----------------------------------
+GARCH Model : sGARCH(1,0)
+Mean Model  : ARFIMA(0,0,0)
+Distribution    : norm 
+
+Optimal Parameters
+------------------------------------
+        Estimate  Std. Error   t value Pr(&gt;|t|)
+mu      0.052183    0.000012 4459.5219        0
+omega   0.000003    0.000000    7.6727        0
+alpha1  0.999000    0.000146 6829.2296        0
+
+Robust Standard Errors:
+        Estimate  Std. Error  t value Pr(&gt;|t|)
+mu      0.052183    3.995753 0.013060  0.98958
+omega   0.000003    0.077704 0.000043  0.99997
+alpha1  0.999000   76.882235 0.012994  0.98963
+
+LogLikelihood : 1412.957 
+
+Information Criteria
+------------------------------------
+                    
+Akaike       -2.2434
+Bayes        -2.2311
+Shibata      -2.2434
+Hannan-Quinn -2.2388
+
+Weighted Ljung-Box Test on Standardized Residuals
+------------------------------------
+                        statistic   p-value
+Lag[1]                      14.12 0.0001716
+Lag[2*(p+q)+(p+q)-1][2]     14.21 0.0001485
+Lag[4*(p+q)+(p+q)-1][5]     15.89 0.0002562
+d.o.f=0
+H0 : No serial correlation
+
+Weighted Ljung-Box Test on Standardized Squared Residuals
+------------------------------------
+                        statistic p-value
+Lag[1]                    0.01666  0.8973
+Lag[2*(p+q)+(p+q)-1][2]   0.01848  0.9820
+Lag[4*(p+q)+(p+q)-1][5]   0.04717  0.9996
+d.o.f=1
+
+Weighted ARCH LM Tests
+------------------------------------
+            Statistic Shape Scale P-Value
+ARCH Lag[2]  0.003628 0.500 2.000  0.9520
+ARCH Lag[4]  0.013470 1.397 1.611  0.9990
+ARCH Lag[6]  0.067159 2.222 1.500  0.9996
+
+Nyblom stability test
+------------------------------------
+Joint Statistic:  2.5469
+Individual Statistics:             
+mu     0.5887
+omega  0.1785
+alpha1 0.5888
+
+Asymptotic Critical Values (10% 5% 1%)
+Joint Statistic:         0.846 1.01 1.35
+Individual Statistic:    0.35 0.47 0.75
+
+Sign Bias Test
+------------------------------------
+                   t-value      prob sig
+Sign Bias           0.6081 5.432e-01    
+Negative Sign Bias  5.1984 2.346e-07 ***
+Positive Sign Bias  0.7707 4.411e-01    
+Joint Effect       29.6145 1.663e-06 ***
 
 
+Adjusted Pearson Goodness-of-Fit Test:
+------------------------------------
+  group statistic p-value(g-1)
+1    20      2836            0
+2    30      2853            0
+3    40      2864            0
+4    50      2860            0
+
+
+Elapsed time : 0.8626037 </code></pre>
+</div>
+</div>
+</section>
+<section id="visualisierung-der-ergebnisse" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="visualisierung-der-ergebnisse">Visualisierung der Ergebnisse</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rugarch"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit_ARCH_data_apple, <span class="at">which =</span> <span class="st">"all"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+please wait...calculating quantiles...</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_05_AR_GARCH_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="vorhersagen-mit-arch-modell" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="vorhersagen-mit-arch-modell">Vorhersagen mit ARCH-Modell</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>forcast_ARCH_apple <span class="ot">&lt;-</span> rugarch<span class="sc">::</span><span class="fu">ugarchforecast</span>(<span class="at">fitORspec =</span> fit_ARCH_data_apple, <span class="at">n.ahead =</span> <span class="dv">5</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>forcast_ARCH_apple</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+*------------------------------------*
+*       GARCH Model Forecast         *
+*------------------------------------*
+Model: sGARCH
+Horizon: 5
+Roll Steps: 0
+Out of Sample: 0
+
+0-roll forecast [T0=1257-01-01]:
+     Series   Sigma
+T+1 0.05218 0.04258
+T+2 0.05218 0.04260
+T+3 0.05218 0.04262
+T+4 0.05218 0.04264
+T+5 0.05218 0.04265</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="garch-modelle" class="level2">
+<h2 class="anchored" data-anchor-id="garch-modelle">GARCH-Modelle</h2>
+<section id="einführung" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="einführung">Einführung</h3>
+<ul>
+<li><strong>Idee wie bei ARCH:</strong>
+<ul>
+<li>Modellierung von Renditen als <span class="math inline">\(r_t = \mu_t + \epsilon_t\)</span>.</li>
+<li><span class="math inline">\(r_t - \mu = \epsilon_t\)</span>, <span class="math inline">\(\epsilon_t = \sigma_t u_t\)</span>, <span class="math inline">\(u_t \sim\)</span> <strong><span class="ctl">starker WN</span></strong>.</li>
+<li><span class="math inline">\(Var[\epsilon_t] = \sigma_t^2\)</span>.</li>
+</ul></li>
+<li><strong>Definition:</strong>
+<ul>
+<li><em>Generalized Autoregressive Conditional Heteroscedasticity</em>.</li>
+<li>Annahme: Varianz hängt von vergangenen Fehlern <span class="crd"><strong>UND</strong></span> vorherigen Varianzen ab.</li>
+</ul></li>
+<li><strong>GARCH(q, p)-Modell:</strong>
+<ul>
+<li><span class="math inline">\(\sigma_t^2 = \omega + \sum_{i=1}^q \alpha_i \epsilon_{t-i}^2 +
+\sum_{j=1}^p \beta_j \sigma_{t-j}^2\)</span></li>
+<li><code>q</code> bestimmt die Anzahl der berücksichtigten Verzögerungen der Fehlerterme</li>
+<li><code>p</code> bestimmt die Anzahl der berücksichtigten Verzögerungen der Varianzen</li>
+</ul></li>
+<li><strong>Anwendungsbereich:</strong> wie bei ARCH.</li>
+</ul>
+</section>
+<section id="garch-in-r" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="garch-in-r">GARCH in <code>R</code></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rugarch"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>model_specification_apple_garch <span class="ot">&lt;-</span> <span class="fu">ugarchspec</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">variance.model =</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">model =</span> <span class="st">"sGARCH"</span>,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">garchOrder =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)),</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean.model =</span> </span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">armaOrder =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)),</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">distribution.model =</span> <span class="st">"norm"</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>fit_GARCH_data_apple <span class="ot">&lt;-</span> <span class="fu">ugarchfit</span>(</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> return_data_apple_filtered,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">spec =</span> model_specification_apple_garch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>wieder: alle Parameter sind signifikant mit Niveau 5% (p &lt; 0.05).</li>
+<li>das <strong>geschätzte / angepasste GARCH-Modell</strong> lautet: <span class="math display">\[
+\sigma_t^2 = 0.000025 + 0.122304\cdot e_{t-1}^2 + 0.771785\cdot \sigma_{t-1}^2
+\]</span></li>
+</ul>
+</section>
+<section id="ergebnisse-ausgeben-1" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="ergebnisse-ausgeben-1">Ergebnisse ausgeben</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_GARCH_data_apple)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+*---------------------------------*
+*          GARCH Model Fit        *
+*---------------------------------*
+
+Conditional Variance Dynamics   
+-----------------------------------
+GARCH Model : sGARCH(1,1)
+Mean Model  : ARFIMA(0,0,0)
+Distribution    : norm 
+
+Optimal Parameters
+------------------------------------
+        Estimate  Std. Error  t value Pr(&gt;|t|)
+mu      0.001146    0.000388   2.9519 0.003158
+omega   0.000025    0.000006   3.9852 0.000067
+alpha1  0.122303    0.028784   4.2491 0.000021
+beta1   0.771789    0.046595  16.5637 0.000000
+
+Robust Standard Errors:
+        Estimate  Std. Error  t value Pr(&gt;|t|)
+mu      0.001146    0.000421   2.7222 0.006484
+omega   0.000025    0.000010   2.6473 0.008114
+alpha1  0.122303    0.033481   3.6529 0.000259
+beta1   0.771789    0.058764  13.1338 0.000000
+
+LogLikelihood : 3538.843 
+
+Information Criteria
+------------------------------------
+                    
+Akaike       -5.6243
+Bayes        -5.6079
+Shibata      -5.6243
+Hannan-Quinn -5.6181
+
+Weighted Ljung-Box Test on Standardized Residuals
+------------------------------------
+                        statistic p-value
+Lag[1]                      1.496  0.2213
+Lag[2*(p+q)+(p+q)-1][2]     1.640  0.3301
+Lag[4*(p+q)+(p+q)-1][5]     2.435  0.5197
+d.o.f=0
+H0 : No serial correlation
+
+Weighted Ljung-Box Test on Standardized Squared Residuals
+------------------------------------
+                        statistic p-value
+Lag[1]                    0.09701  0.7554
+Lag[2*(p+q)+(p+q)-1][5]   0.68386  0.9260
+Lag[4*(p+q)+(p+q)-1][9]   1.07587  0.9829
+d.o.f=2
+
+Weighted ARCH LM Tests
+------------------------------------
+            Statistic Shape Scale P-Value
+ARCH Lag[3]   0.06627 0.500 2.000  0.7969
+ARCH Lag[5]   0.82619 1.440 1.667  0.7851
+ARCH Lag[7]   0.96451 2.315 1.543  0.9193
+
+Nyblom stability test
+------------------------------------
+Joint Statistic:  0.4744
+Individual Statistics:              
+mu     0.04709
+omega  0.09750
+alpha1 0.14804
+beta1  0.11503
+
+Asymptotic Critical Values (10% 5% 1%)
+Joint Statistic:         1.07 1.24 1.6
+Individual Statistic:    0.35 0.47 0.75
+
+Sign Bias Test
+------------------------------------
+                   t-value   prob sig
+Sign Bias           0.3940 0.6936    
+Negative Sign Bias  0.5946 0.5522    
+Positive Sign Bias  0.5933 0.5531    
+Joint Effect        2.6375 0.4510    
+
+
+Adjusted Pearson Goodness-of-Fit Test:
+------------------------------------
+  group statistic p-value(g-1)
+1    20     84.91    2.612e-10
+2    30    103.60    2.579e-10
+3    40    109.40    1.343e-08
+4    50    118.62    1.053e-07
+
+
+Elapsed time : 0.1914036 </code></pre>
+</div>
+</div>
+</section>
+<section id="vorhersagen-mit-garch-modell" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="vorhersagen-mit-garch-modell">Vorhersagen mit GARCH-Modell</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>forcast_GARCH_apple <span class="ot">&lt;-</span> rugarch<span class="sc">::</span><span class="fu">ugarchforecast</span>(<span class="at">fitORspec =</span> fit_GARCH_data_apple, <span class="at">n.ahead =</span> <span class="dv">5</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>forcast_GARCH_apple</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+*------------------------------------*
+*       GARCH Model Forecast         *
+*------------------------------------*
+Model: sGARCH
+Horizon: 5
+Roll Steps: 0
+Out of Sample: 0
+
+0-roll forecast [T0=1257-01-01]:
+      Series   Sigma
+T+1 0.001146 0.02301
+T+2 0.001146 0.02233
+T+3 0.001146 0.02171
+T+4 0.001146 0.02114
+T+5 0.001146 0.02061</code></pre>
+</div>
+</div>
+</section>
+<section id="visualisierung-der-ergebnisse-1" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="visualisierung-der-ergebnisse-1">Visualisierung der Ergebnisse</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rugarch"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit_GARCH_data_apple, <span class="at">which =</span> <span class="st">"all"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+please wait...calculating quantiles...</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_05_AR_GARCH_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -948,13 +1387,13 @@ AIC: 4339.774 </code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../include/02_03_BLR.html" class="pagination-link" aria-label="Binär logistische Regression">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Binär logistische Regression</span>
+      <a href="../include/03_04_BCA.html" class="pagination-link" aria-label="Business Cycle Analysen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Business Cycle Analysen</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../include/02_05_OLR.html" class="pagination-link" aria-label="Ordinal logistische Regression">
-        <span class="nav-page-text">Ordinal logistische Regression</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../include/04_01_apriori_definitions.html" class="pagination-link" aria-label="Assoziationsanalyse">
+        <span class="nav-page-text">Assoziationsanalyse</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

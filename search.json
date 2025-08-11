@@ -1,24 +1,682 @@
 [
   {
-    "objectID": "include/99_altklausuren.html",
-    "href": "include/99_altklausuren.html",
+    "objectID": "include/03_04_BCA.html",
+    "href": "include/03_04_BCA.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 1: Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\n\nFigure 2: Lösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 3: Aufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\n\nFigure 4: Lösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 5: Aufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\n\nFigure 6: Lösung zur Klausur vom 23.03.2024",
+    "text": "Phase 1: Expansion\n\nWirtschaftlicher Aufschwung, sinkende Arbeitslosenzahlen, geringe Inflation.\n\nPhase 2: Hochkonjunktur\n\nLohnniveau steigt, Wachstumsrate des BIP sinkt, Markt erreicht Sättigung.\n\nPhase 3: Rezession\n\nWirtschaftlicher Abschwung, steigende Arbeitslosenquote, Inflation nimmt zu.\n\nPhase 4: Konjunkturtief / Depression\n\nStarke Zunahme der Arbeitslosenquote, rapide fallende Börsenkurse, Inflation steigt stark an.\n\n\n\n\n\nVier-Phasen-Modell des Business Cycle\n\n\n\n\n\n\nVereinfachung des Vier-Phasen-Modells: Häufig in den USA verwendet.\nPhase 1: Expansion-Phase: Zusammenfassung von vormals Phase 1 & 2.\nPhase 2: Rezession-Phase: Zusammenfassung von vormals Phase 3 & 4.\nBusiness Cycle Analyse in R: Ermittlung der Phasen mit dem BCDating-Paket.\n\nbc &lt;- BBQ(myts, mincycle = 5, minphase = 4)\nsummary(bc)\n\n\n\nZwei-Phasen-Modell des Business Cycle\n\n\n\n\n\n\nGRAU: Rezession vs. WEISS: Expansion\n\nbc &lt;- BBQ(myts, mincycle = 5, minphase = 4)\nsummary(bc)\nplot(bc, bne_Q_trend_seasdiff)\n\n\n\nZwei-Phasen-Modell des Business Cycle — Plot",
     "crumbs": [
-      "Altklausuren",
-      "Aufgabentyp 1"
+      "Studienbrief 3",
+      "Business Cycle Analysen"
     ]
   },
   {
-    "objectID": "include/99_altklausuren.html#klausuraufgaben-zu-sb-01",
-    "href": "include/99_altklausuren.html#klausuraufgaben-zu-sb-01",
+    "objectID": "include/03_04_BCA.html#business-cycle-analysen",
+    "href": "include/03_04_BCA.html#business-cycle-analysen",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 1: Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\n\nFigure 2: Lösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 3: Aufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\n\nFigure 4: Lösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\n\n\n\nFigure 5: Aufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\n\nFigure 6: Lösung zur Klausur vom 23.03.2024",
+    "text": "Phase 1: Expansion\n\nWirtschaftlicher Aufschwung, sinkende Arbeitslosenzahlen, geringe Inflation.\n\nPhase 2: Hochkonjunktur\n\nLohnniveau steigt, Wachstumsrate des BIP sinkt, Markt erreicht Sättigung.\n\nPhase 3: Rezession\n\nWirtschaftlicher Abschwung, steigende Arbeitslosenquote, Inflation nimmt zu.\n\nPhase 4: Konjunkturtief / Depression\n\nStarke Zunahme der Arbeitslosenquote, rapide fallende Börsenkurse, Inflation steigt stark an.\n\n\n\n\n\nVier-Phasen-Modell des Business Cycle\n\n\n\n\n\n\nVereinfachung des Vier-Phasen-Modells: Häufig in den USA verwendet.\nPhase 1: Expansion-Phase: Zusammenfassung von vormals Phase 1 & 2.\nPhase 2: Rezession-Phase: Zusammenfassung von vormals Phase 3 & 4.\nBusiness Cycle Analyse in R: Ermittlung der Phasen mit dem BCDating-Paket.\n\nbc &lt;- BBQ(myts, mincycle = 5, minphase = 4)\nsummary(bc)\n\n\n\nZwei-Phasen-Modell des Business Cycle\n\n\n\n\n\n\nGRAU: Rezession vs. WEISS: Expansion\n\nbc &lt;- BBQ(myts, mincycle = 5, minphase = 4)\nsummary(bc)\nplot(bc, bne_Q_trend_seasdiff)\n\n\n\nZwei-Phasen-Modell des Business Cycle — Plot",
+    "crumbs": [
+      "Studienbrief 3",
+      "Business Cycle Analysen"
+    ]
+  },
+  {
+    "objectID": "include/99_altklausuren_A5.html",
+    "href": "include/99_altklausuren_A5.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste \\(10.62 *\\ [(-3)]{.crd}\\ -\\ 0.07 *\\ 200\\ =\\ -45.86\\) heißen !!!\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
     "crumbs": [
       "Altklausuren",
-      "Aufgabentyp 1"
+      "Aufgabentyp 5"
+    ]
+  },
+  {
+    "objectID": "include/99_altklausuren_A5.html#klausuraufgaben-sb-05",
+    "href": "include/99_altklausuren_A5.html#klausuraufgaben-sb-05",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste \\(10.62 *\\ [(-3)]{.crd}\\ -\\ 0.07 *\\ 200\\ =\\ -45.86\\) heißen !!!\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "crumbs": [
+      "Altklausuren",
+      "Aufgabentyp 5"
+    ]
+  },
+  {
+    "objectID": "include/01_programmierung.html",
+    "href": "include/01_programmierung.html",
+    "title": "Vorbereitung - Programmiertools",
+    "section": "",
+    "text": "Auswahl folgender Pakete sollte für die Bearbeitung der Aufgaben und das Nachimplementieren der Anwendungen aus den Studienbriefen ausreichend sein:\n#| cache: true\ninstall.packages(\n  c(\"rcompanion\", \"polr\", \"ordinal\", \"DescTools\", \"tidyverse\", \"ggplot2\", \"dplyr\",\n    \"PerformanceAnalytics\", \"rugarch\", \"tsibbledata\", \"mFilter\", \"FinTS\",\n    \"plm\")\n)\nRest der Veranstaltung: R-code – daher eine kleine Wiederholung zu Python weiter unten.\n\n########################### Allgemeine Grundlagen #####\ntest      &lt;- 5             # Kommentarbereich\ntestplus  &lt;- test + 5      # Addition\ntestminus &lt;- testplus - 3  # Subtraktion\ntestdiv   &lt;- testminus / 7 # Division\ntestmult  &lt;- testdiv * 4   # Multiplikation\n\nv &lt;- c(1, 2, 10, 5, 6, 7) # Vektor\nv[3]\nv[1:4]\nv[v &lt; 3]\nl &lt;- list(v = c(1,2), f = c(\"a\", \"b\"))\nl$v\nl[1:2]\nl[[2]]\nl[\"v\"]\n\n\nmymatrix &lt;- matrix(data = c(1,2,3,4,5,6), nrow = 2, ncol = 3)\nmymatrix[1,2]\nmymatrix[, 3]\nmymatrix[2, ]\n\nmydf &lt;- data.frame(name1 = c(1,2),name2 = c(3,4), name3 = c(5,6))\nmydf[1,2]\nmydf$name3[1]\nmydf[,3]\nmydf$name1\nmydf[2, ]\n\n########################### Pakete installieren #####\n#install.packages(\"tidyverse\")\nlibrary(tidyverse)\n########################### Daten einlesen #####\nmydata &lt;- readxl::read_xls(\"bsp_file.xlsx\")\nmydata &lt;- read.csv(\"bsp_file.csv\")\nmydata &lt;- foreign::read.dta(\"bsp_file.dta\")\ntestme &lt;- load(\"bsp_file.rda\")\n\n########################### Conditional Code #####\nfor (i in c(1, 3, 5)) {\n  print(i)\n}\nwhile (i &lt;= 4) {\nprint(\"i is still smaller or equal to 4\")\n}\n\n\nif (i &lt;= 4) {\n  print(i)\n} else {\n  print(\"i is not smaller 4\")\n}\n\n# Logische Operationen\na &lt;- 3\nb &lt;- 4\n\na == b\na != b\na &gt; b\na &gt;= b\na &lt;- NA\nb &lt;- \"text ist hier\"\nis.na(a)\n!is.na(b)\n\n########################### Funktionen definieren #####\nbsp_funktion &lt;- function(x, y) {\n muffin &lt;- c(x + y, x * y, x - y)\n return(muffin)\n}\n\n\n########################### Datenmanipulation #####\nhead(mtcars)\nlibrary(magrittr) # fuer den Pipe-operator\nmtcars %&gt;%\n  dplyr::select(mpg, hp)\n\nlibrary(dplyr)\nmtcars %&gt;%\n  select(mpg, hp)\n\nmtcars %&gt;% head() %&gt;% filter(cyl %in% 4:6)\n#\n\n\n\n########################### ggplot 2 Intro #####\nlibrary(ggplot2)\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\nshape = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species,\nshape = Species)) +\ngeom_point()\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti'), ],\naes(x = variable, y = value)) +\ngeom_line() +\nylim(25, 50) +\nxlim(1995, 2020)\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\nggplot(data = wb_data,\naes(x = `Country Name`)) +\ngeom_bar(stat = 'count') +\ncoord_flip()\n\nggplot(data = wb_mean,\naes(x = Mean, y = Country)) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor ='red', stat = \"identity\")\n\n\nggplot(data = wb_mean,\naes(x = Mean,\ny = reorder(Country, -Mean))) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor='red', stat = \"identity\")\n\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species))\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species),\nnrow = 3)\n\n\n\n# install.packages(\"ggpubr\")\nlibrary(ggpubr)\n\nscatter_1 &lt;- ggplot(data = iris, aes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nline_2 &lt;- ggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\n\nggarrange(scatter_1, line_2,\nlabels = c('Erster Scatterplot',\n'Zweites Liniendiagram'),\nlegend = 'bottom')",
+    "crumbs": [
+      "Studienbrief 1",
+      "Prommiergrundlagen `R` und Python"
+    ]
+  },
+  {
+    "objectID": "include/01_programmierung.html#r",
+    "href": "include/01_programmierung.html#r",
+    "title": "Vorbereitung - Programmiertools",
+    "section": "",
+    "text": "Auswahl folgender Pakete sollte für die Bearbeitung der Aufgaben und das Nachimplementieren der Anwendungen aus den Studienbriefen ausreichend sein:\n#| cache: true\ninstall.packages(\n  c(\"rcompanion\", \"polr\", \"ordinal\", \"DescTools\", \"tidyverse\", \"ggplot2\", \"dplyr\",\n    \"PerformanceAnalytics\", \"rugarch\", \"tsibbledata\", \"mFilter\", \"FinTS\",\n    \"plm\")\n)\nRest der Veranstaltung: R-code – daher eine kleine Wiederholung zu Python weiter unten.\n\n########################### Allgemeine Grundlagen #####\ntest      &lt;- 5             # Kommentarbereich\ntestplus  &lt;- test + 5      # Addition\ntestminus &lt;- testplus - 3  # Subtraktion\ntestdiv   &lt;- testminus / 7 # Division\ntestmult  &lt;- testdiv * 4   # Multiplikation\n\nv &lt;- c(1, 2, 10, 5, 6, 7) # Vektor\nv[3]\nv[1:4]\nv[v &lt; 3]\nl &lt;- list(v = c(1,2), f = c(\"a\", \"b\"))\nl$v\nl[1:2]\nl[[2]]\nl[\"v\"]\n\n\nmymatrix &lt;- matrix(data = c(1,2,3,4,5,6), nrow = 2, ncol = 3)\nmymatrix[1,2]\nmymatrix[, 3]\nmymatrix[2, ]\n\nmydf &lt;- data.frame(name1 = c(1,2),name2 = c(3,4), name3 = c(5,6))\nmydf[1,2]\nmydf$name3[1]\nmydf[,3]\nmydf$name1\nmydf[2, ]\n\n########################### Pakete installieren #####\n#install.packages(\"tidyverse\")\nlibrary(tidyverse)\n########################### Daten einlesen #####\nmydata &lt;- readxl::read_xls(\"bsp_file.xlsx\")\nmydata &lt;- read.csv(\"bsp_file.csv\")\nmydata &lt;- foreign::read.dta(\"bsp_file.dta\")\ntestme &lt;- load(\"bsp_file.rda\")\n\n########################### Conditional Code #####\nfor (i in c(1, 3, 5)) {\n  print(i)\n}\nwhile (i &lt;= 4) {\nprint(\"i is still smaller or equal to 4\")\n}\n\n\nif (i &lt;= 4) {\n  print(i)\n} else {\n  print(\"i is not smaller 4\")\n}\n\n# Logische Operationen\na &lt;- 3\nb &lt;- 4\n\na == b\na != b\na &gt; b\na &gt;= b\na &lt;- NA\nb &lt;- \"text ist hier\"\nis.na(a)\n!is.na(b)\n\n########################### Funktionen definieren #####\nbsp_funktion &lt;- function(x, y) {\n muffin &lt;- c(x + y, x * y, x - y)\n return(muffin)\n}\n\n\n########################### Datenmanipulation #####\nhead(mtcars)\nlibrary(magrittr) # fuer den Pipe-operator\nmtcars %&gt;%\n  dplyr::select(mpg, hp)\n\nlibrary(dplyr)\nmtcars %&gt;%\n  select(mpg, hp)\n\nmtcars %&gt;% head() %&gt;% filter(cyl %in% 4:6)\n#\n\n\n\n########################### ggplot 2 Intro #####\nlibrary(ggplot2)\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\nshape = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species,\nshape = Species)) +\ngeom_point()\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti'), ],\naes(x = variable, y = value)) +\ngeom_line() +\nylim(25, 50) +\nxlim(1995, 2020)\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\nggplot(data = wb_data,\naes(x = `Country Name`)) +\ngeom_bar(stat = 'count') +\ncoord_flip()\n\nggplot(data = wb_mean,\naes(x = Mean, y = Country)) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor ='red', stat = \"identity\")\n\n\nggplot(data = wb_mean,\naes(x = Mean,\ny = reorder(Country, -Mean))) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor='red', stat = \"identity\")\n\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species))\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species),\nnrow = 3)\n\n\n\n# install.packages(\"ggpubr\")\nlibrary(ggpubr)\n\nscatter_1 &lt;- ggplot(data = iris, aes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nline_2 &lt;- ggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\n\nggarrange(scatter_1, line_2,\nlabels = c('Erster Scatterplot',\n'Zweites Liniendiagram'),\nlegend = 'bottom')",
+    "crumbs": [
+      "Studienbrief 1",
+      "Prommiergrundlagen `R` und Python"
+    ]
+  },
+  {
+    "objectID": "include/01_programmierung.html#python",
+    "href": "include/01_programmierung.html#python",
+    "title": "Vorbereitung - Programmiertools",
+    "section": "Python",
+    "text": "Python\n\nGrundlagen\nEin Python Tupel: geordnet aber nicht veränderbar\nmytuple = (\"apple\", \"banana\", \"cherry\")\nPython Liste: geordnet und veränderbar\ntest = 5*5\na_bool = True\nb_bool = False\n# comment; like R\n\"\"\"\nthis is a longer comment\n\"\"\"\nmylist_01 = [1, \"FSM\", 3, True]       # direkte Konstruktion\nmylist_02 = list((1, \"FSM\", 3, True)) # Konstruktion über Tupel (iterable)\n# INDEXING STARTET BEI NULL vs. R BEI 1\nmylist_01[1] # wählt 2tes Element aus !\nmylist_01[1:3] # wählt 2tes bis 4tes Element aus !\nmylist_01[-1] # wählt letztes Element aus !\nmylist_01[1:] # wählt 2tes bis letztes Element aus !\nmylist_01[:3] # wählt 1tes bis 4tes Element aus !\nEine Menge: ungeordnete Sammlung der Elemente, Elemente einzigartig\nmyset = {\"apple\", \"banana\", \"cherry\"}\nEin Python dictionary: Wörterbuch ist eine Sammlung von Schlüssel-Wert-Paaren\nmydict = {\n  \"brand\": \"Ford\",\n  \"model\": \"Mustang\",\n  \"year\": 1964\n}\nBefehle auf Objekten mit .-Operator `python myset.add(2) myset.add(2).discard(3)\nPakete und skripte importieren:\nimport numpy as np\n# zugriff auf Objekte und methoden/Funktionen mittels des Kürzels\nnp.array()\n# direkter Zugriff auf Funktionen/Objekte; nur diese werden importiert\nfrom numpy import array \n\n\n\n\nDatenimport mit Python.\n\n\n\nfor und while Schleifen\nfor i in range(1,5):\n  print(i)\n  while i &lt;= 4:\n    print(\"i is still smaller or equal to 4\")\n  if i &lt;= 4:\n    print(i)\n  else:\n    print(\"i is greater than 4\")\n\n\n\n\nBoolsche Operationen mit Python.\n\n\n\nNumpy arrays und Pandas series\n\neinzelne Elemente eines Arrays sollen zum gleichen Datentyp gehören\njedem Element eines Arrays ist eine Indexnummer zugeordnet, die den Zugriff auf das Element ermöglicht\nimport numpy as np\nnp.array(data)\nmyarray = np.array([1,2,3,4,5,6])\n\n\n\n\nNumpy Operationen mit Python.\n\n\n\n\nPandas series\n\nPandas Series unterstützt u. a. folgende Datentypen: Ganzzahlen, Fließkommazahlen, Zeichenketten\nJedem Wert in einer Pandas Series ist ein Index zugewiesen\nimport pandas as pdf\nmyseries = pd.Series([1,2,3,4])\nmyseries = pd.Series([1,2,3,4], index = [“a“,“b“,“c“,“d“])\n\n\n\n\nPandas Operationen mit Python.\n\n\n\n\nPandas DataFrame\n\nPandas DataFrame: zweidimensionale Datenstruktur, bestehend aus n Zeilen und m Spalten und hat Zeilen- und Spaltenindizes.\nmydata = {\n \"Name\": [\"Shiva\", \"Tessy\", \"Detoterix Destroyer Of All\"]\n \"Dog\": [1,1,0]\n}\nmydf = pd.DataFrame(mydata)\n\n\n\n\nPandas Operationen mit Python.\n\n\n\n\nGraphiken:\n\nSeaborn, Matplotlib, Plotly, Bokeh, ggplot, Altair, Geoplotlib, Gleam, Plotnine*, Pygal, und eine Menge weiterer\nDas im Studienbrief SB 01, S.38-39 vorgestellte plotnine ist bewusst stark an ggplot2 angelehnt !\nPyt",
+    "crumbs": [
+      "Studienbrief 1",
+      "Prommiergrundlagen `R` und Python"
+    ]
+  },
+  {
+    "objectID": "include/03_05_AR_GARCH.html",
+    "href": "include/03_05_AR_GARCH.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Definition:\n\nAutoregressive Modelle beschreiben Zeitreihen, bei denen der aktuelle Wert von vergangenen Werten abhängt. Die Ordnung \\(q\\) bestimmt, wie viele vergangene Werte Einfluss haben.\nBeispiel: \\[\nx_t = \\phi_1 x_{t-1} + \\phi_2 x_{t-2} + \\dots + \\phi_q x_{t-q} + \\epsilon_t\n\\]\n\nAR(q)-Modelle:\n\nAR(1): Nur vorheriger Wert beeinflusst aktuellen Wert.\nAR(2): Zwei vorherige Werte bestimmen aktuellen Wert.\nAR(q): \\(q\\) vorherige Werte haben Einfluss.\n\nVoraussetzungen: Stationarität, keine stark ausgeprägten Trends oder saisonalen Komponenten.\nAnwendungsbereich: Finanzmarktanalysen, Wirtschaftsindikatoren, Wetterprognosen.\n\n\n\n\n\nIdee: Modellierung von Renditen als \\(r_t = \\mu_t + \\epsilon_t\\).\n\nBei täglichen Renditen meist keine Autokorrelation, sodass man einfach \\(\\mu_t \\equiv \\mu\\) setzt.\nDann gilt \\(r_t - \\mu = \\epsilon_t\\) und man modelliert weiter \\(\\epsilon_t = \\sigma_t u_t\\) mit \\(u_t \\sim\\) starker WN.\nNun gilt \\(Var[\\epsilon_t] = Var[\\sigma_t u_t] = \\sigma_t^2 Var[u_t] =\n\\sigma_t^2 \\cdot 1 = \\sigma_t^2\\).\n\nDefinition:\n\nAutoregressive Conditional Heteroscedasticity (ARCH) modelliert die Varianz der Fehlerzeitreihe.\nAnnahme: Varianz hängt von vergangenen Fehlerwerten ab.\n\nARCH(1)-Modell:\n\nEinfachste Form: Varianz \\(\\sigma_t^2\\) hängt von vorherigem Fehlerterm \\(\\epsilon_{t-1}\\) ab.\nMathematisch: \\[\n\\sigma_t^2 = \\omega + \\alpha_1 \\epsilon_{t-1}^2\n\\] wobei \\(\\omega\\) und \\(\\alpha_1\\) zu schätzen sind.\n\nARCH(q)-Modell:\n\nErweiterung auf mehrere vorherige Fehlerwerte: \\[\n\\sigma_t^2 = \\omega + \\sum_{i=1}^{q} \\alpha_i \\epsilon_{t-i}^2\n\\]\n\nAnwendungsbereich: Finanzmärkte, Volatilitätsmodellierung, Risikoanalysen.",
+    "crumbs": [
+      "Studienbrief 3",
+      "AR-Modelle"
+    ]
+  },
+  {
+    "objectID": "include/03_05_AR_GARCH.html#ar-modelle",
+    "href": "include/03_05_AR_GARCH.html#ar-modelle",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Definition:\n\nAutoregressive Modelle beschreiben Zeitreihen, bei denen der aktuelle Wert von vergangenen Werten abhängt. Die Ordnung \\(q\\) bestimmt, wie viele vergangene Werte Einfluss haben.\nBeispiel: \\[\nx_t = \\phi_1 x_{t-1} + \\phi_2 x_{t-2} + \\dots + \\phi_q x_{t-q} + \\epsilon_t\n\\]\n\nAR(q)-Modelle:\n\nAR(1): Nur vorheriger Wert beeinflusst aktuellen Wert.\nAR(2): Zwei vorherige Werte bestimmen aktuellen Wert.\nAR(q): \\(q\\) vorherige Werte haben Einfluss.\n\nVoraussetzungen: Stationarität, keine stark ausgeprägten Trends oder saisonalen Komponenten.\nAnwendungsbereich: Finanzmarktanalysen, Wirtschaftsindikatoren, Wetterprognosen.\n\n\n\n\n\nIdee: Modellierung von Renditen als \\(r_t = \\mu_t + \\epsilon_t\\).\n\nBei täglichen Renditen meist keine Autokorrelation, sodass man einfach \\(\\mu_t \\equiv \\mu\\) setzt.\nDann gilt \\(r_t - \\mu = \\epsilon_t\\) und man modelliert weiter \\(\\epsilon_t = \\sigma_t u_t\\) mit \\(u_t \\sim\\) starker WN.\nNun gilt \\(Var[\\epsilon_t] = Var[\\sigma_t u_t] = \\sigma_t^2 Var[u_t] =\n\\sigma_t^2 \\cdot 1 = \\sigma_t^2\\).\n\nDefinition:\n\nAutoregressive Conditional Heteroscedasticity (ARCH) modelliert die Varianz der Fehlerzeitreihe.\nAnnahme: Varianz hängt von vergangenen Fehlerwerten ab.\n\nARCH(1)-Modell:\n\nEinfachste Form: Varianz \\(\\sigma_t^2\\) hängt von vorherigem Fehlerterm \\(\\epsilon_{t-1}\\) ab.\nMathematisch: \\[\n\\sigma_t^2 = \\omega + \\alpha_1 \\epsilon_{t-1}^2\n\\] wobei \\(\\omega\\) und \\(\\alpha_1\\) zu schätzen sind.\n\nARCH(q)-Modell:\n\nErweiterung auf mehrere vorherige Fehlerwerte: \\[\n\\sigma_t^2 = \\omega + \\sum_{i=1}^{q} \\alpha_i \\epsilon_{t-i}^2\n\\]\n\nAnwendungsbereich: Finanzmärkte, Volatilitätsmodellierung, Risikoanalysen.",
+    "crumbs": [
+      "Studienbrief 3",
+      "AR-Modelle"
+    ]
+  },
+  {
+    "objectID": "include/03_05_AR_GARCH.html#implementierung-von-arch-modellen-in-r",
+    "href": "include/03_05_AR_GARCH.html#implementierung-von-arch-modellen-in-r",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Implementierung von ARCH-Modellen in R",
+    "text": "Implementierung von ARCH-Modellen in R\n\nDaten Einlesen (Kapitel 3.5)\n\n# install.packages(\"tsibbledata\"); install.packages(\"PerformanceAnalytics\")\nlibrary(magrittr)\nlibrary(xts)\n\nLoading required package: zoo\n\n\n\nAttaching package: 'zoo'\n\n\nThe following objects are masked from 'package:base':\n\n    as.Date, as.Date.numeric\n\nlibrary(PerformanceAnalytics)\n\n\nAttaching package: 'PerformanceAnalytics'\n\n\nThe following object is masked from 'package:graphics':\n\n    legend\n\ndata_gafa &lt;- tsibbledata::gafa_stock %&gt;% \n  dplyr::select(Date, Symbol, Close) %&gt;%\n  tidyr::pivot_wider(names_from = Symbol, values_from = Close)\ncolnames(data_gafa) &lt;- c(\"Date\", \"Apple\",\"Amazon\", \"Facebook\", \"Google\")\nhead(data_gafa)\n\n# A tibble: 6 × 5\n  Date       Apple Amazon Facebook Google\n  &lt;date&gt;     &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;\n1 2014-01-02  79.0   398.     54.7   553.\n2 2014-01-03  77.3   396.     54.6   549.\n3 2014-01-06  77.7   394.     57.2   555.\n4 2014-01-07  77.1   398.     57.9   566.\n5 2014-01-08  77.6   402.     58.2   567.\n6 2014-01-09  76.6   401.     57.2   561.\n\ndata_gafa_xts &lt;- xts::xts(data_gafa[, 2:5], order.by = data_gafa$Date)\ndata_gafa_returns &lt;- PerformanceAnalytics::Return.calculate(data_gafa_xts, method = \"log\")[-1]\n\n\n\nPlotten der eingelesenen Daten I\n\nlibrary(xts)\nplot(data_gafa_xts)\n\n\n\n\n\n\n\n\n\n\nPlotten der eingelesenen Daten II\n\nlibrary(xts)\nplot(data_gafa_returns)\n\n\n\n\n\n\n\n\n\n\nÜberprüfung von Annahmen\n\n\n\nAnnahmen für ARCH und GARCH\n\n\n\n\nGibt es ARCH-Effekte?\n\nStandardabweichung als Maß für Volatilität.\nHohe Standardabweichung \\(\\ra\\) große Schwankungen.\nNiedrige Standardabweichung \\(\\ra\\) stabile Zeitreihe.\nGleitende Standardabweichung: jährliche Normierung.\nBerechnung für Apple-Daten über 22-Tage-Fenster: viele Werte \\(&gt; 0.2\\) deuten auf hohe Volatilität hin.\n\n\nPerformanceAnalytics::chart.RollingPerformance(\n  R = data_gafa_returns$Apple, width = 22, FUN = 'sd.annualized')\n\n\n\n\n\n\n\n\n\nVisuell scheint es welche zu geben, daher nun formale Tests.\nVorher: Renditedaten stationarisieren (z. B. HP-Filter).\n\n\n# install.packages(\"FinTS\"); install.packages(\"mFilter\")\nreturn_data_apple_filtered &lt;- mFilter::mFilter(ts(data_gafa_returns$Apple), filter = \"HP\")\nreturn_data_apple_filtered &lt;- xts::as.xts(return_data_apple_filtered$x)\nFinTS::ArchTest(return_data_apple_filtered)\n\n\n    ARCH LM-test; Null hypothesis: no ARCH effects\n\ndata:  return_data_apple_filtered\nChi-squared = 39.912, df = 12, p-value = 7.436e-05\n\n\n\n\\(H_0\\): Keine ARCH-Effekte.\nErgebnis: \\(H_0\\) abgelehnt, ARCH-Effekte vorhanden.\n\n\n\nSchätzung von ARCH-Modellen\n\n# install.packages(\"rugarch\")\nmodel_specification_apple_arch &lt;- rugarch::ugarchspec(\n  variance.model =\n    list(\n      model = 'sGARCH',\n      garchOrder = c(1, 0) # Erstes Element: ARCH-Ordnung, zweites = 0 für ARCH\n    ), \n  mean.model = list(\n    armaOrder = c(0, 0)\n  ),\n  distribution.model = \"norm\")\nfit_ARCH_data_apple &lt;- rugarch::ugarchfit(\n  data = return_data_apple_filtered,\n  spec = model_specification_apple_arch\n)\n\n\nAlle Parameter signifikant (p &lt; 0.05).\nModell: \\[\n\\sigma_t^2 = 3\\times 10^{-6} + 0.999\\cdot e_{t-1}^2\n\\]\n\n\n\nErgebnisse ausgeben\n\nprint(fit_ARCH_data_apple)\n\n\n*---------------------------------*\n*          GARCH Model Fit        *\n*---------------------------------*\n\nConditional Variance Dynamics   \n-----------------------------------\nGARCH Model : sGARCH(1,0)\nMean Model  : ARFIMA(0,0,0)\nDistribution    : norm \n\nOptimal Parameters\n------------------------------------\n        Estimate  Std. Error   t value Pr(&gt;|t|)\nmu      0.052183    0.000012 4459.5219        0\nomega   0.000003    0.000000    7.6727        0\nalpha1  0.999000    0.000146 6829.2296        0\n\nRobust Standard Errors:\n        Estimate  Std. Error  t value Pr(&gt;|t|)\nmu      0.052183    3.995753 0.013060  0.98958\nomega   0.000003    0.077704 0.000043  0.99997\nalpha1  0.999000   76.882235 0.012994  0.98963\n\nLogLikelihood : 1412.957 \n\nInformation Criteria\n------------------------------------\n                    \nAkaike       -2.2434\nBayes        -2.2311\nShibata      -2.2434\nHannan-Quinn -2.2388\n\nWeighted Ljung-Box Test on Standardized Residuals\n------------------------------------\n                        statistic   p-value\nLag[1]                      14.12 0.0001716\nLag[2*(p+q)+(p+q)-1][2]     14.21 0.0001485\nLag[4*(p+q)+(p+q)-1][5]     15.89 0.0002562\nd.o.f=0\nH0 : No serial correlation\n\nWeighted Ljung-Box Test on Standardized Squared Residuals\n------------------------------------\n                        statistic p-value\nLag[1]                    0.01666  0.8973\nLag[2*(p+q)+(p+q)-1][2]   0.01848  0.9820\nLag[4*(p+q)+(p+q)-1][5]   0.04717  0.9996\nd.o.f=1\n\nWeighted ARCH LM Tests\n------------------------------------\n            Statistic Shape Scale P-Value\nARCH Lag[2]  0.003628 0.500 2.000  0.9520\nARCH Lag[4]  0.013470 1.397 1.611  0.9990\nARCH Lag[6]  0.067159 2.222 1.500  0.9996\n\nNyblom stability test\n------------------------------------\nJoint Statistic:  2.5469\nIndividual Statistics:             \nmu     0.5887\nomega  0.1785\nalpha1 0.5888\n\nAsymptotic Critical Values (10% 5% 1%)\nJoint Statistic:         0.846 1.01 1.35\nIndividual Statistic:    0.35 0.47 0.75\n\nSign Bias Test\n------------------------------------\n                   t-value      prob sig\nSign Bias           0.6081 5.432e-01    \nNegative Sign Bias  5.1984 2.346e-07 ***\nPositive Sign Bias  0.7707 4.411e-01    \nJoint Effect       29.6145 1.663e-06 ***\n\n\nAdjusted Pearson Goodness-of-Fit Test:\n------------------------------------\n  group statistic p-value(g-1)\n1    20      2836            0\n2    30      2853            0\n3    40      2864            0\n4    50      2860            0\n\n\nElapsed time : 0.8626037 \n\n\n\n\nVisualisierung der Ergebnisse\n\nlibrary(\"rugarch\")\nplot(fit_ARCH_data_apple, which = \"all\")\n\n\nplease wait...calculating quantiles...\n\n\n\n\n\n\n\n\n\n\n\nVorhersagen mit ARCH-Modell\n\nforcast_ARCH_apple &lt;- rugarch::ugarchforecast(fitORspec = fit_ARCH_data_apple, n.ahead = 5)\nforcast_ARCH_apple\n\n\n*------------------------------------*\n*       GARCH Model Forecast         *\n*------------------------------------*\nModel: sGARCH\nHorizon: 5\nRoll Steps: 0\nOut of Sample: 0\n\n0-roll forecast [T0=1257-01-01]:\n     Series   Sigma\nT+1 0.05218 0.04258\nT+2 0.05218 0.04260\nT+3 0.05218 0.04262\nT+4 0.05218 0.04264\nT+5 0.05218 0.04265",
+    "crumbs": [
+      "Studienbrief 3",
+      "AR-Modelle"
+    ]
+  },
+  {
+    "objectID": "include/03_05_AR_GARCH.html#garch-modelle",
+    "href": "include/03_05_AR_GARCH.html#garch-modelle",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "GARCH-Modelle",
+    "text": "GARCH-Modelle\n\nEinführung\n\nIdee wie bei ARCH:\n\nModellierung von Renditen als \\(r_t = \\mu_t + \\epsilon_t\\).\n\\(r_t - \\mu = \\epsilon_t\\), \\(\\epsilon_t = \\sigma_t u_t\\), \\(u_t \\sim\\) starker WN.\n\\(Var[\\epsilon_t] = \\sigma_t^2\\).\n\nDefinition:\n\nGeneralized Autoregressive Conditional Heteroscedasticity.\nAnnahme: Varianz hängt von vergangenen Fehlern UND vorherigen Varianzen ab.\n\nGARCH(q, p)-Modell:\n\n\\(\\sigma_t^2 = \\omega + \\sum_{i=1}^q \\alpha_i \\epsilon_{t-i}^2 +\n\\sum_{j=1}^p \\beta_j \\sigma_{t-j}^2\\)\nq bestimmt die Anzahl der berücksichtigten Verzögerungen der Fehlerterme\np bestimmt die Anzahl der berücksichtigten Verzögerungen der Varianzen\n\nAnwendungsbereich: wie bei ARCH.\n\n\n\nGARCH in R\n\nlibrary(\"rugarch\")\nmodel_specification_apple_garch &lt;- ugarchspec(\n  variance.model = \n    list(model = \"sGARCH\",\n         garchOrder = c(1, 1)),\n  mean.model = \n    list(armaOrder = c(0, 0)),\n  distribution.model = \"norm\")\nfit_GARCH_data_apple &lt;- ugarchfit(\n  data = return_data_apple_filtered,\n  spec = model_specification_apple_garch)\n\n\nwieder: alle Parameter sind signifikant mit Niveau 5% (p &lt; 0.05).\ndas geschätzte / angepasste GARCH-Modell lautet: \\[\n\\sigma_t^2 = 0.000025 + 0.122304\\cdot e_{t-1}^2 + 0.771785\\cdot \\sigma_{t-1}^2\n\\]\n\n\n\nErgebnisse ausgeben\n\nprint(fit_GARCH_data_apple)\n\n\n*---------------------------------*\n*          GARCH Model Fit        *\n*---------------------------------*\n\nConditional Variance Dynamics   \n-----------------------------------\nGARCH Model : sGARCH(1,1)\nMean Model  : ARFIMA(0,0,0)\nDistribution    : norm \n\nOptimal Parameters\n------------------------------------\n        Estimate  Std. Error  t value Pr(&gt;|t|)\nmu      0.001146    0.000388   2.9519 0.003158\nomega   0.000025    0.000006   3.9852 0.000067\nalpha1  0.122303    0.028784   4.2491 0.000021\nbeta1   0.771789    0.046595  16.5637 0.000000\n\nRobust Standard Errors:\n        Estimate  Std. Error  t value Pr(&gt;|t|)\nmu      0.001146    0.000421   2.7222 0.006484\nomega   0.000025    0.000010   2.6473 0.008114\nalpha1  0.122303    0.033481   3.6529 0.000259\nbeta1   0.771789    0.058764  13.1338 0.000000\n\nLogLikelihood : 3538.843 \n\nInformation Criteria\n------------------------------------\n                    \nAkaike       -5.6243\nBayes        -5.6079\nShibata      -5.6243\nHannan-Quinn -5.6181\n\nWeighted Ljung-Box Test on Standardized Residuals\n------------------------------------\n                        statistic p-value\nLag[1]                      1.496  0.2213\nLag[2*(p+q)+(p+q)-1][2]     1.640  0.3301\nLag[4*(p+q)+(p+q)-1][5]     2.435  0.5197\nd.o.f=0\nH0 : No serial correlation\n\nWeighted Ljung-Box Test on Standardized Squared Residuals\n------------------------------------\n                        statistic p-value\nLag[1]                    0.09701  0.7554\nLag[2*(p+q)+(p+q)-1][5]   0.68386  0.9260\nLag[4*(p+q)+(p+q)-1][9]   1.07587  0.9829\nd.o.f=2\n\nWeighted ARCH LM Tests\n------------------------------------\n            Statistic Shape Scale P-Value\nARCH Lag[3]   0.06627 0.500 2.000  0.7969\nARCH Lag[5]   0.82619 1.440 1.667  0.7851\nARCH Lag[7]   0.96451 2.315 1.543  0.9193\n\nNyblom stability test\n------------------------------------\nJoint Statistic:  0.4744\nIndividual Statistics:              \nmu     0.04709\nomega  0.09750\nalpha1 0.14804\nbeta1  0.11503\n\nAsymptotic Critical Values (10% 5% 1%)\nJoint Statistic:         1.07 1.24 1.6\nIndividual Statistic:    0.35 0.47 0.75\n\nSign Bias Test\n------------------------------------\n                   t-value   prob sig\nSign Bias           0.3940 0.6936    \nNegative Sign Bias  0.5946 0.5522    \nPositive Sign Bias  0.5933 0.5531    \nJoint Effect        2.6375 0.4510    \n\n\nAdjusted Pearson Goodness-of-Fit Test:\n------------------------------------\n  group statistic p-value(g-1)\n1    20     84.91    2.612e-10\n2    30    103.60    2.579e-10\n3    40    109.40    1.343e-08\n4    50    118.62    1.053e-07\n\n\nElapsed time : 0.1914036 \n\n\n\n\nVorhersagen mit GARCH-Modell\n\nforcast_GARCH_apple &lt;- rugarch::ugarchforecast(fitORspec = fit_GARCH_data_apple, n.ahead = 5)\nforcast_GARCH_apple\n\n\n*------------------------------------*\n*       GARCH Model Forecast         *\n*------------------------------------*\nModel: sGARCH\nHorizon: 5\nRoll Steps: 0\nOut of Sample: 0\n\n0-roll forecast [T0=1257-01-01]:\n      Series   Sigma\nT+1 0.001146 0.02301\nT+2 0.001146 0.02233\nT+3 0.001146 0.02171\nT+4 0.001146 0.02114\nT+5 0.001146 0.02061\n\n\n\n\nVisualisierung der Ergebnisse\n\nlibrary(\"rugarch\")\nplot(fit_GARCH_data_apple, which = \"all\")\n\n\nplease wait...calculating quantiles...",
+    "crumbs": [
+      "Studienbrief 3",
+      "AR-Modelle"
+    ]
+  },
+  {
+    "objectID": "include/03_02_WGB.html",
+    "href": "include/03_02_WGB.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Stationär: Mittelwert und Varianz bleiben über die Zeit konstant.\nNicht-stationär: Zeitreihe zeigt Trend oder andere systematische Veränderungen.\nStationäre Zeitreihen sind einfacher auszuwerten als nicht-stationäre.\nNicht-stationäre Zeitreihen können durch Filtern oder Transformation stationär gemacht werden.\n\n\n\n\n\n\nRegelmäßige Schwankungen innerhalb bestimmter Zeiträume.\nBeispiel: Kursentwicklung an der Börse zeigt saisonale Effekte.\nSaisonalität kann Analyseergebnisse verfälschen, daher oft Saisonbereinigung notwendig.\nStatistisches Bundesamt nutzt BV4.1-Filter für Saisonbereinigung.",
+    "crumbs": [
+      "Studienbrief 3",
+      "Wichtige Grundbegriffe"
+    ]
+  },
+  {
+    "objectID": "include/03_02_WGB.html#einige-wichtige-grundbegriffe",
+    "href": "include/03_02_WGB.html#einige-wichtige-grundbegriffe",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Stationär: Mittelwert und Varianz bleiben über die Zeit konstant.\nNicht-stationär: Zeitreihe zeigt Trend oder andere systematische Veränderungen.\nStationäre Zeitreihen sind einfacher auszuwerten als nicht-stationäre.\nNicht-stationäre Zeitreihen können durch Filtern oder Transformation stationär gemacht werden.\n\n\n\n\n\n\nRegelmäßige Schwankungen innerhalb bestimmter Zeiträume.\nBeispiel: Kursentwicklung an der Börse zeigt saisonale Effekte.\nSaisonalität kann Analyseergebnisse verfälschen, daher oft Saisonbereinigung notwendig.\nStatistisches Bundesamt nutzt BV4.1-Filter für Saisonbereinigung.",
+    "crumbs": [
+      "Studienbrief 3",
+      "Wichtige Grundbegriffe"
+    ]
+  },
+  {
+    "objectID": "include/03_02_WGB.html#autokorrelation-white-noise-random-walk",
+    "href": "include/03_02_WGB.html#autokorrelation-white-noise-random-walk",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Autokorrelation, White Noise & Random Walk",
+    "text": "Autokorrelation, White Noise & Random Walk\n\nStochastische Grundbegriffe: Autokorrelation\nDefinition: Autokorrelation:\n\nBeschreibt den Zusammenhang zwischen Werten einer Zeitreihe und deren verzögerten Werten.\nHohe Autokorrelation bedeutet, dass vergangene Werte stark mit aktuellen Werten zusammenhängen.\nWichtig für Modellierung von Zeitreihen, da Abhängigkeiten über die Zeit hinweg berücksichtigt werden müssen.\n\n\n\nTypischer Zeitreihenprozess: White Noise\n\nModell ohne Struktur oder Abhängigkeiten zwischen aufeinanderfolgenden Werten, d. h. Zufallsprozess mit konstantem Mittelwert und Varianz.\nMathematisch beschrieben als:\n\\[\nx_t = M(t) + \\epsilon_t, \\quad \\epsilon_t \\overset{iid}{\\sim}\n\\mathbb{N}(0,\\sigma^2)\n\\]\nFehlerterm ( _t ) ist unabhängig und identisch verteilt (iid).\n( M(t) ) beschreibt das Modell, z. B. additives Komponentenmodell: \\(M(t) = x_T(t) + x_S(t) + x_R(t)\\)\noder multiplikativ \\(x_t = M(t) \\cdot \\epsilon_t\\).\nErweiterung durch Drift oder Trend möglich:\n\\[\\begin{align*}\n  x_t &= M(t) + \\alpha + \\epsilon_t \\quad \\text{Drift}\\\\\n  x_t &= M(t) + \\beta \\cdot t + \\epsilon_t \\quad \\text{Trend}\\\\\n  x_t &= M(t) + \\alpha + \\beta \\cdot t + \\epsilon_t \\quad \\text{beides}\n\\end{align*}\\]\nACHTUNG:Unterstrichen Oft (siehe ARCH und GARCH Modelle am Ende des SB 03) wird \\(M(t)\\) weggelassen und ein starker WN angenommen:\n\\[\\begin{align*}\n  \\mathbb{E}[x_t]&=0 \\quad \\text{und} \\quad Var[x_t]=1 \\\\\n  \\mathbb{E}[x_t x_s]&=0 \\quad \\text{bzw. } Cov[x_t,x_s]=0 \\text{ für }\n  t\\neq s \\\\\n  x_t&\\sim \\mathcal{N}(0, 1)\n\\end{align*}\\]\n\n\n\nTypischer Zeitreihenprozess: Random Walk\n\nModell, bei dem jeder Wert sich aus dem vorherigen Wert plus einer zufälligen Störgröße ergibt.\nMathematische Darstellung:\n\\[\nx_t = x_{t-1} + \\epsilon_t\n\\]\nStörgröße ( _t ) ist unabhängig und identisch verteilt (iid) mit:\n\\[\n\\mathbb{E}[\\epsilon_t] = 0, \\quad \\text{Var}(\\epsilon_t) = \\sigma^2\n\\]\nErweiterung durch Drift:\n\\[\nx_t = x_{t-1} + \\alpha + \\epsilon_t\n\\]\nErweiterung durch Trend:\n\\[\nx_t = x_{t-1} + \\beta \\cdot t + \\epsilon_t\n\\]\nKombination von Drift und Trend:\n\\[\nx_t = x_{t-1} + \\alpha + \\beta \\cdot t + \\epsilon_t\n\\]\nModell führt zu nicht-stationären Zeitreihen, da Varianz mit der Zeit wächst.\n\n\n\nWhite Noise & Random Walk - Illustration\n\n\n\nRandom Walk Illustration\n\n\n\n\n\nWhite Noise Illustration\n\n\n\n\nVergleich Random Walk und White Noise\n\nVier Random-Walk-Modelle erstellt:\n\nBasis: Startwert 20\nModell mit positivem Drift ( +0,09 )\nModell mit negativem Drift ( -0,09 )\nModell mit zusätzlichem Trend ( 0,005 t )\n\nVier White-Noise-Modelle erstellt:\n\nBasis: Startwert 20\nModell mit positivem Drift ( +1 )\nModell mit negativem Drift ( -1 )\nModell mit zusätzlichem Trend ( 0,005 t )\n\nPositiver Drift verschiebt die Werte nach oben, negativer Drift nach unten.\nTrend führt zu steigendem oder fallendem Verlauf der Zeitreihe.\nUnterschiede zwischen White Noise und Random Walk:\n\nRandom Walk akkumuliert Störungen über die Zeit, Varianz wächst.\nWhite Noise bleibt um den Mittelwert stabil.",
+    "crumbs": [
+      "Studienbrief 3",
+      "Wichtige Grundbegriffe"
+    ]
+  },
+  {
+    "objectID": "include/04_01_apriori_definitions.html",
+    "href": "include/04_01_apriori_definitions.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Grundlagen:\nAusgangspunkt: Menge von Transaktionen\n\\(D=\\{T_1,T_2,\\dots,T_n\\}\\) und Itemmenge \\(I\\), wobei jede Transaktion \\(T_j \\subset I\\). Eine Assoziationsregel mit \\(X,Y \\subset I\\), \\(X \\cap Y = \\emptyset\\), erfüllt eine Regel \\(X \\rightarrow Y\\) genau dann, wenn \\(X \\cup Y \\subset T\\), und hat die Form:\n\\[\nX \\rightarrow Y\n\\]\nSupport:\nDer Support einer Itemmenge \\(X\\) gibt an, wie häufig \\(X\\) in der Datenbank \\(D\\) vorkommt:\n\\[\n\\text{Support}(X)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nSupport einer Regel: Beschreibt, ob eine Regel relevant ist:\n\\[\n\\text{Support}(X \\rightarrow Y)=\n\\text{Support}(X \\cup Y)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\cup Y \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nKonfidenz: Gibt an, mit welcher Wahrscheinlichkeit die Regel zutrifft.\nFEHLER im SB 04, S.10: im Nenner nicht \\(X \\in T\\), sondern \\(\\boldsymbol{X \\subset T}\\)\n\\[\n\\text{Konfidenz}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}{\\text{Support}(X)}=\n\\frac{\\left|\\,\\{T \\in D : (X \\cup Y) \\subset T\\}\\,\\right|}\n     {\\left|\\,\\{T \\in D : \\boldsymbol{X \\subset T}\\}\\,\\right|}\n\\]\nLift: Misst die Stärke der Assoziation relativ zur erwarteten Unabhängigkeit:\n\\[\n\\text{Lift}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}\n     {\\text{Support}(X)\\cdot\\text{Support}(Y)}\n\\]\n\n\\(\\text{Lift} &gt; 1\\): positive Assoziation\n\n\\(\\text{Lift} = 1\\): keine Assoziation\n\n\\(\\text{Lift} &lt; 1\\): negative Assoziation",
+    "crumbs": [
+      "Studienbrief 4",
+      "Assoziationsanalyse"
+    ]
+  },
+  {
+    "objectID": "include/04_01_apriori_definitions.html#formale-beschreibung-der-assoziationsanalyse",
+    "href": "include/04_01_apriori_definitions.html#formale-beschreibung-der-assoziationsanalyse",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Grundlagen:\nAusgangspunkt: Menge von Transaktionen\n\\(D=\\{T_1,T_2,\\dots,T_n\\}\\) und Itemmenge \\(I\\), wobei jede Transaktion \\(T_j \\subset I\\). Eine Assoziationsregel mit \\(X,Y \\subset I\\), \\(X \\cap Y = \\emptyset\\), erfüllt eine Regel \\(X \\rightarrow Y\\) genau dann, wenn \\(X \\cup Y \\subset T\\), und hat die Form:\n\\[\nX \\rightarrow Y\n\\]\nSupport:\nDer Support einer Itemmenge \\(X\\) gibt an, wie häufig \\(X\\) in der Datenbank \\(D\\) vorkommt:\n\\[\n\\text{Support}(X)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nSupport einer Regel: Beschreibt, ob eine Regel relevant ist:\n\\[\n\\text{Support}(X \\rightarrow Y)=\n\\text{Support}(X \\cup Y)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\cup Y \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nKonfidenz: Gibt an, mit welcher Wahrscheinlichkeit die Regel zutrifft.\nFEHLER im SB 04, S.10: im Nenner nicht \\(X \\in T\\), sondern \\(\\boldsymbol{X \\subset T}\\)\n\\[\n\\text{Konfidenz}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}{\\text{Support}(X)}=\n\\frac{\\left|\\,\\{T \\in D : (X \\cup Y) \\subset T\\}\\,\\right|}\n     {\\left|\\,\\{T \\in D : \\boldsymbol{X \\subset T}\\}\\,\\right|}\n\\]\nLift: Misst die Stärke der Assoziation relativ zur erwarteten Unabhängigkeit:\n\\[\n\\text{Lift}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}\n     {\\text{Support}(X)\\cdot\\text{Support}(Y)}\n\\]\n\n\\(\\text{Lift} &gt; 1\\): positive Assoziation\n\n\\(\\text{Lift} = 1\\): keine Assoziation\n\n\\(\\text{Lift} &lt; 1\\): negative Assoziation",
+    "crumbs": [
+      "Studienbrief 4",
+      "Assoziationsanalyse"
+    ]
+  },
+  {
+    "objectID": "include/04_01_apriori_definitions.html#schritte-der-assoziationsanalyse-apriori-algorithmus",
+    "href": "include/04_01_apriori_definitions.html#schritte-der-assoziationsanalyse-apriori-algorithmus",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Schritte der Assoziationsanalyse — Apriori-Algorithmus",
+    "text": "Schritte der Assoziationsanalyse — Apriori-Algorithmus\n\nÜbersicht\n\n\n\nApriori-Algorithmus Übersicht\n\n\n\n\nBeispiel (Support 50 %, Konfidenz 60 %)\n\nSchritt 1 (K=1): Suche Itemsets aus 1 Produkt (\\(\\Leftrightarrow\\) wie oft ein Produkt gekauft wird).\nSchritt 2 (K=1): Entferne Itemsets, die minimalen Support nicht erreichen (prune-Schritt).\nSchritt 3 (K=2): join-Schritt wie bei Schritt 1, nur mit 2 Produkten (aus den verbliebenen Produkten).\nSchritt 4 (K=2): prune-Schritt wie Schritt 2 \\(\\ra\\) entferne Itemsets ohne minimalen Support.\n\n\n\n\nApriori Schritt “join” 1\n\n\n\n\n\nApriori Schritt “prune” 1\n\n\n\n\n\nApriori Schritt “join” 2\n\n\n\n\n\nApriori Schritt “prune” 2\n\n\nSchritt 5 (K=3)\n\nBilde Itemsets, die aus 3 zusammen gekauften Produkten bestehen.\n\n\n\n\n\nZusätzliche Hinweise\n\nMan kann zeigen: Gesamtzahl möglicher Regeln \\(R\\) in einem Datensatz mit \\(d\\) Items:\n\\[\nR = 3^d - 2^{d+1} + 1\n\\]\nAgrawal & Srikant (1994): Wenn ein Itemset frequent ist, sind auch alle seine Teilmengen frequent Itemsets.",
+    "crumbs": [
+      "Studienbrief 4",
+      "Assoziationsanalyse"
+    ]
+  },
+  {
+    "objectID": "include/99_altklausuren_A4.html",
+    "href": "include/99_altklausuren_A4.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "crumbs": [
+      "Altklausuren",
+      "Aufgabentyp 4"
+    ]
+  },
+  {
+    "objectID": "include/99_altklausuren_A4.html#klausuraufgaben-sb-04",
+    "href": "include/99_altklausuren_A4.html#klausuraufgaben-sb-04",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "crumbs": [
+      "Altklausuren",
+      "Aufgabentyp 4"
+    ]
+  },
+  {
+    "objectID": "include/99_altklausuren_A3.html",
+    "href": "include/99_altklausuren_A3.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Aufgabenstellung Teil A der Klausur vom 28.09.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 1 zur Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 2 zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 29.06.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 23.03.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 23.03.2024\n\n\n\n\n\nLösung Teil A zur Klausur vom 23.03.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste nicht Inflationsentwicklung sondern Zinsentwicklung heißen, siehe Beschriftung der Y-Achse !!!\n\n\n\nLösung Teil B zur Klausur vom 23.03.2024",
+    "crumbs": [
+      "Altklausuren",
+      "Aufgabentyp 3"
+    ]
+  },
+  {
+    "objectID": "include/99_altklausuren_A3.html#klausuraufgaben-sb-03",
+    "href": "include/99_altklausuren_A3.html#klausuraufgaben-sb-03",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Aufgabenstellung Teil A der Klausur vom 28.09.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 1 zur Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 2 zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 29.06.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 23.03.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 23.03.2024\n\n\n\n\n\nLösung Teil A zur Klausur vom 23.03.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste nicht Inflationsentwicklung sondern Zinsentwicklung heißen, siehe Beschriftung der Y-Achse !!!\n\n\n\nLösung Teil B zur Klausur vom 23.03.2024",
+    "crumbs": [
+      "Altklausuren",
+      "Aufgabentyp 3"
+    ]
+  },
+  {
+    "objectID": "include/02_02_MLR.html",
+    "href": "include/02_02_MLR.html",
+    "title": "Multiple lineare Regression: Überblick",
+    "section": "",
+    "text": "Daten: gebrauchtwagen.csv aus Eurotax-Liste (Kauf/Verkauf von Gebrauchtwagen in Europa)\n\nPreis: Verkaufspreis (in Euro)\n\nKilometer: Kilometerstand (in km)\n\nService: Anzahl der Serviceintervalle (metrisch = reelle Zahlen)\n\nGarage: Garagennutzung (nominal, dichotom: ja/nein = 0/1 Codierung)\n\nFarbe: Farbe 1–3 (nominal)\nBesteht ein Zusammenhang zwischen Kilometerstand und Preis?\n\nAnalyse im Rahmen einer Regressionsanalyse — nicht Korrelationsstudie\n\nStreudiagramm / Scatterplot:\n\n\n\n\n\n\n\nFigure 1: Abbildung\n\n\n\n\n\n\n\nabhängige Variable \\(Y\\)\n\nErweiterung: mehrere (multiple) unabhängige Variablen / Kovariate\n\nunabhängigen Variable(n) = Regressore(n) = Kontrollvariable(n) = Kovariate = Prädiktoren\n\ndieselben Bezeichnungen für \\(X\\) auf der rechten Seite!\n\nstochastischer Störterm / Fehlerterm \\(\\varepsilon\\): zufälliger Fehler führt zu Abweichungen in der linearen Beziehung zwischen \\(Y\\) und \\(X\\)\n\\(Y = \\alpha + \\beta_1 \\cdot X_1 + \\ldots + \\beta_k \\cdot X_k + \\varepsilon_i\\)\n\\(Preis = \\alpha + \\beta_{1} \\cdot Kilometer + \\beta_{2} \\cdot Service + \\beta_{3} \\cdot Garage + \\varepsilon_i\\)\nErklärung der Variablenbezeichnung:\n\n\\(Y\\): abhängige Variable (Preis), auch Responsevariable genannt\n\n\\(1, X_1, \\ldots, X_k\\): Achsenabschnitt & unabhängige Variable(n) / Kovariate\n\n\\(\\alpha, \\beta_1, \\ldots, \\beta_k\\): Regressionskoeffizienten\n\nBestimmtheitsmaß \\(R^2=\\frac{TTS-RSS}{TTS}\\)\n\\(\\hookrightarrow\\) Gesamtquadratensumme (Total Sum of Squares = TTS)\n\\(\\hookrightarrow\\) Residuenquadratensumme (Residual Sum of Squares = RSS)\n\\(\\hookrightarrow\\) Anteil der durch die Regression erklärten Varianz an der Gesamtvarianz der abhängigen Variable \\(Y\\)",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multiple Lineare Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_02_MLR.html#einleitung",
+    "href": "include/02_02_MLR.html#einleitung",
+    "title": "Multiple lineare Regression: Überblick",
+    "section": "",
+    "text": "Daten: gebrauchtwagen.csv aus Eurotax-Liste (Kauf/Verkauf von Gebrauchtwagen in Europa)\n\nPreis: Verkaufspreis (in Euro)\n\nKilometer: Kilometerstand (in km)\n\nService: Anzahl der Serviceintervalle (metrisch = reelle Zahlen)\n\nGarage: Garagennutzung (nominal, dichotom: ja/nein = 0/1 Codierung)\n\nFarbe: Farbe 1–3 (nominal)\nBesteht ein Zusammenhang zwischen Kilometerstand und Preis?\n\nAnalyse im Rahmen einer Regressionsanalyse — nicht Korrelationsstudie\n\nStreudiagramm / Scatterplot:\n\n\n\n\n\n\n\nFigure 1: Abbildung\n\n\n\n\n\n\n\nabhängige Variable \\(Y\\)\n\nErweiterung: mehrere (multiple) unabhängige Variablen / Kovariate\n\nunabhängigen Variable(n) = Regressore(n) = Kontrollvariable(n) = Kovariate = Prädiktoren\n\ndieselben Bezeichnungen für \\(X\\) auf der rechten Seite!\n\nstochastischer Störterm / Fehlerterm \\(\\varepsilon\\): zufälliger Fehler führt zu Abweichungen in der linearen Beziehung zwischen \\(Y\\) und \\(X\\)\n\\(Y = \\alpha + \\beta_1 \\cdot X_1 + \\ldots + \\beta_k \\cdot X_k + \\varepsilon_i\\)\n\\(Preis = \\alpha + \\beta_{1} \\cdot Kilometer + \\beta_{2} \\cdot Service + \\beta_{3} \\cdot Garage + \\varepsilon_i\\)\nErklärung der Variablenbezeichnung:\n\n\\(Y\\): abhängige Variable (Preis), auch Responsevariable genannt\n\n\\(1, X_1, \\ldots, X_k\\): Achsenabschnitt & unabhängige Variable(n) / Kovariate\n\n\\(\\alpha, \\beta_1, \\ldots, \\beta_k\\): Regressionskoeffizienten\n\nBestimmtheitsmaß \\(R^2=\\frac{TTS-RSS}{TTS}\\)\n\\(\\hookrightarrow\\) Gesamtquadratensumme (Total Sum of Squares = TTS)\n\\(\\hookrightarrow\\) Residuenquadratensumme (Residual Sum of Squares = RSS)\n\\(\\hookrightarrow\\) Anteil der durch die Regression erklärten Varianz an der Gesamtvarianz der abhängigen Variable \\(Y\\)",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multiple Lineare Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_02_MLR.html#multiple-lineare-regression-beispiel",
+    "href": "include/02_02_MLR.html#multiple-lineare-regression-beispiel",
+    "title": "Multiple lineare Regression: Überblick",
+    "section": "Multiple lineare Regression: Beispiel",
+    "text": "Multiple lineare Regression: Beispiel\nSyntax: \\(\\hookrightarrow\\) Ergänze mit + die weiteren Regressoren\n\ndata_gw &lt;- read.csv(\"../data/gebrauchtwagen.csv\")\nmodel &lt;- lm(Preis ~ Kilometer + Service + Garage, data = data_gw)\nsummary(model)\n\n\nCall:\nlm(formula = Preis ~ Kilometer + Service + Garage, data = data_gw)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-97.343 -30.205  -1.084  26.777  97.323 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  6.187e+03  2.585e+01 239.379   &lt;2e-16 ***\nKilometer   -3.114e-02  6.359e-04 -48.966   &lt;2e-16 ***\nService      1.345e+02  3.867e+00  34.793   &lt;2e-16 ***\nGarage       1.901e+01  8.461e+00   2.247    0.027 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.64 on 96 degrees of freedom\nMultiple R-squared:  0.9754,    Adjusted R-squared:  0.9746 \nF-statistic:  1267 on 3 and 96 DF,  p-value: &lt; 2.2e-16\n\n\nInterpretation:\n\n\\(R^2=0.9754\\): 97.54 % der Varianz (im Preis) wird durch das Modell (Achsenabschnitt und alle 3 Regressoren) erklärt \\(\\hookrightarrow\\) sehr hoher Wert nahe Obergrenze 1 ! \\(R^2 \\in [0,1]\\)\n\nKilometer/Service: \\(p&lt;2e-16\\) \\(\\rightarrow\\) hoch signifikant: Sternchen ***\n\nGarage: \\(p=0.027\\) \\(\\rightarrow\\) signifikant auf Niveau 5 %: Sternchen *\n\nF-Wert:\n\nletzte Zeile des summary outputs: p-Wert p-value: &lt;2.2e-16 der F-Statistik zeigt sehr hohe Signifikanz aller drei gemeinsamen Kovariate auf den Preis\n\n\\(Preis = 6187 - 0.003114 \\cdot Kilometer + 134.5 \\cdot Service + 19.01 \\cdot Garage\\)\n\nSteigt der Kilometerstand um 1 (eine kleine/marginale Einheit), so sinkt der Preis um \\(\\beta\\) Einheiten:\n\nAchsenabschnitt 6187 EUR: Basispreis eines Gebrauchtwagens\n\nPro gefahrenem Kilometer: erwarteter Verkaufspreis sinkt um ca. 3 Cent\n\nPro getätigtem Service: erwarteter Verkaufspreis steigt um ca. 134.5 EUR\n\nGaragennutzung (vs. draußen Parken): Verkaufspreis steigt um 19 EUR",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multiple Lineare Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html",
+    "href": "include/02_04_MLR.html",
+    "title": "Multinomiale Logistische Regression",
+    "section": "",
+    "text": "Idee: Erweiterung von binär auf \\(&gt;2\\), d.h. multinomial",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html#einführung-und-beispiel",
+    "href": "include/02_04_MLR.html#einführung-und-beispiel",
+    "title": "Multinomiale Logistische Regression",
+    "section": "",
+    "text": "Idee: Erweiterung von binär auf \\(&gt;2\\), d.h. multinomial",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html#umsetzung-in-r",
+    "href": "include/02_04_MLR.html#umsetzung-in-r",
+    "title": "Multinomiale Logistische Regression",
+    "section": "Umsetzung in R:",
+    "text": "Umsetzung in R:\nReferenzkategorie: selbstein dritte Kategorie: ref='3' oder ref='eher rechts', ACHTUNG: falls ‘eher rechts’ benutzt wird, dann muss vorher die Variable mit as.factor() transformiert werden\n\n#--multinominale logistische Regression: Labels & Partition--\ndata_einsch &lt;- read.csv(\"../data/einschaetzung.csv\")\nhead(data_einsch)\n\n  selbstein schule schicht alter\n1         2      1       1     2\n2         3      1       2     1\n3         1      1       2     1\n4         2      1       1     1\n5         1      1       2     1\n6         3      1       2     2\n\nlevels (data_einsch$selbstein) &lt;- c('eher links', 'Mitte', 'eher rechts')\ndata_einsch$selbstein &lt;- as.factor(data_einsch$selbstein)\nset.seed(222)\n# Nullmodell erhält 80% der Daten, Trainingsmodell 20%: ZUFÄLLIG ausgewählt\nind &lt;-sample(2, nrow(data_einsch), replace = TRUE, prob = c(0.8, 0.2))\nmodel_0 &lt;- data_einsch[ind ==1,]\nmodel   &lt;- data_einsch[ind ==2,]\n# install.packages(\"nnet\")\nlibrary(nnet)\nmodel_0$selbstein &lt;- relevel(model_0$selbstein, ref = \"3\")\nmultinominal.model &lt;- nnet::multinom(selbstein ~ alter + schule, data = model_0)\n\n# weights:  12 (6 variable)\ninitial  value 2311.480255 \niter  10 value 2163.887112\nfinal  value 2163.886874 \nconverged\n\nsummary(multinominal.model)\n\nCall:\nnnet::multinom(formula = selbstein ~ alter + schule, data = model_0)\n\nCoefficients:\n  (Intercept)      alter      schule\n1    1.507787 -0.9693638  0.01803241\n2    2.716944 -0.7463522 -0.66243962\n\nStd. Errors:\n  (Intercept)     alter    schule\n1   0.3217004 0.1306577 0.1291727\n2   0.2912695 0.1170838 0.1174561\n\nResidual Deviance: 4327.774 \nAIC: 4339.774 \n\n\n\nInterpretation: die Ergebnisse sind stets in Relation zur Referenzkategorie zu interpretieren\nAlter: \\(-0.9694\\) negativer Wert, d.h. der Wechsel v. Alterskategorie \\(1\\) (unter 45) nach Alterskategorie \\(2\\) (über 45) wirkt sich negativ zur Zugehörigkeit \\(selbstsein=1=\\)’eher links’ aus relativ zur Basiskategorie \\(selbstsein=3=\\)’eher rechts’",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html#interpretation---fortsetzung",
+    "href": "include/02_04_MLR.html#interpretation---fortsetzung",
+    "title": "Multinomiale Logistische Regression",
+    "section": "Interpretation - Fortsetzung",
+    "text": "Interpretation - Fortsetzung",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_04_MLR.html#p-wert",
+    "href": "include/02_04_MLR.html#p-wert",
+    "title": "Multinomiale Logistische Regression",
+    "section": "P-Wert",
+    "text": "P-Wert\n\nlibrary(magrittr)\ncoeffs &lt;- summary(multinominal.model)$coefficients\nses    &lt;- summary(multinominal.model)$standard.errors\nz &lt;- coeffs / ses\np &lt;- (1 - pnorm(abs(z), 0, 1)) * 2\np\n\n  (Intercept)        alter       schule\n1 2.77334e-06 1.179057e-13 8.889767e-01\n2 0.00000e+00 1.835458e-10 1.701566e-08\n\n\nWir sehen: alle Koeffizienten hochsignifikant.",
+    "crumbs": [
+      "Studienbrief 2",
+      "Multinomial logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/05_05_RE_modell.html",
+    "href": "include/05_05_RE_modell.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Modellformulierung:\n\nDas Random-Effects-Modell basiert auf den Annahmen (A1) – (A4) und (A5R) mit Gleichung:\n\\[\ny_{it} = \\alpha_i + X_{it}^\\top \\beta + \\epsilon_{it}\n\\]\nDie \\(\\alpha_i\\)’s sind Zufallsvariablen, nicht deterministisch, und der Zufallsfehler ist idiosynkratisch:\n\\[\n\\alpha_i \\sim \\mathcal{N}(\\alpha, \\sigma_{\\alpha}^2) \\quad\\quad\n\\epsilon_{it} \\sim \\mathcal{N}(1, \\sigma_{\\epsilon}^2)\n\\]\n\nVarianzstruktur der Fehler: Kovarianzmatrix der Fehler für \\(i\\) und alle gemeinsam, mit \\(I_T\\) als \\(T \\times T\\) Einheitsmatrix und \\(J_T\\) als Einsermatrix:\n\\[\n  \\Omega_i = \\sigma_{\\epsilon}^2 I_T + \\sigma_{\\alpha}^2 J_T\n  \\quad\\quad\n  \\Omega := \\text{Var}(u) = \\text{diag}(\\Omega_1,\\ldots,\\Omega_N)\n  \\]\nWarum \\(I_T\\) und \\(J_T\\)?\n\\(\\rightarrow\\) \\(\\text{Var}(u_{it}) = \\sigma_{\\epsilon}^2 + \\sigma_{\\alpha}^2\\) und \\(\\text{Cov}(u_{it}, u_{is}) = \\sigma_{\\alpha}^2\\) für \\(t \\neq s\\)\nZiel: Effiziente Schätzung der Koeffizienten \\(\\beta\\) unter Berücksichtigung der zufälligen Effekte.\nReduktion der Varianz im Vergleich zum Fixed-Effects-Schätzer, wenn Annahmen erfüllt sind.\nGeneralized Least Squares (GLS) Schätzer:\n\nSchätzung der Koeffizienten und Varianzmatrix des Schätzers:\n\\[\n\\widehat{\\beta}_{RE} = (X^{*\\top} \\widehat{\\Omega}^{-1} X^*)^{-1}\nX^{*\\top} \\widehat{\\Omega}^{-1} y^*\n\\] \\[\n\\text{Var}(\\widehat{\\beta}_{RE}) = \\frac{1}{NT-D-1}\n(X^{*\\top} \\widehat{\\Omega}^{-1} X^*)^{-1}\n\\]\nSchätzung folgt GLS, ist zweistufig und berücksichtigt in der zweiten Stufe die Autokorrelationsstruktur (hier nicht weiter ausgeführt) durch transformierte Regressoren \\(X^{*}\\)",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im RE-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_05_RE_modell.html#random-effects-modell",
+    "href": "include/05_05_RE_modell.html#random-effects-modell",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Modellformulierung:\n\nDas Random-Effects-Modell basiert auf den Annahmen (A1) – (A4) und (A5R) mit Gleichung:\n\\[\ny_{it} = \\alpha_i + X_{it}^\\top \\beta + \\epsilon_{it}\n\\]\nDie \\(\\alpha_i\\)’s sind Zufallsvariablen, nicht deterministisch, und der Zufallsfehler ist idiosynkratisch:\n\\[\n\\alpha_i \\sim \\mathcal{N}(\\alpha, \\sigma_{\\alpha}^2) \\quad\\quad\n\\epsilon_{it} \\sim \\mathcal{N}(1, \\sigma_{\\epsilon}^2)\n\\]\n\nVarianzstruktur der Fehler: Kovarianzmatrix der Fehler für \\(i\\) und alle gemeinsam, mit \\(I_T\\) als \\(T \\times T\\) Einheitsmatrix und \\(J_T\\) als Einsermatrix:\n\\[\n  \\Omega_i = \\sigma_{\\epsilon}^2 I_T + \\sigma_{\\alpha}^2 J_T\n  \\quad\\quad\n  \\Omega := \\text{Var}(u) = \\text{diag}(\\Omega_1,\\ldots,\\Omega_N)\n  \\]\nWarum \\(I_T\\) und \\(J_T\\)?\n\\(\\rightarrow\\) \\(\\text{Var}(u_{it}) = \\sigma_{\\epsilon}^2 + \\sigma_{\\alpha}^2\\) und \\(\\text{Cov}(u_{it}, u_{is}) = \\sigma_{\\alpha}^2\\) für \\(t \\neq s\\)\nZiel: Effiziente Schätzung der Koeffizienten \\(\\beta\\) unter Berücksichtigung der zufälligen Effekte.\nReduktion der Varianz im Vergleich zum Fixed-Effects-Schätzer, wenn Annahmen erfüllt sind.\nGeneralized Least Squares (GLS) Schätzer:\n\nSchätzung der Koeffizienten und Varianzmatrix des Schätzers:\n\\[\n\\widehat{\\beta}_{RE} = (X^{*\\top} \\widehat{\\Omega}^{-1} X^*)^{-1}\nX^{*\\top} \\widehat{\\Omega}^{-1} y^*\n\\] \\[\n\\text{Var}(\\widehat{\\beta}_{RE}) = \\frac{1}{NT-D-1}\n(X^{*\\top} \\widehat{\\Omega}^{-1} X^*)^{-1}\n\\]\nSchätzung folgt GLS, ist zweistufig und berücksichtigt in der zweiten Stufe die Autokorrelationsstruktur (hier nicht weiter ausgeführt) durch transformierte Regressoren \\(X^{*}\\)",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im RE-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_05_RE_modell.html#schätzung-im-random-effects-modell",
+    "href": "include/05_05_RE_modell.html#schätzung-im-random-effects-modell",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Schätzung im Random-Effects Modell",
+    "text": "Schätzung im Random-Effects Modell\n\nImplementierung Random-Effects Schätzung in R\n\nlibrary(plm)\ndata(\"EmplUK\", package = \"plm\")\nre_out &lt;- plm(wage ~ emp + capital + output, data = EmplUK,\n              effect = \"individual\", model = \"random\", index = c(\"firm\",\"year\"))\nprint(summary(re_out))\n\nOneway (individual) effect Random Effect Model \n   (Swamy-Arora's transformation)\n\nCall:\nplm(formula = wage ~ emp + capital + output, data = EmplUK, effect = \"individual\", \n    model = \"random\", index = c(\"firm\", \"year\"))\n\nUnbalanced Panel: n = 140, T = 7-9, N = 1031\n\nEffects:\n                 var std.dev share\nidiosyncratic  4.768   2.184 0.156\nindividual    25.858   5.085 0.844\ntheta:\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n 0.8398  0.8398  0.8398  0.8439  0.8499  0.8583 \n\nResiduals:\n    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. \n-12.7406  -1.4278  -0.3196  -0.0101   1.0011  17.9986 \n\nCoefficients:\n              Estimate Std. Error z-value  Pr(&gt;|z|)    \n(Intercept) 27.6663911  0.9014516 30.6909 &lt; 2.2e-16 ***\nemp         -0.1062911  0.0262412 -4.0505 5.110e-05 ***\ncapital      0.1785261  0.0608780  2.9325  0.003362 ** \noutput      -0.0310606  0.0077168 -4.0251 5.696e-05 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nTotal Sum of Squares:    5165.4\nResidual Sum of Squares: 4886.1\nR-Squared:      0.055556\nAdj. R-Squared: 0.052797\nChisq: 39.8633 on 3 DF, p-value: 1.139e-08",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im RE-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_05_RE_modell.html#schätzung-im-random-effects-modell-1",
+    "href": "include/05_05_RE_modell.html#schätzung-im-random-effects-modell-1",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Schätzung im Random-Effects Modell",
+    "text": "Schätzung im Random-Effects Modell\n\nInterpretation der Ergebnisse\n\nVergleich der Schätzergebnisse:\n\nRE-Schätzer für \\(\\beta_{\\text{capital}}\\):\\(~~~\\) \\(\\widehat{\\beta}_{\\text{capital, RE}} = 0.179, \\quad p = 0.003362\\)\n\nInterpretation: Im RE-Modell ist Kapital signifikant positiv, im FE-Modell nicht signifikant\n\nErgebnisse für Output:\n\nRE-Schätzer für \\(\\beta_{\\text{output}}\\):\\(~~~\\) \\(\\widehat{\\beta}_{\\text{output, RE}} = -0.031, \\quad p = 5.696\\text{e-}05\\)\n\nInterpretation: Output hat in FE- und RE-Modellen einen signifikanten negativen Einfluss\n\nInterpretation der individuellen und idiosynkratischen Varianz:\n\ngeschätzte Standardabweichung der individuellen Effekte und idiosynkratischen Fehler:\n\\[\n\\widehat{\\sigma}_{\\alpha} = 5.085 \\quad\\quad\n\\widehat{\\sigma}_{\\epsilon} = 2.184\n\\]\nVarianz von Löhnen zwischen Firmen ist größer als Varianz von Löhnen innerhalb einer Firma",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im RE-Modell"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Welcome! Hier findest du Skripte, Beispiele und R‑Code für den Kurs. Starte mit einem der Bereiche oder nutze die Suche links.\n\n Kurzeinführung R und Python   Multiple Lineare Regression   Binär logistische Regression   Multinomial logistische Regression   Ordinal logistische Regression   Theorie der Zeitreihen   Wichtige Grundbegriffe   Zeitreihenanalysen in R   Business Cycle Analysen   AR-type Modelle   Assoziationsanalyse   Conjoint-Analyse   Altklausuren \n\n\nAktuelles\n\n\n\n\n\n\nImportant\n\n\n\nWICHTIG: Alle relevanten und verbindlichen Informationen (Klausurtermine / Änderungen / Regularien) nur auf den HFH Seiten und im Webcampus \\(\\ra\\) regelmäßig vorbeischauen !\n\n\n\n\n\n\n\n\nCaution\n\n\n\nHinweise: Klausurtermin 01: 27.09.2025\n\n\n\n\n\n\n\n\nCaution\n\n\n\nHinweise: Klausurtermin 02: 20.12.2025\n\n\n\n\n\n\n\n\nTip\n\n\n\nHinweise: Folien und Notebooks werden laufend ergänzt. Bei Fragen oder Fehlern bitte im GitHub-Menü (links oben) melden.\n\n\n\n\n\nIlya Zarubin (M.Sc.)\nE‑mail: ilya.zarub@campus.hamburger-fh.de\n\nKontakt Über\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n\n\n Back to top",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "include/05_04_FE_modell.html",
+    "href": "include/05_04_FE_modell.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Idee:\n\nEntfernt individuelle Effekte \\(\\alpha_i\\) aus der Modellgleichung\n\nBasiert auf der Within-Transformation der abhängigen und unabhängigen Variablen\n\nModell nach Transformation, bei der individuelle konstante Effekte \\(\\alpha_i\\) eliminiert sind:\n\\[\ny_{it} - \\overline{y}_i = (X_{it} - \\overline{X}_i)^\\top \\beta\n+ (\\epsilon_{it} - \\overline{\\epsilon}_i)\n\\]\n\nWithin-Transformation:\n\nFür jede Beobachtung wird der Mittelwert über \\(T\\) Zeitpunkte abgezogen\n\nTransformation für die abhängige und unabhängige Variablen:\n\\[\n\\widetilde{y}_{it} = y_{it} - \\overline{y}_i, \\quad\n\\text{mit } \\overline{y}_i = \\frac{1}{T} \\sum_{t=1}^{T} y_{it}\n\\] \\[\n\\widetilde{X}_{it} = X_{it} - \\overline{X}_i, \\quad\n\\text{mit } \\overline{X}_i = \\frac{1}{T} \\sum_{t=1}^{T} X_{it}\n\\]\n\nSchätzung der Koeffizienten:\n\nDer Fixed-Effects-Schätzer ergibt sich aus einer OLS-Schätzung nach der Within-Transformation:\n\\[\n\\widehat{\\beta}_{FE} = (\\widetilde{X}^\\top \\widetilde{X})^{-1}\n\\widetilde{X}^\\top \\widetilde{y}\n\\]\n\\(\\widetilde{y} = (\\widetilde{y}_{11},\\ldots,\\widetilde{y}_{1T},\\ldots,\n\\widetilde{y}_{NT})^{T}\\) und \\(\\widetilde{X} = (\\widetilde{X}_{11},\\ldots,\\widetilde{X}_{1T},\\ldots, \\widetilde{X}_{NT})^{T}\\)\nIntercept entfällt, da die Transformation die Mittelwerte entfernt",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im FE-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_04_FE_modell.html#within-transformation",
+    "href": "include/05_04_FE_modell.html#within-transformation",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Idee:\n\nEntfernt individuelle Effekte \\(\\alpha_i\\) aus der Modellgleichung\n\nBasiert auf der Within-Transformation der abhängigen und unabhängigen Variablen\n\nModell nach Transformation, bei der individuelle konstante Effekte \\(\\alpha_i\\) eliminiert sind:\n\\[\ny_{it} - \\overline{y}_i = (X_{it} - \\overline{X}_i)^\\top \\beta\n+ (\\epsilon_{it} - \\overline{\\epsilon}_i)\n\\]\n\nWithin-Transformation:\n\nFür jede Beobachtung wird der Mittelwert über \\(T\\) Zeitpunkte abgezogen\n\nTransformation für die abhängige und unabhängige Variablen:\n\\[\n\\widetilde{y}_{it} = y_{it} - \\overline{y}_i, \\quad\n\\text{mit } \\overline{y}_i = \\frac{1}{T} \\sum_{t=1}^{T} y_{it}\n\\] \\[\n\\widetilde{X}_{it} = X_{it} - \\overline{X}_i, \\quad\n\\text{mit } \\overline{X}_i = \\frac{1}{T} \\sum_{t=1}^{T} X_{it}\n\\]\n\nSchätzung der Koeffizienten:\n\nDer Fixed-Effects-Schätzer ergibt sich aus einer OLS-Schätzung nach der Within-Transformation:\n\\[\n\\widehat{\\beta}_{FE} = (\\widetilde{X}^\\top \\widetilde{X})^{-1}\n\\widetilde{X}^\\top \\widetilde{y}\n\\]\n\\(\\widetilde{y} = (\\widetilde{y}_{11},\\ldots,\\widetilde{y}_{1T},\\ldots,\n\\widetilde{y}_{NT})^{T}\\) und \\(\\widetilde{X} = (\\widetilde{X}_{11},\\ldots,\\widetilde{X}_{1T},\\ldots, \\widetilde{X}_{NT})^{T}\\)\nIntercept entfällt, da die Transformation die Mittelwerte entfernt",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im FE-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_04_FE_modell.html#first-difference-schätzer",
+    "href": "include/05_04_FE_modell.html#first-difference-schätzer",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "First-Difference-Schätzer",
+    "text": "First-Difference-Schätzer\n\nGrundidee und Ziel:\nEliminierung der individuellen Effekte \\(\\alpha_i\\) durch Differenzbildung: für festes \\(i\\) werden zwei aufeinanderfolgende Zeitpunkte \\(t-1\\) und \\(t\\) betrachtet, so dass im Modell vor Differenzbildung gilt:\n\\[\n  y_{it} = \\alpha_i + X_{it}^\\top \\beta + \\epsilon_{it}\n  \\quad\\text{und}\\quad\n  y_{i,t-1} = \\alpha_i + X_{i,t-1}^\\top \\beta + \\epsilon_{i,t-1}\n  \\]\nFirst-Difference-Transformation:\n\nDifferenzbildung zwischen zwei aufeinanderfolgenden Zeitpunkten,\n\\(\\alpha_i\\) fallen wieder weg. Neue Modellgleichung: nur Veränderungen in \\(X_{it}\\) beeinflussen \\(\\Delta y_{it}\\):\n\\[\\begin{align}\n\\Delta y_{it} &= y_{it} - y_{i,t-1}\n= (X_{it} - X_{i,t-1})^\\top \\beta\n+ (\\epsilon_{it} - \\epsilon_{i,t-1})\\\\\n\\Delta y_{it} &= \\beta^{\\top} \\Delta X_{it} + \\Delta \\epsilon_{it},\n\\quad t = 2, \\dots, T\n\\end{align}\\]\n\nSchätzung der Koeffizienten:\n\nOLS-Schätzung nach Differenzbildung (kein Intercept notwendig):\n\\[\n\\widehat{\\beta}_{FD} = (\\Delta X^\\top \\Delta X)^{-1}\n\\Delta X^\\top \\Delta y\n\\]\n\\(\\Delta y = (\\Delta y_{11},\\ldots,\\Delta y_{1T},\\ldots,\\Delta y_{NT})^{T}\\) und \\(\\Delta X = (\\Delta X_{11},\\ldots,\\Delta X_{1T},\\ldots,\\Delta X_{NT})^{T}\\)\n\nEigenschaften des First-Difference-Schätzers:\n\nkonsistent unter Standardannahmen\nhöhere Varianz als Within-Schätzer, da Differenzbildung Varianz der Fehler erhöht\nbenötigt mindestens \\(T \\geq 2\\), da erste Periode für Differenzbildung entfällt",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im FE-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_04_FE_modell.html#schätzung-im-fixed-effects-modell",
+    "href": "include/05_04_FE_modell.html#schätzung-im-fixed-effects-modell",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Schätzung im Fixed-Effects Modell",
+    "text": "Schätzung im Fixed-Effects Modell\n\nVergleich Within-Schätzers vs First-Difference-Schätzer\n\nVergleich mit First-Difference-Schätzer:\n\nDie Within-Transformation reduziert die Varianz der abhängigen Variablen nur um einen Faktor \\(\\frac{T}{T+1}\\), wodurch der Informationsverlust gering ist\n\nBeim First-Difference-Schätzer verdoppelt sich hingegen die Varianz, was zu höheren Standardfehlern führt\n\nFirst-Difference-Schätzer ist insbesondere bei wenigen Zeitpunkten ineffizient\n\nAsymptotische Eigenschaften:\n\nDie geschätzte Varianz von \\(\\widehat{\\beta}_{FE}\\) ist gegeben durch:\n\\[\n\\text{Var}(\\widehat{\\beta}_{FE}) \\approx \\sigma_u^2\n(\\widetilde{X}^\\top \\widetilde{X})^{-1}\n\\]\nDie Fehler \\(\\epsilon_{it}\\) müssen homoskedastisch und unkorreliert sein, um eine effiziente Schätzung zu gewährleisten\n\nFalls Autokorrelation oder Heteroskedastizität vorhanden ist, sind robuste Standardfehler erforderlich\n\nSchlussfolgerungen:\n\nWithin-Schätzer ist unter den Standardannahmen konsistent und asymptotisch normalverteilt\n\nFalls \\(T\\) klein ist, kann der First-Difference-Schätzer zu großen Standardfehlern führen, wodurch der Within-Schätzer oft vorzuziehen ist",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im FE-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_04_FE_modell.html#schätzung-im-fixed-effects-modell-1",
+    "href": "include/05_04_FE_modell.html#schätzung-im-fixed-effects-modell-1",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Schätzung im Fixed-Effects Modell",
+    "text": "Schätzung im Fixed-Effects Modell\n\nImplementierung Within-Schätzung in R\n\nInwiefern haben Kapital capital, Output (output) bzw. Sektor (sector) Einfluss auf Lohn wage\n\n\nlibrary(plm)\ndata(\"EmplUK\", package = \"plm\")\nfe_out &lt;- plm(wage ~ capital + output + factor(sector), data = EmplUK,\n              effect = \"individual\", model = \"within\", index = c(\"firm\",\"year\"))\nprint(summary(fe_out))\n\nOneway (individual) effect Within Model\n\nCall:\nplm(formula = wage ~ capital + output + factor(sector), data = EmplUK, \n    effect = \"individual\", model = \"within\", index = c(\"firm\", \n        \"year\"))\n\nUnbalanced Panel: n = 140, T = 7-9, N = 1031\n\nResiduals:\n     Min.   1st Qu.    Median   3rd Qu.      Max. \n-12.69621  -1.15115  -0.16712   0.95113  17.29499 \n\nCoefficients:\n          Estimate Std. Error t-value  Pr(&gt;|t|)    \ncapital  0.0642258  0.0649524  0.9888     0.323    \noutput  -0.0384657  0.0076773 -5.0103 6.555e-07 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nTotal Sum of Squares:    4403.4\nResidual Sum of Squares: 4281.3\nR-Squared:      0.027726\nAdj. R-Squared: -0.12648\nF-statistic: 12.6756 on 2 and 889 DF, p-value: 3.7333e-06\n\n\n\nsector aufgrund Multikollinearität zu Firmenindex firm entfernt: Firma wechselt Sektor nicht\ncapital insignifikant vs. output \\(\\ra\\) negativer Effekt von \\(\\widehat{\\beta}^{FE}=-0.0384657\\)",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im FE-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_04_FE_modell.html#schätzung-im-fixed-effects-modell-2",
+    "href": "include/05_04_FE_modell.html#schätzung-im-fixed-effects-modell-2",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Schätzung im Fixed-Effects Modell",
+    "text": "Schätzung im Fixed-Effects Modell\n\nImplementierung First-Difference Schätzung in R\n\nfe_out &lt;- plm(wage ~ capital + output + factor(sector), data = EmplUK,\n              effect = \"individual\", model = \"fd\", index = c(\"firm\",\"year\"))\nprint(summary(fe_out))\n\nOneway (individual) effect First-Difference Model\n\nCall:\nplm(formula = wage ~ capital + output + factor(sector), data = EmplUK, \n    effect = \"individual\", model = \"fd\", index = c(\"firm\", \"year\"))\n\nUnbalanced Panel: n = 140, T = 7-9, N = 1031\nObservations used in estimation: 891\n\nResiduals:\n      Min.    1st Qu.     Median    3rd Qu.       Max. \n-13.458947  -0.891161   0.016247   1.036022  16.425976 \n\nCoefficients:\n              Estimate Std. Error t-value Pr(&gt;|t|)\n(Intercept)  0.1133889  0.0770901  1.4709   0.1417\ncapital     -0.0061282  0.0691908 -0.0886   0.9294\noutput       0.0084674  0.0132336  0.6398   0.5224\n\nTotal Sum of Squares:    4002.5\nResidual Sum of Squares: 4000.6\nR-Squared:      0.00046382\nAdj. R-Squared: -0.0017874\nF-statistic: 0.20603 on 2 and 888 DF, p-value: 0.81385\n\n\n\nsector entfernt wie gerade, nun aber auch capital UND output insignifikant\nFirst-Difference-Schätzer hat bekanntermaßen höhere Varianz, sodass\n\\[\nt = \\frac{\\widehat{\\beta}^{FD}}{\\sigma(\\widehat{\\beta}^{FD})}\n\\]\ntendenziell näher an Null liegt, wenn \\(\\sigma(\\widehat{\\beta}^{FD})\\) steigt. Das kann die Abweichung zu\n\\[\nt = \\frac{\\widehat{\\beta}^{FE}}{\\sigma(\\widehat{\\beta}^{FE})}\n\\]\nerklären.",
+    "crumbs": [
+      "Studienbrief 5",
+      "Schätzung im FE-Modell"
+    ]
+  },
+  {
+    "objectID": "include/02_05_OLR.html",
+    "href": "include/02_05_OLR.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Zuvor: multivariate nominale abhängige Variable\nJetzt: multivariate ordinale abhängige Variable\n\n\n\n\n\ndata_planen &lt;- read.csv(\"../data/planendf.csv\")\nhead(data_planen)\n\n  geschl alter kdauer schule planen\n1      1     2      4      1      1\n2      1     1      3      1      4\n3      1     2      4      1      2\n4      1     1      3      2      3\n5      2     1      2      2      4\n6      2     1      1      3      4\n\ntable(data_planen$geschl)\n\n\n 1  2 \n44 41 \n\ntable(data_planen$planen)\n\n\n 1  2  3  4  5 \n24 18 18 16  9 \n\ntable(data_planen$alter)\n\n\n 1  2  3 \n29 29 27 \n\ntable(data_planen$schule)\n\n\n 1  2  3 \n53 18 14 \n\ntable(data_planen$kdauer)\n\n\n 1  2  3  4 \n24 16 32 13 \n\n\n\n\n\n\n# install.packages(\"ordinal\")\n# install.packages(\"rcompanion\")\n# install.packages(\"MASS\")\nlibrary(ordinal)\nlibrary(rcompanion)\nlibrary(MASS)\ndata_planen$planen &lt;- factor(\n  data_planen$planen,\n  levels = c(1, 2, 3, 4, 5),\n  labels = c(\"gar nicht\", \"wenig\", \"mittel\", \"ziemlich\", \"sehr stark\")\n)\ndata_planen$alter &lt;- factor(\n  data_planen$alter,\n  levels = c(1, 2, 3),\n  labels = c(\"bis 40 Jahre\", \"41-55 Jahre\", \"über 55 Jahre\")\n)\ndata_planen$kdauer &lt;- factor(\n  data_planen$kdauer,\n  levels = c(1, 2, 3, 4),\n  labels = c(\"bis 5 Jahre\", \"6-10 Jahre\", \"11-20 Jahre\", \"über 20 Jahre\")\n)\nmodel_0 &lt;- clm(as.factor(planen) ~ 1, data = data_planen, link = \"logit\")\nmodel &lt;- clm(\n  as.factor(planen) ~ geschl + as.factor(alter) + as.factor(kdauer),\n  data = data_planen,\n  link = \"logit\"\n)\n\nACHTUNG: Bei der Erstellung von Faktoren legt R immer die erste Kategorie als Referenzkategorie fest !\n\n\n\n\nanova(model_0, model)\n\nLikelihood ratio tests of cumulative link models:\n \n        formula:                                                          link:\nmodel_0 as.factor(planen) ~ 1                                             logit\nmodel   as.factor(planen) ~ geschl + as.factor(alter) + as.factor(kdauer) logit\n        threshold:\nmodel_0 flexible  \nmodel   flexible  \n\n        no.par    AIC  logLik LR.stat df Pr(&gt;Chisq)    \nmodel_0      4 274.32 -133.16                          \nmodel       10 253.84 -116.92  32.485  6  1.317e-05 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nANOVA-Ergebnisse des Modellvergleichs: AIC ist etwa um 21 kleiner als Nullmodell (gut!)\nANOVA-Ergebnissunterschiede sind auch signifikant \\(p\\text{-value}=1.317\\text{e-}05\\) mit ***, also drei Sternchen, also hoch signifikant.\n\n\n\n\n\nordinal.model &lt;- polr(\n  as.factor(planen) ~ geschl + alter + kdauer,\n  data = data_planen,\n  Hess = TRUE\n)\nsummary(ordinal.model)\n\nCall:\npolr(formula = as.factor(planen) ~ geschl + alter + kdauer, data = data_planen, \n    Hess = TRUE)\n\nCoefficients:\n                      Value Std. Error t value\ngeschl               1.1162     0.4262  2.6188\nalter41-55 Jahre    -0.7926     0.4933 -1.6065\nalterüber 55 Jahre  -2.2612     0.5397 -4.1897\nkdauer6-10 Jahre    -0.1265     0.5742 -0.2203\nkdauer11-20 Jahre   -0.6471     0.5002 -1.2936\nkdauerüber 20 Jahre -2.0930     0.7309 -2.8636\n\nIntercepts:\n                    Value   Std. Error t value\ngar nicht|wenig     -1.1579  0.8135    -1.4232\nwenig|mittel         0.0166  0.7974     0.0208\nmittel|ziemlich      1.2489  0.8088     1.5441\nziemlich|sehr stark  2.8422  0.8768     3.2416\n\nResidual Deviance: 233.8394 \nAIC: 253.8394 \n\n\n\n\n\n\nFrauen zeigen 1,12-mal höhere Zustimmung als Männer (Referenzgruppe).\nNiedriges Alter & kurze Krankheitsdauer erhöhen Zustimmung (negatives Vorzeichen).\nAltersgruppen:\n\n41–55 Jahre: Wahrscheinlichkeit sinkt um Faktor 0,79, aktiv vorauszuplanen.\nÜber 55 Jahre: Wahrscheinlichkeit sinkt um Faktor 2,26.\n\nKrankheitsdauer:\n\nÜber 20 Jahre: Wahrscheinlichkeit des aktiven Vorausplanens und Handelns sinkt um Faktor 2,09 gegenüber einer Krankheitsdauer von 5 Jahren.\n\n\n\n\n\n\nnagelkerke(fit = model, null = model_0)\n\n$Models\n                                                                                                   \nModel: \"clm, as.factor(planen) ~ geschl + as.factor(alter) + as.factor(kdauer), data_planen, logit\"\nNull:  \"clm, as.factor(planen) ~ 1, data_planen, logit\"                                            \n\n$Pseudo.R.squared.for.model.vs.null\n                             Pseudo.R.squared\nMcFadden                             0.121975\nCox and Snell (ML)                   0.317626\nNagelkerke (Cragg and Uhler)         0.332097\n\n$Likelihood.ratio.test\n Df.diff LogLik.diff  Chisq   p.value\n      -6     -16.243 32.485 1.317e-05\n\n$Number.of.observations\n         \nModel: 85\nNull:  85\n\n$Messages\n[1] \"Note: For models fit with REML, these statistics are based on refitting with ML\"\n\n$Warnings\n[1] \"None\"\n\n\n\n\n\n\nNagelkerke \\(R^2\\) = 0,332 \\(\\ra\\) akzeptable Modellgüte (Varianzerklärung ~33%)\nSignifikante Prädiktoren (p &lt; 0,001):\n\nGeschlecht\nAlter (über 55 Jahre)\nKrankheitsdauer (über 20 Jahre)\n\n\n\n\n\nUmsetzung mit R — Fortsetzung\n\nsummary(model)\n\nformula: as.factor(planen) ~ geschl + as.factor(alter) + as.factor(kdauer)\ndata:    data_planen\n\n link  threshold nobs logLik  AIC    niter max.grad cond.H \n logit flexible  85   -116.92 253.84 5(0)  1.17e-12 2.2e+02\n\nCoefficients:\n                               Estimate Std. Error z value Pr(&gt;|z|)    \ngeschl                           1.1162     0.4262   2.619  0.00882 ** \nas.factor(alter)41-55 Jahre     -0.7925     0.4933  -1.607  0.10816    \nas.factor(alter)über 55 Jahre   -2.2612     0.5397  -4.190 2.79e-05 ***\nas.factor(kdauer)6-10 Jahre     -0.1265     0.5742  -0.220  0.82567    \nas.factor(kdauer)11-20 Jahre    -0.6471     0.5002  -1.294  0.19579    \nas.factor(kdauer)über 20 Jahre  -2.0930     0.7309  -2.864  0.00419 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nThreshold coefficients:\n                    Estimate Std. Error z value\ngar nicht|wenig     -1.15788    0.81355  -1.423\nwenig|mittel         0.01657    0.79743   0.021\nmittel|ziemlich      1.24892    0.80882   1.544\nziemlich|sehr stark  2.84219    0.87680   3.242\n\n\n\nSignifikanzprüfung mittels summary(model) d.h. auf dem clm() - Befehl basierendes Modell",
+    "crumbs": [
+      "Studienbrief 2",
+      "Ordinal logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/02_05_OLR.html#ordinale-logistische-regression",
+    "href": "include/02_05_OLR.html#ordinale-logistische-regression",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Zuvor: multivariate nominale abhängige Variable\nJetzt: multivariate ordinale abhängige Variable\n\n\n\n\n\ndata_planen &lt;- read.csv(\"../data/planendf.csv\")\nhead(data_planen)\n\n  geschl alter kdauer schule planen\n1      1     2      4      1      1\n2      1     1      3      1      4\n3      1     2      4      1      2\n4      1     1      3      2      3\n5      2     1      2      2      4\n6      2     1      1      3      4\n\ntable(data_planen$geschl)\n\n\n 1  2 \n44 41 \n\ntable(data_planen$planen)\n\n\n 1  2  3  4  5 \n24 18 18 16  9 \n\ntable(data_planen$alter)\n\n\n 1  2  3 \n29 29 27 \n\ntable(data_planen$schule)\n\n\n 1  2  3 \n53 18 14 \n\ntable(data_planen$kdauer)\n\n\n 1  2  3  4 \n24 16 32 13 \n\n\n\n\n\n\n# install.packages(\"ordinal\")\n# install.packages(\"rcompanion\")\n# install.packages(\"MASS\")\nlibrary(ordinal)\nlibrary(rcompanion)\nlibrary(MASS)\ndata_planen$planen &lt;- factor(\n  data_planen$planen,\n  levels = c(1, 2, 3, 4, 5),\n  labels = c(\"gar nicht\", \"wenig\", \"mittel\", \"ziemlich\", \"sehr stark\")\n)\ndata_planen$alter &lt;- factor(\n  data_planen$alter,\n  levels = c(1, 2, 3),\n  labels = c(\"bis 40 Jahre\", \"41-55 Jahre\", \"über 55 Jahre\")\n)\ndata_planen$kdauer &lt;- factor(\n  data_planen$kdauer,\n  levels = c(1, 2, 3, 4),\n  labels = c(\"bis 5 Jahre\", \"6-10 Jahre\", \"11-20 Jahre\", \"über 20 Jahre\")\n)\nmodel_0 &lt;- clm(as.factor(planen) ~ 1, data = data_planen, link = \"logit\")\nmodel &lt;- clm(\n  as.factor(planen) ~ geschl + as.factor(alter) + as.factor(kdauer),\n  data = data_planen,\n  link = \"logit\"\n)\n\nACHTUNG: Bei der Erstellung von Faktoren legt R immer die erste Kategorie als Referenzkategorie fest !\n\n\n\n\nanova(model_0, model)\n\nLikelihood ratio tests of cumulative link models:\n \n        formula:                                                          link:\nmodel_0 as.factor(planen) ~ 1                                             logit\nmodel   as.factor(planen) ~ geschl + as.factor(alter) + as.factor(kdauer) logit\n        threshold:\nmodel_0 flexible  \nmodel   flexible  \n\n        no.par    AIC  logLik LR.stat df Pr(&gt;Chisq)    \nmodel_0      4 274.32 -133.16                          \nmodel       10 253.84 -116.92  32.485  6  1.317e-05 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nANOVA-Ergebnisse des Modellvergleichs: AIC ist etwa um 21 kleiner als Nullmodell (gut!)\nANOVA-Ergebnissunterschiede sind auch signifikant \\(p\\text{-value}=1.317\\text{e-}05\\) mit ***, also drei Sternchen, also hoch signifikant.\n\n\n\n\n\nordinal.model &lt;- polr(\n  as.factor(planen) ~ geschl + alter + kdauer,\n  data = data_planen,\n  Hess = TRUE\n)\nsummary(ordinal.model)\n\nCall:\npolr(formula = as.factor(planen) ~ geschl + alter + kdauer, data = data_planen, \n    Hess = TRUE)\n\nCoefficients:\n                      Value Std. Error t value\ngeschl               1.1162     0.4262  2.6188\nalter41-55 Jahre    -0.7926     0.4933 -1.6065\nalterüber 55 Jahre  -2.2612     0.5397 -4.1897\nkdauer6-10 Jahre    -0.1265     0.5742 -0.2203\nkdauer11-20 Jahre   -0.6471     0.5002 -1.2936\nkdauerüber 20 Jahre -2.0930     0.7309 -2.8636\n\nIntercepts:\n                    Value   Std. Error t value\ngar nicht|wenig     -1.1579  0.8135    -1.4232\nwenig|mittel         0.0166  0.7974     0.0208\nmittel|ziemlich      1.2489  0.8088     1.5441\nziemlich|sehr stark  2.8422  0.8768     3.2416\n\nResidual Deviance: 233.8394 \nAIC: 253.8394 \n\n\n\n\n\n\nFrauen zeigen 1,12-mal höhere Zustimmung als Männer (Referenzgruppe).\nNiedriges Alter & kurze Krankheitsdauer erhöhen Zustimmung (negatives Vorzeichen).\nAltersgruppen:\n\n41–55 Jahre: Wahrscheinlichkeit sinkt um Faktor 0,79, aktiv vorauszuplanen.\nÜber 55 Jahre: Wahrscheinlichkeit sinkt um Faktor 2,26.\n\nKrankheitsdauer:\n\nÜber 20 Jahre: Wahrscheinlichkeit des aktiven Vorausplanens und Handelns sinkt um Faktor 2,09 gegenüber einer Krankheitsdauer von 5 Jahren.\n\n\n\n\n\n\nnagelkerke(fit = model, null = model_0)\n\n$Models\n                                                                                                   \nModel: \"clm, as.factor(planen) ~ geschl + as.factor(alter) + as.factor(kdauer), data_planen, logit\"\nNull:  \"clm, as.factor(planen) ~ 1, data_planen, logit\"                                            \n\n$Pseudo.R.squared.for.model.vs.null\n                             Pseudo.R.squared\nMcFadden                             0.121975\nCox and Snell (ML)                   0.317626\nNagelkerke (Cragg and Uhler)         0.332097\n\n$Likelihood.ratio.test\n Df.diff LogLik.diff  Chisq   p.value\n      -6     -16.243 32.485 1.317e-05\n\n$Number.of.observations\n         \nModel: 85\nNull:  85\n\n$Messages\n[1] \"Note: For models fit with REML, these statistics are based on refitting with ML\"\n\n$Warnings\n[1] \"None\"\n\n\n\n\n\n\nNagelkerke \\(R^2\\) = 0,332 \\(\\ra\\) akzeptable Modellgüte (Varianzerklärung ~33%)\nSignifikante Prädiktoren (p &lt; 0,001):\n\nGeschlecht\nAlter (über 55 Jahre)\nKrankheitsdauer (über 20 Jahre)\n\n\n\n\n\nUmsetzung mit R — Fortsetzung\n\nsummary(model)\n\nformula: as.factor(planen) ~ geschl + as.factor(alter) + as.factor(kdauer)\ndata:    data_planen\n\n link  threshold nobs logLik  AIC    niter max.grad cond.H \n logit flexible  85   -116.92 253.84 5(0)  1.17e-12 2.2e+02\n\nCoefficients:\n                               Estimate Std. Error z value Pr(&gt;|z|)    \ngeschl                           1.1162     0.4262   2.619  0.00882 ** \nas.factor(alter)41-55 Jahre     -0.7925     0.4933  -1.607  0.10816    \nas.factor(alter)über 55 Jahre   -2.2612     0.5397  -4.190 2.79e-05 ***\nas.factor(kdauer)6-10 Jahre     -0.1265     0.5742  -0.220  0.82567    \nas.factor(kdauer)11-20 Jahre    -0.6471     0.5002  -1.294  0.19579    \nas.factor(kdauer)über 20 Jahre  -2.0930     0.7309  -2.864  0.00419 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nThreshold coefficients:\n                    Estimate Std. Error z value\ngar nicht|wenig     -1.15788    0.81355  -1.423\nwenig|mittel         0.01657    0.79743   0.021\nmittel|ziemlich      1.24892    0.80882   1.544\nziemlich|sehr stark  2.84219    0.87680   3.242\n\n\n\nSignifikanzprüfung mittels summary(model) d.h. auf dem clm() - Befehl basierendes Modell",
+    "crumbs": [
+      "Studienbrief 2",
+      "Ordinal logistische Regression"
+    ]
+  },
+  {
+    "objectID": "include/03_03_ZRA_in_R.html",
+    "href": "include/03_03_ZRA_in_R.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Eine Vielzahl von Paketen.\nZusammenfassung im Studienbrief GDA 03 auf den Seiten 14–18, Kapitel 3.1–3.2.\nFokus auf die „Explorativen Analysen“.\nGrund: Wahrscheinlichkeit, dass das in der Klausur abgefragt wird, ist deutlich größer.\nGleiches gilt für Kapitel 3.5: wichtig für Bachelorarbeit, in der Klausur jedoch schwer abzufragen.\nTrotzdem: bitte vor der Klausur einmal durchlesen, falls doch etwas dazu gefragt wird.",
+    "crumbs": [
+      "Studienbrief 3",
+      "Zeitreihenanalysen in `R`"
+    ]
+  },
+  {
+    "objectID": "include/03_03_ZRA_in_R.html#pakete-für-zeitreihenanalysen-in-r",
+    "href": "include/03_03_ZRA_in_R.html#pakete-für-zeitreihenanalysen-in-r",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Eine Vielzahl von Paketen.\nZusammenfassung im Studienbrief GDA 03 auf den Seiten 14–18, Kapitel 3.1–3.2.\nFokus auf die „Explorativen Analysen“.\nGrund: Wahrscheinlichkeit, dass das in der Klausur abgefragt wird, ist deutlich größer.\nGleiches gilt für Kapitel 3.5: wichtig für Bachelorarbeit, in der Klausur jedoch schwer abzufragen.\nTrotzdem: bitte vor der Klausur einmal durchlesen, falls doch etwas dazu gefragt wird.",
+    "crumbs": [
+      "Studienbrief 3",
+      "Zeitreihenanalysen in `R`"
+    ]
+  },
+  {
+    "objectID": "include/03_03_ZRA_in_R.html#explorative-analyse-von-zeitreihen-tests",
+    "href": "include/03_03_ZRA_in_R.html#explorative-analyse-von-zeitreihen-tests",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Explorative Analyse von Zeitreihen: Tests",
+    "text": "Explorative Analyse von Zeitreihen: Tests\n\nKPSS-Test — Theorie\n\nKPSS-Test (Kwiatkowski–Phillips–Schmidt–Shin-Test):\n\nPrüft, ob eine Zeitreihe nicht-stationär ist.\nNullhypothese \\(\\ra\\) \\(H_0\\): Zeitreihe stationär.\nAlternativhypothese \\(\\ra\\) \\(H_1\\): Zeitreihe nicht-stationär.\nWichtig für Modellwahl in der Zeitreihenanalyse.\n\nBerechnung in R:\n\nstationary.test(myTS, method = \"kpss\")\nInterpretation bei festgelegtem Signifikanzniveau von 1 %:\n\np-Wert &gt; 0.01 \\(\\ra\\) Nullhypothese beibehalten (stationär).\np-Wert &lt; 0.01 \\(\\ra\\) Nullhypothese ablehnen (nicht-stationär).\n\n\n\n\n\nKPSS-Test — Beispiel\n\n\n\nKPSS-Test in R\n\n\n\n\nPP- und ADF-Tests — Theorie\n\nPhillips–Perron-Test (PP-Test):\n\nPrüft auf Stationarität.\nNullhypothese \\(\\ra\\) \\(H_0\\): Zeitreihe ist nicht-stationär.\nAlternativhypothese \\(\\ra\\) \\(H_1\\): Zeitreihe ist stationär.\nRobust gegenüber Autokorrelation und Heteroskedastizität.\n\nAugmented Dickey–Fuller-Test (ADF-Test):\n\nPrüft auf Stationarität, wie der PP-Test, berücksichtigt jedoch Autokorrelation.\nNullhypothese \\(\\ra\\) \\(H_0\\): Zeitreihe ist nicht-stationär.\nAlternativhypothese \\(\\ra\\) \\(H_1\\): Zeitreihe ist stationär.\n\nBerechnung in R:\n\nPP-Test: stationary.test(myTS, method = \"pp\")\nADF-Test: stationary.test(myTS, method = \"adf\")\n\n\n\n\nPP-Test — Beispiel\n\n\n\nPP-Test in R\n\n\n\n\nADF-Test — Beispiel\nstationary.test(bne_quartal_de, method = \"adf\")\n\n\n\nADF-Test in R\n\n\n\n\nTesten von Autokorrelation — ACF\n\nDefinition:\n\nAutokorrelation beschreibt den Zusammenhang zwischen den Werten einer Zeitreihe und deren verzögerten Werten.\nWichtig für Modellierung, da Abhängigkeiten über die Zeit hinweg berücksichtigt werden müssen.\n\nAutokorrelationsfunktion (ACF):\n\nMisst die Korrelation zwischen einem Wert und seinen verzögerten Werten (Lags).\nBerechnung in R: acf(myts, lag.max = 30)\nInterpretation:\n\nGroße Werte \\(\\ra\\) starke Autokorrelation.\nSignifikanzgrenze durch gestrichelte Linie gekennzeichnet.\n\n\n\n\n\n\nACF in R\n\n\n\n\nTesten von Autokorrelation — PACF\n\nPartielle Autokorrelationsfunktion (PACF):\n\nMisst den direkten Zusammenhang zwischen einem Wert und seinen verzögerten Werten, ohne Einfluss dazwischenliegender Werte.\nBerechnung in R:pacf(myts, lag.max = 30)\nInterpretation: Hohe Werte zeigen direkten Einfluss eines bestimmten Lags auf die Zeitreihe.\n\nBox–Pierce- und Ljung–Box-Test:\n\nPrüfen, ob die Autokorrelation der Zeitreihe insgesamt signifikant ist.\nBerechnung in R: Box.test(myTS, lag = 4, type = \"Box-Pierce\")\nInterpretation:\n\np-Wert &lt; 0.05 \\(\\ra\\) Nullhypothese ablehnen \\(\\ra\\) Autokorrelation vorhanden.\nLjung–Box-Test für kleine Stichproben besser geeignet.\nACHTUNG:Unterstrichen Im Skript steht noch „Stationarität“, es geht aber um Ablehnung der Signifikanz der Autokorrelation, siehe z. B. diesen Wikipedia-Link hier.\n\n\n\n\n\n\nPACF in R",
+    "crumbs": [
+      "Studienbrief 3",
+      "Zeitreihenanalysen in `R`"
+    ]
+  },
+  {
+    "objectID": "include/03_03_ZRA_in_R.html#saison--und-trendbereinigung",
+    "href": "include/03_03_ZRA_in_R.html#saison--und-trendbereinigung",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Saison- und Trendbereinigung",
+    "text": "Saison- und Trendbereinigung\n\nSaisonbereinigung — Ziel: Überprüfung, ob eine Zeitreihe saisonale Effekte enthält\n\nWarum Saisonbereinigung?\n\nSaisonale Schwankungen können Analyse verfälschen.\nBereinigte Zeitreihen ermöglichen genauere Modellierung.\n\nMethoden zur Saisonbereinigung:\n\nMA-Verfahren:\n\nBestimmung der Saisonkomponente über gleitende Mittelwerte.\nEntfernen der Saisonkomponente:\nBNE_SB_MA &lt;- myts - decompose(myts)$seasonal\n\nSTL-Verfahren:\n\nBerechnung der Saisonkomponente durch Loess-Glättung.\nNur für additive Modelle geeignet.\nEntfernen der Saisonkomponente:\nBNE_SB_loess &lt;- seasadj(stl(myts, s.window = \"periodic\"))\n\n\nVergleich mit offiziellen saisonbereinigten Daten:\n\nStatistisches Bundesamt nutzt den BV4.1-Filter.\nUnterschiedliche Methoden können zu leicht abweichenden Ergebnissen führen.\n\n\n\n\n\nSaisonbereinigung in R\n\n\n\n\nTrendbereinigung — Entfernung des Trends, um die Zeitreihe stationär zu machen\n\nWann? Falls keine Stationarität vorliegt, bereinigen wir den Trend.\nMethode — Differenzenbildung:\n\nBerechnung der Differenz zwischen aufeinanderfolgenden Werten.\nAnzahl der Differenzen in R bestimmen:\nnsdiffs(myts)\nDifferenzenbildung zur Trendbereinigung:\nbne_Q_trend_seasdiff &lt;- diff(myts, lag = frequency(myts), differences = 1)\n\nErgebnis:\n\nNach Differenzenbildung ist der Trend entfernt.\nZeitreihe kann nun für weitere Analysen verwendet werden.\n\n\n\n\n\nTrendbereinigung in R\n\n\n\n\nFiltermethoden für Trend- und Saisonbereinigung\n\nZusätzliche Methoden zur Glättung der Zeitreihe.\nHodrick–Prescott-Filter (HP-Filter):\n\nTrennt den zyklischen Anteil von der Zeitreihe.\nBerechnung in R:\nmyts_filter &lt;- mFilter(myts, filter = \"HP\")\n\nBaxter–King-Filter (BK-Filter):\n\nEntfernt sehr kurzfristige Schwankungen.\nBerechnung in R:\nmyts_filter &lt;- mFilter(myts, filter = \"BK\")\n\nErgebnis:\n\nGlättung der Zeitreihe für bessere Modellierung und Vorhersage.",
+    "crumbs": [
+      "Studienbrief 3",
+      "Zeitreihenanalysen in `R`"
+    ]
+  },
+  {
+    "objectID": "include/05_02_03_paneldaten_weiteres.html",
+    "href": "include/05_02_03_paneldaten_weiteres.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "(\"EmplUK\", package = \"plm\"): Datensätze aus dem Paket direkt als Variable EmplUK einladen\nUK Löhne wage — firm Variablenname (Firma) Querschnitt — year Variablenname Zeit (1976 bis 1984)\nemp: Beschäftigte — capital: Bruttokapitalstock — output: Branchenoutput\n\n\n# install.packages(\"plm\")\nlibrary(plm)\ndata(\"EmplUK\", package = \"plm\")\n# daten &lt;- read.csv('../data/EmplUK.csv', header = TRUE, sep = ';', dec = ',')\nhead(EmplUK)\n\n  firm year sector   emp    wage capital   output\n1    1 1977      7 5.041 13.1516  0.5894  95.7072\n2    1 1978      7 5.600 12.3018  0.6318  97.3569\n3    1 1979      7 5.015 12.8395  0.6771  99.6083\n4    1 1980      7 4.715 13.8039  0.6171 100.5501\n5    1 1981      7 4.093 14.2897  0.5076  99.5581\n6    1 1982      7 3.166 14.8681  0.4229  98.6151\n\nnames(EmplUK)\n\n[1] \"firm\"    \"year\"    \"sector\"  \"emp\"     \"wage\"    \"capital\" \"output\" \n\nEmplUK[2, ]\n\n  firm year sector emp    wage capital  output\n2    1 1978      7 5.6 12.3018  0.6318 97.3569\n\nN &lt;- length(unique(EmplUK[, 1]))\nT &lt;- length(unique(EmplUK[, 2]))\nd &lt;- length(EmplUK[2, ]) - 2 # Spalten 1 und 2 für N und T raussubtrahieren\nprint(c(N = N, T = T, d = d))\n\n  N   T   d \n140   9   5",
+    "crumbs": [
+      "Studienbrief 5",
+      "Wdhl. allgemeiner Konzepte"
+    ]
+  },
+  {
+    "objectID": "include/05_02_03_paneldaten_weiteres.html#einige-grundbefehle",
+    "href": "include/05_02_03_paneldaten_weiteres.html#einige-grundbefehle",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "(\"EmplUK\", package = \"plm\"): Datensätze aus dem Paket direkt als Variable EmplUK einladen\nUK Löhne wage — firm Variablenname (Firma) Querschnitt — year Variablenname Zeit (1976 bis 1984)\nemp: Beschäftigte — capital: Bruttokapitalstock — output: Branchenoutput\n\n\n# install.packages(\"plm\")\nlibrary(plm)\ndata(\"EmplUK\", package = \"plm\")\n# daten &lt;- read.csv('../data/EmplUK.csv', header = TRUE, sep = ';', dec = ',')\nhead(EmplUK)\n\n  firm year sector   emp    wage capital   output\n1    1 1977      7 5.041 13.1516  0.5894  95.7072\n2    1 1978      7 5.600 12.3018  0.6318  97.3569\n3    1 1979      7 5.015 12.8395  0.6771  99.6083\n4    1 1980      7 4.715 13.8039  0.6171 100.5501\n5    1 1981      7 4.093 14.2897  0.5076  99.5581\n6    1 1982      7 3.166 14.8681  0.4229  98.6151\n\nnames(EmplUK)\n\n[1] \"firm\"    \"year\"    \"sector\"  \"emp\"     \"wage\"    \"capital\" \"output\" \n\nEmplUK[2, ]\n\n  firm year sector emp    wage capital  output\n2    1 1978      7 5.6 12.3018  0.6318 97.3569\n\nN &lt;- length(unique(EmplUK[, 1]))\nT &lt;- length(unique(EmplUK[, 2]))\nd &lt;- length(EmplUK[2, ]) - 2 # Spalten 1 und 2 für N und T raussubtrahieren\nprint(c(N = N, T = T, d = d))\n\n  N   T   d \n140   9   5",
+    "crumbs": [
+      "Studienbrief 5",
+      "Wdhl. allgemeiner Konzepte"
+    ]
+  },
+  {
+    "objectID": "include/05_02_03_paneldaten_weiteres.html#wiederholung-schätzen-und-testen",
+    "href": "include/05_02_03_paneldaten_weiteres.html#wiederholung-schätzen-und-testen",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Wiederholung: Schätzen und Testen",
+    "text": "Wiederholung: Schätzen und Testen\n\n3.1 Modell vs. Realität:\n\nPaneldatenmodell ist eine Annäherung an die Realität, keine perfekte Abbildung\n\nModellannahmen sind oft nur näherungsweise erfüllt, z. B. linearer Zusammenhang \\(x_{it}\\) \\(\\ra\\) \\(y_{it}\\)\n\nzufällige Abweichungen sind komplexer als reines additiv weißes Rauschen \\(\\epsilon_{it}\\)\n\n3.2 Parameter von Interesse:\n\nZiel: Bestimmung des Einflusses der unabhängigen Variablen \\(X_{it}\\) auf \\(y_{it}\\), wobei Stärke des Zusammenhangs von \\(X_{it}^{(j)}\\) und \\(y_{it}\\): \\(\\beta_j &gt; 0\\) positiver vs. \\(\\beta_j &lt; 0\\) negativer Einfluss\n\\(\\alpha_i\\)’s meist uninteressant \\(\\ra\\) bloße Korrektur individueller Effekte; außerdem wären \\(D\\) vs. \\(n+D\\) Parameter zu schätzen\n\n3.3 Schätzung:\n\nParameter \\(\\beta\\) und ggf. \\(\\alpha\\) müssen anhand von Stichprobendaten geschätzt werden\n\nVerschiedene Schätzer für FE-/RE-Modelle: aber Schätzungen sind Näherungen an wahre Werte\n\n3.4 Statistische Testprobleme:\n\nTests zur Überprüfung der Hypothese \\(H_0: \\beta_j = 0\\) gegen \\(H_1: \\beta_j \\neq 0\\)\n\np-Wert: Wahrscheinlichkeit für noch extremere Beobachtungen als Irrtumswahrscheinlichkeit \\(\\alpha = 0.05\\)\nFehler 1. Art (\\(\\alpha\\)-Fehler): Ablehnung von \\(H_0\\), obwohl sie wahr ist\nFehler 2. Art (\\(\\beta\\)-Fehler): Beibehaltung von \\(H_0\\), obwohl \\(H_1\\) wahr ist",
+    "crumbs": [
+      "Studienbrief 5",
+      "Wdhl. allgemeiner Konzepte"
+    ]
+  },
+  {
+    "objectID": "include/04_02_conjoint.html",
+    "href": "include/04_02_conjoint.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Attribute A und B mit levels, 1-3 und 1-2 \\(\\ra\\) 6 Stimuli/Teilnutzenwerte für A und B (s. Bild)\n\\(y=\\mu +\\beta_A +\\beta_B\\) – \\(\\beta_X\\) ist Teilnutzenwert für Attribut X und \\(\\mu\\) der Durchschnittsrang\n\n\n\n\nConjoint Analysis Beispiel 1",
+    "crumbs": [
+      "Studienbrief 4",
+      "Conjoint-Analyse"
+    ]
+  },
+  {
+    "objectID": "include/04_02_conjoint.html#conjoint-analysis",
+    "href": "include/04_02_conjoint.html#conjoint-analysis",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Attribute A und B mit levels, 1-3 und 1-2 \\(\\ra\\) 6 Stimuli/Teilnutzenwerte für A und B (s. Bild)\n\\(y=\\mu +\\beta_A +\\beta_B\\) – \\(\\beta_X\\) ist Teilnutzenwert für Attribut X und \\(\\mu\\) der Durchschnittsrang\n\n\n\n\nConjoint Analysis Beispiel 1",
+    "crumbs": [
+      "Studienbrief 4",
+      "Conjoint-Analyse"
+    ]
+  },
+  {
+    "objectID": "include/04_02_conjoint.html#conjoint-analysis-1",
+    "href": "include/04_02_conjoint.html#conjoint-analysis-1",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Conjoint Analysis",
+    "text": "Conjoint Analysis\n\n\n\nConjoint Analysis Beispiel 2\n\n\n\n\n\nConjoint Analysis Beispiel 3",
+    "crumbs": [
+      "Studienbrief 4",
+      "Conjoint-Analyse"
+    ]
+  },
+  {
+    "objectID": "include/04_02_conjoint.html#conjoint-analysis-2",
+    "href": "include/04_02_conjoint.html#conjoint-analysis-2",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Conjoint Analysis",
+    "text": "Conjoint Analysis\n\n\n\nConjoint Analysis Beispiel 4\n\n\n\n\n\nConjoint Analysis Beispiel 5",
+    "crumbs": [
+      "Studienbrief 4",
+      "Conjoint-Analyse"
+    ]
+  },
+  {
+    "objectID": "include/05_01_paneldaten_effectsmodels.html",
+    "href": "include/05_01_paneldaten_effectsmodels.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Definition von Paneldaten:\n\nBeobachtung derselben Individuen über mehrere Zeitpunkte\n\ntypische Beispiele: sozio-ökonomisches Panel (SOEP), Unternehmensdaten über Jahre\n\nStruktur eines Paneldatensatzes:\n\n\\(y_{it}\\): abhängige Variable für Individuum \\(i\\) zu Zeitpunkt \\(t\\)\n\n\\(x_{it}\\): Vektor unabhängiger Variablen für Individuum \\(i\\) zu Zeitpunkt \\(t\\)\n\n\\(i = 1, \\dots, N\\), \\(t = 1, \\dots, T\\)\n\nzur Veranschaulichung:",
+    "crumbs": [
+      "Studienbrief 5",
+      "Paneldaten und das Effects-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_01_paneldaten_effectsmodels.html#einführung-in-die-paneldatenanalyse",
+    "href": "include/05_01_paneldaten_effectsmodels.html#einführung-in-die-paneldatenanalyse",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Definition von Paneldaten:\n\nBeobachtung derselben Individuen über mehrere Zeitpunkte\n\ntypische Beispiele: sozio-ökonomisches Panel (SOEP), Unternehmensdaten über Jahre\n\nStruktur eines Paneldatensatzes:\n\n\\(y_{it}\\): abhängige Variable für Individuum \\(i\\) zu Zeitpunkt \\(t\\)\n\n\\(x_{it}\\): Vektor unabhängiger Variablen für Individuum \\(i\\) zu Zeitpunkt \\(t\\)\n\n\\(i = 1, \\dots, N\\), \\(t = 1, \\dots, T\\)\n\nzur Veranschaulichung:",
+    "crumbs": [
+      "Studienbrief 5",
+      "Paneldaten und das Effects-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_01_paneldaten_effectsmodels.html#lineares-modell-für-paneldaten",
+    "href": "include/05_01_paneldaten_effectsmodels.html#lineares-modell-für-paneldaten",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Lineares Modell für Paneldaten",
+    "text": "Lineares Modell für Paneldaten\n\nDefinition: klassische lineare Regression für Paneldaten:\n\nAnnahme: Effekte der unabhängigen Variablen sind konstant über Individuen und Zeit\n\\[\ny_{it} = \\beta_0 + \\beta_1 x_{it}^{(1)} + \\dots + \\beta_D x_{it}^{(D)}\n+ \\epsilon_{it}\n\\]\nMatrixnotation: Zusammenfassung der unabhängigen Variablen als Vektor\n\\(X_{it} = (x_{it}^{(1)}, x_{it}^{(2)}, \\dots, x_{it}^{(D)})^\\top\\) führt, mit \\(\\beta=(\\beta_1,\\ldots,\\beta_D)\\) als Vektor der Regressionskoeffizienten, zum Modell in kompakter Form:\n\\[\ny_{it} = \\beta_0 + X_{it}^\\top \\beta + \\epsilon_{it}\n\\]\n\nImplikationen des Modells und Problematik:\n\nFalls alle unabhängigen Variablen \\(X_{it} = 0\\) sind, so ist \\(\\beta_0\\) der Durchschnittswert von \\(y_{it}\\) in Abwesenheit von erklärenden Variablen und \\(\\epsilon_{it}\\) allein erfasst unbeobachtete Einflüsse:\n\\[\ny_{it} = \\beta_0 + \\epsilon_{it}\n\\]\nAnnahme homogener Effekte für alle Individuen und Zeitpunkte oft nicht realistisch\nalle erklärenden Variablen Null \\(\\ra\\) Modell impliziert: alle Individuen haben denselben Grundwert \\(\\beta_0\\)\nDies würde bedeuten, dass Unterschiede in \\(y_{it}\\) nur durch Zufall entstehen\n\nBeispiel: Personen mit gleicher Bildung verdienen unterschiedlich, was das Modell nicht erklärt\nRealität: unbeobachtete Faktoren (soziale Herkunft, Talent, Netzwerke) beeinflussen Einkommen\nDas einfache Modell kann diese individuellen Effekte (individuelle Heterogenität) nicht erfassen",
+    "crumbs": [
+      "Studienbrief 5",
+      "Paneldaten und das Effects-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_01_paneldaten_effectsmodels.html#effects-modelle",
+    "href": "include/05_01_paneldaten_effectsmodels.html#effects-modelle",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Effects-Modelle",
+    "text": "Effects-Modelle\n\nGrundidee des Effects-Modells:\n\nErweiterung des linearen Modells um individuelle Grundwerte \\(\\alpha_i\\) für jedes Individuum\n\nAnnahme: jedes Individuum besitzt einen eigenen Basiswert für die abhängige Variable\n\nallgemeine Modellform:\n\\[\ny_{it} = \\alpha_i + X_{it}^\\top \\beta + \\epsilon_{it}, \\quad \\forall i=1,\n\\ldots,N, \\quad t=1,\\ldots,T\n\\]\nindividuelle Effekte \\(\\alpha_i\\) repräsentieren unbeobachtete Charakteristika (z. B. Talent/soziale Herkunft)\n\nInterpretation der Modellparameter:\n\n\\(\\alpha_i\\) beschreibt den erwarteten Grundwert von \\(y_{it}\\) über alle Zeitpunkte \\(t\\), wenn \\(X_{it} = 0\\)\n\n\\(\\beta_j\\) misst den Einfluss der unabhängigen Variable \\(x_{it}^{(j)}\\) auf \\(y_{it}\\)\n\n\\(\\epsilon_{it}\\) ist ein zufälliger Fehlerterm, der unbeobachtete Schwankungen enthält\n\nMathematische Darstellung der unbeobachteten Heterogenität:\n\nModellierung der individuellen Effekte führt zur Modellform:\n\\[\ny_{it} = \\alpha_i + X_{it}^\\top \\beta + \\epsilon_{it}, \\quad i = 1,\n\\dots, N, \\quad t = 1, \\dots, T\n\\]\nindividuelle Effekte \\(\\alpha_i\\) können als feste (fixed) oder zufällige (random) Effekte behandelt werden",
+    "crumbs": [
+      "Studienbrief 5",
+      "Paneldaten und das Effects-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_01_paneldaten_effectsmodels.html#statistische-annahmen-an-das-effects-modell",
+    "href": "include/05_01_paneldaten_effectsmodels.html#statistische-annahmen-an-das-effects-modell",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Statistische Annahmen an das Effects-Modell",
+    "text": "Statistische Annahmen an das Effects-Modell\n\n(A1) Strikte Exogenität:\n\nDie Fehlerterme \\(\\epsilon_{it}\\) sind unkorreliert mit den unabhängigen Variablen \\(X_{it}\\) und \\(\\alpha_i\\):\n\\[\n\\mathbb{E}[\\epsilon_{it} | X_{it}, \\alpha_i] = 0 \\quad \\forall i=1,\\ldots,\nN \\ \\text{und} \\ t=1,\\ldots,T\n\\]\nfalls verletzt \\(\\ra\\) Endogenität \\(\\ra\\) verzerrte Schätzungen \\(\\ra\\) PROBLEMATISCH\n\n(A2) Unkorreliertheit der Fehler:\n\nDie Fehlerterme sind sowohl zeitlich als auch über die Individuen hinweg unkorreliert\n\\[\n\\text{Cov}(\\epsilon_{i_1 t_1}, \\epsilon_{i_2 t_2}) = 0\n\\quad \\forall (i_1, t_1) \\neq (i_2, t_2)\n\\]\nFalls verletzt \\(\\ra\\) Autokorrelation \\(\\ra\\) verschlechtert Effizienz (nicht mehr BLUE)\n\n(A3) Homoskedastizität:\n\nFehler haben über die Zeit und über die Individuen hinweg konstante Varianz\n\\[\n\\text{Var}(\\epsilon_{it}) = \\sigma^2 \\quad \\forall i, t\n\\]\nFalls verletzt \\(\\ra\\) Heteroskedastizität \\(\\ra\\) verschlechtert Effizienz (nicht mehr BLUE)\n\n(A4) Keine Multikollinearität: Einzelne Kovariate, also Komponenten aus\n\\(X_{it}=(x_{it}^{(1)}, \\ldots, x_{it}^{(D)})^\\top\\), sind nicht kollinear,\n\n\nkein \\(x_{it}^{(d)}\\) ist Linearkombination der (einer) anderen — Informationswert einer Variablen lässt sich nicht durch die anderen ausdrücken — falls verletzt \\(\\ra\\) hohe Standardfehler\n\n\nFE-Modell (A5F): \\(\\alpha_i\\) deterministisch\nRE-Modell (A5R): \\(\\text{Cov}(\\alpha_i,X_{it})=0\\) und\n\\(\\alpha_i \\sim (\\mu=\\alpha,\\sigma_{\\alpha}^2)\\)",
+    "crumbs": [
+      "Studienbrief 5",
+      "Paneldaten und das Effects-Modell"
+    ]
+  },
+  {
+    "objectID": "include/05_01_paneldaten_effectsmodels.html#fixed--und-random-effects",
+    "href": "include/05_01_paneldaten_effectsmodels.html#fixed--und-random-effects",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Fixed- und Random-Effects",
+    "text": "Fixed- und Random-Effects\n\nGrundidee der Effekte:\n\nBeide Modelle basieren auf der Modellgleichung:\n\\[\ny_{it} = \\alpha_i + X_{it}^\\top \\beta + \\epsilon_{it}\n\\]\nUnterschied liegt in der Interpretation der individuellen Effekte \\(\\alpha_i\\)\n\nFixed-Effects-Modell (FE-Modell):\n\nAnnahme: \\(\\alpha_i\\) sind deterministische Individuen-spezifische Effekte, \\(\\alpha_i\\) kann mit \\(X_{it}\\) korrelieren\nIndividuelle Unterschiede werden explizit, als fester Mittelwert für\n\nB. jedes Individuum modelliert \\(\\ra\\) geeignet, wenn \\(N\\) klein ist und sich Individuen systematisch unterscheiden (z. B. unterschiedliche Länder)\n\n\nRandom-Effects-Modell (RE-Modell):\n\nAnnahme: \\(\\alpha_i\\) sind zufällige Ziehungen aus einer Verteilung mit \\(\\alpha_i \\sim \\mathcal{N}(\\alpha, \\sigma_{\\alpha}^2)\\)\n\nIndividuelle Unterschiede werden als Zufallsvariable betrachtet, gut geeignet, wenn die Individuen eine zufällige Stichprobe aus einer größeren Population darstellen \\(\\ra\\) ACHTUNG: \\(\\text{Cov}(X_{it}, \\alpha_i) = 0\\)\n\nStatistische Abwägung:\n\nFixed-Effects-Modell erlaubt konsistente Schätzung, auch wenn $(X_{it}, _i) $\n\nRandom-Effects-Modell führt zu effizienteren Schätzungen, aber nur wenn $(X_{it}, _i) = 0 $\n\nWahl zwischen beiden Modellen häufig mittels Hausman-Test (siehe späteres Kapitel)",
+    "crumbs": [
+      "Studienbrief 5",
+      "Paneldaten und das Effects-Modell"
+    ]
+  },
+  {
+    "objectID": "include/03_01_TZ.html",
+    "href": "include/03_01_TZ.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Multiple lineare Regression:\n\\[\nAV = \\beta_0 + \\beta_1 UV_1 + \\dots + \\beta_n UV_n\n\\]\nStandardregression, bei der die abhängige Variable (AV) durch mehrere unabhängige Variablen (UV) erklärt wird.\nZeitabhängige Regression:\n\\[\nAV(t) = \\beta_0 + \\beta_1 UV_1(t) + \\dots + \\beta_n UV_n(t)\n\\]\nErweiterung um den Zeitfaktor ( t ), sodass alle Variablen zeitabhängig sind.\nAllgemeine Darstellung einer Zeitreihe:\n\\[\n\\{x_t\\}, \\quad t \\in \\mathbb{N}\n\\]\nEine Zeitreihe ist eine Menge gerichteter Beobachtungen über die Zeit.\nLineares Modell für eine Zeitreihe:\n\\[\nx_t = \\beta \\cdot t\n\\]\nEinfache lineare Darstellung einer Zeitreihe, die nur einen linearen Trend abbildet.\n\n\n\n\n\nLineares Modell basiert auf Daten von 1991 bis 2016.\nVorhersage für 2017–2021 zeigt deutliche Abweichungen von den tatsächlichen Werten.\nLineares Modell erklärt Schwankungen nicht hinreichend: Vorhersage weicht von tatsächlichen Werten ab.\nAdditives und multiplikatives Komponentenmodell sollen bessere Ergebnisse liefern.\n\n\n\n\n\n\nAdditives Komponentenmodell:\n\nEine Zeitreihe \\(x_t\\) wird in drei additive Komponenten zerlegt:\n\\[\nx_t = x_T(t) + x_S(t) + x_R(t)\n\\]\nTrendkomponente ( x_T(t) ): langfristige systematische Veränderung\nSaisonkomponente ( x_S(t) ): regelmäßige jahreszeitliche Schwankungen\nRestkomponente ( x_R(t) ): unregelmäßige Schwankungen — nicht durch Trend oder Saison erklärt\n\nAnalyse in R möglich mit decompose()-Funktion.\nBeispielgrafik zeigt starke Restkomponente ab 2020 (Corona-Effekt).\n\n\n\n\n\n\nMultiplikatives Komponentenmodell:\n\nEine Zeitreihe \\(x_t\\) wird in drei Komponenten zerlegt:\n\\[\nx_t = x_T(t) \\cdot x_S(t) \\cdot x_R(t)\n\\]\nTrendkomponente ( x_T(t) ): langfristige systematische Veränderung\nSaisonkomponente ( x_S(t) ): jahreszeitliche Schwankungen, die mit der Zeit größer werden\nRestkomponente ( x_R(t) ): unregelmäßige Schwankungen, die nicht durch Trend oder Saison erklärbar sind\n\nWird genutzt, wenn die Streuung der Zeitreihe über die Zeit zunimmt.\nUnterschied zum additiven Modell:\n\nRest- und Saisonkomponente haben geringere Werte.\nModell reagiert stärker auf äußere Einflüsse (z. B. Wirtschaftskrisen).\n\nBeispiel: BNE-Daten zeigen stärkeren Einfluss der Asienkrise 1997 im multiplikativen Modell.\n\n\n\n\n\n\nadditiv vs. multiplikativ:\n\nAdditive Modelle geeignet bei konstanter saisonaler Schwankung.\nMultiplikative Modelle, wenn Streuung der Zeitreihe mit der Zeit wächst.\nBeispiel: Für quartalsweises BNE von Deutschland wäre ein additives Modell passend.\n\nMultiplikativ zu additiv transformieren:\n\nNotwendig, da viele Analysen auf additiven Modellen basieren.\nTransformation der Zeitreihe durch Logarithmieren oder Box-Cox.\n\nLogarithmische Transformation:\n\\[\ny_t = \\ln(x_t)\n\\]\nBox-Cox-Transformation:\n\\[\ny_t =\n\\begin{cases}\n\\frac{x_t^\\lambda - 1}{\\lambda}, & \\lambda \\neq 0 \\\\\n\\ln(x_t), & \\lambda = 0\n\\end{cases}\n\\]\n\nReduziert Heteroskedastizität (ungleiche Varianzen über die Zeit).\nErmöglicht Anwendung additiver Analysen auf ursprünglich multiplikative Zeitreihen.",
+    "crumbs": [
+      "Studienbrief 3",
+      "Theorie der Zeitreihen"
+    ]
+  },
+  {
+    "objectID": "include/03_01_TZ.html#zeitreihen-einleitung-komponentenmodelle",
+    "href": "include/03_01_TZ.html#zeitreihen-einleitung-komponentenmodelle",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Multiple lineare Regression:\n\\[\nAV = \\beta_0 + \\beta_1 UV_1 + \\dots + \\beta_n UV_n\n\\]\nStandardregression, bei der die abhängige Variable (AV) durch mehrere unabhängige Variablen (UV) erklärt wird.\nZeitabhängige Regression:\n\\[\nAV(t) = \\beta_0 + \\beta_1 UV_1(t) + \\dots + \\beta_n UV_n(t)\n\\]\nErweiterung um den Zeitfaktor ( t ), sodass alle Variablen zeitabhängig sind.\nAllgemeine Darstellung einer Zeitreihe:\n\\[\n\\{x_t\\}, \\quad t \\in \\mathbb{N}\n\\]\nEine Zeitreihe ist eine Menge gerichteter Beobachtungen über die Zeit.\nLineares Modell für eine Zeitreihe:\n\\[\nx_t = \\beta \\cdot t\n\\]\nEinfache lineare Darstellung einer Zeitreihe, die nur einen linearen Trend abbildet.\n\n\n\n\n\nLineares Modell basiert auf Daten von 1991 bis 2016.\nVorhersage für 2017–2021 zeigt deutliche Abweichungen von den tatsächlichen Werten.\nLineares Modell erklärt Schwankungen nicht hinreichend: Vorhersage weicht von tatsächlichen Werten ab.\nAdditives und multiplikatives Komponentenmodell sollen bessere Ergebnisse liefern.\n\n\n\n\n\n\nAdditives Komponentenmodell:\n\nEine Zeitreihe \\(x_t\\) wird in drei additive Komponenten zerlegt:\n\\[\nx_t = x_T(t) + x_S(t) + x_R(t)\n\\]\nTrendkomponente ( x_T(t) ): langfristige systematische Veränderung\nSaisonkomponente ( x_S(t) ): regelmäßige jahreszeitliche Schwankungen\nRestkomponente ( x_R(t) ): unregelmäßige Schwankungen — nicht durch Trend oder Saison erklärt\n\nAnalyse in R möglich mit decompose()-Funktion.\nBeispielgrafik zeigt starke Restkomponente ab 2020 (Corona-Effekt).\n\n\n\n\n\n\nMultiplikatives Komponentenmodell:\n\nEine Zeitreihe \\(x_t\\) wird in drei Komponenten zerlegt:\n\\[\nx_t = x_T(t) \\cdot x_S(t) \\cdot x_R(t)\n\\]\nTrendkomponente ( x_T(t) ): langfristige systematische Veränderung\nSaisonkomponente ( x_S(t) ): jahreszeitliche Schwankungen, die mit der Zeit größer werden\nRestkomponente ( x_R(t) ): unregelmäßige Schwankungen, die nicht durch Trend oder Saison erklärbar sind\n\nWird genutzt, wenn die Streuung der Zeitreihe über die Zeit zunimmt.\nUnterschied zum additiven Modell:\n\nRest- und Saisonkomponente haben geringere Werte.\nModell reagiert stärker auf äußere Einflüsse (z. B. Wirtschaftskrisen).\n\nBeispiel: BNE-Daten zeigen stärkeren Einfluss der Asienkrise 1997 im multiplikativen Modell.\n\n\n\n\n\n\nadditiv vs. multiplikativ:\n\nAdditive Modelle geeignet bei konstanter saisonaler Schwankung.\nMultiplikative Modelle, wenn Streuung der Zeitreihe mit der Zeit wächst.\nBeispiel: Für quartalsweises BNE von Deutschland wäre ein additives Modell passend.\n\nMultiplikativ zu additiv transformieren:\n\nNotwendig, da viele Analysen auf additiven Modellen basieren.\nTransformation der Zeitreihe durch Logarithmieren oder Box-Cox.\n\nLogarithmische Transformation:\n\\[\ny_t = \\ln(x_t)\n\\]\nBox-Cox-Transformation:\n\\[\ny_t =\n\\begin{cases}\n\\frac{x_t^\\lambda - 1}{\\lambda}, & \\lambda \\neq 0 \\\\\n\\ln(x_t), & \\lambda = 0\n\\end{cases}\n\\]\n\nReduziert Heteroskedastizität (ungleiche Varianzen über die Zeit).\nErmöglicht Anwendung additiver Analysen auf ursprünglich multiplikative Zeitreihen.",
+    "crumbs": [
+      "Studienbrief 3",
+      "Theorie der Zeitreihen"
     ]
   },
   {
@@ -121,144 +779,80 @@
     ]
   },
   {
-    "objectID": "include/02_04_MLR.html",
-    "href": "include/02_04_MLR.html",
-    "title": "Multinomiale Logistische Regression",
-    "section": "",
-    "text": "Idee: Erweiterung von binär auf \\(&gt;2\\), d.h. multinomial",
-    "crumbs": [
-      "Studienbrief 2",
-      "Multinomial logistische Regression"
-    ]
-  },
-  {
-    "objectID": "include/02_04_MLR.html#einführung-und-beispiel",
-    "href": "include/02_04_MLR.html#einführung-und-beispiel",
-    "title": "Multinomiale Logistische Regression",
-    "section": "",
-    "text": "Idee: Erweiterung von binär auf \\(&gt;2\\), d.h. multinomial",
-    "crumbs": [
-      "Studienbrief 2",
-      "Multinomial logistische Regression"
-    ]
-  },
-  {
-    "objectID": "include/02_04_MLR.html#umsetzung-in-r",
-    "href": "include/02_04_MLR.html#umsetzung-in-r",
-    "title": "Multinomiale Logistische Regression",
-    "section": "Umsetzung in R:",
-    "text": "Umsetzung in R:\nReferenzkategorie: selbstein dritte Kategorie: ref='3' oder ref='eher rechts', ACHTUNG: falls ‘eher rechts’ benutzt wird, dann muss vorher die Variable mit as.factor() transformiert werden\n\n#--multinominale logistische Regression: Labels & Partition--\ndata_einsch &lt;- read.csv(\"../data/einschaetzung.csv\")\nhead(data_einsch)\n\n  selbstein schule schicht alter\n1         2      1       1     2\n2         3      1       2     1\n3         1      1       2     1\n4         2      1       1     1\n5         1      1       2     1\n6         3      1       2     2\n\nlevels (data_einsch$selbstein) &lt;- c('eher links', 'Mitte', 'eher rechts')\ndata_einsch$selbstein &lt;- as.factor(data_einsch$selbstein)\nset.seed(222)\n# Nullmodell erhält 80% der Daten, Trainingsmodell 20%: ZUFÄLLIG ausgewählt\nind &lt;-sample(2, nrow(data_einsch), replace = TRUE, prob = c(0.8, 0.2))\nmodel_0 &lt;- data_einsch[ind ==1,]\nmodel   &lt;- data_einsch[ind ==2,]\n# install.packages(\"nnet\")\nlibrary(nnet)\nmodel_0$selbstein &lt;- relevel(model_0$selbstein, ref = \"3\")\nmultinominal.model &lt;- nnet::multinom(selbstein ~ alter + schule, data = model_0)\n\n# weights:  12 (6 variable)\ninitial  value 2311.480255 \niter  10 value 2163.887112\nfinal  value 2163.886874 \nconverged\n\nsummary(multinominal.model)\n\nCall:\nnnet::multinom(formula = selbstein ~ alter + schule, data = model_0)\n\nCoefficients:\n  (Intercept)      alter      schule\n1    1.507787 -0.9693638  0.01803241\n2    2.716944 -0.7463522 -0.66243962\n\nStd. Errors:\n  (Intercept)     alter    schule\n1   0.3217004 0.1306577 0.1291727\n2   0.2912695 0.1170838 0.1174561\n\nResidual Deviance: 4327.774 \nAIC: 4339.774 \n\n\n\nInterpretation: die Ergebnisse sind stets in Relation zur Referenzkategorie zu interpretieren\nAlter: \\(-0.9694\\) negativer Wert, d.h. der Wechsel v. Alterskategorie \\(1\\) (unter 45) nach Alterskategorie \\(2\\) (über 45) wirkt sich negativ zur Zugehörigkeit \\(selbstsein=1=\\)’eher links’ aus relativ zur Basiskategorie \\(selbstsein=3=\\)’eher rechts’",
-    "crumbs": [
-      "Studienbrief 2",
-      "Multinomial logistische Regression"
-    ]
-  },
-  {
-    "objectID": "include/02_04_MLR.html#interpretation---fortsetzung",
-    "href": "include/02_04_MLR.html#interpretation---fortsetzung",
-    "title": "Multinomiale Logistische Regression",
-    "section": "Interpretation - Fortsetzung",
-    "text": "Interpretation - Fortsetzung",
-    "crumbs": [
-      "Studienbrief 2",
-      "Multinomial logistische Regression"
-    ]
-  },
-  {
-    "objectID": "include/02_04_MLR.html#p-wert",
-    "href": "include/02_04_MLR.html#p-wert",
-    "title": "Multinomiale Logistische Regression",
-    "section": "P-Wert",
-    "text": "P-Wert\n\nlibrary(magrittr)\ncoeffs &lt;- summary(multinominal.model)$coefficients\nses    &lt;- summary(multinominal.model)$standard.errors\nz &lt;- coeffs / ses\np &lt;- (1 - pnorm(abs(z), 0, 1)) * 2\np\n\n  (Intercept)        alter       schule\n1 2.77334e-06 1.179057e-13 8.889767e-01\n2 0.00000e+00 1.835458e-10 1.701566e-08\n\n\nWir sehen: alle Koeffizienten hochsignifikant.",
-    "crumbs": [
-      "Studienbrief 2",
-      "Multinomial logistische Regression"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n\n\n Back to top",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "include/99_altklausuren_A2.html",
+    "href": "include/99_altklausuren_A2.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Welcome! Hier findest du Skripte, Beispiele und R‑Code für den Kurs. Starte mit einem der Bereiche oder nutze die Suche links.\n\n Kurzeinführung R und Python   Multiple Lineare Regression   Binär logistische Regression   Altklausuren \n\n\nAktuelles\n\n\n\n\n\n\nNote\n\n\n\nHinweise: Klausurtermin 01:\n\n\n\n\n\n\n\n\nNote\n\n\n\nHinweise: Klausurtermin 02:\n\n\n\n\n\n\n\n\nNote\n\n\n\nHinweise: Folien und Notebooks werden laufend ergänzt. Bei Fragen oder Fehlern bitte im GitHub-Menü (links oben) melden.\n\n\n\n\n\nIlya Zarubin (M.Sc.)\nE‑mail: ilya.zarub@campus.hamburger-fh.de\n\nKontakt Über\n\n\n\n\n\n\n Back to top",
+    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
     "crumbs": [
-      "Home"
+      "Altklausuren",
+      "Aufgabentyp 2"
     ]
   },
   {
-    "objectID": "include/02_02_MLR.html",
-    "href": "include/02_02_MLR.html",
-    "title": "Multiple lineare Regression: Überblick",
+    "objectID": "include/99_altklausuren_A2.html#klausuraufgaben-sb-02",
+    "href": "include/99_altklausuren_A2.html#klausuraufgaben-sb-02",
+    "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Daten: gebrauchtwagen.csv aus Eurotax-Liste (Kauf/Verkauf von Gebrauchtwagen in Europa)\n\nPreis: Verkaufspreis (in Euro)\n\nKilometer: Kilometerstand (in km)\n\nService: Anzahl der Serviceintervalle (metrisch = reelle Zahlen)\n\nGarage: Garagennutzung (nominal, dichotom: ja/nein = 0/1 Codierung)\n\nFarbe: Farbe 1–3 (nominal)\nBesteht ein Zusammenhang zwischen Kilometerstand und Preis?\n\nAnalyse im Rahmen einer Regressionsanalyse — nicht Korrelationsstudie\n\nStreudiagramm / Scatterplot:\n\n\n\n\n\n\n\nFigure 1: Abbildung\n\n\n\n\n\n\n\nabhängige Variable \\(Y\\)\n\nErweiterung: mehrere (multiple) unabhängige Variablen / Kovariate\n\nunabhängigen Variable(n) = Regressore(n) = Kontrollvariable(n) = Kovariate = Prädiktoren\n\ndieselben Bezeichnungen für \\(X\\) auf der rechten Seite!\n\nstochastischer Störterm / Fehlerterm \\(\\varepsilon\\): zufälliger Fehler führt zu Abweichungen in der linearen Beziehung zwischen \\(Y\\) und \\(X\\)\n\\(Y = \\alpha + \\beta_1 \\cdot X_1 + \\ldots + \\beta_k \\cdot X_k + \\varepsilon_i\\)\n\\(Preis = \\alpha + \\beta_{1} \\cdot Kilometer + \\beta_{2} \\cdot Service + \\beta_{3} \\cdot Garage + \\varepsilon_i\\)\nErklärung der Variablenbezeichnung:\n\n\\(Y\\): abhängige Variable (Preis), auch Responsevariable genannt\n\n\\(1, X_1, \\ldots, X_k\\): Achsenabschnitt & unabhängige Variable(n) / Kovariate\n\n\\(\\alpha, \\beta_1, \\ldots, \\beta_k\\): Regressionskoeffizienten\n\nBestimmtheitsmaß \\(R^2=\\frac{TTS-RSS}{TTS}\\)\n\\(\\hookrightarrow\\) Gesamtquadratensumme (Total Sum of Squares = TTS)\n\\(\\hookrightarrow\\) Residuenquadratensumme (Residual Sum of Squares = RSS)\n\\(\\hookrightarrow\\) Anteil der durch die Regression erklärten Varianz an der Gesamtvarianz der abhängigen Variable \\(Y\\)",
+    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
     "crumbs": [
-      "Studienbrief 2",
-      "Multiple Lineare Regression"
+      "Altklausuren",
+      "Aufgabentyp 2"
     ]
   },
   {
-    "objectID": "include/02_02_MLR.html#einleitung",
-    "href": "include/02_02_MLR.html#einleitung",
-    "title": "Multiple lineare Regression: Überblick",
+    "objectID": "include/05_06_hausmann.html",
+    "href": "include/05_06_hausmann.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Daten: gebrauchtwagen.csv aus Eurotax-Liste (Kauf/Verkauf von Gebrauchtwagen in Europa)\n\nPreis: Verkaufspreis (in Euro)\n\nKilometer: Kilometerstand (in km)\n\nService: Anzahl der Serviceintervalle (metrisch = reelle Zahlen)\n\nGarage: Garagennutzung (nominal, dichotom: ja/nein = 0/1 Codierung)\n\nFarbe: Farbe 1–3 (nominal)\nBesteht ein Zusammenhang zwischen Kilometerstand und Preis?\n\nAnalyse im Rahmen einer Regressionsanalyse — nicht Korrelationsstudie\n\nStreudiagramm / Scatterplot:\n\n\n\n\n\n\n\nFigure 1: Abbildung\n\n\n\n\n\n\n\nabhängige Variable \\(Y\\)\n\nErweiterung: mehrere (multiple) unabhängige Variablen / Kovariate\n\nunabhängigen Variable(n) = Regressore(n) = Kontrollvariable(n) = Kovariate = Prädiktoren\n\ndieselben Bezeichnungen für \\(X\\) auf der rechten Seite!\n\nstochastischer Störterm / Fehlerterm \\(\\varepsilon\\): zufälliger Fehler führt zu Abweichungen in der linearen Beziehung zwischen \\(Y\\) und \\(X\\)\n\\(Y = \\alpha + \\beta_1 \\cdot X_1 + \\ldots + \\beta_k \\cdot X_k + \\varepsilon_i\\)\n\\(Preis = \\alpha + \\beta_{1} \\cdot Kilometer + \\beta_{2} \\cdot Service + \\beta_{3} \\cdot Garage + \\varepsilon_i\\)\nErklärung der Variablenbezeichnung:\n\n\\(Y\\): abhängige Variable (Preis), auch Responsevariable genannt\n\n\\(1, X_1, \\ldots, X_k\\): Achsenabschnitt & unabhängige Variable(n) / Kovariate\n\n\\(\\alpha, \\beta_1, \\ldots, \\beta_k\\): Regressionskoeffizienten\n\nBestimmtheitsmaß \\(R^2=\\frac{TTS-RSS}{TTS}\\)\n\\(\\hookrightarrow\\) Gesamtquadratensumme (Total Sum of Squares = TTS)\n\\(\\hookrightarrow\\) Residuenquadratensumme (Residual Sum of Squares = RSS)\n\\(\\hookrightarrow\\) Anteil der durch die Regression erklärten Varianz an der Gesamtvarianz der abhängigen Variable \\(Y\\)",
+    "text": "Ziel:\n\nAuswahl zwischen Fixed-Effects (FE) und Random-Effects (RE) Modell\n\nTestet, ob die individuellen Effekte \\(\\alpha_i\\) mit den unabhängigen Variablen \\(X_{it}\\) korreliert sind\n\nStatistische Hypothesen:\n\nNullhypothese \\(H_0\\): Es liegt ein RE-Modell vor\n\\((\\text{Cov}(X_{it}, \\alpha_i) = 0)\\)\n\nAlternativhypothese \\(H_1\\): Es liegt kein RE-Modell vor\n\\((\\text{Cov}(X_{it}, \\alpha_i) \\neq 0)\\)\n\nTeststatistik:\n\nDie Prüfgröße basiert auf der Differenz der Schätzer:\n\\[\n\\lambda = (\\widehat{\\beta}_{FE} - \\widehat{\\beta}_{RE})^\\top\n\\left( \\text{Var}(\\widehat{\\beta}_{FE}) - \\text{Var}(\\widehat{\\beta}_{RE})\n\\right)^{-1}\n(\\widehat{\\beta}_{FE} - \\widehat{\\beta}_{RE})\n\\]\n\\(\\lambda\\) folgt asymptotisch einer Chi-Quadrat-Verteilung mit \\(D\\) Freiheitsgraden\n\nEntscheidungsregel:\n\nFalls \\(\\lambda &gt; \\chi^2_{1-\\alpha, D}\\), wird \\(H_0\\) verworfen → FE-Modell bevorzugt\n\nFalls \\(\\lambda \\leq \\chi^2_{1-\\alpha, D}\\), kann \\(H_0\\) nicht verworfen werden → RE-Modell zulässig",
     "crumbs": [
-      "Studienbrief 2",
-      "Multiple Lineare Regression"
+      "Studienbrief 5",
+      "Auswahl geeigneteR Paneldatenmodelle: Hausman-Test"
     ]
   },
   {
-    "objectID": "include/02_02_MLR.html#multiple-lineare-regression-beispiel",
-    "href": "include/02_02_MLR.html#multiple-lineare-regression-beispiel",
-    "title": "Multiple lineare Regression: Überblick",
-    "section": "Multiple lineare Regression: Beispiel",
-    "text": "Multiple lineare Regression: Beispiel\nSyntax: \\(\\hookrightarrow\\) Ergänze mit + die weiteren Regressoren\n\ndata_gw &lt;- read.csv(\"../data/gebrauchtwagen.csv\")\nmodel &lt;- lm(Preis ~ Kilometer + Service + Garage, data = data_gw)\nsummary(model)\n\n\nCall:\nlm(formula = Preis ~ Kilometer + Service + Garage, data = data_gw)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-97.343 -30.205  -1.084  26.777  97.323 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  6.187e+03  2.585e+01 239.379   &lt;2e-16 ***\nKilometer   -3.114e-02  6.359e-04 -48.966   &lt;2e-16 ***\nService      1.345e+02  3.867e+00  34.793   &lt;2e-16 ***\nGarage       1.901e+01  8.461e+00   2.247    0.027 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.64 on 96 degrees of freedom\nMultiple R-squared:  0.9754,    Adjusted R-squared:  0.9746 \nF-statistic:  1267 on 3 and 96 DF,  p-value: &lt; 2.2e-16\n\n\nInterpretation:\n\n\\(R^2=0.9754\\): 97.54 % der Varianz (im Preis) wird durch das Modell (Achsenabschnitt und alle 3 Regressoren) erklärt \\(\\hookrightarrow\\) sehr hoher Wert nahe Obergrenze 1 ! \\(R^2 \\in [0,1]\\)\n\nKilometer/Service: \\(p&lt;2e-16\\) \\(\\rightarrow\\) hoch signifikant: Sternchen ***\n\nGarage: \\(p=0.027\\) \\(\\rightarrow\\) signifikant auf Niveau 5 %: Sternchen *\n\nF-Wert:\n\nletzte Zeile des summary outputs: p-Wert p-value: &lt;2.2e-16 der F-Statistik zeigt sehr hohe Signifikanz aller drei gemeinsamen Kovariate auf den Preis\n\n\\(Preis = 6187 - 0.003114 \\cdot Kilometer + 134.5 \\cdot Service + 19.01 \\cdot Garage\\)\n\nSteigt der Kilometerstand um 1 (eine kleine/marginale Einheit), so sinkt der Preis um \\(\\beta\\) Einheiten:\n\nAchsenabschnitt 6187 EUR: Basispreis eines Gebrauchtwagens\n\nPro gefahrenem Kilometer: erwarteter Verkaufspreis sinkt um ca. 3 Cent\n\nPro getätigtem Service: erwarteter Verkaufspreis steigt um ca. 134.5 EUR\n\nGaragennutzung (vs. draußen Parken): Verkaufspreis steigt um 19 EUR",
-    "crumbs": [
-      "Studienbrief 2",
-      "Multiple Lineare Regression"
-    ]
-  },
-  {
-    "objectID": "include/01_programmierung.html",
-    "href": "include/01_programmierung.html",
-    "title": "Vorbereitung - Programmiertools",
+    "objectID": "include/05_06_hausmann.html#der-hausman-test-auswahl-eines-geeigneten-paneldatenmodells",
+    "href": "include/05_06_hausmann.html#der-hausman-test-auswahl-eines-geeigneten-paneldatenmodells",
+    "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Auswahl folgender Pakete sollte für die Bearbeitung der Aufgaben und das Nachimplementieren der Anwendungen aus den Studienbriefen ausreichend sein:\n#| cache: true\ninstall.packages(\n  c(\"rcompanion\", \"polr\", \"ordinal\", \"DescTools\", \"tidyverse\", \"ggplot2\", \"dplyr\",\n    \"PerformanceAnalytics\", \"rugarch\", \"tsibbledata\", \"mFilter\", \"FinTS\",\n    \"plm\")\n)\nRest der Veranstaltung: R-code – daher eine kleine Wiederholung zu Python weiter unten.\n\n########################### Allgemeine Grundlagen #####\ntest      &lt;- 5             # Kommentarbereich\ntestplus  &lt;- test + 5      # Addition\ntestminus &lt;- testplus - 3  # Subtraktion\ntestdiv   &lt;- testminus / 7 # Division\ntestmult  &lt;- testdiv * 4   # Multiplikation\n\nv &lt;- c(1, 2, 10, 5, 6, 7) # Vektor\nv[3]\nv[1:4]\nv[v &lt; 3]\nl &lt;- list(v = c(1,2), f = c(\"a\", \"b\"))\nl$v\nl[1:2]\nl[[2]]\nl[\"v\"]\n\n\nmymatrix &lt;- matrix(data = c(1,2,3,4,5,6), nrow = 2, ncol = 3)\nmymatrix[1,2]\nmymatrix[, 3]\nmymatrix[2, ]\n\nmydf &lt;- data.frame(name1 = c(1,2),name2 = c(3,4), name3 = c(5,6))\nmydf[1,2]\nmydf$name3[1]\nmydf[,3]\nmydf$name1\nmydf[2, ]\n\n########################### Pakete installieren #####\n#install.packages(\"tidyverse\")\nlibrary(tidyverse)\n########################### Daten einlesen #####\nmydata &lt;- readxl::read_xls(\"bsp_file.xlsx\")\nmydata &lt;- read.csv(\"bsp_file.csv\")\nmydata &lt;- foreign::read.dta(\"bsp_file.dta\")\ntestme &lt;- load(\"bsp_file.rda\")\n\n########################### Conditional Code #####\nfor (i in c(1, 3, 5)) {\n  print(i)\n}\nwhile (i &lt;= 4) {\nprint(\"i is still smaller or equal to 4\")\n}\n\n\nif (i &lt;= 4) {\n  print(i)\n} else {\n  print(\"i is not smaller 4\")\n}\n\n# Logische Operationen\na &lt;- 3\nb &lt;- 4\n\na == b\na != b\na &gt; b\na &gt;= b\na &lt;- NA\nb &lt;- \"text ist hier\"\nis.na(a)\n!is.na(b)\n\n########################### Funktionen definieren #####\nbsp_funktion &lt;- function(x, y) {\n muffin &lt;- c(x + y, x * y, x - y)\n return(muffin)\n}\n\n\n########################### Datenmanipulation #####\nhead(mtcars)\nlibrary(magrittr) # fuer den Pipe-operator\nmtcars %&gt;%\n  dplyr::select(mpg, hp)\n\nlibrary(dplyr)\nmtcars %&gt;%\n  select(mpg, hp)\n\nmtcars %&gt;% head() %&gt;% filter(cyl %in% 4:6)\n#\n\n\n\n########################### ggplot 2 Intro #####\nlibrary(ggplot2)\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\nshape = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species,\nshape = Species)) +\ngeom_point()\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti'), ],\naes(x = variable, y = value)) +\ngeom_line() +\nylim(25, 50) +\nxlim(1995, 2020)\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\nggplot(data = wb_data,\naes(x = `Country Name`)) +\ngeom_bar(stat = 'count') +\ncoord_flip()\n\nggplot(data = wb_mean,\naes(x = Mean, y = Country)) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor ='red', stat = \"identity\")\n\n\nggplot(data = wb_mean,\naes(x = Mean,\ny = reorder(Country, -Mean))) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor='red', stat = \"identity\")\n\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species))\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species),\nnrow = 3)\n\n\n\n# install.packages(\"ggpubr\")\nlibrary(ggpubr)\n\nscatter_1 &lt;- ggplot(data = iris, aes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nline_2 &lt;- ggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\n\nggarrange(scatter_1, line_2,\nlabels = c('Erster Scatterplot',\n'Zweites Liniendiagram'),\nlegend = 'bottom')",
+    "text": "Ziel:\n\nAuswahl zwischen Fixed-Effects (FE) und Random-Effects (RE) Modell\n\nTestet, ob die individuellen Effekte \\(\\alpha_i\\) mit den unabhängigen Variablen \\(X_{it}\\) korreliert sind\n\nStatistische Hypothesen:\n\nNullhypothese \\(H_0\\): Es liegt ein RE-Modell vor\n\\((\\text{Cov}(X_{it}, \\alpha_i) = 0)\\)\n\nAlternativhypothese \\(H_1\\): Es liegt kein RE-Modell vor\n\\((\\text{Cov}(X_{it}, \\alpha_i) \\neq 0)\\)\n\nTeststatistik:\n\nDie Prüfgröße basiert auf der Differenz der Schätzer:\n\\[\n\\lambda = (\\widehat{\\beta}_{FE} - \\widehat{\\beta}_{RE})^\\top\n\\left( \\text{Var}(\\widehat{\\beta}_{FE}) - \\text{Var}(\\widehat{\\beta}_{RE})\n\\right)^{-1}\n(\\widehat{\\beta}_{FE} - \\widehat{\\beta}_{RE})\n\\]\n\\(\\lambda\\) folgt asymptotisch einer Chi-Quadrat-Verteilung mit \\(D\\) Freiheitsgraden\n\nEntscheidungsregel:\n\nFalls \\(\\lambda &gt; \\chi^2_{1-\\alpha, D}\\), wird \\(H_0\\) verworfen → FE-Modell bevorzugt\n\nFalls \\(\\lambda \\leq \\chi^2_{1-\\alpha, D}\\), kann \\(H_0\\) nicht verworfen werden → RE-Modell zulässig",
     "crumbs": [
-      "Studienbrief 1",
-      "Prommiergrundlagen `R` und Python"
+      "Studienbrief 5",
+      "Auswahl geeigneteR Paneldatenmodelle: Hausman-Test"
     ]
   },
   {
-    "objectID": "include/01_programmierung.html#r",
-    "href": "include/01_programmierung.html#r",
-    "title": "Vorbereitung - Programmiertools",
+    "objectID": "include/05_06_hausmann.html#hausman-test-implementierung",
+    "href": "include/05_06_hausmann.html#hausman-test-implementierung",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Hausman-Test – Implementierung",
+    "text": "Hausman-Test – Implementierung\n\nImplementierung in R\n\nlibrary(plm)\ndata(\"EmplUK\", package = \"plm\")\nphtest(wage ~ emp + capital + output, data = EmplUK, \n       effect = \"individual\", model = c(\"within\", \"random\"),\n       index = c(\"firm\", \"year\")\n)\n\n\n    Hausman Test\n\ndata:  wage ~ emp + capital + output\nchisq = 3.9812, df = 3, p-value = 0.2635\nalternative hypothesis: one model is inconsistent\n\n\nHypothese, dass sowohl RE- als auch FE-Schätzer verwendbar sind, wird nicht verworfen. Man kann also den RE-Schätzer nehmen und z. B. die bei diesem Schätzer signifikanten Ergebnisse für capital interpretieren zusätzlich zu output.",
+    "crumbs": [
+      "Studienbrief 5",
+      "Auswahl geeigneteR Paneldatenmodelle: Hausman-Test"
+    ]
+  },
+  {
+    "objectID": "include/99_altklausuren_A1.html",
+    "href": "include/99_altklausuren_A1.html",
+    "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Auswahl folgender Pakete sollte für die Bearbeitung der Aufgaben und das Nachimplementieren der Anwendungen aus den Studienbriefen ausreichend sein:\n#| cache: true\ninstall.packages(\n  c(\"rcompanion\", \"polr\", \"ordinal\", \"DescTools\", \"tidyverse\", \"ggplot2\", \"dplyr\",\n    \"PerformanceAnalytics\", \"rugarch\", \"tsibbledata\", \"mFilter\", \"FinTS\",\n    \"plm\")\n)\nRest der Veranstaltung: R-code – daher eine kleine Wiederholung zu Python weiter unten.\n\n########################### Allgemeine Grundlagen #####\ntest      &lt;- 5             # Kommentarbereich\ntestplus  &lt;- test + 5      # Addition\ntestminus &lt;- testplus - 3  # Subtraktion\ntestdiv   &lt;- testminus / 7 # Division\ntestmult  &lt;- testdiv * 4   # Multiplikation\n\nv &lt;- c(1, 2, 10, 5, 6, 7) # Vektor\nv[3]\nv[1:4]\nv[v &lt; 3]\nl &lt;- list(v = c(1,2), f = c(\"a\", \"b\"))\nl$v\nl[1:2]\nl[[2]]\nl[\"v\"]\n\n\nmymatrix &lt;- matrix(data = c(1,2,3,4,5,6), nrow = 2, ncol = 3)\nmymatrix[1,2]\nmymatrix[, 3]\nmymatrix[2, ]\n\nmydf &lt;- data.frame(name1 = c(1,2),name2 = c(3,4), name3 = c(5,6))\nmydf[1,2]\nmydf$name3[1]\nmydf[,3]\nmydf$name1\nmydf[2, ]\n\n########################### Pakete installieren #####\n#install.packages(\"tidyverse\")\nlibrary(tidyverse)\n########################### Daten einlesen #####\nmydata &lt;- readxl::read_xls(\"bsp_file.xlsx\")\nmydata &lt;- read.csv(\"bsp_file.csv\")\nmydata &lt;- foreign::read.dta(\"bsp_file.dta\")\ntestme &lt;- load(\"bsp_file.rda\")\n\n########################### Conditional Code #####\nfor (i in c(1, 3, 5)) {\n  print(i)\n}\nwhile (i &lt;= 4) {\nprint(\"i is still smaller or equal to 4\")\n}\n\n\nif (i &lt;= 4) {\n  print(i)\n} else {\n  print(\"i is not smaller 4\")\n}\n\n# Logische Operationen\na &lt;- 3\nb &lt;- 4\n\na == b\na != b\na &gt; b\na &gt;= b\na &lt;- NA\nb &lt;- \"text ist hier\"\nis.na(a)\n!is.na(b)\n\n########################### Funktionen definieren #####\nbsp_funktion &lt;- function(x, y) {\n muffin &lt;- c(x + y, x * y, x - y)\n return(muffin)\n}\n\n\n########################### Datenmanipulation #####\nhead(mtcars)\nlibrary(magrittr) # fuer den Pipe-operator\nmtcars %&gt;%\n  dplyr::select(mpg, hp)\n\nlibrary(dplyr)\nmtcars %&gt;%\n  select(mpg, hp)\n\nmtcars %&gt;% head() %&gt;% filter(cyl %in% 4:6)\n#\n\n\n\n########################### ggplot 2 Intro #####\nlibrary(ggplot2)\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\nshape = Species)) +\ngeom_point()\n\nggplot(data = iris,\naes(x = Petal.Length,\ny = Sepal.Length,\ncolor = Species,\nshape = Species)) +\ngeom_point()\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti'), ],\naes(x = variable, y = value)) +\ngeom_line() +\nylim(25, 50) +\nxlim(1995, 2020)\n\nggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\nggplot(data = wb_data,\naes(x = `Country Name`)) +\ngeom_bar(stat = 'count') +\ncoord_flip()\n\nggplot(data = wb_mean,\naes(x = Mean, y = Country)) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor ='red', stat = \"identity\")\n\n\nggplot(data = wb_mean,\naes(x = Mean,\ny = reorder(Country, -Mean))) +\ngeom_bar(stat = 'identity') +\ngeom_errorbar(aes(xmin = Mean - SD,\nxmax = Mean + SD), width = 0.6,\nalpha = 0.9, size = 1,\ncolor='red', stat = \"identity\")\n\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species))\n\nggplot(data = iris, aes(\nx = Petal.Length,\ny = Sepal.Length)) +\ngeom_point() +\nfacet_wrap(vars(Species),\nnrow = 3)\n\n\n\n# install.packages(\"ggpubr\")\nlibrary(ggpubr)\n\nscatter_1 &lt;- ggplot(data = iris, aes(x = Petal.Length,\ny = Sepal.Length)) +\ngeom_point()\n\nline_2 &lt;- ggplot(data = wb_data[which(\nwb_data$`Country Name` == 'Haiti' |\nwb_data$`Country Name` == 'India'), ],\naes(x = variable,\ny = value,\ncolor = `Country Name`)) +\ngeom_line() +\nylim(25, 100) +\nxlim(1995, 2020) +\ntheme(legend.position = 'bottom')\n\n\nggarrange(scatter_1, line_2,\nlabels = c('Erster Scatterplot',\n'Zweites Liniendiagram'),\nlegend = 'bottom')",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
     "crumbs": [
-      "Studienbrief 1",
-      "Prommiergrundlagen `R` und Python"
+      "Altklausuren",
+      "Aufgabentyp 1"
     ]
   },
   {
-    "objectID": "include/01_programmierung.html#python",
-    "href": "include/01_programmierung.html#python",
-    "title": "Vorbereitung - Programmiertools",
-    "section": "Python",
-    "text": "Python\n\nGrundlagen\nEin Python Tupel: geordnet aber nicht veränderbar\nmytuple = (\"apple\", \"banana\", \"cherry\")\nPython Liste: geordnet und veränderbar\ntest = 5*5\na_bool = True\nb_bool = False\n# comment; like R\n\"\"\"\nthis is a longer comment\n\"\"\"\nmylist_01 = [1, \"FSM\", 3, True]       # direkte Konstruktion\nmylist_02 = list((1, \"FSM\", 3, True)) # Konstruktion über Tupel (iterable)\n# INDEXING STARTET BEI NULL vs. R BEI 1\nmylist_01[1] # wählt 2tes Element aus !\nmylist_01[1:3] # wählt 2tes bis 4tes Element aus !\nmylist_01[-1] # wählt letztes Element aus !\nmylist_01[1:] # wählt 2tes bis letztes Element aus !\nmylist_01[:3] # wählt 1tes bis 4tes Element aus !\nEine Menge: ungeordnete Sammlung der Elemente, Elemente einzigartig\nmyset = {\"apple\", \"banana\", \"cherry\"}\nEin Python dictionary: Wörterbuch ist eine Sammlung von Schlüssel-Wert-Paaren\nmydict = {\n  \"brand\": \"Ford\",\n  \"model\": \"Mustang\",\n  \"year\": 1964\n}\nBefehle auf Objekten mit .-Operator `python myset.add(2) myset.add(2).discard(3)\nPakete und skripte importieren:\nimport numpy as np\n# zugriff auf Objekte und methoden/Funktionen mittels des Kürzels\nnp.array()\n# direkter Zugriff auf Funktionen/Objekte; nur diese werden importiert\nfrom numpy import array \n\n\n\n\nDatenimport mit Python.\n\n\n\nfor und while Schleifen\nfor i in range(1,5):\n  print(i)\n  while i &lt;= 4:\n    print(\"i is still smaller or equal to 4\")\n  if i &lt;= 4:\n    print(i)\n  else:\n    print(\"i is greater than 4\")\n\n\n\n\nBoolsche Operationen mit Python.\n\n\n\nNumpy arrays und Pandas series\n\neinzelne Elemente eines Arrays sollen zum gleichen Datentyp gehören\njedem Element eines Arrays ist eine Indexnummer zugeordnet, die den Zugriff auf das Element ermöglicht\nimport numpy as np\nnp.array(data)\nmyarray = np.array([1,2,3,4,5,6])\n\n\n\n\nNumpy Operationen mit Python.\n\n\n\n\nPandas series\n\nPandas Series unterstützt u. a. folgende Datentypen: Ganzzahlen, Fließkommazahlen, Zeichenketten\nJedem Wert in einer Pandas Series ist ein Index zugewiesen\nimport pandas as pdf\nmyseries = pd.Series([1,2,3,4])\nmyseries = pd.Series([1,2,3,4], index = [“a“,“b“,“c“,“d“])\n\n\n\n\nPandas Operationen mit Python.\n\n\n\n\nPandas DataFrame\n\nPandas DataFrame: zweidimensionale Datenstruktur, bestehend aus n Zeilen und m Spalten und hat Zeilen- und Spaltenindizes.\nmydata = {\n \"Name\": [\"Shiva\", \"Tessy\", \"Detoterix Destroyer Of All\"]\n \"Dog\": [1,1,0]\n}\nmydf = pd.DataFrame(mydata)\n\n\n\n\nPandas Operationen mit Python.\n\n\n\n\nGraphiken:\n\nSeaborn, Matplotlib, Plotly, Bokeh, ggplot, Altair, Geoplotlib, Gleam, Plotnine*, Pygal, und eine Menge weiterer\nDas im Studienbrief SB 01, S.38-39 vorgestellte plotnine ist bewusst stark an ggplot2 angelehnt !\nPyt",
+    "objectID": "include/99_altklausuren_A1.html#klausuraufgaben-zu-sb-01",
+    "href": "include/99_altklausuren_A1.html#klausuraufgaben-zu-sb-01",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
     "crumbs": [
-      "Studienbrief 1",
-      "Prommiergrundlagen `R` und Python"
+      "Altklausuren",
+      "Aufgabentyp 1"
     ]
   }
 ]

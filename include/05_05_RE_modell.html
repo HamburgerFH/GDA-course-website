@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multinomiale Logistische Regression – Grundlagen der Datenanalyse (GDA)</title>
+<title>re_modell – Grundlagen der Datenanalyse (GDA)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../include/02_05_OLR.html" rel="next">
-<link href="../include/02_03_BLR.html" rel="prev">
+<link href="../include/05_06_hausmann.html" rel="next">
+<link href="../include/05_04_FE_modell.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -160,7 +160,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/02_02_MLR.html">Studienbrief 2</a></li><li class="breadcrumb-item"><a href="../include/02_04_MLR.html">Multinomial logistische Regression</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/05_01_paneldaten_effectsmodels.html">Studienbrief 5</a></li><li class="breadcrumb-item"><a href="../include/05_05_RE_modell.html">Schätzung im RE-Modell</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -252,7 +252,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../include/02_04_MLR.html" class="sidebar-item-text sidebar-link active">
+  <a href="../include/02_04_MLR.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multinomial logistische Regression</span></a>
   </div>
 </li>
@@ -357,7 +357,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../include/05_05_RE_modell.html" class="sidebar-item-text sidebar-link">
+  <a href="../include/05_05_RE_modell.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Schätzung im RE-Modell</span></a>
   </div>
 </li>
@@ -428,122 +428,137 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#einführung-und-beispiel" id="toc-einführung-und-beispiel" class="nav-link active" data-scroll-target="#einführung-und-beispiel">Einführung und Beispiel:</a></li>
-  <li><a href="#umsetzung-in-r" id="toc-umsetzung-in-r" class="nav-link" data-scroll-target="#umsetzung-in-r">Umsetzung in <code>R</code>:</a></li>
-  <li><a href="#interpretation---fortsetzung" id="toc-interpretation---fortsetzung" class="nav-link" data-scroll-target="#interpretation---fortsetzung">Interpretation - Fortsetzung</a></li>
-  <li><a href="#p-wert" id="toc-p-wert" class="nav-link" data-scroll-target="#p-wert">P-Wert</a></li>
+  <li><a href="#random-effects-modell" id="toc-random-effects-modell" class="nav-link active" data-scroll-target="#random-effects-modell">Random-Effects-Modell</a></li>
+  <li><a href="#schätzung-im-random-effects-modell" id="toc-schätzung-im-random-effects-modell" class="nav-link" data-scroll-target="#schätzung-im-random-effects-modell">Schätzung im Random-Effects Modell</a></li>
+  <li><a href="#schätzung-im-random-effects-modell-1" id="toc-schätzung-im-random-effects-modell-1" class="nav-link" data-scroll-target="#schätzung-im-random-effects-modell-1">Schätzung im Random-Effects Modell</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/02_02_MLR.html">Studienbrief 2</a></li><li class="breadcrumb-item"><a href="../include/02_04_MLR.html">Multinomial logistische Regression</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Multinomiale Logistische Regression</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/05_01_paneldaten_effectsmodels.html">Studienbrief 5</a></li><li class="breadcrumb-item"><a href="../include/05_05_RE_modell.html">Schätzung im RE-Modell</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="einführung-und-beispiel" class="level2">
-<h2 class="anchored" data-anchor-id="einführung-und-beispiel">Einführung und Beispiel:</h2>
+<section id="random-effects-modell" class="level2">
+<h2 class="anchored" data-anchor-id="random-effects-modell">Random-Effects-Modell</h2>
 <ul>
-<li>Idee: Erweiterung von <em>binär</em> auf <span class="math inline">\(&gt;2\)</span>, d.h. multinomial</li>
+<li><p><strong>Modellformulierung:</strong></p>
+<ul>
+<li><p>Das Random-Effects-Modell basiert auf den Annahmen (A1) – (A4) und (A5R) mit Gleichung:</p>
+<p><span class="math display">\[
+y_{it} = \alpha_i + X_{it}^\top \beta + \epsilon_{it}
+\]</span></p></li>
+<li><p>Die <span class="math inline">\(\alpha_i\)</span>’s sind <strong>Zufallsvariablen</strong>, nicht deterministisch, und der Zufallsfehler ist idiosynkratisch:</p>
+<p><span class="math display">\[
+\alpha_i \sim \mathcal{N}(\alpha, \sigma_{\alpha}^2) \quad\quad
+\epsilon_{it} \sim \mathcal{N}(1, \sigma_{\epsilon}^2)
+\]</span></p></li>
+</ul></li>
+<li><p><strong>Varianzstruktur der Fehler:</strong> Kovarianzmatrix der Fehler für <span class="math inline">\(i\)</span> und alle gemeinsam, mit <span class="math inline">\(I_T\)</span> als <span class="math inline">\(T \times T\)</span> Einheitsmatrix und <span class="math inline">\(J_T\)</span> als Einsermatrix:</p>
+<p><span class="math display">\[
+  \Omega_i = \sigma_{\epsilon}^2 I_T + \sigma_{\alpha}^2 J_T
+  \quad\quad
+  \Omega := \text{Var}(u) = \text{diag}(\Omega_1,\ldots,\Omega_N)
+  \]</span></p></li>
+<li><p>Warum <span class="math inline">\(I_T\)</span> und <span class="math inline">\(J_T\)</span>?<br>
+<span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(\text{Var}(u_{it}) = \sigma_{\epsilon}^2 + \sigma_{\alpha}^2\)</span> und <span class="math inline">\(\text{Cov}(u_{it}, u_{is}) = \sigma_{\alpha}^2\)</span> für <span class="math inline">\(t \neq s\)</span></p></li>
+<li><p><strong>Ziel:</strong> Effiziente Schätzung der Koeffizienten <span class="math inline">\(\beta\)</span> unter Berücksichtigung der zufälligen Effekte.<br>
+Reduktion der Varianz im Vergleich zum Fixed-Effects-Schätzer, wenn Annahmen erfüllt sind.</p></li>
+<li><p><strong>Generalized Least Squares (GLS) Schätzer:</strong></p>
+<ul>
+<li><p>Schätzung der Koeffizienten und Varianzmatrix des Schätzers:</p>
+<p><span class="math display">\[
+\widehat{\beta}_{RE} = (X^{*\top} \widehat{\Omega}^{-1} X^*)^{-1}
+X^{*\top} \widehat{\Omega}^{-1} y^*
+\]</span> <span class="math display">\[
+\text{Var}(\widehat{\beta}_{RE}) = \frac{1}{NT-D-1}
+(X^{*\top} \widehat{\Omega}^{-1} X^*)^{-1}
+\]</span></p></li>
+<li><p>Schätzung folgt GLS, ist zweistufig und berücksichtigt in der zweiten Stufe die Autokorrelationsstruktur (hier nicht weiter ausgeführt) durch transformierte Regressoren <span class="math inline">\(X^{*}\)</span></p></li>
+</ul></li>
 </ul>
-<p><img src="../figs/02_04_multinomial_intro.png" id="fig-02-04-multinomial-intro" class="img-fluid" alt="Einführung in die multinomiale logistische Regression"> <img src="../figs/02_04_jamovi_out_01.png" id="fig-02-04-jamovi-out-01" class="img-fluid" alt="Jamovi Ausgabe der multinomialen logistischen Regression"></p>
 </section>
-<section id="umsetzung-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="umsetzung-in-r">Umsetzung in <code>R</code>:</h2>
-<p>Referenzkategorie: <em>selbstein</em> dritte Kategorie: <code>ref='3'</code> oder <code>ref='eher rechts'</code>, <span class="crd">ACHTUNG:</span> falls ‘eher rechts’ benutzt wird, dann muss vorher die Variable mit <code>as.factor()</code> transformiert werden</p>
+<section id="schätzung-im-random-effects-modell" class="level2">
+<h2 class="anchored" data-anchor-id="schätzung-im-random-effects-modell">Schätzung im Random-Effects Modell</h2>
+<section id="implementierung-random-effects-schätzung-in-r" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="implementierung-random-effects-schätzung-in-r">Implementierung Random-Effects Schätzung in <code>R</code></h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--multinominale logistische Regression: Labels &amp; Partition--</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_einsch <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/einschaetzung.csv"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_einsch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plm)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"EmplUK"</span>, <span class="at">package =</span> <span class="st">"plm"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>re_out <span class="ot">&lt;-</span> <span class="fu">plm</span>(wage <span class="sc">~</span> emp <span class="sc">+</span> capital <span class="sc">+</span> output, <span class="at">data =</span> EmplUK,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">effect =</span> <span class="st">"individual"</span>, <span class="at">model =</span> <span class="st">"random"</span>, <span class="at">index =</span> <span class="fu">c</span>(<span class="st">"firm"</span>,<span class="st">"year"</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(re_out))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  selbstein schule schicht alter
-1         2      1       1     2
-2         3      1       2     1
-3         1      1       2     1
-4         2      1       1     1
-5         1      1       2     1
-6         3      1       2     2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span> (data_einsch<span class="sc">$</span>selbstein) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'eher links'</span>, <span class="st">'Mitte'</span>, <span class="st">'eher rechts'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data_einsch<span class="sc">$</span>selbstein <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data_einsch<span class="sc">$</span>selbstein)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Nullmodell erhält 80% der Daten, Trainingsmodell 20%: ZUFÄLLIG ausgewählt</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">2</span>, <span class="fu">nrow</span>(data_einsch), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>model_0 <span class="ot">&lt;-</span> data_einsch[ind <span class="sc">==</span><span class="dv">1</span>,]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>model   <span class="ot">&lt;-</span> data_einsch[ind <span class="sc">==</span><span class="dv">2</span>,]</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("nnet")</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>model_0<span class="sc">$</span>selbstein <span class="ot">&lt;-</span> <span class="fu">relevel</span>(model_0<span class="sc">$</span>selbstein, <span class="at">ref =</span> <span class="st">"3"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>multinominal.model <span class="ot">&lt;-</span> nnet<span class="sc">::</span><span class="fu">multinom</span>(selbstein <span class="sc">~</span> alter <span class="sc">+</span> schule, <span class="at">data =</span> model_0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># weights:  12 (6 variable)
-initial  value 2311.480255 
-iter  10 value 2163.887112
-final  value 2163.886874 
-converged</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(multinominal.model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Call:
-nnet::multinom(formula = selbstein ~ alter + schule, data = model_0)
+<pre><code>Oneway (individual) effect Random Effect Model 
+   (Swamy-Arora's transformation)
+
+Call:
+plm(formula = wage ~ emp + capital + output, data = EmplUK, effect = "individual", 
+    model = "random", index = c("firm", "year"))
+
+Unbalanced Panel: n = 140, T = 7-9, N = 1031
+
+Effects:
+                 var std.dev share
+idiosyncratic  4.768   2.184 0.156
+individual    25.858   5.085 0.844
+theta:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.8398  0.8398  0.8398  0.8439  0.8499  0.8583 
+
+Residuals:
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-12.7406  -1.4278  -0.3196  -0.0101   1.0011  17.9986 
 
 Coefficients:
-  (Intercept)      alter      schule
-1    1.507787 -0.9693638  0.01803241
-2    2.716944 -0.7463522 -0.66243962
+              Estimate Std. Error z-value  Pr(&gt;|z|)    
+(Intercept) 27.6663911  0.9014516 30.6909 &lt; 2.2e-16 ***
+emp         -0.1062911  0.0262412 -4.0505 5.110e-05 ***
+capital      0.1785261  0.0608780  2.9325  0.003362 ** 
+output      -0.0310606  0.0077168 -4.0251 5.696e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Std. Errors:
-  (Intercept)     alter    schule
-1   0.3217004 0.1306577 0.1291727
-2   0.2912695 0.1170838 0.1174561
-
-Residual Deviance: 4327.774 
-AIC: 4339.774 </code></pre>
+Total Sum of Squares:    5165.4
+Residual Sum of Squares: 4886.1
+R-Squared:      0.055556
+Adj. R-Squared: 0.052797
+Chisq: 39.8633 on 3 DF, p-value: 1.139e-08</code></pre>
 </div>
 </div>
+</section>
+</section>
+<section id="schätzung-im-random-effects-modell-1" class="level2">
+<h2 class="anchored" data-anchor-id="schätzung-im-random-effects-modell-1">Schätzung im Random-Effects Modell</h2>
+<section id="interpretation-der-ergebnisse" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="interpretation-der-ergebnisse">Interpretation der Ergebnisse</h3>
 <ul>
-<li><strong>Interpretation:</strong> die Ergebnisse sind stets in Relation zur Referenzkategorie zu interpretieren</li>
-<li><strong>Alter:</strong> <span class="math inline">\(-0.9694\)</span> negativer Wert, d.h. der Wechsel v. Alterskategorie <span class="math inline">\(1\)</span> (unter 45) nach Alterskategorie <span class="math inline">\(2\)</span> (über 45) wirkt sich negativ zur Zugehörigkeit <span class="math inline">\(selbstsein=1=\)</span>’eher links’ aus relativ zur Basiskategorie <span class="math inline">\(selbstsein=3=\)</span>’eher rechts’</li>
+<li><p><strong>Vergleich der Schätzergebnisse:</strong></p>
+<ul>
+<li>RE-Schätzer für <span class="math inline">\(\beta_{\text{capital}}\)</span>:<span class="math inline">\(~~~\)</span> <span class="math inline">\(\widehat{\beta}_{\text{capital, RE}} = 0.179, \quad p = 0.003362\)</span><br>
+</li>
+<li><strong>Interpretation:</strong> Im RE-Modell ist Kapital signifikant positiv, im FE-Modell nicht signifikant</li>
+</ul></li>
+<li><p><strong>Ergebnisse für Output:</strong></p>
+<ul>
+<li>RE-Schätzer für <span class="math inline">\(\beta_{\text{output}}\)</span>:<span class="math inline">\(~~~\)</span> <span class="math inline">\(\widehat{\beta}_{\text{output, RE}} = -0.031, \quad p = 5.696\text{e-}05\)</span><br>
+</li>
+<li><strong>Interpretation:</strong> Output hat in FE- und RE-Modellen einen signifikanten negativen Einfluss</li>
+</ul></li>
+<li><p><strong>Interpretation der individuellen und idiosynkratischen Varianz:</strong></p>
+<ul>
+<li><p>geschätzte Standardabweichung der individuellen Effekte und idiosynkratischen Fehler:</p>
+<p><span class="math display">\[
+\widehat{\sigma}_{\alpha} = 5.085 \quad\quad
+\widehat{\sigma}_{\epsilon} = 2.184
+\]</span></p></li>
+<li><p><strong>Varianz von Löhnen zwischen Firmen ist größer als Varianz von Löhnen innerhalb einer Firma</strong></p></li>
+</ul></li>
 </ul>
-</section>
-<section id="interpretation---fortsetzung" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation---fortsetzung">Interpretation - Fortsetzung</h2>
-<p><img src="../figs/02_04_logodds_interpretation_01.png" class="img-fluid"> <img src="../figs/02_04_logodds_interpretation_02.png" class="img-fluid" alt="Beispielinterpretation im Mult. Logistischen Modell"></p>
-</section>
-<section id="p-wert" class="level2">
-<h2 class="anchored" data-anchor-id="p-wert">P-Wert</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>coeffs <span class="ot">&lt;-</span> <span class="fu">summary</span>(multinominal.model)<span class="sc">$</span>coefficients</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ses    <span class="ot">&lt;-</span> <span class="fu">summary</span>(multinominal.model)<span class="sc">$</span>standard.errors</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> coeffs <span class="sc">/</span> ses</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(z), <span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  (Intercept)        alter       schule
-1 2.77334e-06 1.179057e-13 8.889767e-01
-2 0.00000e+00 1.835458e-10 1.701566e-08</code></pre>
-</div>
-</div>
-<p>Wir sehen: alle Koeffizienten hochsignifikant.</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -948,13 +963,13 @@ AIC: 4339.774 </code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../include/02_03_BLR.html" class="pagination-link" aria-label="Binär logistische Regression">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Binär logistische Regression</span>
+      <a href="../include/05_04_FE_modell.html" class="pagination-link" aria-label="Schätzung im FE-Modell">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Schätzung im FE-Modell</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../include/02_05_OLR.html" class="pagination-link" aria-label="Ordinal logistische Regression">
-        <span class="nav-page-text">Ordinal logistische Regression</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../include/05_06_hausmann.html" class="pagination-link" aria-label="Auswahl geeigneteR Paneldatenmodelle: Hausman-Test">
+        <span class="nav-page-text">Auswahl geeigneteR Paneldatenmodelle: Hausman-Test</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

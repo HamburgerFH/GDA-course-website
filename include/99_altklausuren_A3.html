@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multinomiale Logistische Regression – Grundlagen der Datenanalyse (GDA)</title>
+<title>altklausuren_a3 – Grundlagen der Datenanalyse (GDA)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../include/02_05_OLR.html" rel="next">
-<link href="../include/02_03_BLR.html" rel="prev">
+<link href="../include/99_altklausuren_A4.html" rel="next">
+<link href="../include/99_altklausuren_A2.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -118,35 +83,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   };
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -160,7 +96,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/02_02_MLR.html">Studienbrief 2</a></li><li class="breadcrumb-item"><a href="../include/02_04_MLR.html">Multinomial logistische Regression</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/99_altklausuren_A1.html">Altklausuren</a></li><li class="breadcrumb-item"><a href="../include/99_altklausuren_A3.html">Aufgabentyp 3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -252,7 +188,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../include/02_04_MLR.html" class="sidebar-item-text sidebar-link active">
+  <a href="../include/02_04_MLR.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multinomial logistische Regression</span></a>
   </div>
 </li>
@@ -393,7 +329,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../include/99_altklausuren_A3.html" class="sidebar-item-text sidebar-link">
+  <a href="../include/99_altklausuren_A3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Aufgabentyp 3</span></a>
   </div>
 </li>
@@ -428,122 +364,96 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#einführung-und-beispiel" id="toc-einführung-und-beispiel" class="nav-link active" data-scroll-target="#einführung-und-beispiel">Einführung und Beispiel:</a></li>
-  <li><a href="#umsetzung-in-r" id="toc-umsetzung-in-r" class="nav-link" data-scroll-target="#umsetzung-in-r">Umsetzung in <code>R</code>:</a></li>
-  <li><a href="#interpretation---fortsetzung" id="toc-interpretation---fortsetzung" class="nav-link" data-scroll-target="#interpretation---fortsetzung">Interpretation - Fortsetzung</a></li>
-  <li><a href="#p-wert" id="toc-p-wert" class="nav-link" data-scroll-target="#p-wert">P-Wert</a></li>
+  <li><a href="#klausuraufgaben-sb-03" id="toc-klausuraufgaben-sb-03" class="nav-link active" data-scroll-target="#klausuraufgaben-sb-03">Klausuraufgaben SB 03</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/99_altklausuren_A1.html">Altklausuren</a></li><li class="breadcrumb-item"><a href="../include/99_altklausuren_A3.html">Aufgabentyp 3</a></li></ol></nav></header>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/02_02_MLR.html">Studienbrief 2</a></li><li class="breadcrumb-item"><a href="../include/02_04_MLR.html">Multinomial logistische Regression</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Multinomiale Logistische Regression</h1>
+
+
+
+<section id="klausuraufgaben-sb-03" class="level2">
+<h2 class="anchored" data-anchor-id="klausuraufgaben-sb-03">Klausuraufgaben SB 03</h2>
+<section id="aufgabe-3-20-punkte" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="aufgabe-3-20-punkte"><span class="crd">28.09.2024</span> – Aufgabe 3 <span class="ctl">(20 Punkte)</span></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_09_28_A.png" class="img-fluid figure-img"></p>
+<figcaption>Aufgabenstellung Teil A der Klausur vom 28.09.2024</figcaption>
+</figure>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="einführung-und-beispiel" class="level2">
-<h2 class="anchored" data-anchor-id="einführung-und-beispiel">Einführung und Beispiel:</h2>
-<ul>
-<li>Idee: Erweiterung von <em>binär</em> auf <span class="math inline">\(&gt;2\)</span>, d.h. multinomial</li>
-</ul>
-<p><img src="../figs/02_04_multinomial_intro.png" id="fig-02-04-multinomial-intro" class="img-fluid" alt="Einführung in die multinomiale logistische Regression"> <img src="../figs/02_04_jamovi_out_01.png" id="fig-02-04-jamovi-out-01" class="img-fluid" alt="Jamovi Ausgabe der multinomialen logistischen Regression"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_09_28_B.png" class="img-fluid figure-img"></p>
+<figcaption>Aufgabenstellung Teil B der Klausur vom 28.09.2024</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_09_28_lsg_part1.png" class="img-fluid figure-img"></p>
+<figcaption>Lösung Teil 1 zur Klausur vom 28.09.2024</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_09_28_lsg_part2.png" class="img-fluid figure-img"></p>
+<figcaption>Lösung Teil 2 zur Klausur vom 28.09.2024</figcaption>
+</figure>
+</div>
 </section>
-<section id="umsetzung-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="umsetzung-in-r">Umsetzung in <code>R</code>:</h2>
-<p>Referenzkategorie: <em>selbstein</em> dritte Kategorie: <code>ref='3'</code> oder <code>ref='eher rechts'</code>, <span class="crd">ACHTUNG:</span> falls ‘eher rechts’ benutzt wird, dann muss vorher die Variable mit <code>as.factor()</code> transformiert werden</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--multinominale logistische Regression: Labels &amp; Partition--</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_einsch <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/einschaetzung.csv"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_einsch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  selbstein schule schicht alter
-1         2      1       1     2
-2         3      1       2     1
-3         1      1       2     1
-4         2      1       1     1
-5         1      1       2     1
-6         3      1       2     2</code></pre>
+<section id="aufgabe-3-20-punkte-1" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="aufgabe-3-20-punkte-1"><span class="crd">29.06.2024</span> – Aufgabe 3 <span class="ctl">(20 Punkte)</span></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_06_29_A.png" class="img-fluid figure-img"></p>
+<figcaption>Aufgabenstellung Teil A der Klausur vom 29.06.2024</figcaption>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span> (data_einsch<span class="sc">$</span>selbstein) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'eher links'</span>, <span class="st">'Mitte'</span>, <span class="st">'eher rechts'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data_einsch<span class="sc">$</span>selbstein <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data_einsch<span class="sc">$</span>selbstein)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Nullmodell erhält 80% der Daten, Trainingsmodell 20%: ZUFÄLLIG ausgewählt</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">2</span>, <span class="fu">nrow</span>(data_einsch), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>model_0 <span class="ot">&lt;-</span> data_einsch[ind <span class="sc">==</span><span class="dv">1</span>,]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>model   <span class="ot">&lt;-</span> data_einsch[ind <span class="sc">==</span><span class="dv">2</span>,]</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("nnet")</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>model_0<span class="sc">$</span>selbstein <span class="ot">&lt;-</span> <span class="fu">relevel</span>(model_0<span class="sc">$</span>selbstein, <span class="at">ref =</span> <span class="st">"3"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>multinominal.model <span class="ot">&lt;-</span> nnet<span class="sc">::</span><span class="fu">multinom</span>(selbstein <span class="sc">~</span> alter <span class="sc">+</span> schule, <span class="at">data =</span> model_0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># weights:  12 (6 variable)
-initial  value 2311.480255 
-iter  10 value 2163.887112
-final  value 2163.886874 
-converged</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_06_29_B.png" class="img-fluid figure-img"></p>
+<figcaption>Aufgabenstellung Teil B der Klausur vom 29.06.2024</figcaption>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(multinominal.model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Call:
-nnet::multinom(formula = selbstein ~ alter + schule, data = model_0)
-
-Coefficients:
-  (Intercept)      alter      schule
-1    1.507787 -0.9693638  0.01803241
-2    2.716944 -0.7463522 -0.66243962
-
-Std. Errors:
-  (Intercept)     alter    schule
-1   0.3217004 0.1306577 0.1291727
-2   0.2912695 0.1170838 0.1174561
-
-Residual Deviance: 4327.774 
-AIC: 4339.774 </code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_06_29_lsg.png" class="img-fluid figure-img"></p>
+<figcaption>Lösung zur Klausur vom 29.06.2024</figcaption>
+</figure>
 </div>
-</div>
-<ul>
-<li><strong>Interpretation:</strong> die Ergebnisse sind stets in Relation zur Referenzkategorie zu interpretieren</li>
-<li><strong>Alter:</strong> <span class="math inline">\(-0.9694\)</span> negativer Wert, d.h. der Wechsel v. Alterskategorie <span class="math inline">\(1\)</span> (unter 45) nach Alterskategorie <span class="math inline">\(2\)</span> (über 45) wirkt sich negativ zur Zugehörigkeit <span class="math inline">\(selbstsein=1=\)</span>’eher links’ aus relativ zur Basiskategorie <span class="math inline">\(selbstsein=3=\)</span>’eher rechts’</li>
-</ul>
 </section>
-<section id="interpretation---fortsetzung" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation---fortsetzung">Interpretation - Fortsetzung</h2>
-<p><img src="../figs/02_04_logodds_interpretation_01.png" class="img-fluid"> <img src="../figs/02_04_logodds_interpretation_02.png" class="img-fluid" alt="Beispielinterpretation im Mult. Logistischen Modell"></p>
+<section id="aufgabe-3-20-punkte-2" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="aufgabe-3-20-punkte-2"><span class="crd">23.03.2024</span> – Aufgabe 3 <span class="ctl">(20 Punkte)</span></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_03_23_A.png" class="img-fluid figure-img"></p>
+<figcaption>Aufgabenstellung Teil A der Klausur vom 23.03.2024</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_03_23_B.png" class="img-fluid figure-img"></p>
+<figcaption>Aufgabenstellung Teil B der Klausur vom 23.03.2024</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_03_23_A_lsg.png" class="img-fluid figure-img"></p>
+<figcaption>Lösung Teil A zur Klausur vom 23.03.2024</figcaption>
+</figure>
+</div>
+<p><span class="crd">ACHTUNG FEHLER IN DER MUSTERLÖSUNG:</span> es müsste <strong>nicht</strong> <span class="crd">Inflations</span>entwicklung <strong>sondern</strong> <span class="ctl">Zins</span>entwicklung heißen, siehe Beschriftung der Y-Achse !!!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/03_99_ak_2024_03_23_B_lsg.png" class="img-fluid figure-img"></p>
+<figcaption>Lösung Teil B zur Klausur vom 23.03.2024</figcaption>
+</figure>
+</div>
+
+
 </section>
-<section id="p-wert" class="level2">
-<h2 class="anchored" data-anchor-id="p-wert">P-Wert</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>coeffs <span class="ot">&lt;-</span> <span class="fu">summary</span>(multinominal.model)<span class="sc">$</span>coefficients</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ses    <span class="ot">&lt;-</span> <span class="fu">summary</span>(multinominal.model)<span class="sc">$</span>standard.errors</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> coeffs <span class="sc">/</span> ses</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(z), <span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  (Intercept)        alter       schule
-1 2.77334e-06 1.179057e-13 8.889767e-01
-2 0.00000e+00 1.835458e-10 1.701566e-08</code></pre>
-</div>
-</div>
-<p>Wir sehen: alle Koeffizienten hochsignifikant.</p>
-
-
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -948,13 +858,13 @@ AIC: 4339.774 </code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../include/02_03_BLR.html" class="pagination-link" aria-label="Binär logistische Regression">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Binär logistische Regression</span>
+      <a href="../include/99_altklausuren_A2.html" class="pagination-link" aria-label="Aufgabentyp 2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Aufgabentyp 2</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../include/02_05_OLR.html" class="pagination-link" aria-label="Ordinal logistische Regression">
-        <span class="nav-page-text">Ordinal logistische Regression</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../include/99_altklausuren_A4.html" class="pagination-link" aria-label="Aufgabentyp 4">
+        <span class="nav-page-text">Aufgabentyp 4</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -97,6 +97,35 @@ ul.task-list li input[type="checkbox"] {
   };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -223,13 +252,18 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Multinomial logistische Regression</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/02_05_OLR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ordinal logistische Regression</span></a>
+  </div>
+</li>
       </ul>
   </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Altklausuren</span></a>
+ <span class="menu-text">Studienbrief 3</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -237,8 +271,138 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./include/99_altklausuren.html" class="sidebar-item-text sidebar-link">
+  <a href="./include/03_01_TZ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theorie der Zeitreihen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/03_02_WGB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wichtige Grundbegriffe</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/03_03_ZRA_in_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zeitreihenanalysen in <code>R</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/03_04_BCA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Business Cycle Analysen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/03_05_AR_GARCH.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AR-Modelle</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Studienbrief 4</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/04_01_apriori_definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assoziationsanalyse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/04_02_conjoint.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conjoint-Analyse</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Studienbrief 5</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/05_01_paneldaten_effectsmodels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paneldaten und das Effects-Modell</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/05_02_03_paneldaten_weiteres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wdhl. allgemeiner Konzepte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/05_04_FE_modell.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schätzung im FE-Modell</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/05_05_RE_modell.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schätzung im RE-Modell</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/05_06_hausmann.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Auswahl geeigneteR Paneldatenmodelle: Hausman-Test</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Altklausuren</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/99_altklausuren_A1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Aufgabentyp 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/99_altklausuren_A2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aufgabentyp 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/99_altklausuren_A3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aufgabentyp 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/99_altklausuren_A4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aufgabentyp 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./include/99_altklausuren_A5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aufgabentyp 5</span></a>
   </div>
 </li>
       </ul>
@@ -267,43 +431,56 @@ ul.task-list li input[type="checkbox"] {
 <div class="column" style="width:65%;">
 <p>Welcome! Hier findest du Skripte, Beispiele und <code>R</code>‑Code für den Kurs. Starte mit einem der Bereiche oder nutze die Suche links.</p>
 <div class="home-cta">
-<p><a class="btn btn-primary btn-cta" href="./include/01_programmierung.html"> Kurzeinführung R und Python </a> <a class="btn btn-outline-primary btn-cta" href="./include/02_02_MLR.html"> Multiple Lineare Regression </a> <a class="btn btn-outline-primary btn-cta" href="./include/02_03_BLR.html"> Binär logistische Regression </a> <a class="btn btn-outline-secondary btn-cta" href="./include/99_altklausuren.html"> Altklausuren </a></p>
+<p><a class="btn btn-primary btn-cta" href="./include/01_programmierung.html"> Kurzeinführung R und Python </a> <a class="btn btn-outline-primary btn-cta" href="./include/02_02_MLR.html"> Multiple Lineare Regression </a> <a class="btn btn-outline-primary btn-cta" href="./include/02_03_BLR.html"> Binär logistische Regression </a> <a class="btn btn-outline-primary btn-cta" href="./include/02_04_MLR.html"> Multinomial logistische Regression </a> <a class="btn btn-outline-primary btn-cta" href="./include/02_05_OLR.html"> Ordinal logistische Regression </a> <a class="btn btn-outline-primary btn-cta" href="./include/03_01_TZ.html"> Theorie der Zeitreihen </a> <a class="btn btn-outline-primary btn-cta" href="./include/03_02_WGB.html"> Wichtige Grundbegriffe </a> <a class="btn btn-outline-primary btn-cta" href="./include/03_03_ZRA_in_R.html"> Zeitreihenanalysen in R </a> <a class="btn btn-outline-primary btn-cta" href="./include/03_04_BCA.html"> Business Cycle Analysen </a> <a class="btn btn-outline-primary btn-cta" href="./include/03_05_AR_GARCH.html"> AR-type Modelle </a> <a class="btn btn-outline-primary btn-cta" href="./include/04_01_apriori_definitions.html"> Assoziationsanalyse </a> <a class="btn btn-outline-primary btn-cta" href="./include/04_02_conjoint.html"> Conjoint-Analyse </a> <a class="btn btn-outline-secondary btn-cta" href="./include/99_altklausuren_A1.html"> Altklausuren </a></p>
 </div>
 <section id="aktuelles" class="level3 mt-4">
 <h3 class="mt-4 anchored" data-anchor-id="aktuelles">Aktuelles</h3>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Hinweise:</strong> Klausurtermin 01:</p>
+<p><u><strong>WICHTIG:</strong></u> Alle relevanten und verbindlichen Informationen (Klausurtermine / Änderungen / Regularien) nur auf den HFH Seiten und im Webcampus <span class="math inline">\(\ra\)</span> regelmäßig vorbeischauen !</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Hinweise:</strong> Klausurtermin 02:</p>
+<p><u><strong>Hinweise:</strong></u> Klausurtermin 01: <span class="ctl"><u>27.09.2025</u></span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><u><strong>Hinweise:</strong></u> Klausurtermin 02: <span class="ctl"><u>20.12.2025</u></span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">

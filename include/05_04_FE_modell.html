@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multinomiale Logistische Regression – Grundlagen der Datenanalyse (GDA)</title>
+<title>fe_modell – Grundlagen der Datenanalyse (GDA)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../include/02_05_OLR.html" rel="next">
-<link href="../include/02_03_BLR.html" rel="prev">
+<link href="../include/05_05_RE_modell.html" rel="next">
+<link href="../include/05_02_03_paneldaten_weiteres.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -160,7 +160,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/02_02_MLR.html">Studienbrief 2</a></li><li class="breadcrumb-item"><a href="../include/02_04_MLR.html">Multinomial logistische Regression</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/05_01_paneldaten_effectsmodels.html">Studienbrief 5</a></li><li class="breadcrumb-item"><a href="../include/05_04_FE_modell.html">Schätzung im FE-Modell</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -252,7 +252,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../include/02_04_MLR.html" class="sidebar-item-text sidebar-link active">
+  <a href="../include/02_04_MLR.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multinomial logistische Regression</span></a>
   </div>
 </li>
@@ -351,7 +351,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../include/05_04_FE_modell.html" class="sidebar-item-text sidebar-link">
+  <a href="../include/05_04_FE_modell.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Schätzung im FE-Modell</span></a>
   </div>
 </li>
@@ -428,122 +428,230 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#einführung-und-beispiel" id="toc-einführung-und-beispiel" class="nav-link active" data-scroll-target="#einführung-und-beispiel">Einführung und Beispiel:</a></li>
-  <li><a href="#umsetzung-in-r" id="toc-umsetzung-in-r" class="nav-link" data-scroll-target="#umsetzung-in-r">Umsetzung in <code>R</code>:</a></li>
-  <li><a href="#interpretation---fortsetzung" id="toc-interpretation---fortsetzung" class="nav-link" data-scroll-target="#interpretation---fortsetzung">Interpretation - Fortsetzung</a></li>
-  <li><a href="#p-wert" id="toc-p-wert" class="nav-link" data-scroll-target="#p-wert">P-Wert</a></li>
+  <li><a href="#within-transformation" id="toc-within-transformation" class="nav-link active" data-scroll-target="#within-transformation">Within-Transformation</a></li>
+  <li><a href="#first-difference-schätzer" id="toc-first-difference-schätzer" class="nav-link" data-scroll-target="#first-difference-schätzer">First-Difference-Schätzer</a></li>
+  <li><a href="#schätzung-im-fixed-effects-modell" id="toc-schätzung-im-fixed-effects-modell" class="nav-link" data-scroll-target="#schätzung-im-fixed-effects-modell">Schätzung im Fixed-Effects Modell</a></li>
+  <li><a href="#schätzung-im-fixed-effects-modell-1" id="toc-schätzung-im-fixed-effects-modell-1" class="nav-link" data-scroll-target="#schätzung-im-fixed-effects-modell-1">Schätzung im Fixed-Effects Modell</a></li>
+  <li><a href="#schätzung-im-fixed-effects-modell-2" id="toc-schätzung-im-fixed-effects-modell-2" class="nav-link" data-scroll-target="#schätzung-im-fixed-effects-modell-2">Schätzung im Fixed-Effects Modell</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/02_02_MLR.html">Studienbrief 2</a></li><li class="breadcrumb-item"><a href="../include/02_04_MLR.html">Multinomial logistische Regression</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Multinomiale Logistische Regression</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../include/05_01_paneldaten_effectsmodels.html">Studienbrief 5</a></li><li class="breadcrumb-item"><a href="../include/05_04_FE_modell.html">Schätzung im FE-Modell</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="einführung-und-beispiel" class="level2">
-<h2 class="anchored" data-anchor-id="einführung-und-beispiel">Einführung und Beispiel:</h2>
+<section id="within-transformation" class="level2">
+<h2 class="anchored" data-anchor-id="within-transformation">Within-Transformation</h2>
 <ul>
-<li>Idee: Erweiterung von <em>binär</em> auf <span class="math inline">\(&gt;2\)</span>, d.h. multinomial</li>
+<li><p><strong>Idee:</strong></p>
+<ul>
+<li><p>Entfernt individuelle Effekte <span class="math inline">\(\alpha_i\)</span> aus der Modellgleichung<br>
+</p></li>
+<li><p>Basiert auf der Within-Transformation der abhängigen und unabhängigen Variablen<br>
+</p></li>
+<li><p>Modell nach Transformation, bei der individuelle konstante Effekte <span class="math inline">\(\alpha_i\)</span> eliminiert sind:</p>
+<p><span class="math display">\[
+y_{it} - \overline{y}_i = (X_{it} - \overline{X}_i)^\top \beta
++ (\epsilon_{it} - \overline{\epsilon}_i)
+\]</span></p></li>
+</ul></li>
+<li><p><strong>Within-Transformation:</strong></p>
+<ul>
+<li><p>Für jede Beobachtung wird der Mittelwert über <span class="math inline">\(T\)</span> Zeitpunkte abgezogen<br>
+</p></li>
+<li><p>Transformation für die abhängige und unabhängige Variablen:</p>
+<p><span class="math display">\[
+\widetilde{y}_{it} = y_{it} - \overline{y}_i, \quad
+\text{mit } \overline{y}_i = \frac{1}{T} \sum_{t=1}^{T} y_{it}
+\]</span> <span class="math display">\[
+\widetilde{X}_{it} = X_{it} - \overline{X}_i, \quad
+\text{mit } \overline{X}_i = \frac{1}{T} \sum_{t=1}^{T} X_{it}
+\]</span></p></li>
+</ul></li>
+<li><p><strong>Schätzung der Koeffizienten:</strong></p>
+<ul>
+<li><p>Der Fixed-Effects-Schätzer ergibt sich aus einer OLS-Schätzung nach der Within-Transformation:</p>
+<p><span class="math display">\[
+\widehat{\beta}_{FE} = (\widetilde{X}^\top \widetilde{X})^{-1}
+\widetilde{X}^\top \widetilde{y}
+\]</span></p></li>
+<li><p><span class="math inline">\(\widetilde{y} = (\widetilde{y}_{11},\ldots,\widetilde{y}_{1T},\ldots,
+\widetilde{y}_{NT})^{T}\)</span> und <span class="math inline">\(\widetilde{X} = (\widetilde{X}_{11},\ldots,\widetilde{X}_{1T},\ldots, \widetilde{X}_{NT})^{T}\)</span></p></li>
+<li><p>Intercept entfällt, da die Transformation die Mittelwerte entfernt</p></li>
+</ul></li>
 </ul>
-<p><img src="../figs/02_04_multinomial_intro.png" id="fig-02-04-multinomial-intro" class="img-fluid" alt="Einführung in die multinomiale logistische Regression"> <img src="../figs/02_04_jamovi_out_01.png" id="fig-02-04-jamovi-out-01" class="img-fluid" alt="Jamovi Ausgabe der multinomialen logistischen Regression"></p>
 </section>
-<section id="umsetzung-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="umsetzung-in-r">Umsetzung in <code>R</code>:</h2>
-<p>Referenzkategorie: <em>selbstein</em> dritte Kategorie: <code>ref='3'</code> oder <code>ref='eher rechts'</code>, <span class="crd">ACHTUNG:</span> falls ‘eher rechts’ benutzt wird, dann muss vorher die Variable mit <code>as.factor()</code> transformiert werden</p>
+<section id="first-difference-schätzer" class="level2">
+<h2 class="anchored" data-anchor-id="first-difference-schätzer">First-Difference-Schätzer</h2>
+<ul>
+<li><p><strong>Grundidee und Ziel:</strong><br>
+Eliminierung der individuellen Effekte <span class="math inline">\(\alpha_i\)</span> durch Differenzbildung: für festes <span class="math inline">\(i\)</span> werden zwei aufeinanderfolgende Zeitpunkte <span class="math inline">\(t-1\)</span> und <span class="math inline">\(t\)</span> betrachtet, so dass im Modell vor Differenzbildung gilt:</p>
+<p><span class="math display">\[
+  y_{it} = \alpha_i + X_{it}^\top \beta + \epsilon_{it}
+  \quad\text{und}\quad
+  y_{i,t-1} = \alpha_i + X_{i,t-1}^\top \beta + \epsilon_{i,t-1}
+  \]</span></p></li>
+<li><p><strong>First-Difference-Transformation:</strong></p>
+<ul>
+<li><p>Differenzbildung zwischen zwei aufeinanderfolgenden Zeitpunkten,<br>
+<span class="math inline">\(\alpha_i\)</span> fallen wieder weg. Neue Modellgleichung: nur Veränderungen in <span class="math inline">\(X_{it}\)</span> beeinflussen <span class="math inline">\(\Delta y_{it}\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+\Delta y_{it} &amp;= y_{it} - y_{i,t-1}
+= (X_{it} - X_{i,t-1})^\top \beta
++ (\epsilon_{it} - \epsilon_{i,t-1})\\
+\Delta y_{it} &amp;= \beta^{\top} \Delta X_{it} + \Delta \epsilon_{it},
+\quad t = 2, \dots, T
+\end{align}\]</span></p></li>
+</ul></li>
+<li><p><strong>Schätzung der Koeffizienten:</strong></p>
+<ul>
+<li><p>OLS-Schätzung nach Differenzbildung (kein Intercept notwendig):</p>
+<p><span class="math display">\[
+\widehat{\beta}_{FD} = (\Delta X^\top \Delta X)^{-1}
+\Delta X^\top \Delta y
+\]</span></p></li>
+<li><p><span class="math inline">\(\Delta y = (\Delta y_{11},\ldots,\Delta y_{1T},\ldots,\Delta y_{NT})^{T}\)</span> und <span class="math inline">\(\Delta X = (\Delta X_{11},\ldots,\Delta X_{1T},\ldots,\Delta X_{NT})^{T}\)</span></p></li>
+</ul></li>
+<li><p><strong>Eigenschaften des First-Difference-Schätzers:</strong></p>
+<ul>
+<li>konsistent unter Standardannahmen</li>
+<li>höhere Varianz als Within-Schätzer, da Differenzbildung Varianz der Fehler erhöht</li>
+<li>benötigt mindestens <span class="math inline">\(T \geq 2\)</span>, da erste Periode für Differenzbildung entfällt</li>
+</ul></li>
+</ul>
+</section>
+<section id="schätzung-im-fixed-effects-modell" class="level2">
+<h2 class="anchored" data-anchor-id="schätzung-im-fixed-effects-modell">Schätzung im Fixed-Effects Modell</h2>
+<section id="vergleich-within-schätzers-vs-first-difference-schätzer" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="vergleich-within-schätzers-vs-first-difference-schätzer">Vergleich Within-Schätzers vs First-Difference-Schätzer</h3>
+<ul>
+<li><p><strong>Vergleich mit First-Difference-Schätzer:</strong></p>
+<ul>
+<li>Die Within-Transformation reduziert die Varianz der abhängigen Variablen nur um einen Faktor <span class="math inline">\(\frac{T}{T+1}\)</span>, wodurch der Informationsverlust gering ist<br>
+</li>
+<li>Beim First-Difference-Schätzer verdoppelt sich hingegen die Varianz, was zu höheren Standardfehlern führt<br>
+</li>
+<li>First-Difference-Schätzer ist insbesondere bei wenigen Zeitpunkten ineffizient</li>
+</ul></li>
+<li><p><strong>Asymptotische Eigenschaften:</strong></p>
+<ul>
+<li><p>Die geschätzte Varianz von <span class="math inline">\(\widehat{\beta}_{FE}\)</span> ist gegeben durch:</p>
+<p><span class="math display">\[
+\text{Var}(\widehat{\beta}_{FE}) \approx \sigma_u^2
+(\widetilde{X}^\top \widetilde{X})^{-1}
+\]</span></p></li>
+<li><p>Die Fehler <span class="math inline">\(\epsilon_{it}\)</span> müssen homoskedastisch und unkorreliert sein, um eine effiziente Schätzung zu gewährleisten<br>
+</p></li>
+<li><p>Falls Autokorrelation oder Heteroskedastizität vorhanden ist, sind robuste Standardfehler erforderlich</p></li>
+</ul></li>
+<li><p><strong>Schlussfolgerungen:</strong></p>
+<ul>
+<li>Within-Schätzer ist unter den Standardannahmen konsistent und asymptotisch normalverteilt<br>
+</li>
+<li>Falls <span class="math inline">\(T\)</span> klein ist, kann der First-Difference-Schätzer zu großen Standardfehlern führen, wodurch der Within-Schätzer oft vorzuziehen ist</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="schätzung-im-fixed-effects-modell-1" class="level2">
+<h2 class="anchored" data-anchor-id="schätzung-im-fixed-effects-modell-1">Schätzung im Fixed-Effects Modell</h2>
+<section id="implementierung-within-schätzung-in-r" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="implementierung-within-schätzung-in-r">Implementierung Within-Schätzung in <code>R</code></h3>
+<ul>
+<li>Inwiefern haben Kapital <strong>capital</strong>, Output (<strong>output</strong>) bzw. Sektor (<strong>sector</strong>) Einfluss auf Lohn <strong>wage</strong></li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--multinominale logistische Regression: Labels &amp; Partition--</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_einsch <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/einschaetzung.csv"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_einsch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plm)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"EmplUK"</span>, <span class="at">package =</span> <span class="st">"plm"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fe_out <span class="ot">&lt;-</span> <span class="fu">plm</span>(wage <span class="sc">~</span> capital <span class="sc">+</span> output <span class="sc">+</span> <span class="fu">factor</span>(sector), <span class="at">data =</span> EmplUK,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">effect =</span> <span class="st">"individual"</span>, <span class="at">model =</span> <span class="st">"within"</span>, <span class="at">index =</span> <span class="fu">c</span>(<span class="st">"firm"</span>,<span class="st">"year"</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(fe_out))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  selbstein schule schicht alter
-1         2      1       1     2
-2         3      1       2     1
-3         1      1       2     1
-4         2      1       1     1
-5         1      1       2     1
-6         3      1       2     2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span> (data_einsch<span class="sc">$</span>selbstein) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'eher links'</span>, <span class="st">'Mitte'</span>, <span class="st">'eher rechts'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data_einsch<span class="sc">$</span>selbstein <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data_einsch<span class="sc">$</span>selbstein)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Nullmodell erhält 80% der Daten, Trainingsmodell 20%: ZUFÄLLIG ausgewählt</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">2</span>, <span class="fu">nrow</span>(data_einsch), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>model_0 <span class="ot">&lt;-</span> data_einsch[ind <span class="sc">==</span><span class="dv">1</span>,]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>model   <span class="ot">&lt;-</span> data_einsch[ind <span class="sc">==</span><span class="dv">2</span>,]</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("nnet")</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>model_0<span class="sc">$</span>selbstein <span class="ot">&lt;-</span> <span class="fu">relevel</span>(model_0<span class="sc">$</span>selbstein, <span class="at">ref =</span> <span class="st">"3"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>multinominal.model <span class="ot">&lt;-</span> nnet<span class="sc">::</span><span class="fu">multinom</span>(selbstein <span class="sc">~</span> alter <span class="sc">+</span> schule, <span class="at">data =</span> model_0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># weights:  12 (6 variable)
-initial  value 2311.480255 
-iter  10 value 2163.887112
-final  value 2163.886874 
-converged</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(multinominal.model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Call:
-nnet::multinom(formula = selbstein ~ alter + schule, data = model_0)
+<pre><code>Oneway (individual) effect Within Model
+
+Call:
+plm(formula = wage ~ capital + output + factor(sector), data = EmplUK, 
+    effect = "individual", model = "within", index = c("firm", 
+        "year"))
+
+Unbalanced Panel: n = 140, T = 7-9, N = 1031
+
+Residuals:
+     Min.   1st Qu.    Median   3rd Qu.      Max. 
+-12.69621  -1.15115  -0.16712   0.95113  17.29499 
 
 Coefficients:
-  (Intercept)      alter      schule
-1    1.507787 -0.9693638  0.01803241
-2    2.716944 -0.7463522 -0.66243962
+          Estimate Std. Error t-value  Pr(&gt;|t|)    
+capital  0.0642258  0.0649524  0.9888     0.323    
+output  -0.0384657  0.0076773 -5.0103 6.555e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Std. Errors:
-  (Intercept)     alter    schule
-1   0.3217004 0.1306577 0.1291727
-2   0.2912695 0.1170838 0.1174561
-
-Residual Deviance: 4327.774 
-AIC: 4339.774 </code></pre>
+Total Sum of Squares:    4403.4
+Residual Sum of Squares: 4281.3
+R-Squared:      0.027726
+Adj. R-Squared: -0.12648
+F-statistic: 12.6756 on 2 and 889 DF, p-value: 3.7333e-06</code></pre>
 </div>
 </div>
 <ul>
-<li><strong>Interpretation:</strong> die Ergebnisse sind stets in Relation zur Referenzkategorie zu interpretieren</li>
-<li><strong>Alter:</strong> <span class="math inline">\(-0.9694\)</span> negativer Wert, d.h. der Wechsel v. Alterskategorie <span class="math inline">\(1\)</span> (unter 45) nach Alterskategorie <span class="math inline">\(2\)</span> (über 45) wirkt sich negativ zur Zugehörigkeit <span class="math inline">\(selbstsein=1=\)</span>’eher links’ aus relativ zur Basiskategorie <span class="math inline">\(selbstsein=3=\)</span>’eher rechts’</li>
+<li><strong>sector</strong> aufgrund Multikollinearität zu Firmenindex <strong>firm</strong> entfernt: Firma wechselt Sektor nicht</li>
+<li><strong>capital</strong> insignifikant vs.&nbsp;<strong>output</strong> <span class="math inline">\(\ra\)</span> negativer Effekt von <span class="math inline">\(\widehat{\beta}^{FE}=-0.0384657\)</span></li>
 </ul>
 </section>
-<section id="interpretation---fortsetzung" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation---fortsetzung">Interpretation - Fortsetzung</h2>
-<p><img src="../figs/02_04_logodds_interpretation_01.png" class="img-fluid"> <img src="../figs/02_04_logodds_interpretation_02.png" class="img-fluid" alt="Beispielinterpretation im Mult. Logistischen Modell"></p>
 </section>
-<section id="p-wert" class="level2">
-<h2 class="anchored" data-anchor-id="p-wert">P-Wert</h2>
+<section id="schätzung-im-fixed-effects-modell-2" class="level2">
+<h2 class="anchored" data-anchor-id="schätzung-im-fixed-effects-modell-2">Schätzung im Fixed-Effects Modell</h2>
+<section id="implementierung-first-difference-schätzung-in-r" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="implementierung-first-difference-schätzung-in-r">Implementierung First-Difference Schätzung in <code>R</code></h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>coeffs <span class="ot">&lt;-</span> <span class="fu">summary</span>(multinominal.model)<span class="sc">$</span>coefficients</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ses    <span class="ot">&lt;-</span> <span class="fu">summary</span>(multinominal.model)<span class="sc">$</span>standard.errors</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> coeffs <span class="sc">/</span> ses</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(z), <span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fe_out <span class="ot">&lt;-</span> <span class="fu">plm</span>(wage <span class="sc">~</span> capital <span class="sc">+</span> output <span class="sc">+</span> <span class="fu">factor</span>(sector), <span class="at">data =</span> EmplUK,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">effect =</span> <span class="st">"individual"</span>, <span class="at">model =</span> <span class="st">"fd"</span>, <span class="at">index =</span> <span class="fu">c</span>(<span class="st">"firm"</span>,<span class="st">"year"</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(fe_out))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  (Intercept)        alter       schule
-1 2.77334e-06 1.179057e-13 8.889767e-01
-2 0.00000e+00 1.835458e-10 1.701566e-08</code></pre>
+<pre><code>Oneway (individual) effect First-Difference Model
+
+Call:
+plm(formula = wage ~ capital + output + factor(sector), data = EmplUK, 
+    effect = "individual", model = "fd", index = c("firm", "year"))
+
+Unbalanced Panel: n = 140, T = 7-9, N = 1031
+Observations used in estimation: 891
+
+Residuals:
+      Min.    1st Qu.     Median    3rd Qu.       Max. 
+-13.458947  -0.891161   0.016247   1.036022  16.425976 
+
+Coefficients:
+              Estimate Std. Error t-value Pr(&gt;|t|)
+(Intercept)  0.1133889  0.0770901  1.4709   0.1417
+capital     -0.0061282  0.0691908 -0.0886   0.9294
+output       0.0084674  0.0132336  0.6398   0.5224
+
+Total Sum of Squares:    4002.5
+Residual Sum of Squares: 4000.6
+R-Squared:      0.00046382
+Adj. R-Squared: -0.0017874
+F-statistic: 0.20603 on 2 and 888 DF, p-value: 0.81385</code></pre>
 </div>
 </div>
-<p>Wir sehen: alle Koeffizienten hochsignifikant.</p>
+<ul>
+<li><p><strong>sector</strong> entfernt wie gerade, nun aber auch <strong>capital</strong> UND <strong>output</strong> insignifikant</p></li>
+<li><p>First-Difference-Schätzer hat bekanntermaßen höhere Varianz, sodass</p>
+<p><span class="math display">\[
+t = \frac{\widehat{\beta}^{FD}}{\sigma(\widehat{\beta}^{FD})}
+\]</span></p>
+<p>tendenziell näher an Null liegt, wenn <span class="math inline">\(\sigma(\widehat{\beta}^{FD})\)</span> steigt. Das kann die Abweichung zu</p>
+<p><span class="math display">\[
+t = \frac{\widehat{\beta}^{FE}}{\sigma(\widehat{\beta}^{FE})}
+\]</span></p>
+<p>erklären.</p></li>
+</ul>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -948,13 +1056,13 @@ AIC: 4339.774 </code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../include/02_03_BLR.html" class="pagination-link" aria-label="Binär logistische Regression">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Binär logistische Regression</span>
+      <a href="../include/05_02_03_paneldaten_weiteres.html" class="pagination-link" aria-label="Wdhl. allgemeiner Konzepte">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Wdhl. allgemeiner Konzepte</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../include/02_05_OLR.html" class="pagination-link" aria-label="Ordinal logistische Regression">
-        <span class="nav-page-text">Ordinal logistische Regression</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../include/05_05_RE_modell.html" class="pagination-link" aria-label="Schätzung im RE-Modell">
+        <span class="nav-page-text">Schätzung im RE-Modell</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
