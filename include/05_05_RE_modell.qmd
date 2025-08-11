@@ -1,0 +1,103 @@
+## Random-Effects-Modell
+
+- **Modellformulierung:**  
+
+  - Das Random-Effects-Modell basiert auf den Annahmen (A1) – (A4) und (A5R) 
+    mit Gleichung:  
+
+    $$
+    y_{it} = \alpha_i + X_{it}^\top \beta + \epsilon_{it}
+    $$
+
+  - Die $\alpha_i$'s sind **Zufallsvariablen**, nicht deterministisch, und der 
+    Zufallsfehler ist idiosynkratisch:  
+
+    $$
+    \alpha_i \sim \mathcal{N}(\alpha, \sigma_{\alpha}^2) \quad\quad 
+    \epsilon_{it} \sim \mathcal{N}(1, \sigma_{\epsilon}^2)
+    $$
+
+- **Varianzstruktur der Fehler:** Kovarianzmatrix der Fehler für $i$ und alle 
+  gemeinsam, mit $I_T$ als $T \times T$ Einheitsmatrix und $J_T$ als 
+  Einsermatrix:  
+
+    $$
+    \Omega_i = \sigma_{\epsilon}^2 I_T + \sigma_{\alpha}^2 J_T 
+    \quad\quad 
+    \Omega := \text{Var}(u) = \text{diag}(\Omega_1,\ldots,\Omega_N)
+    $$
+
+- Warum $I_T$ und $J_T$?  
+  $\rightarrow$ $\text{Var}(u_{it}) = \sigma_{\epsilon}^2 + \sigma_{\alpha}^2$ 
+  und $\text{Cov}(u_{it}, u_{is}) = \sigma_{\alpha}^2$ für $t \neq s$
+
+- **Ziel:** Effiziente Schätzung der Koeffizienten $\beta$ unter 
+  Berücksichtigung der zufälligen Effekte.  
+  Reduktion der Varianz im Vergleich zum Fixed-Effects-Schätzer, wenn Annahmen 
+  erfüllt sind.
+
+- **Generalized Least Squares (GLS) Schätzer:**  
+
+  - Schätzung der Koeffizienten und Varianzmatrix des Schätzers:  
+
+    $$
+    \widehat{\beta}_{RE} = (X^{*\top} \widehat{\Omega}^{-1} X^*)^{-1} 
+    X^{*\top} \widehat{\Omega}^{-1} y^*
+    $$
+    $$
+    \text{Var}(\widehat{\beta}_{RE}) = \frac{1}{NT-D-1}
+    (X^{*\top} \widehat{\Omega}^{-1} X^*)^{-1}
+    $$
+
+  - Schätzung folgt GLS, ist zweistufig und berücksichtigt in der zweiten Stufe 
+    die Autokorrelationsstruktur (hier nicht weiter ausgeführt) durch 
+    transformierte Regressoren $X^{*}$  
+
+
+
+
+
+## Schätzung im Random-Effects Modell
+
+### Implementierung Random-Effects Schätzung in `R`  {.unlisted}
+
+```{r}
+#| echo: true
+library(plm)
+data("EmplUK", package = "plm")
+re_out <- plm(wage ~ emp + capital + output, data = EmplUK,
+              effect = "individual", model = "random", index = c("firm","year"))
+print(summary(re_out))
+```
+
+
+
+
+
+## Schätzung im Random-Effects Modell
+
+### Interpretation der Ergebnisse  {.unlisted}
+
+- **Vergleich der Schätzergebnisse:**  
+
+  - RE-Schätzer für $\beta_{\text{capital}}$:$~~~$ $\widehat{\beta}_{\text{capital, RE}} = 0.179, \quad p = 0.003362$  
+  - **Interpretation:** Im RE-Modell ist Kapital signifikant positiv, im 
+    FE-Modell nicht signifikant
+
+- **Ergebnisse für Output:**  
+
+  - RE-Schätzer für $\beta_{\text{output}}$:$~~~$ $\widehat{\beta}_{\text{output, RE}} = -0.031, \quad p = 5.696\text{e-}05$  
+  - **Interpretation:** Output hat in FE- und RE-Modellen einen signifikanten 
+    negativen Einfluss
+
+- **Interpretation der individuellen und idiosynkratischen Varianz:**  
+
+  - geschätzte Standardabweichung der individuellen Effekte und 
+    idiosynkratischen Fehler:  
+
+    $$
+    \widehat{\sigma}_{\alpha} = 5.085 \quad\quad 
+    \widehat{\sigma}_{\epsilon} = 2.184
+    $$
+
+  - **Varianz von Löhnen zwischen Firmen ist größer als Varianz von Löhnen innerhalb einer Firma**  

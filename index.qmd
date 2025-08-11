@@ -23,7 +23,34 @@ Starte mit einem der Bereiche oder nutze die Suche links.
   <a class="btn btn-outline-primary btn-cta" href="include/02_03_BLR.qmd">
     Binär logistische Regression
   </a>
-  <a class="btn btn-outline-secondary btn-cta" href="include/99_altklausuren.qmd">
+  <a class="btn btn-outline-primary btn-cta" href="include/02_04_MLR.qmd">
+    Multinomial logistische Regression
+  </a>
+  <a class="btn btn-outline-primary btn-cta" href="include/02_05_OLR.qmd">
+    Ordinal logistische Regression
+  </a>
+  <a class="btn btn-outline-primary btn-cta" href="/include/03_01_TZ.qmd">
+    Theorie der Zeitreihen
+  </a>
+    <a class="btn btn-outline-primary btn-cta" href="./include/03_02_WGB.qmd">
+    Wichtige Grundbegriffe
+  </a>
+    <a class="btn btn-outline-primary btn-cta" href="./include/03_03_ZRA_in_R.qmd">
+    Zeitreihenanalysen in R
+  </a>
+  <a class="btn btn-outline-primary btn-cta" href="./include/03_04_BCA.qmd">
+    Business Cycle Analysen
+  </a>
+  <a class="btn btn-outline-primary btn-cta" href="./include/03_05_AR_GARCH.qmd">
+    AR-type Modelle
+  </a>
+  <a class="btn btn-outline-primary btn-cta" href="./include/04_01_apriori_definitions.qmd">
+    Assoziationsanalyse
+  </a>
+  <a class="btn btn-outline-primary btn-cta" href="./include/04_02_conjoint.qmd">
+    Conjoint-Analyse
+  </a>
+  <a class="btn btn-outline-secondary btn-cta" href="include/99_altklausuren_A1.qmd">
     Altklausuren
   </a>
 </div>
@@ -31,19 +58,24 @@ Starte mit einem der Bereiche oder nutze die Suche links.
 
 ### Aktuelles {.mt-4}
 
-::: {.callout-note}
-**Hinweise:** Klausurtermin 01:
+::: {.callout-important}
+[**WICHTIG:**]{.underline} Alle relevanten und verbindlichen Informationen 
+(Klausurtermine / Änderungen / Regularien) nur auf den HFH Seiten 
+und im Webcampus $\ra$ regelmäßig vorbeischauen !
 :::
 
-::: {.callout-note}
-**Hinweise:** Klausurtermin 02:
+::: {.callout-caution}
+[**Hinweise:**]{.underline} Klausurtermin 01: [27.09.2025]{.underline .ctl}
 :::
 
-::: {.callout-note}
+::: {.callout-caution}
+[**Hinweise:**]{.underline} Klausurtermin 02: [20.12.2025]{.underline .ctl}
+:::
+
+::: {.callout-tip}
 **Hinweise:** Folien und Notebooks werden laufend ergänzt. Bei Fragen oder
 Fehlern bitte im GitHub-Menü (links oben) melden.
 :::
-
 
 :::
 ::: {.column width="35%"}

@@ -1,0 +1,254 @@
+
+
+
+
+
+## AR-Modelle
+
+### AR-Modell Einführung {.unlisted}
+
+- **Definition:**
+  - Autoregressive Modelle beschreiben Zeitreihen, bei denen der aktuelle
+    Wert von vergangenen Werten abhängt. Die Ordnung $q$ bestimmt, wie
+    viele vergangene Werte Einfluss haben.
+  - Beispiel:
+    $$
+    x_t = \phi_1 x_{t-1} + \phi_2 x_{t-2} + \dots + \phi_q x_{t-q} + \epsilon_t
+    $$
+- **AR(q)-Modelle:**
+  - **AR(1):** Nur vorheriger Wert beeinflusst aktuellen Wert.
+  - **AR(2):** Zwei vorherige Werte bestimmen aktuellen Wert.
+  - **AR(q):** $q$ vorherige Werte haben Einfluss.
+- **Voraussetzungen:** Stationarität, keine stark ausgeprägten Trends oder
+  saisonalen Komponenten.
+- **Anwendungsbereich:** Finanzmarktanalysen, Wirtschaftsindikatoren,
+  Wetterprognosen.
+
+
+### ARCH-Modelle Einführung {.unlisted}
+
+- **Idee:** Modellierung von Renditen als $r_t = \mu_t + \epsilon_t$.
+  - Bei täglichen Renditen meist keine Autokorrelation, sodass man einfach
+    $\mu_t \equiv \mu$ setzt.
+  - Dann gilt $r_t - \mu = \epsilon_t$ und man modelliert weiter
+    $\epsilon_t = \sigma_t u_t$ mit $u_t \sim$ **[starker WN]{.ctl}**.
+  - Nun gilt $Var[\epsilon_t] = Var[\sigma_t u_t] = \sigma_t^2 Var[u_t] =
+    \sigma_t^2 \cdot 1 = \sigma_t^2$.
+- **Definition:**
+  - *Autoregressive Conditional Heteroscedasticity* (ARCH) modelliert die
+    Varianz der Fehlerzeitreihe.
+  - Annahme: Varianz hängt von vergangenen Fehlerwerten ab.
+- **ARCH(1)-Modell:**
+  - Einfachste Form: Varianz $\sigma_t^2$ hängt von vorherigem Fehlerterm
+    $\epsilon_{t-1}$ ab.
+  - Mathematisch:
+    $$
+    \sigma_t^2 = \omega + \alpha_1 \epsilon_{t-1}^2
+    $$
+    wobei $\omega$ und $\alpha_1$ zu schätzen sind.
+- **ARCH(q)-Modell:**
+  - Erweiterung auf mehrere vorherige Fehlerwerte:
+    $$
+    \sigma_t^2 = \omega + \sum_{i=1}^{q} \alpha_i \epsilon_{t-i}^2
+    $$
+- **Anwendungsbereich:** Finanzmärkte, Volatilitätsmodellierung, Risikoanalysen.
+
+
+## Implementierung von ARCH-Modellen in `R`
+
+### Daten Einlesen (Kapitel 3.5) {.unlisted}
+
+```{r}
+#| echo: true
+# install.packages("tsibbledata"); install.packages("PerformanceAnalytics")
+library(magrittr)
+library(xts)
+library(PerformanceAnalytics)
+data_gafa <- tsibbledata::gafa_stock %>% 
+  dplyr::select(Date, Symbol, Close) %>%
+  tidyr::pivot_wider(names_from = Symbol, values_from = Close)
+colnames(data_gafa) <- c("Date", "Apple","Amazon", "Facebook", "Google")
+head(data_gafa)
+data_gafa_xts <- xts::xts(data_gafa[, 2:5], order.by = data_gafa$Date)
+data_gafa_returns <- PerformanceAnalytics::Return.calculate(data_gafa_xts, method = "log")[-1]
+```
+
+
+### Plotten der eingelesenen Daten I {.unlisted}
+
+```{r}
+#| echo: true
+library(xts)
+plot(data_gafa_xts)
+```
+
+
+### Plotten der eingelesenen Daten II {.unlisted}
+
+```{r}
+#| echo: true
+library(xts)
+plot(data_gafa_returns)
+```
+
+
+### Überprüfung von Annahmen {.unlisted}
+
+![Annahmen für ARCH und GARCH](/figs/03_05_annahmen_arch_garch.png)
+
+
+### Gibt es ARCH-Effekte? {.unlisted}
+
+- Standardabweichung als Maß für Volatilität.
+- Hohe Standardabweichung $\ra$ große Schwankungen.
+- Niedrige Standardabweichung $\ra$ stabile Zeitreihe.
+- Gleitende Standardabweichung: jährliche Normierung.
+- Berechnung für Apple-Daten über 22-Tage-Fenster: viele Werte $> 0.2$
+  deuten auf hohe Volatilität hin.
+
+```{r}
+#| echo: true
+#| fig-width: 10
+#| fig-height: 2.5
+PerformanceAnalytics::chart.RollingPerformance(
+  R = data_gafa_returns$Apple, width = 22, FUN = 'sd.annualized')
+```
+
+- Visuell scheint es welche zu geben, daher nun formale Tests.
+- Vorher: Renditedaten stationarisieren (z. B. HP-Filter).
+
+```{r}
+#| echo: true
+# install.packages("FinTS"); install.packages("mFilter")
+return_data_apple_filtered <- mFilter::mFilter(ts(data_gafa_returns$Apple), filter = "HP")
+return_data_apple_filtered <- xts::as.xts(return_data_apple_filtered$x)
+FinTS::ArchTest(return_data_apple_filtered)
+```
+
+- $H_0$: Keine ARCH-Effekte.
+- Ergebnis: $H_0$ abgelehnt, ARCH-Effekte vorhanden.
+
+
+### Schätzung von ARCH-Modellen {.unlisted}
+
+```{r}
+#| echo: true
+# install.packages("rugarch")
+model_specification_apple_arch <- rugarch::ugarchspec(
+  variance.model =
+    list(
+      model = 'sGARCH',
+      garchOrder = c(1, 0) # Erstes Element: ARCH-Ordnung, zweites = 0 für ARCH
+    ), 
+  mean.model = list(
+    armaOrder = c(0, 0)
+  ),
+  distribution.model = "norm")
+fit_ARCH_data_apple <- rugarch::ugarchfit(
+  data = return_data_apple_filtered,
+  spec = model_specification_apple_arch
+)
+```
+
+- Alle Parameter signifikant (p < 0.05).
+- Modell:
+  $$
+  \sigma_t^2 = 3\times 10^{-6} + 0.999\cdot e_{t-1}^2
+  $$
+
+
+### Ergebnisse ausgeben {.unlisted}
+
+```{r}
+#| echo: true
+print(fit_ARCH_data_apple)
+```
+
+
+### Visualisierung der Ergebnisse {.unlisted}
+
+```{r}
+#| echo: true
+library("rugarch")
+plot(fit_ARCH_data_apple, which = "all")
+```
+
+
+### Vorhersagen mit ARCH-Modell {.unlisted}
+
+```{r}
+#| echo: true
+forcast_ARCH_apple <- rugarch::ugarchforecast(fitORspec = fit_ARCH_data_apple, n.ahead = 5)
+forcast_ARCH_apple
+```
+
+
+## GARCH-Modelle
+
+### Einführung {.unlisted}
+
+- **Idee wie bei ARCH:**
+  - Modellierung von Renditen als $r_t = \mu_t + \epsilon_t$.
+  - $r_t - \mu = \epsilon_t$, $\epsilon_t = \sigma_t u_t$, $u_t \sim$
+    **[starker WN]{.ctl}**.
+  - $Var[\epsilon_t] = \sigma_t^2$.
+- **Definition:**
+  - *Generalized Autoregressive Conditional Heteroscedasticity*.
+  - Annahme: Varianz hängt von vergangenen Fehlern [**UND**]{.crd} vorherigen
+    Varianzen ab.
+- **GARCH(q, p)-Modell:**
+  - $\sigma_t^2 = \omega + \sum_{i=1}^q \alpha_i \epsilon_{t-i}^2 +
+    \sum_{j=1}^p \beta_j \sigma_{t-j}^2$
+  - `q` bestimmt die Anzahl der berücksichtigten Verzögerungen der Fehlerterme
+  - `p` bestimmt die Anzahl der berücksichtigten Verzögerungen der Varianzen
+- **Anwendungsbereich:** wie bei ARCH.
+
+
+### GARCH in `R` {.unlisted}
+
+```{r}
+#| echo: true
+library("rugarch")
+model_specification_apple_garch <- ugarchspec(
+  variance.model = 
+    list(model = "sGARCH",
+         garchOrder = c(1, 1)),
+  mean.model = 
+    list(armaOrder = c(0, 0)),
+  distribution.model = "norm")
+fit_GARCH_data_apple <- ugarchfit(
+  data = return_data_apple_filtered,
+  spec = model_specification_apple_garch)
+```
+
+- wieder: alle Parameter sind signifikant mit Niveau 5\% (p < 0.05).
+- das **geschätzte / angepasste GARCH-Modell** lautet:
+  $$
+  \sigma_t^2 = 0.000025 + 0.122304\cdot e_{t-1}^2 + 0.771785\cdot \sigma_{t-1}^2
+  $$
+
+
+### Ergebnisse ausgeben {.unlisted}
+
+```{r}
+#| echo: true
+print(fit_GARCH_data_apple)
+```
+
+
+### Vorhersagen mit GARCH-Modell {.unlisted}
+
+```{r}
+#| echo: true
+forcast_GARCH_apple <- rugarch::ugarchforecast(fitORspec = fit_GARCH_data_apple, n.ahead = 5)
+forcast_GARCH_apple
+```
+
+
+### Visualisierung der Ergebnisse {.unlisted}
+
+```{r}
+#| echo: true
+library("rugarch")
+plot(fit_GARCH_data_apple, which = "all")
+```

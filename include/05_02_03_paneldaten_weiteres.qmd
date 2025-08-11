@@ -1,0 +1,55 @@
+## Einige Grundbefehle
+
+### Einlesen von Daten  {.unlisted}
+
+- `("EmplUK", package = "plm")`: Datensätze aus dem Paket direkt als Variable `EmplUK` einladen
+- UK Löhne `wage` — **firm** Variablenname (Firma) Querschnitt — **year** Variablenname Zeit (1976 bis 1984)
+- `emp`: Beschäftigte — `capital`: Bruttokapitalstock — `output`: Branchenoutput
+
+
+```{r}
+#| echo: true
+# install.packages("plm")
+library(plm)
+data("EmplUK", package = "plm")
+# daten <- read.csv('../data/EmplUK.csv', header = TRUE, sep = ';', dec = ',')
+head(EmplUK)
+names(EmplUK)
+EmplUK[2, ]
+N <- length(unique(EmplUK[, 1]))
+T <- length(unique(EmplUK[, 2]))
+d <- length(EmplUK[2, ]) - 2 # Spalten 1 und 2 für N und T raussubtrahieren
+print(c(N = N, T = T, d = d))
+```
+
+
+
+
+
+## Wiederholung: Schätzen und Testen
+
+- **3.1 Modell vs. Realität:**  
+
+  - Paneldatenmodell ist eine Annäherung an die Realität, keine perfekte Abbildung  
+  - Modellannahmen sind oft nur näherungsweise erfüllt, z. B. linearer Zusammenhang $x_{it}$ $\ra$ $y_{it}$  
+  - zufällige Abweichungen sind komplexer als reines additiv weißes Rauschen $\epsilon_{it}$  
+
+- **3.2 Parameter von Interesse:**  
+
+  - Ziel: Bestimmung des Einflusses der unabhängigen Variablen $X_{it}$ auf $y_{it}$, wobei Stärke des Zusammenhangs von $X_{it}^{(j)}$ und $y_{it}$: $\beta_j > 0$ positiver vs. $\beta_j < 0$ negativer Einfluss 
+  - $\alpha_i$'s meist uninteressant $\ra$ bloße Korrektur individueller Effekte; außerdem wären $D$ vs. $n+D$ Parameter zu schätzen
+
+- **3.3 Schätzung:**  
+
+  - Parameter $\beta$ und ggf. $\alpha$ müssen anhand von Stichprobendaten 
+    geschätzt werden  
+  - Verschiedene Schätzer für FE-/RE-Modelle: aber Schätzungen sind 
+    Näherungen an wahre Werte
+
+- **3.4 Statistische Testprobleme:**  
+
+  - Tests zur Überprüfung der Hypothese $H_0: \beta_j = 0$ gegen $H_1: \beta_j \neq 0$  
+  - p-Wert: Wahrscheinlichkeit für noch extremere Beobachtungen als Irrtumswahrscheinlichkeit $\alpha = 0.05$
+  - Fehler 1. Art ($\alpha$-Fehler): Ablehnung von $H_0$, obwohl sie wahr ist 
+  - Fehler 2. Art ($\beta$-Fehler): Beibehaltung von $H_0$, obwohl $H_1$ 
+    wahr ist  

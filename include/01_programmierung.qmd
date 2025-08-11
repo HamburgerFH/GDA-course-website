@@ -8,7 +8,7 @@ title: "Vorbereitung - Programmiertools"
 
 Auswahl folgender Pakete sollte für die Bearbeitung der Aufgaben und das Nachimplementieren der Anwendungen aus den Studienbriefen ausreichend sein: 
 
-```r
+``` r
 #| cache: true
 install.packages(
   c("rcompanion", "polr", "ordinal", "DescTools", "tidyverse", "ggplot2", "dplyr",

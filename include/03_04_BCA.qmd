@@ -1,0 +1,54 @@
+
+
+
+
+
+## Business Cycle Analysen
+
+
+### Vier-Phasen-Modell des Business Cycle {.unlisted}
+
+- **Phase 1: Expansion**
+  - Wirtschaftlicher Aufschwung, sinkende Arbeitslosenzahlen, geringe
+    Inflation.
+- **Phase 2: Hochkonjunktur**
+  - Lohnniveau steigt, Wachstumsrate des BIP sinkt, Markt erreicht
+    Sättigung.
+- **Phase 3: Rezession**
+  - Wirtschaftlicher Abschwung, steigende Arbeitslosenquote, Inflation nimmt
+    zu.
+- **Phase 4: Konjunkturtief / Depression**
+  - Starke Zunahme der Arbeitslosenquote, rapide fallende Börsenkurse,
+    Inflation steigt stark an.
+
+![Vier-Phasen-Modell des Business Cycle](/figs/03_04_BCA_4phasen.png)
+
+
+### Zwei-Phasen-Modell des Business Cycle {.unlisted}
+
+- **Vereinfachung des Vier-Phasen-Modells:** Häufig in den USA verwendet.
+- **Phase 1: Expansion-Phase:** Zusammenfassung von vormals Phase 1 & 2.
+- **Phase 2: Rezession-Phase:** Zusammenfassung von vormals Phase 3 & 4.
+- **Business Cycle Analyse in `R`:** Ermittlung der Phasen mit dem
+  **BCDating**-Paket.
+
+```r
+bc <- BBQ(myts, mincycle = 5, minphase = 4)
+summary(bc)
+```
+
+![Zwei-Phasen-Modell des Business Cycle](/figs/03_04_BCA_2phasen.png)
+
+
+### Zwei-Phasen-Modell des Business Cycle — Plot {.unlisted}
+
+- [GRAU:]{.crd} [Rezession]{.crd} **vs.**
+  [WEISS: Expansion]{.ctl}
+
+```r
+bc <- BBQ(myts, mincycle = 5, minphase = 4)
+summary(bc)
+plot(bc, bne_Q_trend_seasdiff)
+```
+
+![Zwei-Phasen-Modell des Business Cycle — Plot](/figs/03_04_BCA_2phasen_plot.png)

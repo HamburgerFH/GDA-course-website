@@ -1,0 +1,22 @@
+## Conjoint Analysis
+
+- Attribute A und B mit levels, 1-3 und 1-2 $\ra$ 6 Stimuli/Teilnutzenwerte 
+  für A und B (s. Bild)
+- $y=\mu +\beta_A +\beta_B$ -- $\beta_X$ ist Teilnutzenwert für Attribut X und
+  $\mu$ der Durchschnittsrang
+
+![Conjoint Analysis Beispiel 1](/figs/04_02_conjoint_01.png)
+
+
+## Conjoint Analysis
+
+![Conjoint Analysis Beispiel 2](/figs/04_02_conjoint_02.png)
+
+![Conjoint Analysis Beispiel 3](/figs/04_02_conjoint_03.png)
+
+
+## Conjoint Analysis
+
+![Conjoint Analysis Beispiel 4](/figs/04_02_conjoint_04.png)
+
+![Conjoint Analysis Beispiel 5](/figs/04_02_conjoint_05.png)

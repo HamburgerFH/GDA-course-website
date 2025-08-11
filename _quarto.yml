@@ -53,11 +53,51 @@ website:
             text: "Binär logistische Regression"
           - href: ./include/02_04_MLR.qmd
             text: "Multinomial logistische Regression"
+          - href: ./include/02_05_OLR.qmd
+            text: "Ordinal logistische Regression"
+      - section: "Studienbrief 3"
+        contents: 
+          - href: ./include/03_01_TZ.qmd
+            text: "Theorie der Zeitreihen"
+          - href: ./include/03_02_WGB.qmd
+            text: "Wichtige Grundbegriffe"
+          - href: ./include/03_03_ZRA_in_R.qmd
+            text: "Zeitreihenanalysen in `R`"
+          - href: ./include/03_04_BCA.qmd
+            text: "Business Cycle Analysen"
+          - href: ./include/03_05_AR_GARCH.qmd
+            text: "AR-Modelle"
+      - section: "Studienbrief 4"
+        contents: 
+          - href: ./include/04_01_apriori_definitions.qmd
+            text: "Assoziationsanalyse"
+          - href: ./include/04_02_conjoint.qmd
+            text: "Conjoint-Analyse"
+      - section: "Studienbrief 5"
+        contents: 
+          - href: ./include/05_01_paneldaten_effectsmodels.qmd
+            text: "Paneldaten und das Effects-Modell"
+          - href: ./include/05_02_03_paneldaten_weiteres.qmd
+            text: "Wdhl. allgemeiner Konzepte"
+          - href: ./include/05_04_FE_modell.qmd
+            text: "Schätzung im FE-Modell"
+          - href: ./include/05_05_RE_modell.qmd
+            text: "Schätzung im RE-Modell"
+          - href: ./include/05_06_hausmann.qmd
+            text: "Auswahl geeigneteR Paneldatenmodelle: Hausman-Test"
       - text: "---"
       - section: "Altklausuren"
         contents: 
-          - href: ./include/99_altklausuren.qmd
+          - href: ./include/99_altklausuren_A1.qmd
             text: "Aufgabentyp 1"
+          - href: ./include/99_altklausuren_A2.qmd
+            text: "Aufgabentyp 2"
+          - href: ./include/99_altklausuren_A3.qmd
+            text: "Aufgabentyp 3"
+          - href: ./include/99_altklausuren_A4.qmd
+            text: "Aufgabentyp 4"
+          - href: ./include/99_altklausuren_A5.qmd
+            text: "Aufgabentyp 5"
       - text: "---"
       - about.qmd
 

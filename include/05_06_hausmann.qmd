@@ -1,0 +1,55 @@
+## Der Hausman-Test: Auswahl eines geeigneten Paneldatenmodells
+
+- **Ziel:**  
+
+  - Auswahl zwischen Fixed-Effects (FE) und Random-Effects (RE) Modell  
+  - Testet, ob die individuellen Effekte $\alpha_i$ mit den unabhängigen 
+    Variablen $X_{it}$ korreliert sind  
+
+- **Statistische Hypothesen:**  
+
+  - Nullhypothese $H_0$: Es liegt ein **RE-Modell** vor  
+    $(\text{Cov}(X_{it}, \alpha_i) = 0)$  
+  - Alternativhypothese $H_1$: Es liegt kein **RE-Modell** vor  
+    $(\text{Cov}(X_{it}, \alpha_i) \neq 0)$  
+
+- **Teststatistik:**  
+
+  - Die Prüfgröße basiert auf der Differenz der Schätzer:  
+
+    $$
+    \lambda = (\widehat{\beta}_{FE} - \widehat{\beta}_{RE})^\top 
+    \left( \text{Var}(\widehat{\beta}_{FE}) - \text{Var}(\widehat{\beta}_{RE}) 
+    \right)^{-1} 
+    (\widehat{\beta}_{FE} - \widehat{\beta}_{RE})
+    $$
+
+  - $\lambda$ folgt asymptotisch einer Chi-Quadrat-Verteilung mit $D$ 
+    Freiheitsgraden  
+
+- **Entscheidungsregel:**  
+
+  - Falls $\lambda > \chi^2_{1-\alpha, D}$, wird $H_0$ verworfen → 
+    **FE-Modell bevorzugt**  
+  - Falls $\lambda \leq \chi^2_{1-\alpha, D}$, kann $H_0$ nicht verworfen 
+    werden → **RE-Modell zulässig**  
+
+
+
+
+
+## Hausman-Test – Implementierung
+
+### Implementierung in `R`  {.unlisted}
+
+```{r}
+#| echo: true
+library(plm)
+data("EmplUK", package = "plm")
+phtest(wage ~ emp + capital + output, data = EmplUK, 
+       effect = "individual", model = c("within", "random"),
+       index = c("firm", "year")
+)
+```
+
+Hypothese, dass sowohl RE- als auch FE-Schätzer verwendbar sind, wird nicht verworfen. Man kann also den RE-Schätzer nehmen und z. B. die bei diesem Schätzer signifikanten Ergebnisse für **capital** interpretieren zusätzlich zu **output**.  

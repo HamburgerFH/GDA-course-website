@@ -1,0 +1,137 @@
+
+
+
+
+
+## Ordinale Logistische Regression
+
+- Zuvor: multivariate ***nominale*** abhängige Variable
+- Jetzt: multivariate ***ordinale*** abhängige Variable
+
+![](/figs/02_05_OLR_intro.png)
+
+
+### Überblick Datensatz {.unlisted}
+
+```{r}
+#| echo: true
+data_planen <- read.csv("../data/planendf.csv")
+head(data_planen)
+table(data_planen$geschl)
+table(data_planen$planen)
+table(data_planen$alter)
+table(data_planen$schule)
+table(data_planen$kdauer)
+```
+
+
+### Umsetzung mit R {.unlisted}
+
+```{r}
+#| echo: true
+# install.packages("ordinal")
+# install.packages("rcompanion")
+# install.packages("MASS")
+library(ordinal)
+library(rcompanion)
+library(MASS)
+data_planen$planen <- factor(
+  data_planen$planen,
+  levels = c(1, 2, 3, 4, 5),
+  labels = c("gar nicht", "wenig", "mittel", "ziemlich", "sehr stark")
+)
+data_planen$alter <- factor(
+  data_planen$alter,
+  levels = c(1, 2, 3),
+  labels = c("bis 40 Jahre", "41-55 Jahre", "über 55 Jahre")
+)
+data_planen$kdauer <- factor(
+  data_planen$kdauer,
+  levels = c(1, 2, 3, 4),
+  labels = c("bis 5 Jahre", "6-10 Jahre", "11-20 Jahre", "über 20 Jahre")
+)
+model_0 <- clm(as.factor(planen) ~ 1, data = data_planen, link = "logit")
+model <- clm(
+  as.factor(planen) ~ geschl + as.factor(alter) + as.factor(kdauer),
+  data = data_planen,
+  link = "logit"
+)
+```
+
+[ACHTUNG:]{.crd} Bei der Erstellung von Faktoren legt `R` immer die erste
+Kategorie als Referenzkategorie fest !
+
+
+### Umsetzung mit R — Fortsetzung {.unlisted}
+
+```{r}
+#| echo: true
+anova(model_0, model)
+```
+
+- ANOVA-Ergebnisse des Modellvergleichs: AIC ist etwa um 21 kleiner als
+  Nullmodell (gut!)
+- ANOVA-Ergebnissunterschiede sind auch signifikant
+  $p\text{-value}=1.317\text{e-}05$ mit [\*\*\*]{.crd}, also drei Sternchen, also hoch signifikant.
+
+
+### Ergebnisse ohne p-Werte: {.unlisted}
+
+```{r}
+#| echo: true
+ordinal.model <- polr(
+  as.factor(planen) ~ geschl + alter + kdauer,
+  data = data_planen,
+  Hess = TRUE
+)
+summary(ordinal.model)
+```
+
+
+### Interpretation der Koeffizienten: {.unlisted}
+
+- **Frauen** zeigen **1,12-mal höhere Zustimmung** als Männer
+  (Referenzgruppe).
+- **Niedriges Alter & kurze Krankheitsdauer** erhöhen Zustimmung
+  (negatives Vorzeichen).
+- **Altersgruppen:**
+  - 41–55 Jahre: Wahrscheinlichkeit sinkt um **Faktor 0,79**, aktiv
+    vorauszuplanen.
+  - Über 55 Jahre: Wahrscheinlichkeit sinkt um **Faktor 2,26**.
+- **Krankheitsdauer:**
+  - Über 20 Jahre: Wahrscheinlichkeit des aktiven Vorausplanens und
+    Handelns sinkt um **Faktor 2,09** gegenüber einer Krankheitsdauer
+    von 5 Jahren.
+
+
+### Umsetzung mit R — Fortsetzung {.unlisted}
+
+```{r}
+#| echo: true
+nagelkerke(fit = model, null = model_0)
+```
+
+
+### Modellgüte & Signifikanz {.unlisted}
+
+- **Nagelkerke $R^2$ = 0,332** $\ra$ akzeptable Modellgüte
+  (Varianzerklärung ~33\%)
+
+- **Signifikante Prädiktoren (p < 0,001):**
+
+  - Geschlecht
+  - Alter (über 55 Jahre)
+  - Krankheitsdauer (über 20 Jahre)
+
+
+### Ergebnisse mit P-Werten {.unlisted}
+
+**Umsetzung mit R — Fortsetzung**
+
+```{r}
+#| echo: true
+summary(model)
+```
+
+- Signifikanzprüfung mittels **summary(model)** d.h. auf dem `clm()` -
+  Befehl basierendes Modell

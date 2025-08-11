@@ -1,0 +1,186 @@
+## Within-Transformation
+
+- **Idee:**  
+
+  - Entfernt individuelle Effekte $\alpha_i$ aus der Modellgleichung  
+  - Basiert auf der Within-Transformation der abhängigen und unabhängigen 
+    Variablen  
+  - Modell nach Transformation, bei der individuelle konstante Effekte 
+    $\alpha_i$ eliminiert sind:
+
+    $$
+    y_{it} - \overline{y}_i = (X_{it} - \overline{X}_i)^\top \beta 
+    + (\epsilon_{it} - \overline{\epsilon}_i)
+    $$
+
+- **Within-Transformation:**  
+
+  - Für jede Beobachtung wird der Mittelwert über $T$ Zeitpunkte abgezogen  
+  - Transformation für die abhängige und unabhängige Variablen:  
+
+    $$
+    \widetilde{y}_{it} = y_{it} - \overline{y}_i, \quad 
+    \text{mit } \overline{y}_i = \frac{1}{T} \sum_{t=1}^{T} y_{it}
+    $$
+    $$
+    \widetilde{X}_{it} = X_{it} - \overline{X}_i, \quad 
+    \text{mit } \overline{X}_i = \frac{1}{T} \sum_{t=1}^{T} X_{it}
+    $$
+
+- **Schätzung der Koeffizienten:**  
+
+  - Der Fixed-Effects-Schätzer ergibt sich aus einer OLS-Schätzung nach der 
+    Within-Transformation:  
+
+    $$
+    \widehat{\beta}_{FE} = (\widetilde{X}^\top \widetilde{X})^{-1} 
+    \widetilde{X}^\top \widetilde{y}
+    $$
+
+  - $\widetilde{y} = (\widetilde{y}_{11},\ldots,\widetilde{y}_{1T},\ldots,
+    \widetilde{y}_{NT})^{T}$ und $\widetilde{X} = (\widetilde{X}_{11},\ldots,\widetilde{X}_{1T},\ldots, \widetilde{X}_{NT})^{T}$
+  - Intercept entfällt, da die Transformation die Mittelwerte entfernt  
+
+
+
+
+
+## First-Difference-Schätzer
+
+- **Grundidee und Ziel:**  
+  Eliminierung der individuellen Effekte $\alpha_i$ durch Differenzbildung: 
+  für festes $i$ werden zwei aufeinanderfolgende Zeitpunkte $t-1$ und $t$ 
+  betrachtet, so dass im Modell vor Differenzbildung gilt:
+
+    $$
+    y_{it} = \alpha_i + X_{it}^\top \beta + \epsilon_{it} 
+    \quad\text{und}\quad
+    y_{i,t-1} = \alpha_i + X_{i,t-1}^\top \beta + \epsilon_{i,t-1}
+    $$
+
+- **First-Difference-Transformation:**  
+
+  - Differenzbildung zwischen zwei aufeinanderfolgenden Zeitpunkten,  
+    $\alpha_i$ fallen wieder weg. Neue Modellgleichung: nur Veränderungen in 
+    $X_{it}$ beeinflussen $\Delta y_{it}$:  
+
+    \begin{align}
+    \Delta y_{it} &= y_{it} - y_{i,t-1} 
+    = (X_{it} - X_{i,t-1})^\top \beta 
+    + (\epsilon_{it} - \epsilon_{i,t-1})\\
+    \Delta y_{it} &= \beta^{\top} \Delta X_{it} + \Delta \epsilon_{it}, 
+    \quad t = 2, \dots, T
+    \end{align}
+
+- **Schätzung der Koeffizienten:**  
+
+  - OLS-Schätzung nach Differenzbildung (kein Intercept notwendig):  
+
+    $$
+    \widehat{\beta}_{FD} = (\Delta X^\top \Delta X)^{-1} 
+    \Delta X^\top \Delta y
+    $$
+
+  - $\Delta y = (\Delta y_{11},\ldots,\Delta y_{1T},\ldots,\Delta y_{NT})^{T}$ und $\Delta X = (\Delta X_{11},\ldots,\Delta X_{1T},\ldots,\Delta X_{NT})^{T}$
+
+- **Eigenschaften des First-Difference-Schätzers:**  
+
+  - konsistent unter Standardannahmen 
+  - höhere Varianz als Within-Schätzer, da Differenzbildung Varianz der Fehler erhöht
+  - benötigt mindestens $T \geq 2$, da erste Periode für Differenzbildung entfällt  
+
+
+
+
+
+## Schätzung im Fixed-Effects Modell
+
+### Vergleich Within-Schätzers vs First-Difference-Schätzer  {.unlisted}
+
+- **Vergleich mit First-Difference-Schätzer:**  
+
+  - Die Within-Transformation reduziert die Varianz der abhängigen Variablen 
+    nur um einen Faktor $\frac{T}{T+1}$, wodurch der Informationsverlust gering 
+    ist  
+  - Beim First-Difference-Schätzer verdoppelt sich hingegen die Varianz, was zu 
+    höheren Standardfehlern führt  
+  - First-Difference-Schätzer ist insbesondere bei wenigen Zeitpunkten 
+    ineffizient  
+
+- **Asymptotische Eigenschaften:**  
+
+  - Die geschätzte Varianz von $\widehat{\beta}_{FE}$ ist gegeben durch:  
+
+    $$
+    \text{Var}(\widehat{\beta}_{FE}) \approx \sigma_u^2 
+    (\widetilde{X}^\top \widetilde{X})^{-1}
+    $$
+
+  - Die Fehler $\epsilon_{it}$ müssen homoskedastisch und unkorreliert sein, um 
+    eine effiziente Schätzung zu gewährleisten  
+  - Falls Autokorrelation oder Heteroskedastizität vorhanden ist, sind robuste 
+    Standardfehler erforderlich  
+
+- **Schlussfolgerungen:**  
+
+  - Within-Schätzer ist unter den Standardannahmen konsistent und asymptotisch 
+    normalverteilt  
+  - Falls $T$ klein ist, kann der First-Difference-Schätzer zu großen 
+    Standardfehlern führen, wodurch der Within-Schätzer oft vorzuziehen ist  
+
+
+
+
+
+## Schätzung im Fixed-Effects Modell
+
+### Implementierung Within-Schätzung in `R`  {.unlisted}
+
+- Inwiefern haben Kapital **capital**, Output (**output**) bzw. Sektor 
+  (**sector**) Einfluss auf Lohn **wage**
+
+
+```{r}
+#| echo: true
+library(plm)
+data("EmplUK", package = "plm")
+fe_out <- plm(wage ~ capital + output + factor(sector), data = EmplUK,
+              effect = "individual", model = "within", index = c("firm","year"))
+print(summary(fe_out))
+```
+
+- **sector** aufgrund Multikollinearität zu Firmenindex **firm** entfernt: 
+  Firma wechselt Sektor nicht
+- **capital** insignifikant vs. **output** $\ra$ negativer Effekt von 
+  $\widehat{\beta}^{FE}=-0.0384657$  
+
+
+
+
+
+## Schätzung im Fixed-Effects Modell
+
+### Implementierung First-Difference Schätzung in `R`  {.unlisted}
+
+```{r}
+#| echo: true
+fe_out <- plm(wage ~ capital + output + factor(sector), data = EmplUK,
+              effect = "individual", model = "fd", index = c("firm","year"))
+print(summary(fe_out))
+```
+
+- **sector** entfernt wie gerade, nun aber auch **capital** UND **output** 
+  insignifikant
+- First-Difference-Schätzer hat bekanntermaßen höhere Varianz, sodass  
+
+  $$
+  t = \frac{\widehat{\beta}^{FD}}{\sigma(\widehat{\beta}^{FD})}
+  $$  
+
+  tendenziell näher an Null liegt, wenn $\sigma(\widehat{\beta}^{FD})$ steigt. Das kann die Abweichung zu  
+
+  $$
+  t = \frac{\widehat{\beta}^{FE}}{\sigma(\widehat{\beta}^{FE})}
+  $$  
+
+  erklären.  

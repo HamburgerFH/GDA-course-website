@@ -1,0 +1,29 @@
+## Klausuraufgaben zu SB 01
+
+### [28.09.2024]{.crd} -- Aufgabe 1 [(20 Punkte)]{.ctl}   {.unlisted}
+
+
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
+
+![Aufgabenstellung der Klausur vom 28.09.2024](/figs/01_99_ak_2024_09_28.png)
+
+![Lösung zur Klausur vom 28.09.2024](/figs/01_99_ak_2024_09_28_lsg.png)
+
+### [29.06.2024]{.crd} -- Aufgabe 1 [(20 Punkte)]{.ctl} {.unlisted}
+
+
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
+
+![Aufgabenstellung der Klausur vom 29.06.2024](/figs/01_99_ak_2024_06_29.png)
+
+![Lösung zur Klausur vom 29.06.2024](/figs/01_99_ak_2024_06_29_lsg.png)
+
+
+### [23.03.2024]{.crd} -- Aufgabe 1 [(20 Punkte)]{.ctl} {.unlisted}
+
+
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
+
+![Aufgabenstellung der Klausur vom 23.03.2024](/figs/01_99_ak_2024_03_23.png)
+
+![Lösung zur Klausur vom 23.03.2024](/figs/01_99_ak_2024_03_23_lsg.png)
