@@ -50,6 +50,21 @@ Starte mit einem der Bereiche oder nutze die Suche links.
   <a class="btn btn-outline-primary btn-cta" href="./include/04_02_conjoint.qmd">
     Conjoint-Analyse
   </a>
+    <a class="btn btn-outline-primary btn-cta" href="./include/05_01_paneldaten_effectsmodels.qmd">
+    Paneldaten und das Effects-Modell
+  </a>
+    <a class="btn btn-outline-primary btn-cta" href="./include/05_02_03_paneldaten_weiteres.qmd">
+    Wdhl. allgemeiner Konzepte
+  </a>
+    <a class="btn btn-outline-primary btn-cta" href="./include/05_04_FE_modell.qmd">
+    Schätzung im FE-Modell
+  </a>
+    <a class="btn btn-outline-primary btn-cta" href="./include/05_05_RE_modell.qmd">
+    Schätzung im RE-Modell
+  </a>
+    <a class="btn btn-outline-primary btn-cta" href="./include/05_06_hausmann.qmd">
+    Auswahl geeigneteR Paneldatenmodelle: Hausman-Test
+  </a>
   <a class="btn btn-outline-secondary btn-cta" href="include/99_altklausuren_A1.qmd">
     Altklausuren
   </a>
