@@ -3,9 +3,8 @@
 ### Kernprinzip: Der dekompositionelle Ansatz {.unlisted}
 
 #### Einsatz:
-Conjoint-Analysen (Zusammensetzung aus den Begriffen „consider“ und „jointly“)
-werden eingesetzt, um Kundenpräferenzen zu messen und Kaufverhalten zu pro-
-gnostizieren.
+Conjoint-Analysen (Zusammensetzung aus den Begriffen ''consider'' und ''jointly'')
+werden eingesetzt, um Kundenpräferenzen zu messen und Kaufverhalten zu prognostizieren.
 
 #### Dekomposition:
 Die Analyse startet mit der **Gesamtbeurteilung** eines Stimulus und zerlegt
@@ -21,43 +20,34 @@ Merkmale.
 #### Anwendungsfelder:
 
 - Produktgestaltung
-
 - Markenbewertung
-
 - Marktsegmentierung
-
-::: {.callout-note}
-#### Schlüsselbegriffe
-
--   **Attribut:** Produktmerkmale, die von der Analyse ausgewertet werden -- Merkmal (z.B. Marke, Preis)
--   **Level:** Merkmalsausprägung einzelner Attribute (z.B. `Apple`, `$900`)
--   **Stimulus:** Fiktives / hypothetisches Produkt zur Bewertung: ein Satz von Attributen mit verschiedenen Levels
--   **Teilnutzenwert:** Quantifizierter Nutzen eines Levels: geben an, wie viel Gewicht ein Attribut-Level für einen Befragten hat -- einzelne Faktoren, die zum Gesamtwert eines Produkts für den Verbraucher führen, sind Teilwerte
--   **Wichtigkeit:** Relativer Einfluss eines Attributs: beschreibt, welche der verschiedenen Attribute eines Produkts/einer Dienstleistung bei der Kaufentscheidung mehr oder weniger wichtig ist -- Beispiel: Marke 35 %, Preis 30 %, Größe 15 % und Farbe 5 %.
--   **Profil:** Gesamtheit aller Attribute
-:::
 
 
 ### Typischer Ablauf der Analyse {.unlisted}
 
 1.  **Designphase:**
-    -   Definition relevanter, unabhängiger & steuerbarer Attribute/Levels.
-    -   Erstellung der Stimuli (oft mittels *reduzierter Designs* zur
-        Vermeidung kombinatorischer Explosion).
+    -   Definition relevanter, unabhängiger & steuerbarer Attribute/Levels
+    -   Erstellung der Stimuli oft mittels *reduzierter Designs*
+    -   reduzierte Designs: Vermeidung kombinatorischer Explosion beim Betrachten aller Attribut-level Kombinationen
 
 2.  **Datenerhebung:**
-    -   Probanden bewerten die Stimuli (z.B. durch Ranking).
+    -   Probanden bewerten die Stimuli: z.B. durch ein Ranking
 
 3.  **Analyse & Interpretation:**
     -   Schätzung der Teilnutzenwerte (z.B. $y = \mu + \beta_A + \beta_B$).
     -   Aggregation und Berechnung der relativen Wichtigkeiten.
 
 
+::: {.callout-note}
+#### Schlüsselbegriffe
+
+-   **Attribute:** Produktmerkmale, die ausgewertet werden -- Merkmale wie z.B. Farbe, Preis
+-   **Level:** Merkmalsausprägung einzelner Attribute (z.B. `rot`, `900 Euro`)
+-   **Stimulus:** Fiktives / hypothetisches Produkt zur Bewertung: ein (neuer) Satz von Attributen mit verschiedenen Levels
+:::
 
 ## Conjoint-Analyse - Beispielrechnung
-
-Auf Basis der empirisch ermittelten Rangdaten für die Stimuli werden mit der Con-
-joint-Analyse zunächst Teilnutzenwerte (engl. Partworths) für alle Level ermittelt.
 
 Das additive Modell besagt, dass sich der Gesamtnutzen als Summe der Teilnutzen
 ergibt. Die Teilnutzenwerte wiederum sollen so bestimmt werden, dass die resultie-
@@ -66,22 +56,35 @@ renden Gesamtnutzenwerte möglichst gut den empirischen Rangwerten entsprechen.
 Im additiven Modell mit zwei Attributen A und B kann man den Gesamtnutzen y
 darstellen als :
 
-  - $y=\mu +\beta_A +\beta_B$ -- $\beta_X$ ist Teilnutzenwert für Attribut X und
+  - $y=\mu +\beta_A +\beta_B$, wobei $\beta_X$ der Teilnutzenwert für Attribut $X$ (A oder B) ist, und
   $\mu$ der Durchschnittsrang
 
   - Attribute A und B mit levels, 1-3 und 1-2 $\ra$ 6 Stimuli/Teilnutzenwerte 
-  für A und B (s. Bild)
+  für A und B (siehe \textbf{Tabelle 2.1})
 
 
-![Conjoint Analysis Beispiel 1](/figs/04_02_conjoint_01.png)
+![Conjoint Analysis Beispiel](/figs/04_02_conjoint_01.png)
 
-![Conjoint Analysis Beispiel 2](/figs/04_02_conjoint_02.png)
+![Conjoint Analysis Beispiel Fortsetzung](/figs/04_02_conjoint_02.png)
 
-![Conjoint Analysis Beispiel 3](/figs/04_02_conjoint_03.png)
+Auf Basis der empirisch ermittelten Rangdaten für die Stimuli werden mit der Conjoint-Analyse zunächst Teilnutzenwerte (engl. Partworths) für alle Level ermittelt.
 
+::: {.callout-note}
+#### Schlüsselbegriffe
 
-### Conjoint-Analyse - Beispielrechnung -- Fortsetzung {.unlisted}
+-   **Teilnutzenwert:** Quantifizierter Nutzen eines Levels von einem Attribut: gibt an, wie viel Gewicht ein Attribut-Level für einen Befragten hat
+-   **Wichtigkeit:** Relativer Einfluss eines Attributs: beschreibt, welche der verschiedenen Attribute eines Produkts/einer Dienstleistung bei der Kaufentscheidung mehr oder weniger wichtig sind -- Beispiel: 35 %, Preis 30 %, Größe 15 % und Farbe 5 %.
+-   **Profil:** Gesamtheit aller Attribute
+:::
 
-![Conjoint Analysis Beispiel 4](/figs/04_02_conjoint_04.png)
+![Conjoint Analysis Beispiel Fortsetzung](/figs/04_02_conjoint_03.png)
 
-![Conjoint Analysis Beispiel 5](/figs/04_02_conjoint_05.png)
+![Conjoint Analysis Beispiel Fortsetzung](/figs/04_02_conjoint_04.png)
+
+![Conjoint Analysis Beispiel Fortsetzung](/figs/04_02_conjoint_05.png)
+
+![Conjoint Analysis Beispiel Fortsetzung](/figs/04_02_conjoint_06.png)
+
+### Implementierung in `R` {.unlisted}
+
+**_Hier nicht weiter betrachtet -> siehe Studienbrief 04, Kapitel 2.5 ff._**

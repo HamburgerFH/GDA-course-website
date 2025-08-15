@@ -106,3 +106,8 @@
 ![](/figs/04_01_apriori_bsp_02.png)
 
 ![](/figs/04_01_apriori_bsp_03.png)
+
+
+### Implementierung in `R` {.unlisted}
+
+**_Hier nicht weiter betrachtet -> siehe Studienbrief 04, Kapitel 1.6 ff._**
