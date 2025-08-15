@@ -51,7 +51,11 @@
   - $\text{Lift} = 1$: keine Assoziation  
   - $\text{Lift} < 1$: negative Assoziation
 
-
+- **Man kann zeigen:** Gesamtzahl möglicher Regeln $R$ in einem Datensatz mit $d$ Items:
+  
+  $$
+  R = 3^d - 2^{d+1} + 1
+  $$
 
 
 
@@ -97,14 +101,7 @@
 
 ### Zusätzliche Hinweise {.unlisted}
 
-- Man kann zeigen: Gesamtzahl möglicher Regeln $R$ in einem Datensatz mit $d$ Items:
-  
-  $$
-  R = 3^d - 2^{d+1} + 1
-  $$
-  
-- **Agrawal & Srikant (1994):** Wenn ein Itemset *frequent* ist, sind auch
-  alle seine Teilmengen *frequent* Itemsets.
+**Agrawal & Srikant (1994):** Wenn ein Itemset *frequent* ist, sind auch alle seine Teilmengen *frequent* Itemsets.
 
 ![](/figs/04_01_apriori_bsp_02.png)
 

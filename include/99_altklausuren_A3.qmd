@@ -1,36 +1,64 @@
 ## Klausuraufgaben SB 03
 
+### [September 2023]{.crd} -- Aufgabe 3 [(20 Punkte)]{.ctl} {.unlisted}
 
-### [28.09.2024]{.crd} -- Aufgabe 3 [(20 Punkte)]{.ctl} {.unlisted}
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
 
-![Aufgabenstellung Teil A der Klausur vom 28.09.2024](/figs/03_99_ak_2024_09_28_A.png)
+![Aufgabenstellung zur Übungsklausur vom September 2023](/figs/03_ak_2023_ukl.png)
 
-![Aufgabenstellung Teil B der Klausur vom 28.09.2024](/figs/03_99_ak_2024_09_28_B.png)
-
-![Lösung Teil 1 zur Klausur vom 28.09.2024](/figs/03_99_ak_2024_09_28_lsg_part1.png)
-
-![Lösung Teil 2 zur Klausur vom 28.09.2024](/figs/03_99_ak_2024_09_28_lsg_part2.png)
+![Lösung zur Übungsklausur vom September 2023](/figs/03_ak_2023_ukl_lsg.png)
 
 
-### [29.06.2024]{.crd} -- Aufgabe 3 [(20 Punkte)]{.ctl} {.unlisted}
 
-![Aufgabenstellung Teil A der Klausur vom 29.06.2024](/figs/03_99_ak_2024_06_29_A.png)
 
-![Aufgabenstellung Teil B der Klausur vom 29.06.2024](/figs/03_99_ak_2024_06_29_B.png)
+### [16.12.2023]{.crd} -- Aufgabe 3 [(20 Punkte)]{.ctl} {.unlisted}
 
-![Lösung zur Klausur vom 29.06.2024](/figs/03_99_ak_2024_06_29_lsg.png)
+Müsste identisch sein zu **_28.09.2024_**.
+
 
 
 ### [23.03.2024]{.crd} -- Aufgabe 3 [(20 Punkte)]{.ctl} {.unlisted}
 
-![Aufgabenstellung Teil A der Klausur vom 23.03.2024](/figs/03_99_ak_2024_03_23_A.png)
+![Aufgabenstellung Teil A der Klausur vom 23.03.2024](/figs/03_ak_2024_03_23_A.png)
 
-![Aufgabenstellung Teil B der Klausur vom 23.03.2024](/figs/03_99_ak_2024_03_23_B.png)
+![Aufgabenstellung Teil B der Klausur vom 23.03.2024](/figs/03_ak_2024_03_23_B.png)
 
-![Lösung Teil A zur Klausur vom 23.03.2024](/figs/03_99_ak_2024_03_23_A_lsg.png)
+![Lösung Teil A zur Klausur vom 23.03.2024](/figs/03_ak_2024_03_23_A_lsg.png)
 
 [ACHTUNG FEHLER IN DER MUSTERLÖSUNG:]{.crd} es müsste **nicht**
 [Inflations]{.crd}entwicklung **sondern** [Zins]{.ctl}entwicklung heißen,
 siehe Beschriftung der Y-Achse !!!
 
-![Lösung Teil B zur Klausur vom 23.03.2024](/figs/03_99_ak_2024_03_23_B_lsg.png)
+![Lösung Teil B zur Klausur vom 23.03.2024](/figs/03_ak_2024_03_23_B_lsg.png)
+
+
+
+### [29.06.2024]{.crd} -- Aufgabe 3 [(20 Punkte)]{.ctl} {.unlisted}
+
+![Aufgabenstellung Teil A der Klausur vom 29.06.2024](/figs/03_ak_2024_06_29_A.png)
+
+![Aufgabenstellung Teil B der Klausur vom 29.06.2024](/figs/03_ak_2024_06_29_B.png)
+
+![Lösung zur Klausur vom 29.06.2024](/figs/03_ak_2024_06_29_lsg.png)
+
+
+
+### [28.09.2024]{.crd} -- Aufgabe 3 [(20 Punkte)]{.ctl} {.unlisted}
+
+![Aufgabenstellung Teil A der Klausur vom 28.09.2024](/figs/03_ak_2024_09_28_A.png)
+
+![Aufgabenstellung Teil B der Klausur vom 28.09.2024](/figs/03_ak_2024_09_28_B.png)
+
+![Lösung Teil 1 zur Klausur vom 28.09.2024](/figs/03_ak_2024_09_28_lsg_part1.png)
+
+![Lösung Teil 2 zur Klausur vom 28.09.2024](/figs/03_ak_2024_09_28_lsg_part2.png)
+
+
+
+### [29.03.2025]{.crd} -- Aufgabe 3 [(20 Punkte)]{.ctl}   {.unlisted}
+
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
+
+![Aufgabenstellung der Klausur vom 29.03.2025](/figs/03_ak_2025_03_29.png)
+
+![Lösung zur Klausur vom 29.03.2025](/figs/03_ak_2025_03_29_lsg.png)

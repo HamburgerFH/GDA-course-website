@@ -1,7 +1,7 @@
 project:
   type: website
   preview:
-    port: 4444
+    port: 4445
     browser: false   # don’t auto-open a new tab
 
 # Global execution policy: cache + freeze for fast rebuilds

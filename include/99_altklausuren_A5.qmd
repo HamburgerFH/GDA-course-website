@@ -1,25 +1,52 @@
 ## Klausuraufgaben SB 05
 
+### [September 2023]{.crd} -- Aufgabe 5 [(20 Punkte)]{.ctl} {.unlisted}
+
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
+
+![Aufgabenstellung zur Übungsklausur vom September 2023](/figs/05_ak_2023_ukl.png)
+
+![Lösung zur Übungsklausur vom September 2023](/figs/05_ak_2023_ukl_lsg.png)
+
+
+
+### [16.12.2023]{.crd} -- Aufgabe 5 [(20 Punkte)]{.ctl} {.unlisted}
+
+Müsste identisch sein zu **_28.09.2024_**.
+
+
+
+### [23.03.2024]{.crd} -- Aufgabe 5 [(20 Punkte)]{.ctl} {.unlisted}
+
+![Aufgabenstellung der Klausur vom 23.03.2024](/figs/05_ak_2024_03_23.png)
+
+![Lösung zur Klausur vom 23.03.2024](/figs/05_ak_2024_03_23_lsg.png)
+
+
+
+### [29.06.2024]{.crd} -- Aufgabe 5 [(20 Punkte)]{.ctl} {.unlisted}
+
+![Aufgabenstellung der Klausur vom 29.06.2024](/figs/05_ak_2024_06_29.png)
+
+![Lösung zur Klausur vom 29.06.2024](/figs/05_ak_2024_06_29_lsg.png)
+
+
 
 ### [28.09.2024]{.crd} -- Aufgabe 5 [(20 Punkte)]{.ctl} {.unlisted}
 
-![Aufgabenstellung der Klausur vom 28.09.2024](/figs/05_99_ak_2024_09_28.png)
+![Aufgabenstellung der Klausur vom 28.09.2024](/figs/05_ak_2024_09_28.png)
 
-![Lösung zur Klausur vom 28.09.2024](/figs/05_99_ak_2024_09_28_lsg.png)
+![Lösung zur Klausur vom 28.09.2024](/figs/05_ak_2024_09_28_lsg.png)
 
 [ACHTUNG FEHLER IN DER MUSTERLÖSUNG:]{.crd} es müsste
 $10.62 *\ [(-3)]{.crd}\ -\ 0.07 *\ 200\ =\ -45.86$ heißen !!!
 
 
-### [29.06.2024]{.crd} -- Aufgabe 5 [(20 Punkte)]{.ctl} {.unlisted}
 
-![Aufgabenstellung der Klausur vom 29.06.2024](/figs/05_99_ak_2024_06_29.png)
+### [29.03.2025]{.crd} -- Aufgabe 5 [(20 Punkte)]{.ctl}   {.unlisted}
 
-![Lösung zur Klausur vom 29.06.2024](/figs/05_99_ak_2024_06_29_lsg.png)
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
 
+![Aufgabenstellung der Klausur vom 29.03.2025](/figs/05_ak_2025_03_29.png)
 
-### [23.03.2024]{.crd} -- Aufgabe 5 [(20 Punkte)]{.ctl} {.unlisted}
-
-![Aufgabenstellung der Klausur vom 23.03.2024](/figs/05_99_ak_2024_03_23.png)
-
-![Lösung zur Klausur vom 23.03.2024](/figs/05_99_ak_2024_03_23_lsg.png)
+![Lösung zur Klausur vom 29.03.2025](/figs/05_ak_2025_03_29_lsg.png)

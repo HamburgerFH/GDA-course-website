@@ -1,22 +1,49 @@
 ## Klausuraufgaben SB 02
 
+### [September 2023]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl} {.unlisted}
 
-### [28.09.2024]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl} {.unlisted}
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
 
-![Aufgabenstellung der Klausur vom 28.09.2024](/figs/02_99_ak_2024_09_28.png)
+![Aufgabenstellung zur Übungsklausur vom September 2023](/figs/02_ak_2023_ukl.png)
 
-![Lösung zur Klausur vom 28.09.2024](/figs/02_99_ak_2024_09_28_lsg.png)
+![Lösung zur Übungsklausur vom September 2023](/figs/02_ak_2023_ukl_lsg.png)
 
 
-### [29.06.2024]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl} {.unlisted}
 
-![Aufgabenstellung der Klausur vom 29.06.2024](/figs/02_99_ak_2024_06_29.png)
+### [16.12.2023]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl} {.unlisted}
 
-![Lösung zur Klausur vom 29.06.2024](/figs/02_99_ak_2024_06_29_lsg.png)
+Müsste identisch sein zu **_28.09.2024_**.
+
 
 
 ### [23.03.2024]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl} {.unlisted}
 
-![Aufgabenstellung der Klausur vom 23.03.2024](/figs/02_99_ak_2024_03_23.png)
+![Aufgabenstellung der Klausur vom 23.03.2024](/figs/02_ak_2024_03_23.png)
 
-![Lösung zur Klausur vom 23.03.2024](/figs/02_99_ak_2024_03_23_lsg.png)
+![Lösung zur Klausur vom 23.03.2024](/figs/02_ak_2024_03_23_lsg.png)
+
+
+
+### [29.06.2024]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl} {.unlisted}
+
+![Aufgabenstellung der Klausur vom 29.06.2024](/figs/02_ak_2024_06_29.png)
+
+![Lösung zur Klausur vom 29.06.2024](/figs/02_ak_2024_06_29_lsg.png)
+
+
+
+### [28.09.2024]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl} {.unlisted}
+
+![Aufgabenstellung der Klausur vom 28.09.2024](/figs/02_ak_2024_09_28.png)
+
+![Lösung zur Klausur vom 28.09.2024](/figs/02_ak_2024_09_28_lsg.png)
+
+
+
+### [29.03.2025]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl}   {.unlisted}
+
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
+
+![Aufgabenstellung der Klausur vom 29.03.2025](/figs/02_ak_2025_03_29.png)
+
+![Lösung zur Klausur vom 29.03.2025](/figs/02_ak_2025_03_29_lsg.png)
