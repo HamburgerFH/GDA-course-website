@@ -74,17 +74,15 @@ Starte mit einem der Bereiche oder nutze die Suche links.
 ### Aktuelles {.mt-4}
 
 ::: {.callout-important}
-[**WICHTIG:**]{.underline} Alle relevanten und verbindlichen Informationen 
-(Klausurtermine / Änderungen / Regularien) nur auf den HFH Seiten 
-und im Webcampus $\ra$ regelmäßig vorbeischauen !
+[**WICHTIG:**]{.underline} Alle **relevanten und verbindlichen Informationen** 
+(Klausurtermine / Änderungen / Regularien zur Prüfung bzw. Proctoring) nur auf den HFH Seiten und im Webcampus $\ra$ regelmäßig vorbeischauen !
 :::
 
 ::: {.callout-caution}
-[**Hinweise:**]{.underline} Klausurtermin 01: [27.09.2025]{.underline .ctl}
-:::
+[**Hinweise:**]{.underline} 
 
-::: {.callout-caution}
-[**Hinweise:**]{.underline} Klausurtermin 02: [20.12.2025]{.underline .ctl}
+- Klausurtermin 01: [27.09.2025]{.underline .ctl}
+- Klausurtermin 02: [20.12.2025]{.underline .ctl}
 :::
 
 ::: {.callout-tip}
