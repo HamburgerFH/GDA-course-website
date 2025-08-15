@@ -393,9 +393,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#conjoint-analysis" id="toc-conjoint-analysis" class="nav-link active" data-scroll-target="#conjoint-analysis">Conjoint Analysis</a></li>
-  <li><a href="#conjoint-analysis-1" id="toc-conjoint-analysis-1" class="nav-link" data-scroll-target="#conjoint-analysis-1">Conjoint Analysis</a></li>
-  <li><a href="#conjoint-analysis-2" id="toc-conjoint-analysis-2" class="nav-link" data-scroll-target="#conjoint-analysis-2">Conjoint Analysis</a></li>
+  <li><a href="#conjoint-analyse-ziel-und-idee" id="toc-conjoint-analyse-ziel-und-idee" class="nav-link active" data-scroll-target="#conjoint-analyse-ziel-und-idee">Conjoint-Analyse – Ziel und Idee</a></li>
+  <li><a href="#conjoint-analyse---beispielrechnung" id="toc-conjoint-analyse---beispielrechnung" class="nav-link" data-scroll-target="#conjoint-analyse---beispielrechnung">Conjoint-Analyse - Beispielrechnung</a></li>
   </ul>
 </nav>
     </div>
@@ -405,11 +404,79 @@ window.Quarto = {
 
 
 
-<section id="conjoint-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="conjoint-analysis">Conjoint Analysis</h2>
+<section id="conjoint-analyse-ziel-und-idee" class="level2">
+<h2 class="anchored" data-anchor-id="conjoint-analyse-ziel-und-idee">Conjoint-Analyse – Ziel und Idee</h2>
+<section id="kernprinzip-der-dekompositionelle-ansatz" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="kernprinzip-der-dekompositionelle-ansatz">Kernprinzip: Der dekompositionelle Ansatz</h3>
+<section id="einsatz" class="level4">
+<h4 class="anchored" data-anchor-id="einsatz">Einsatz:</h4>
+<p>Conjoint-Analysen (Zusammensetzung aus den Begriffen „consider“ und „jointly“) werden eingesetzt, um Kundenpräferenzen zu messen und Kaufverhalten zu pro- gnostizieren.</p>
+</section>
+<section id="dekomposition" class="level4">
+<h4 class="anchored" data-anchor-id="dekomposition">Dekomposition:</h4>
+<p>Die Analyse startet mit der <strong>Gesamtbeurteilung</strong> eines Stimulus und zerlegt (<em>dekomponiert</em>) diese statistisch in die Nutzenbeiträge der einzelnen Merkmale.</p>
 <ul>
-<li>Attribute A und B mit levels, 1-3 und 1-2 <span class="math inline">\(\ra\)</span> 6 Stimuli/Teilnutzenwerte für A und B (s. Bild)</li>
-<li><span class="math inline">\(y=\mu +\beta_A +\beta_B\)</span> – <span class="math inline">\(\beta_X\)</span> ist Teilnutzenwert für Attribut X und <span class="math inline">\(\mu\)</span> der Durchschnittsrang</li>
+<li>Ziel ist die Quantifizierung von <strong>Trade-offs</strong>, die Konsumenten bei Kaufentscheidungen treffen.</li>
+<li>Es wird eine reale Entscheidungssituation simuliert, statt direkte, oft verzerrende Fragen zu stellen.</li>
+</ul>
+</section>
+<section id="anwendungsfelder" class="level4">
+<h4 class="anchored" data-anchor-id="anwendungsfelder">Anwendungsfelder:</h4>
+<ul>
+<li><p>Produktgestaltung</p></li>
+<li><p>Markenbewertung</p></li>
+<li><p>Marktsegmentierung</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schlüsselbegriffe
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Attribut:</strong> Produktmerkmale, die von der Analyse ausgewertet werden – Merkmal (z.B. Marke, Preis)</li>
+<li><strong>Level:</strong> Merkmalsausprägung einzelner Attribute (z.B. <code>Apple</code>, <code>$900</code>)</li>
+<li><strong>Stimulus:</strong> Fiktives / hypothetisches Produkt zur Bewertung: ein Satz von Attributen mit verschiedenen Levels</li>
+<li><strong>Teilnutzenwert:</strong> Quantifizierter Nutzen eines Levels: geben an, wie viel Gewicht ein Attribut-Level für einen Befragten hat – einzelne Faktoren, die zum Gesamtwert eines Produkts für den Verbraucher führen, sind Teilwerte</li>
+<li><strong>Wichtigkeit:</strong> Relativer Einfluss eines Attributs: beschreibt, welche der verschiedenen Attribute eines Produkts/einer Dienstleistung bei der Kaufentscheidung mehr oder weniger wichtig ist – Beispiel: Marke 35 %, Preis 30 %, Größe 15 % und Farbe 5 %.</li>
+<li><strong>Profil:</strong> Gesamtheit aller Attribute</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="typischer-ablauf-der-analyse" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="typischer-ablauf-der-analyse">Typischer Ablauf der Analyse</h3>
+<ol type="1">
+<li><strong>Designphase:</strong>
+<ul>
+<li>Definition relevanter, unabhängiger &amp; steuerbarer Attribute/Levels.</li>
+<li>Erstellung der Stimuli (oft mittels <em>reduzierter Designs</em> zur Vermeidung kombinatorischer Explosion).</li>
+</ul></li>
+<li><strong>Datenerhebung:</strong>
+<ul>
+<li>Probanden bewerten die Stimuli (z.B. durch Ranking).</li>
+</ul></li>
+<li><strong>Analyse &amp; Interpretation:</strong>
+<ul>
+<li>Schätzung der Teilnutzenwerte (z.B. <span class="math inline">\(y = \mu + \beta_A + \beta_B\)</span>).</li>
+<li>Aggregation und Berechnung der relativen Wichtigkeiten.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="conjoint-analyse---beispielrechnung" class="level2">
+<h2 class="anchored" data-anchor-id="conjoint-analyse---beispielrechnung">Conjoint-Analyse - Beispielrechnung</h2>
+<p>Auf Basis der empirisch ermittelten Rangdaten für die Stimuli werden mit der Con- joint-Analyse zunächst Teilnutzenwerte (engl. Partworths) für alle Level ermittelt.</p>
+<p>Das additive Modell besagt, dass sich der Gesamtnutzen als Summe der Teilnutzen ergibt. Die Teilnutzenwerte wiederum sollen so bestimmt werden, dass die resultie- renden Gesamtnutzenwerte möglichst gut den empirischen Rangwerten entsprechen.</p>
+<p>Im additiven Modell mit zwei Attributen A und B kann man den Gesamtnutzen y darstellen als :</p>
+<ul>
+<li><p><span class="math inline">\(y=\mu +\beta_A +\beta_B\)</span> – <span class="math inline">\(\beta_X\)</span> ist Teilnutzenwert für Attribut X und <span class="math inline">\(\mu\)</span> der Durchschnittsrang</p></li>
+<li><p>Attribute A und B mit levels, 1-3 und 1-2 <span class="math inline">\(\ra\)</span> 6 Stimuli/Teilnutzenwerte für A und B (s. Bild)</p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -417,9 +484,6 @@ window.Quarto = {
 <figcaption>Conjoint Analysis Beispiel 1</figcaption>
 </figure>
 </div>
-</section>
-<section id="conjoint-analysis-1" class="level2">
-<h2 class="anchored" data-anchor-id="conjoint-analysis-1">Conjoint Analysis</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../figs/04_02_conjoint_02.png" class="img-fluid figure-img"></p>
@@ -432,9 +496,8 @@ window.Quarto = {
 <figcaption>Conjoint Analysis Beispiel 3</figcaption>
 </figure>
 </div>
-</section>
-<section id="conjoint-analysis-2" class="level2">
-<h2 class="anchored" data-anchor-id="conjoint-analysis-2">Conjoint Analysis</h2>
+<section id="conjoint-analyse---beispielrechnung-fortsetzung" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="conjoint-analyse---beispielrechnung-fortsetzung">Conjoint-Analyse - Beispielrechnung – Fortsetzung</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../figs/04_02_conjoint_04.png" class="img-fluid figure-img"></p>
@@ -449,6 +512,7 @@ window.Quarto = {
 </div>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

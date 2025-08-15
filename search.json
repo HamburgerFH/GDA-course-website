@@ -26,7 +26,7 @@
     "href": "include/99_altklausuren_A5.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste \\(10.62 *\\ [(-3)]{.crd}\\ -\\ 0.07 *\\ 200\\ =\\ -45.86\\) heißen !!!\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste \\(10.62 *\\ [(-3)]{.crd}\\ -\\ 0.07 *\\ 200\\ =\\ -45.86\\) heißen !!!\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 5"
@@ -37,7 +37,7 @@
     "href": "include/99_altklausuren_A5.html#klausuraufgaben-sb-05",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste \\(10.62 *\\ [(-3)]{.crd}\\ -\\ 0.07 *\\ 200\\ =\\ -45.86\\) heißen !!!\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste \\(10.62 *\\ [(-3)]{.crd}\\ -\\ 0.07 *\\ 200\\ =\\ -45.86\\) heißen !!!\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 5"
@@ -158,7 +158,7 @@
     "href": "include/04_01_apriori_definitions.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Grundlagen:\nAusgangspunkt: Menge von Transaktionen\n\\(D=\\{T_1,T_2,\\dots,T_n\\}\\) und Itemmenge \\(I\\), wobei jede Transaktion \\(T_j \\subset I\\). Eine Assoziationsregel mit \\(X,Y \\subset I\\), \\(X \\cap Y = \\emptyset\\), erfüllt eine Regel \\(X \\rightarrow Y\\) genau dann, wenn \\(X \\cup Y \\subset T\\), und hat die Form:\n\\[\nX \\rightarrow Y\n\\]\nSupport:\nDer Support einer Itemmenge \\(X\\) gibt an, wie häufig \\(X\\) in der Datenbank \\(D\\) vorkommt:\n\\[\n\\text{Support}(X)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nSupport einer Regel: Beschreibt, ob eine Regel relevant ist:\n\\[\n\\text{Support}(X \\rightarrow Y)=\n\\text{Support}(X \\cup Y)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\cup Y \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nKonfidenz: Gibt an, mit welcher Wahrscheinlichkeit die Regel zutrifft.\nFEHLER im SB 04, S.10: im Nenner nicht \\(X \\in T\\), sondern \\(\\boldsymbol{X \\subset T}\\)\n\\[\n\\text{Konfidenz}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}{\\text{Support}(X)}=\n\\frac{\\left|\\,\\{T \\in D : (X \\cup Y) \\subset T\\}\\,\\right|}\n     {\\left|\\,\\{T \\in D : \\boldsymbol{X \\subset T}\\}\\,\\right|}\n\\]\nLift: Misst die Stärke der Assoziation relativ zur erwarteten Unabhängigkeit:\n\\[\n\\text{Lift}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}\n     {\\text{Support}(X)\\cdot\\text{Support}(Y)}\n\\]\n\n\\(\\text{Lift} &gt; 1\\): positive Assoziation\n\n\\(\\text{Lift} = 1\\): keine Assoziation\n\n\\(\\text{Lift} &lt; 1\\): negative Assoziation",
+    "text": "Grundlagen:\nAusgangspunkt: Menge von Transaktionen\n\\(D=\\{T_1,T_2,\\dots,T_n\\}\\) und Itemmenge \\(I\\), wobei jede Transaktion \\(T_j \\subset I\\). Eine Assoziationsregel mit \\(X,Y \\subset I\\), \\(X \\cap Y = \\emptyset\\), erfüllt eine Regel \\(X \\rightarrow Y\\) genau dann, wenn \\(X \\cup Y \\subset T\\), und hat die Form:\n\\[\nX \\rightarrow Y\n\\]\nSupport:\nDer Support einer Itemmenge \\(X\\) gibt an, wie häufig \\(X\\) in der Datenbank \\(D\\) vorkommt:\n\\[\n\\text{Support}(X)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nSupport einer Regel: Beschreibt, ob eine Regel relevant ist:\n\\[\n\\text{Support}(X \\rightarrow Y)=\n\\text{Support}(X \\cup Y)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\cup Y \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nKonfidenz: Gibt an, mit welcher Wahrscheinlichkeit die Regel zutrifft.\nFEHLER im SB 04, S.10: im Nenner nicht \\(X \\in T\\), sondern \\(\\boldsymbol{X \\subset T}\\)\n\\[\n\\text{Konfidenz}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}{\\text{Support}(X)}=\n\\frac{\\left|\\,\\{T \\in D : (X \\cup Y) \\subset T\\}\\,\\right|}\n     {\\left|\\,\\{T \\in D : \\boldsymbol{X \\subset T}\\}\\,\\right|}\n\\]\nLift: Misst die Stärke der Assoziation relativ zur erwarteten Unabhängigkeit:\n\\[\n\\text{Lift}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}\n     {\\text{Support}(X)\\cdot\\text{Support}(Y)}\n\\]\n\n\\(\\text{Lift} &gt; 1\\): positive Assoziation\n\n\\(\\text{Lift} = 1\\): keine Assoziation\n\n\\(\\text{Lift} &lt; 1\\): negative Assoziation\n\nMan kann zeigen: Gesamtzahl möglicher Regeln \\(R\\) in einem Datensatz mit \\(d\\) Items:\n\\[\nR = 3^d - 2^{d+1} + 1\n\\]",
     "crumbs": [
       "Studienbrief 4",
       "Assoziationsanalyse"
@@ -169,7 +169,7 @@
     "href": "include/04_01_apriori_definitions.html#formale-beschreibung-der-assoziationsanalyse",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Grundlagen:\nAusgangspunkt: Menge von Transaktionen\n\\(D=\\{T_1,T_2,\\dots,T_n\\}\\) und Itemmenge \\(I\\), wobei jede Transaktion \\(T_j \\subset I\\). Eine Assoziationsregel mit \\(X,Y \\subset I\\), \\(X \\cap Y = \\emptyset\\), erfüllt eine Regel \\(X \\rightarrow Y\\) genau dann, wenn \\(X \\cup Y \\subset T\\), und hat die Form:\n\\[\nX \\rightarrow Y\n\\]\nSupport:\nDer Support einer Itemmenge \\(X\\) gibt an, wie häufig \\(X\\) in der Datenbank \\(D\\) vorkommt:\n\\[\n\\text{Support}(X)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nSupport einer Regel: Beschreibt, ob eine Regel relevant ist:\n\\[\n\\text{Support}(X \\rightarrow Y)=\n\\text{Support}(X \\cup Y)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\cup Y \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nKonfidenz: Gibt an, mit welcher Wahrscheinlichkeit die Regel zutrifft.\nFEHLER im SB 04, S.10: im Nenner nicht \\(X \\in T\\), sondern \\(\\boldsymbol{X \\subset T}\\)\n\\[\n\\text{Konfidenz}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}{\\text{Support}(X)}=\n\\frac{\\left|\\,\\{T \\in D : (X \\cup Y) \\subset T\\}\\,\\right|}\n     {\\left|\\,\\{T \\in D : \\boldsymbol{X \\subset T}\\}\\,\\right|}\n\\]\nLift: Misst die Stärke der Assoziation relativ zur erwarteten Unabhängigkeit:\n\\[\n\\text{Lift}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}\n     {\\text{Support}(X)\\cdot\\text{Support}(Y)}\n\\]\n\n\\(\\text{Lift} &gt; 1\\): positive Assoziation\n\n\\(\\text{Lift} = 1\\): keine Assoziation\n\n\\(\\text{Lift} &lt; 1\\): negative Assoziation",
+    "text": "Grundlagen:\nAusgangspunkt: Menge von Transaktionen\n\\(D=\\{T_1,T_2,\\dots,T_n\\}\\) und Itemmenge \\(I\\), wobei jede Transaktion \\(T_j \\subset I\\). Eine Assoziationsregel mit \\(X,Y \\subset I\\), \\(X \\cap Y = \\emptyset\\), erfüllt eine Regel \\(X \\rightarrow Y\\) genau dann, wenn \\(X \\cup Y \\subset T\\), und hat die Form:\n\\[\nX \\rightarrow Y\n\\]\nSupport:\nDer Support einer Itemmenge \\(X\\) gibt an, wie häufig \\(X\\) in der Datenbank \\(D\\) vorkommt:\n\\[\n\\text{Support}(X)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nSupport einer Regel: Beschreibt, ob eine Regel relevant ist:\n\\[\n\\text{Support}(X \\rightarrow Y)=\n\\text{Support}(X \\cup Y)=\n\\frac{\\left|\\{\\,T_j \\in D: X \\cup Y \\subset T_j\\,\\}\\right|}{|D|}\n\\]\nKonfidenz: Gibt an, mit welcher Wahrscheinlichkeit die Regel zutrifft.\nFEHLER im SB 04, S.10: im Nenner nicht \\(X \\in T\\), sondern \\(\\boldsymbol{X \\subset T}\\)\n\\[\n\\text{Konfidenz}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}{\\text{Support}(X)}=\n\\frac{\\left|\\,\\{T \\in D : (X \\cup Y) \\subset T\\}\\,\\right|}\n     {\\left|\\,\\{T \\in D : \\boldsymbol{X \\subset T}\\}\\,\\right|}\n\\]\nLift: Misst die Stärke der Assoziation relativ zur erwarteten Unabhängigkeit:\n\\[\n\\text{Lift}(X \\rightarrow Y)=\n\\frac{\\text{Support}(X \\cup Y)}\n     {\\text{Support}(X)\\cdot\\text{Support}(Y)}\n\\]\n\n\\(\\text{Lift} &gt; 1\\): positive Assoziation\n\n\\(\\text{Lift} = 1\\): keine Assoziation\n\n\\(\\text{Lift} &lt; 1\\): negative Assoziation\n\nMan kann zeigen: Gesamtzahl möglicher Regeln \\(R\\) in einem Datensatz mit \\(d\\) Items:\n\\[\nR = 3^d - 2^{d+1} + 1\n\\]",
     "crumbs": [
       "Studienbrief 4",
       "Assoziationsanalyse"
@@ -180,7 +180,7 @@
     "href": "include/04_01_apriori_definitions.html#schritte-der-assoziationsanalyse-apriori-algorithmus",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "Schritte der Assoziationsanalyse — Apriori-Algorithmus",
-    "text": "Schritte der Assoziationsanalyse — Apriori-Algorithmus\n\nÜbersicht\n\n\n\nApriori-Algorithmus Übersicht\n\n\n\n\nBeispiel (Support 50 %, Konfidenz 60 %)\n\nSchritt 1 (K=1): Suche Itemsets aus 1 Produkt (\\(\\Leftrightarrow\\) wie oft ein Produkt gekauft wird).\nSchritt 2 (K=1): Entferne Itemsets, die minimalen Support nicht erreichen (prune-Schritt).\nSchritt 3 (K=2): join-Schritt wie bei Schritt 1, nur mit 2 Produkten (aus den verbliebenen Produkten).\nSchritt 4 (K=2): prune-Schritt wie Schritt 2 \\(\\ra\\) entferne Itemsets ohne minimalen Support.\n\n\n\n\nApriori Schritt “join” 1\n\n\n\n\n\nApriori Schritt “prune” 1\n\n\n\n\n\nApriori Schritt “join” 2\n\n\n\n\n\nApriori Schritt “prune” 2\n\n\nSchritt 5 (K=3)\n\nBilde Itemsets, die aus 3 zusammen gekauften Produkten bestehen.\n\n\n\n\n\nZusätzliche Hinweise\n\nMan kann zeigen: Gesamtzahl möglicher Regeln \\(R\\) in einem Datensatz mit \\(d\\) Items:\n\\[\nR = 3^d - 2^{d+1} + 1\n\\]\nAgrawal & Srikant (1994): Wenn ein Itemset frequent ist, sind auch alle seine Teilmengen frequent Itemsets.",
+    "text": "Schritte der Assoziationsanalyse — Apriori-Algorithmus\n\nÜbersicht\n\n\n\nApriori-Algorithmus Übersicht\n\n\n\n\nBeispiel (Support 50 %, Konfidenz 60 %)\n\nSchritt 1 (K=1): Suche Itemsets aus 1 Produkt (\\(\\Leftrightarrow\\) wie oft ein Produkt gekauft wird).\nSchritt 2 (K=1): Entferne Itemsets, die minimalen Support nicht erreichen (prune-Schritt).\nSchritt 3 (K=2): join-Schritt wie bei Schritt 1, nur mit 2 Produkten (aus den verbliebenen Produkten).\nSchritt 4 (K=2): prune-Schritt wie Schritt 2 \\(\\ra\\) entferne Itemsets ohne minimalen Support.\n\n\n\n\nApriori Schritt “join” 1\n\n\n\n\n\nApriori Schritt “prune” 1\n\n\n\n\n\nApriori Schritt “join” 2\n\n\n\n\n\nApriori Schritt “prune” 2\n\n\nSchritt 5 (K=3)\n\nBilde Itemsets, die aus 3 zusammen gekauften Produkten bestehen.\n\n\n\n\n\nZusätzliche Hinweise\nAgrawal & Srikant (1994): Wenn ein Itemset frequent ist, sind auch alle seine Teilmengen frequent Itemsets.",
     "crumbs": [
       "Studienbrief 4",
       "Assoziationsanalyse"
@@ -191,7 +191,7 @@
     "href": "include/99_altklausuren_A4.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 4"
@@ -202,7 +202,7 @@
     "href": "include/99_altklausuren_A4.html#klausuraufgaben-sb-04",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 4"
@@ -213,7 +213,7 @@
     "href": "include/99_altklausuren_A3.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Aufgabenstellung Teil A der Klausur vom 28.09.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 1 zur Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 2 zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 29.06.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 23.03.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 23.03.2024\n\n\n\n\n\nLösung Teil A zur Klausur vom 23.03.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste nicht Inflationsentwicklung sondern Zinsentwicklung heißen, siehe Beschriftung der Y-Achse !!!\n\n\n\nLösung Teil B zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 23.03.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 23.03.2024\n\n\n\n\n\nLösung Teil A zur Klausur vom 23.03.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste nicht Inflationsentwicklung sondern Zinsentwicklung heißen, siehe Beschriftung der Y-Achse !!!\n\n\n\nLösung Teil B zur Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 29.06.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 28.09.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 1 zur Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 2 zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 3"
@@ -224,7 +224,7 @@
     "href": "include/99_altklausuren_A3.html#klausuraufgaben-sb-03",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Aufgabenstellung Teil A der Klausur vom 28.09.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 1 zur Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 2 zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 29.06.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 23.03.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 23.03.2024\n\n\n\n\n\nLösung Teil A zur Klausur vom 23.03.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste nicht Inflationsentwicklung sondern Zinsentwicklung heißen, siehe Beschriftung der Y-Achse !!!\n\n\n\nLösung Teil B zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 23.03.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 23.03.2024\n\n\n\n\n\nLösung Teil A zur Klausur vom 23.03.2024\n\n\nACHTUNG FEHLER IN DER MUSTERLÖSUNG: es müsste nicht Inflationsentwicklung sondern Zinsentwicklung heißen, siehe Beschriftung der Y-Achse !!!\n\n\n\nLösung Teil B zur Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 29.06.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung Teil A der Klausur vom 28.09.2024\n\n\n\n\n\nAufgabenstellung Teil B der Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 1 zur Klausur vom 28.09.2024\n\n\n\n\n\nLösung Teil 2 zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 3"
@@ -552,40 +552,29 @@
     "href": "include/04_02_conjoint.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Attribute A und B mit levels, 1-3 und 1-2 \\(\\ra\\) 6 Stimuli/Teilnutzenwerte für A und B (s. Bild)\n\\(y=\\mu +\\beta_A +\\beta_B\\) – \\(\\beta_X\\) ist Teilnutzenwert für Attribut X und \\(\\mu\\) der Durchschnittsrang\n\n\n\n\nConjoint Analysis Beispiel 1",
+    "text": "Conjoint-Analysen (Zusammensetzung aus den Begriffen „consider“ und „jointly“) werden eingesetzt, um Kundenpräferenzen zu messen und Kaufverhalten zu pro- gnostizieren.\n\n\n\nDie Analyse startet mit der Gesamtbeurteilung eines Stimulus und zerlegt (dekomponiert) diese statistisch in die Nutzenbeiträge der einzelnen Merkmale.\n\nZiel ist die Quantifizierung von Trade-offs, die Konsumenten bei Kaufentscheidungen treffen.\nEs wird eine reale Entscheidungssituation simuliert, statt direkte, oft verzerrende Fragen zu stellen.\n\n\n\n\n\nProduktgestaltung\nMarkenbewertung\nMarktsegmentierung\n\n\n\n\n\n\n\nSchlüsselbegriffe\n\n\n\n\nAttribut: Produktmerkmale, die von der Analyse ausgewertet werden – Merkmal (z.B. Marke, Preis)\nLevel: Merkmalsausprägung einzelner Attribute (z.B. Apple, $900)\nStimulus: Fiktives / hypothetisches Produkt zur Bewertung: ein Satz von Attributen mit verschiedenen Levels\nTeilnutzenwert: Quantifizierter Nutzen eines Levels: geben an, wie viel Gewicht ein Attribut-Level für einen Befragten hat – einzelne Faktoren, die zum Gesamtwert eines Produkts für den Verbraucher führen, sind Teilwerte\nWichtigkeit: Relativer Einfluss eines Attributs: beschreibt, welche der verschiedenen Attribute eines Produkts/einer Dienstleistung bei der Kaufentscheidung mehr oder weniger wichtig ist – Beispiel: Marke 35 %, Preis 30 %, Größe 15 % und Farbe 5 %.\nProfil: Gesamtheit aller Attribute\n\n\n\n\n\n\n\n\nDesignphase:\n\nDefinition relevanter, unabhängiger & steuerbarer Attribute/Levels.\nErstellung der Stimuli (oft mittels reduzierter Designs zur Vermeidung kombinatorischer Explosion).\n\nDatenerhebung:\n\nProbanden bewerten die Stimuli (z.B. durch Ranking).\n\nAnalyse & Interpretation:\n\nSchätzung der Teilnutzenwerte (z.B. \\(y = \\mu + \\beta_A + \\beta_B\\)).\nAggregation und Berechnung der relativen Wichtigkeiten.",
     "crumbs": [
       "Studienbrief 4",
       "Conjoint-Analyse"
     ]
   },
   {
-    "objectID": "include/04_02_conjoint.html#conjoint-analysis",
-    "href": "include/04_02_conjoint.html#conjoint-analysis",
+    "objectID": "include/04_02_conjoint.html#conjoint-analyse-ziel-und-idee",
+    "href": "include/04_02_conjoint.html#conjoint-analyse-ziel-und-idee",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Attribute A und B mit levels, 1-3 und 1-2 \\(\\ra\\) 6 Stimuli/Teilnutzenwerte für A und B (s. Bild)\n\\(y=\\mu +\\beta_A +\\beta_B\\) – \\(\\beta_X\\) ist Teilnutzenwert für Attribut X und \\(\\mu\\) der Durchschnittsrang\n\n\n\n\nConjoint Analysis Beispiel 1",
+    "text": "Conjoint-Analysen (Zusammensetzung aus den Begriffen „consider“ und „jointly“) werden eingesetzt, um Kundenpräferenzen zu messen und Kaufverhalten zu pro- gnostizieren.\n\n\n\nDie Analyse startet mit der Gesamtbeurteilung eines Stimulus und zerlegt (dekomponiert) diese statistisch in die Nutzenbeiträge der einzelnen Merkmale.\n\nZiel ist die Quantifizierung von Trade-offs, die Konsumenten bei Kaufentscheidungen treffen.\nEs wird eine reale Entscheidungssituation simuliert, statt direkte, oft verzerrende Fragen zu stellen.\n\n\n\n\n\nProduktgestaltung\nMarkenbewertung\nMarktsegmentierung\n\n\n\n\n\n\n\nSchlüsselbegriffe\n\n\n\n\nAttribut: Produktmerkmale, die von der Analyse ausgewertet werden – Merkmal (z.B. Marke, Preis)\nLevel: Merkmalsausprägung einzelner Attribute (z.B. Apple, $900)\nStimulus: Fiktives / hypothetisches Produkt zur Bewertung: ein Satz von Attributen mit verschiedenen Levels\nTeilnutzenwert: Quantifizierter Nutzen eines Levels: geben an, wie viel Gewicht ein Attribut-Level für einen Befragten hat – einzelne Faktoren, die zum Gesamtwert eines Produkts für den Verbraucher führen, sind Teilwerte\nWichtigkeit: Relativer Einfluss eines Attributs: beschreibt, welche der verschiedenen Attribute eines Produkts/einer Dienstleistung bei der Kaufentscheidung mehr oder weniger wichtig ist – Beispiel: Marke 35 %, Preis 30 %, Größe 15 % und Farbe 5 %.\nProfil: Gesamtheit aller Attribute\n\n\n\n\n\n\n\n\nDesignphase:\n\nDefinition relevanter, unabhängiger & steuerbarer Attribute/Levels.\nErstellung der Stimuli (oft mittels reduzierter Designs zur Vermeidung kombinatorischer Explosion).\n\nDatenerhebung:\n\nProbanden bewerten die Stimuli (z.B. durch Ranking).\n\nAnalyse & Interpretation:\n\nSchätzung der Teilnutzenwerte (z.B. \\(y = \\mu + \\beta_A + \\beta_B\\)).\nAggregation und Berechnung der relativen Wichtigkeiten.",
     "crumbs": [
       "Studienbrief 4",
       "Conjoint-Analyse"
     ]
   },
   {
-    "objectID": "include/04_02_conjoint.html#conjoint-analysis-1",
-    "href": "include/04_02_conjoint.html#conjoint-analysis-1",
+    "objectID": "include/04_02_conjoint.html#conjoint-analyse---beispielrechnung",
+    "href": "include/04_02_conjoint.html#conjoint-analyse---beispielrechnung",
     "title": "Grundlagen der Datenanalyse (GDA)",
-    "section": "Conjoint Analysis",
-    "text": "Conjoint Analysis\n\n\n\nConjoint Analysis Beispiel 2\n\n\n\n\n\nConjoint Analysis Beispiel 3",
-    "crumbs": [
-      "Studienbrief 4",
-      "Conjoint-Analyse"
-    ]
-  },
-  {
-    "objectID": "include/04_02_conjoint.html#conjoint-analysis-2",
-    "href": "include/04_02_conjoint.html#conjoint-analysis-2",
-    "title": "Grundlagen der Datenanalyse (GDA)",
-    "section": "Conjoint Analysis",
-    "text": "Conjoint Analysis\n\n\n\nConjoint Analysis Beispiel 4\n\n\n\n\n\nConjoint Analysis Beispiel 5",
+    "section": "Conjoint-Analyse - Beispielrechnung",
+    "text": "Conjoint-Analyse - Beispielrechnung\nAuf Basis der empirisch ermittelten Rangdaten für die Stimuli werden mit der Con- joint-Analyse zunächst Teilnutzenwerte (engl. Partworths) für alle Level ermittelt.\nDas additive Modell besagt, dass sich der Gesamtnutzen als Summe der Teilnutzen ergibt. Die Teilnutzenwerte wiederum sollen so bestimmt werden, dass die resultie- renden Gesamtnutzenwerte möglichst gut den empirischen Rangwerten entsprechen.\nIm additiven Modell mit zwei Attributen A und B kann man den Gesamtnutzen y darstellen als :\n\n\\(y=\\mu +\\beta_A +\\beta_B\\) – \\(\\beta_X\\) ist Teilnutzenwert für Attribut X und \\(\\mu\\) der Durchschnittsrang\nAttribute A und B mit levels, 1-3 und 1-2 \\(\\ra\\) 6 Stimuli/Teilnutzenwerte für A und B (s. Bild)\n\n\n\n\nConjoint Analysis Beispiel 1\n\n\n\n\n\nConjoint Analysis Beispiel 2\n\n\n\n\n\nConjoint Analysis Beispiel 3\n\n\n\nConjoint-Analyse - Beispielrechnung – Fortsetzung\n\n\n\nConjoint Analysis Beispiel 4\n\n\n\n\n\nConjoint Analysis Beispiel 5",
     "crumbs": [
       "Studienbrief 4",
       "Conjoint-Analyse"
@@ -783,7 +772,7 @@
     "href": "include/99_altklausuren_A2.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 2"
@@ -794,7 +783,7 @@
     "href": "include/99_altklausuren_A2.html#klausuraufgaben-sb-02",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Aufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 2"
@@ -838,7 +827,7 @@
     "href": "include/99_altklausuren_A1.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 1"
@@ -849,7 +838,7 @@
     "href": "include/99_altklausuren_A1.html#klausuraufgaben-zu-sb-01",
     "title": "Grundlagen der Datenanalyse (GDA)",
     "section": "",
-    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024",
+    "text": "Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung zur Übungsklausur vom September 2023\n\n\n\n\n\nLösung zur Übungsklausur vom September 2023\n\n\n\n\n\nMüsste identisch sein zu 28.09.2024.\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 23.03.2024\n\n\n\n\n\nLösung zur Klausur vom 23.03.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.06.2024\n\n\n\n\n\nLösung zur Klausur vom 29.06.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 28.09.2024\n\n\n\n\n\nLösung zur Klausur vom 28.09.2024\n\n\n\n\n\nNachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.\n\n\n\nAufgabenstellung der Klausur vom 29.03.2025\n\n\n\n\n\nLösung zur Klausur vom 29.03.2025",
     "crumbs": [
       "Altklausuren",
       "Aufgabentyp 1"

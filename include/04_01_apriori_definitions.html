@@ -446,6 +446,10 @@ Der Support einer Itemmenge <span class="math inline">\(X\)</span> gibt an, wie 
 </li>
 <li><span class="math inline">\(\text{Lift} &lt; 1\)</span>: negative Assoziation</li>
 </ul></li>
+<li><p><strong>Man kann zeigen:</strong> Gesamtzahl möglicher Regeln <span class="math inline">\(R\)</span> in einem Datensatz mit <span class="math inline">\(d\)</span> Items:</p>
+<p><span class="math display">\[
+R = 3^d - 2^{d+1} + 1
+\]</span></p></li>
 </ul>
 </section>
 <section id="schritte-der-assoziationsanalyse-apriori-algorithmus" class="level2">
@@ -500,13 +504,7 @@ Der Support einer Itemmenge <span class="math inline">\(X\)</span> gibt an, wie 
 </section>
 <section id="zusätzliche-hinweise" class="level3 unlisted">
 <h3 class="unlisted anchored" data-anchor-id="zusätzliche-hinweise">Zusätzliche Hinweise</h3>
-<ul>
-<li><p>Man kann zeigen: Gesamtzahl möglicher Regeln <span class="math inline">\(R\)</span> in einem Datensatz mit <span class="math inline">\(d\)</span> Items:</p>
-<p><span class="math display">\[
-R = 3^d - 2^{d+1} + 1
-\]</span></p></li>
-<li><p><strong>Agrawal &amp; Srikant (1994):</strong> Wenn ein Itemset <em>frequent</em> ist, sind auch alle seine Teilmengen <em>frequent</em> Itemsets.</p></li>
-</ul>
+<p><strong>Agrawal &amp; Srikant (1994):</strong> Wenn ein Itemset <em>frequent</em> ist, sind auch alle seine Teilmengen <em>frequent</em> Itemsets.</p>
 <p><img src="../figs/04_01_apriori_bsp_02.png" class="img-fluid"></p>
 <p><img src="../figs/04_01_apriori_bsp_03.png" class="img-fluid"></p>
 
