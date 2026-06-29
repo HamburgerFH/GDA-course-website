@@ -47,3 +47,21 @@ Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
 ![Aufgabenstellung der Klausur vom 29.03.2025](/figs/02_ak_2025_03_29.png)
 
 ![Lösung zur Klausur vom 29.03.2025](/figs/02_ak_2025_03_29_lsg.png)
+
+
+
+### [27.09.2025]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl}   {.unlisted}
+
+Nachfolgend finden Sie die Aufgabenstellung.
+
+![Aufgabenstellung der Klausur vom 27.09.2025](/figs/02_ak_2025_09_27.png)
+
+
+
+### [28.03.2026]{.crd} -- Aufgabe 2 [(20 Punkte)]{.ctl}   {.unlisted}
+
+Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.
+
+![Aufgabenstellung der Klausur vom 28.03.2026](/figs/02_ak_2026_03_28.png)
+
+![Lösung zur Klausur vom 28.03.2026](/figs/02_ak_2026_03_28_lsg.png)
