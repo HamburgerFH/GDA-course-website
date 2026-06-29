@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>altklausuren_a4 – Grundlagen der Datenanalyse (GDA)</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -38,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2e1311d7f0849a64a545b1da44e11871.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-030272f455e572ed6753ef26030623ef.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,7 +114,8 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/logo_hfh.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../assets/logo_hfh.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../assets/logo_hfh.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <div class="dropdown">
@@ -456,6 +460,32 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Lösung zur Klausur vom 29.03.2025</figcaption>
 </figure>
 </div>
+</section>
+<section id="aufgabe-4-20-punkte-5" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="aufgabe-4-20-punkte-5"><span class="crd">27.09.2025</span> – Aufgabe 4 <span class="ctl">(20 Punkte)</span></h3>
+<p>Nachfolgend finden Sie die Aufgabenstellung.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/04_ak_2025_09_27.png" class="img-fluid figure-img"></p>
+<figcaption>Aufgabenstellung der Klausur vom 27.09.2025</figcaption>
+</figure>
+</div>
+</section>
+<section id="aufgabe-4-20-punkte-6" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="aufgabe-4-20-punkte-6"><span class="crd">28.03.2026</span> – Aufgabe 4 <span class="ctl">(20 Punkte)</span></h3>
+<p>Nachfolgend finden Sie die Aufgabenstellung und die dazugehörige Musterlösung.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/04_ak_2026_03_28.png" class="img-fluid figure-img"></p>
+<figcaption>Aufgabenstellung der Klausur vom 28.03.2026</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figs/04_ak_2026_03_28_lsg.png" class="img-fluid figure-img"></p>
+<figcaption>Lösung zur Klausur vom 28.03.2026</figcaption>
+</figure>
+</div>
 
 
 </section>
@@ -513,13 +543,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
