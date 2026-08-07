@@ -205,16 +205,8 @@ summary(model_1)
 
 ![Beispiel für Odds Ratio](/figs/02_03_odds_bsp_01.png){#fig-02_03_odds_bsp_01}
 
-### Umsetzung in `R`: {.unlisted}
-
-```{r}
-#| cache: true
-#| echo: true
-# Berechnung der Odds Ratios
-exp(cbind(OR = coef(model_1)))
-model_wm_only <- glm(mode ~ geschlecht, data = data_vkm, family = binomial())
-exp(cbind(OR = coef(model_wm_only)))
-```
+## Odds ratio: Idee der Berechnung und Umsetzung in `R`:
+### Idee der Berechnung: {.unlisted}
 
 -   **Ziel:** Die Auswirkung einer **Erhöhung von** $x_j$ um eine Einheit auf
     die Odds zu verstehen, ceteris paribus.
@@ -239,6 +231,18 @@ exp(cbind(OR = coef(model_wm_only)))
     \text{OR}_j = \frac{\text{Odds}_{\text{neu}}}{\text{Odds}} = e^{\beta_j}
     $$
 
+### Umsetzung der Berechnung in R: {.unlisted}
+
+```{r}
+#| cache: true
+#| echo: true
+# Berechnung der Odds Ratios
+exp(cbind(OR = coef(model_1)))
+model_wm_only <- glm(mode ~ geschlecht, data = data_vkm, family = binomial())
+exp(cbind(OR = coef(model_wm_only)))
+```
+
+
 ### Interpretation: {.unlisted}
 
 -   **zeit:** 1,1-fache höhere Chance zugunsten von Auto pro marg. höherer
@@ -249,8 +253,6 @@ exp(cbind(OR = coef(model_wm_only)))
     ähnlich
 -   im Modell mit nur **geschlecht:** 2,287-fache höhere Wskt./Chance
     zugunsten von Mann siehe vorheriges Rechenbeispiel !
-
-
 
 
 
