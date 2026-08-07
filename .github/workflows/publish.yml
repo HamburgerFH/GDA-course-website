@@ -58,6 +58,8 @@ jobs:
             --directory _site \
             --config .staticrypt.json \
             --remember 30 \
+            --template-color-primary "#03497b" \
+            --template-color-secondary "#177bb9" \
             --template-title "GDA-Kurswebsite" \
             --template-instructions "Bitte Kurs-Passwort eingeben." \
             --template-placeholder "Passwort" \
