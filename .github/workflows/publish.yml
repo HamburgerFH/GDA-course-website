@@ -41,9 +41,34 @@ jobs:
             any::FinTS
             any::plm
 
+      - name: Render Quarto website
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Encrypt HTML pages
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.SITE_PASSWORD }}
+        run: |
+          if [ -z "$STATICRYPT_PASSWORD" ]; then
+            echo "SITE_PASSWORD repository secret is required"
+            exit 1
+          fi
+
+          npx --yes staticrypt@3.5.4 _site/* \
+            --recursive \
+            --directory _site \
+            --config .staticrypt.json \
+            --remember 30 \
+            --template-title "GDA-Kurswebsite" \
+            --template-instructions "Bitte Kurs-Passwort eingeben." \
+            --template-placeholder "Passwort" \
+            --template-button "Website öffnen" \
+            --template-remember "Passwort 30 Tage merken" \
+            --template-error "Falsches Passwort"
+
       # Publish to GitHub Pages
       - uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
