@@ -57,14 +57,14 @@ jobs:
             --recursive \
             --directory _site \
             --config .staticrypt.json \
-            --remember 30 \
+            --remember 5 \
             --template-color-primary "#03497b" \
             --template-color-secondary "#177bb9" \
             --template-title "GDA-Kurswebsite" \
             --template-instructions "Bitte Kurs-Passwort eingeben." \
             --template-placeholder "Passwort" \
             --template-button "Website öffnen" \
-            --template-remember "Passwort 30 Tage merken" \
+            --template-remember "Passwort 5 Tage merken" \
             --template-error "Falsches Passwort"
 
           node scripts/apply-staticrypt-entry-gate.mjs \

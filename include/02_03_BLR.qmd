@@ -28,6 +28,7 @@ execute:
     -   **kosten:** Kostendifferenz zwischen ÖV und Auto
     -   **geschlecht:** 1 = weiblich $\ra$ 2 = männlich
     -   **umsteigen:** Zahl notwendiger Umstiege bei Nutzung der ÖV
+        ganzzahlige Zählvariable mit den Werten $0,\ldots,5$
 
 -   **Fragestellung:** Von welchen Faktoren hängt die Wahl des
     Verkehrsmittels ab?
