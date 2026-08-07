@@ -20,7 +20,7 @@ execute:
     -   wird allgemein verwendet für unabhängige **und** abhängige Variablen
 
 -   **Beispiel: Studie zur Verkehrsmittelwahl**
-    -   Pendlerfahrten: Arbeitsplatz $\ra$ zu Hause
+    -   Pendlerfahrten zwischen Wohnort und Arbeitsplatz
     -   $\ra$ Privatauto vs. öffentlicher Nahverkehr (ÖV)
     -   Datensatz `verkersmittel.csv` mit den Variablen
     -   **mode:** Verkehrsmittel ($0=$ Privatauto  vs. $1=$ ÖV)
