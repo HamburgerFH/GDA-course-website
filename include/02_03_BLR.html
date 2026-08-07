@@ -440,6 +440,7 @@ window.Quarto = {
   <li><a href="#binär-logistische-regression---umsetzung-in-r" id="toc-binär-logistische-regression---umsetzung-in-r" class="nav-link" data-scroll-target="#binär-logistische-regression---umsetzung-in-r">Binär logistische Regression - Umsetzung in <code>R</code></a></li>
   <li><a href="#nullmodellabweichung-omnibus-test" id="toc-nullmodellabweichung-omnibus-test" class="nav-link" data-scroll-target="#nullmodellabweichung-omnibus-test">Nullmodellabweichung: Omnibus-Test</a></li>
   <li><a href="#modellgüte-odds-ratio" id="toc-modellgüte-odds-ratio" class="nav-link" data-scroll-target="#modellgüte-odds-ratio">Modellgüte: Odds Ratio</a></li>
+  <li><a href="#odds-ratio-idee-der-berechnung-und-umsetzung-in-r" id="toc-odds-ratio-idee-der-berechnung-und-umsetzung-in-r" class="nav-link" data-scroll-target="#odds-ratio-idee-der-berechnung-und-umsetzung-in-r">Odds ratio: Idee der Berechnung und Umsetzung in <code>R</code>:</a></li>
   <li><a href="#modellgüte-pseudo-r2" id="toc-modellgüte-pseudo-r2" class="nav-link" data-scroll-target="#modellgüte-pseudo-r2">Modellgüte: Pseudo-<span class="math inline">\(R^2\)</span></a></li>
   <li><a href="#modellgüte-klassifizierungstabelle" id="toc-modellgüte-klassifizierungstabelle" class="nav-link" data-scroll-target="#modellgüte-klassifizierungstabelle">Modellgüte: Klassifizierungstabelle</a></li>
   <li><a href="#modellverbesserung-und-modellvalidierung" id="toc-modellverbesserung-und-modellvalidierung" class="nav-link" data-scroll-target="#modellverbesserung-und-modellvalidierung">Modellverbesserung und Modellvalidierung</a></li>
@@ -682,8 +683,29 @@ Figure&nbsp;1: Beispiel für Odds Ratio
 </figcaption>
 </figure>
 </div>
-<section id="umsetzung-in-r" class="level3 unlisted">
-<h3 class="unlisted anchored" data-anchor-id="umsetzung-in-r">Umsetzung in <code>R</code>:</h3>
+</section>
+<section id="odds-ratio-idee-der-berechnung-und-umsetzung-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="odds-ratio-idee-der-berechnung-und-umsetzung-in-r">Odds ratio: Idee der Berechnung und Umsetzung in <code>R</code>:</h2>
+<section id="idee-der-berechnung" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="idee-der-berechnung">Idee der Berechnung:</h3>
+<ul>
+<li><p><strong>Ziel:</strong> Die Auswirkung einer <strong>Erhöhung von</strong> <span class="math inline">\(x_j\)</span> um eine Einheit auf die Odds zu verstehen, ceteris paribus.</p></li>
+<li><p>Der Logit (Log-Odds) für eine Beobachtung ist: <span class="math display">\[
+\ln(\text{Odds}) = \beta_0 + \dots + \beta_j x_j + \dots
+\]</span></p></li>
+<li><p>Der Logit, wenn <span class="math inline">\(x_j\)</span> um 1 erhöht wird: <span class="math display">\[
+\ln(\text{Odds}_{\text{neu}}) = \beta_0 + \dots + \beta_j (x_j+1) + \dots
+\]</span></p></li>
+<li><p>Die <strong>Differenz der Log-Odds</strong> ist exakt der Koeffizient: <span class="math display">\[
+\ln(\text{Odds}_{\text{neu}}) - \ln(\text{Odds}) = \beta_j
+\]</span></p></li>
+<li><p>Das Verhältnis der Odds (Odds Ratio) ist somit: <span class="math display">\[
+\text{OR}_j = \frac{\text{Odds}_{\text{neu}}}{\text{Odds}} = e^{\beta_j}
+\]</span></p></li>
+</ul>
+</section>
+<section id="umsetzung-der-berechnung-in-r" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="umsetzung-der-berechnung-in-r">Umsetzung der Berechnung in R:</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Berechnung der Odds Ratios</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">cbind</span>(<span class="at">OR =</span> <span class="fu">coef</span>(model_1)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -703,21 +725,6 @@ geschlecht  2.8438543</code></pre>
 geschlecht  2.2867514</code></pre>
 </div>
 </div>
-<ul>
-<li><p><strong>Ziel:</strong> Die Auswirkung einer <strong>Erhöhung von</strong> <span class="math inline">\(x_j\)</span> um eine Einheit auf die Odds zu verstehen, ceteris paribus.</p></li>
-<li><p>Der Logit (Log-Odds) für eine Beobachtung ist: <span class="math display">\[
-\ln(\text{Odds}) = \beta_0 + \dots + \beta_j x_j + \dots
-\]</span></p></li>
-<li><p>Der Logit, wenn <span class="math inline">\(x_j\)</span> um 1 erhöht wird: <span class="math display">\[
-\ln(\text{Odds}_{\text{neu}}) = \beta_0 + \dots + \beta_j (x_j+1) + \dots
-\]</span></p></li>
-<li><p>Die <strong>Differenz der Log-Odds</strong> ist exakt der Koeffizient: <span class="math display">\[
-\ln(\text{Odds}_{\text{neu}}) - \ln(\text{Odds}) = \beta_j
-\]</span></p></li>
-<li><p>Das Verhältnis der Odds (Odds Ratio) ist somit: <span class="math display">\[
-\text{OR}_j = \frac{\text{Odds}_{\text{neu}}}{\text{Odds}} = e^{\beta_j}
-\]</span></p></li>
-</ul>
 </section>
 <section id="interpretation-1" class="level3 unlisted">
 <h3 class="unlisted anchored" data-anchor-id="interpretation-1">Interpretation:</h3>
