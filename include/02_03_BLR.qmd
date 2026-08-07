@@ -23,7 +23,7 @@ execute:
     -   Pendlerfahrten: Arbeitsplatz $\ra$ zu Hause
     -   $\ra$ Privatauto vs. öffentlicher Nahverkehr (ÖV)
     -   Datensatz `verkersmittel.csv` mit den Variablen
-    -   **mode:** Verkehrsmittel ($0 = $ Privatauto  vs. $ 1 = $ ÖV)
+    -   **mode:** Verkehrsmittel ($0=$ Privatauto  vs. $1=$ ÖV)
     -   **zeit:** Fahrzeitdifferenz zwischen ÖV und Auto
     -   **kosten:** Kostendifferenz zwischen ÖV und Auto
     -   **geschlecht:** 1 = weiblich $\ra$ 2 = männlich
@@ -281,7 +281,7 @@ interpretiert werden können, die sogenannten **Pseudo-**$R^2$ Maße:
     -   < 0.2: Gering
     -   0.2 - 0.4: Akzeptabel
     -   0.4 - 0.5: Gut
-    -   > 0.5: Sehr gut
+    -   $>=$ 0.5: Sehr gut
 
 
 
