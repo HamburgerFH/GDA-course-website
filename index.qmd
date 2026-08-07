@@ -94,7 +94,7 @@ Fehlern bitte im GitHub-Menü (links oben) melden.
 
 ![](assets/logo_hfh.png){.home-logo}
 
-**Ilya Zarubin (M.Sc.)**  
+**Dr. Ilya Zarubin**  
 E‑mail: ilya.zarub@campus.hamburger-fh.de
 
 <div class="d-flex gap-2 mt-2">
