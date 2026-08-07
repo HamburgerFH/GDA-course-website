@@ -420,8 +420,7 @@ Ausgangspunkt: Menge von Transaktionen<br>
 <p><span class="math display">\[
 X \rightarrow Y
 \]</span></p></li>
-<li><p><strong>Support:</strong><br>
-Der Support einer Itemmenge <span class="math inline">\(X\)</span> gibt an, wie häufig <span class="math inline">\(X\)</span> in der Datenbank <span class="math inline">\(D\)</span> vorkommt:</p>
+<li><p><strong>Support:</strong> Beschreibt, ob ein item relevant ist: Der Support einer Itemmenge <span class="math inline">\(X\)</span> gibt an, wie häufig <span class="math inline">\(X\)</span> in der Datenbank <span class="math inline">\(D\)</span> vorkommt:</p>
 <p><span class="math display">\[
 \text{Support}(X)=
 \frac{\left|\{\,T_j \in D: X \subset T_j\,\}\right|}{|D|}
@@ -447,16 +446,19 @@ Der Support einer Itemmenge <span class="math inline">\(X\)</span> gibt an, wie 
      {\text{Support}(X)\cdot\text{Support}(Y)}
 \]</span></p>
 <ul>
-<li><span class="math inline">\(\text{Lift} &gt; 1\)</span>: positive Assoziation<br>
-</li>
-<li><span class="math inline">\(\text{Lift} = 1\)</span>: keine Assoziation<br>
-</li>
+<li><span class="math inline">\(\text{Lift} &gt; 1\)</span>: positive Assoziation</li>
+<li><span class="math inline">\(\text{Lift} = 1\)</span>: keine Assoziation</li>
 <li><span class="math inline">\(\text{Lift} &lt; 1\)</span>: negative Assoziation</li>
 </ul></li>
 <li><p><strong>Man kann zeigen:</strong> Gesamtzahl möglicher Regeln <span class="math inline">\(R\)</span> in einem Datensatz mit <span class="math inline">\(d\)</span> Items:</p>
 <p><span class="math display">\[
 R = 3^d - 2^{d+1} + 1
 \]</span></p></li>
+<li><p><strong>Man kann weiter sehen:</strong></p>
+<ul>
+<li>der support einer Regel ist für alle Regeln über <span class="math inline">\(X \cup Y\)</span> gleich: Konfidenz sinnvoll</li>
+<li>frequent itemset (<span class="math inline">\(:=\)</span> ein itemset, dass einen vorgegebenen support übersteigt): ist eine Obermenge ein frequent itemset, so müssen die Untermengen ebenfalls frequent sein <span class="math inline">\(-&gt;\)</span> Monotonie der Vereinigungsoperation</li>
+</ul></li>
 </ul>
 </section>
 <section id="schritte-der-assoziationsanalyse-apriori-algorithmus" class="level2">
