@@ -67,6 +67,9 @@ jobs:
             --template-remember "Passwort 30 Tage merken" \
             --template-error "Falsches Passwort"
 
+          node scripts/apply-staticrypt-entry-gate.mjs \
+            _site /GDA-course-website/
+
       # Publish to GitHub Pages
       - uses: quarto-dev/quarto-actions/publish@v2
         with:

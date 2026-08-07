@@ -8,6 +8,12 @@ GitHub-Actions-Secret `SITE_PASSWORD`. Das feste Salt in `.staticrypt.json`
 ermöglicht, dass ein gemerktes Passwort auf allen Unterseiten und über mehrere
 Deployments hinweg funktioniert.
 
+Nur die Startseite ist ein Login-Einstieg. Nach erfolgreicher Eingabe wird die
+Freigabe automatisch für 30 Tage gespeichert. Unterseiten entschlüsseln sich
+danach ohne weitere Abfrage. Ein direkter Unterseitenaufruf ohne gültige
+Freigabe wird zur Startseite umgeleitet; dort erscheint das einzige
+Passwortformular.
+
 Zum Ändern des Passworts:
 
 ```bash
