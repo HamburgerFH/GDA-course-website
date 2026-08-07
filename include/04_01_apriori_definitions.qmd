@@ -11,7 +11,7 @@
   X \rightarrow Y
   $$
 
-- **Support:**  
+- **Support:**  Beschreibt, ob ein item relevant ist:
   Der Support einer Itemmenge $X$ gibt an, wie häufig $X$ in der Datenbank
   $D$ vorkommt:
   
@@ -47,8 +47,8 @@
        {\text{Support}(X)\cdot\text{Support}(Y)}
   $$
   
-  - $\text{Lift} > 1$: positive Assoziation  
-  - $\text{Lift} = 1$: keine Assoziation  
+  - $\text{Lift} > 1$: positive Assoziation
+  - $\text{Lift} = 1$: keine Assoziation
   - $\text{Lift} < 1$: negative Assoziation
 
 - **Man kann zeigen:** Gesamtzahl möglicher Regeln $R$ in einem Datensatz mit $d$ Items:
@@ -58,6 +58,11 @@
   $$
 
 
+- **Man kann weiter sehen:** 
+  - der support einer Regel ist für alle Regeln über $X \cup Y$ gleich: Konfidenz sinnvoll
+  - frequent itemset ($:=$ ein itemset, dass einen vorgegebenen support übersteigt):
+  ist eine Obermenge ein frequent itemset, so müssen die Untermengen ebenfalls frequent sein
+  $->$ Monotonie der Vereinigungsoperation
 
 
 

@@ -80,8 +80,10 @@ Starte mit einem der Bereiche oder nutze die Suche links.
 ::: {.callout-caution}
 [**Hinweise:**]{.underline} 
 
-- Klausurtermin 01: [27.09.2025]{.underline .ctl}
-- Klausurtermin 02: [20.12.2025]{.underline .ctl}
+- Klausurtermin 01: [26.09.2026]{.underline .ctl}
+- Klausurtermin 02: [19.12.2026]{.underline .ctl}
+- Klausurtermin 03: [20.03.2027]{.underline .ctl}
+- Klausurtermin 04: [26.06.2027]{.underline .ctl}
 :::
 
 ::: {.callout-tip}

@@ -50,8 +50,8 @@ Merkmale.
 ## Conjoint-Analyse - Beispielrechnung
 
 Das additive Modell besagt, dass sich der Gesamtnutzen als Summe der Teilnutzen
-ergibt. Die Teilnutzenwerte wiederum sollen so bestimmt werden, dass die resultie-
-renden Gesamtnutzenwerte möglichst gut den empirischen Rangwerten entsprechen.
+ergibt. Die Teilnutzenwerte wiederum sollen so bestimmt werden, dass die resultierenden
+Gesamtnutzenwerte möglichst gut den empirischen Rangwerten entsprechen.
 
 Im additiven Modell mit zwei Attributen A und B kann man den Gesamtnutzen y
 darstellen als :
