@@ -367,41 +367,29 @@ interpretiert werden können, die sogenannten **Pseudo-**$R^2$ Maße:
 
 ### Klassifizierungstabelle (Confusion Matrix) {.unlisted}
 
-Ein Schwellenwert (meist $\tau=0.5$) entscheidet über die Klassifikation:
-Falls die logistische Regression eine Wahrscheinlichkeit größer als 0.5
-liefert, wird die Beobachtung als 1 klassifiziert, sonst als 0.
+Ein Schwellenwert (meist $\tau=0.5$) entscheidet über die Klassifikation: Falls
+die logistische Regression eine Wahrscheinlichkeit größer als 0.5 liefert, wird
+die Beobachtung als 1 klassifiziert, sonst als 0.
 
 Im vorliegenden Datensatz ist **Auto** das positive Ereignis (`mode = 1`). Die
 Abbildung im Studienbrief vertauscht an dieser Stelle Auto und ÖV. Aus dem oben
 geschätzten Modell ergibt sich bei $\tau=0.5$ die konsistente Tabelle:
 
-| Vorhersage       | Tatsächlich: ÖV (0) | Tatsächlich: Auto (1) |
-|------------------|---------------------:|-----------------------:|
-| ÖV (0)           | 52 (TN)              | 17 (FN)                |
-| Auto (1)         | 12 (FP)              | 38 (TP)                |
+| Vorhersage | Tatsächlich: ÖV (0) | Tatsächlich: Auto (1) |
+| ---------- | ------------------: | --------------------: |
+| ÖV (0)     |             52 (TN) |               17 (FN) |
+| Auto (1)   |             12 (FP) |               38 (TP) |
 
 $$
 \begin{align*}
-\text{Sensitivität}
-  &= \frac{TP}{TP+FN}
-   = \frac{38}{38+17}
-   = \frac{38}{55}
-   \approx 0.691, \\
-\text{Spezifität}
-  &= \frac{TN}{TN+FP}
-   = \frac{52}{52+12}
-   = \frac{52}{64}
-   = 0.8125, \\
-\text{Genauigkeit}
-  &= \frac{TP+TN}{n}
-   = \frac{38+52}{119}
-   \approx 0.756.
+\text{Sensitivität} &= \frac{\text{Richtig Positiv (TP)}}{\text{Richtig Positiv (TP)} + \text{Falsch Negativ (FN)}} = \frac{38}{38 + 17} = \frac{38}{55} \approx 0.6909\\
+\text{Spezifität} &= \frac{\text{Richtig Negativ (TN)}}{\text{Richtig Negativ (TN)} + \text{Falsch Positiv (FP)}} = \frac{52}{52 + 12} = \frac{52}{64} = 0.8125
+
 \end{align*}
 $$
 
-
-
-
+- Richtig Positive an Gesamt-Positiven: $38/55=69.09\%$
+- Richtig Negative an Gesamt-Negativen: $52/64=81.25\%$
 
 ## Modellverbesserung und Modellvalidierung
 
