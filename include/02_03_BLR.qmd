@@ -395,6 +395,10 @@ $$
 
 ### Systematischer Ein- oder Ausschluss von Variablen {.unlisted}
 
+Nicht signifikante Variablen können aus dem Modell entfernt werden. Neben dem
+p-Wert aus der Modellzusammenfassung kann hierfür auch ein Wald-Test
+herangezogen werden.
+
 Der Koeffiziententest in `summary(model_1)` ist bereits ein asymptotischer
 Wald-Test. Für `umsteigen` lässt er sich direkt nachvollziehen:
 
@@ -407,10 +411,12 @@ wald_z <- beta_umsteigen / se_umsteigen
 wald_chi2 <- wald_z^2
 wald_p <- pchisq(wald_chi2, df = 1, lower.tail = FALSE)
 cbind(wald_z, wald_chi2, wald_p)
+
 ```
 
-Das Ergebnis $p\approx0.691$ ist derselbe Test, der in der Modellzusammenfassung
-für diesen einzelnen Koeffizienten erscheint. Es liefert keine Evidenz gegen
+Das Wald-Testergebnis ($p\approx0.691$) ist derselbe Test, der für diesen
+einzelnen Koeffizienten in der Modellzusammenfassung erscheint. Es liefert keine
+Evidenz gegen
 $H_0\colon\beta_{\text{umsteigen}}=0$. Eine Variable sollte dennoch nicht allein
 aufgrund eines p-Wertes entfernt werden; Theorie, Modellzweck und mögliches
 Confounding sind ebenfalls zu berücksichtigen.
