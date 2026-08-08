@@ -222,40 +222,45 @@ summary(model_1)
 
 ## Effektinterpretation: Odds Ratios
 
--   **Problem und Motivation:**
-    -   Die Koeffizienten wirken linear auf die Log-Odds und sind deshalb
-        nicht unmittelbar als Chancenverhältnisse ablesbar.
-    -   Durch Exponenzieren entsteht für einen Anstieg des Prädiktors um
-        eine Einheit die Odds Ratio $e^{\beta_j}$.
-    -   Odds Ratios beschreiben Effektstärken; sie sind kein Maß der
-        Modellgüte.
+- **Problem und Motivation:**
 
--   **Odds Ratio (OR): Begriffe und Interpretation**
-    -   **Odds:** Chance -- **Odds Ratio:** Chancenverhältnis --
-        **Logit:** logarithmierte Odds
-    -   [$OR > 1$]{.crd} [erhöht die Odds,]{.ctl} [$OR < 1$]{.crd}
-        [ senkt die Odds,]{.ctl} [$OR = 1$]{.crd} [lässt sie unverändert.]{.ctl}
-        Eine Odds Ratio ist nicht mit einem Verhältnis von
-        Wahrscheinlichkeiten gleichzusetzen.
+  - Koeffizienten wirken linear auf die Log-Odds und sind deshalb nicht
+    unmittelbar als Chancenverhältnisse ablesbar
+  - Das Vorzeichen zeigt die Richtung des Effekts auf die Log-Odds.
+  - Durch Exponenzieren entsteht für einen Anstieg des Prädiktors um eine
+    Einheit die Odds Ratio $e^{\beta_j}$
+  - Odds Ratios beschreiben Effektstärken; sie sind kein Maß der Modellgüte.
 
--   **Odds Ratio -- Beispiel:**
-    $$
-    OR_{F/M}^{\text{ÖV/Auto}}
-      = \frac{F\text{Ö}/FA}{M\text{Ö}/MA}
-      = \frac{F\text{Ö}\cdot MA}{FA\cdot M\text{Ö}}
-      = 2.287.
-    $$
-    wobei hier der erste Buchstabe Mann/Frau bezeichnet ($M$ oder $F$) und
-    der zweite das gewählte Verkehrsmittel $Ö$ für ÖV und $A$ für Auto, z.B.
-    FÖ für Frauen und öffentliche Verkehrsmittel.
+- **Odds Ratio (OR): Begriffe und Interpretation**
+
+  - **Odds:** Chance -- **Odds Ratio:** Chancenverhältnis -- **Logit:**
+    logarithmierte Odds
+  - [$OR > 1$]{.crd} [erhöht die Odds,]{.ctl} [$OR < 1$]{.crd} [ senkt die
+    Odds,]{.ctl} [$OR = 1$]{.crd} [lässt sie unverändert.]{.ctl} Eine Odds Ratio
+    ist nicht mit einem Verhältnis von Wahrscheinlichkeiten gleichzusetzen.
+
+- **Odds Ratio -- Beispiel:**
+
+  $$
+
+  OR_{F/M}^{\text{ÖV/Auto}}
+    = \frac{F\text{Ö}/FA}{M\text{Ö}/MA}
+    = \frac{F\text{Ö}\cdot MA}{FA\cdot M\text{Ö}}
+    = 2.287.
+
+
+  $$
+
+  wobei hier der erste Buchstabe Mann/Frau bezeichnet ($M$ oder $F$) und der
+  zweite das gewählte Verkehrsmittel $Ö$ für ÖV und $A$ für Auto, z.B. FÖ für
+  Frauen und öffentliche Verkehrsmittel.
 
 ![Beispiel für Odds Ratio](/figs/02_03_odds_bsp_01.png){#fig-02_03_odds_bsp_01}
 
-Das Bild betrachtet die Odds **ÖV versus Auto** bei Frauen relativ zu
-Männern. Das Regressionsmodell betrachtet dagegen wegen `mode = 1` die Odds
-**Auto versus ÖV** bei Männern relativ zu Frauen. Zähler und Nenner werden
-also beide vertauscht; daher ergibt sich im reinen Geschlechtermodell derselbe
-Zahlenwert:
+Das Bild betrachtet die Odds **ÖV versus Auto** bei Frauen relativ zu Männern.
+Das Regressionsmodell betrachtet dagegen wegen `mode = 1` die Odds **Auto versus
+ÖV** bei Männern relativ zu Frauen. Zähler und Nenner werden also beide
+vertauscht; daher ergibt sich im reinen Geschlechtermodell derselbe Zahlenwert:
 
 $$
 OR_{M/F}^{\text{Auto/ÖV}}
@@ -263,31 +268,35 @@ OR_{M/F}^{\text{Auto/ÖV}}
   = 2.287.
 $$
 
-## Odds ratio: Idee der Berechnung und Umsetzung in `R`:
+## Odds ratio: Idee der Berechnung und Umsetzung in `R`
+
 ### Idee der Berechnung: {.unlisted}
 
--   **Ziel:** Die Auswirkung einer **Erhöhung von** $x_j$ um eine Einheit auf
-    die Odds zu verstehen, ceteris paribus.
+- **Ziel:** Die Auswirkung einer **Erhöhung von** $x_j$ um eine Einheit auf die
+  Odds zu verstehen, ceteris paribus.
 
--   Der Logit (Log-Odds) für eine Beobachtung ist:
-    $$
-    \ln(\text{Odds}) = \beta_0 + \dots + \beta_j x_j + \dots
-    $$
+- Der Logit (Log-Odds) für eine Beobachtung ist:
 
--   Der Logit, wenn $x_j$ um 1 erhöht wird:
-    $$
-    \ln(\text{Odds}_{\text{neu}}) = \beta_0 + \dots + \beta_j (x_j+1) + \dots
-    $$
+  $$
+  \ln(\text{Odds}) = \beta_0 + \dots + \beta_j x_j + \dots
+  $$
 
--   Die **Differenz der Log-Odds** ist exakt der Koeffizient:
-    $$
-    \ln(\text{Odds}_{\text{neu}}) - \ln(\text{Odds}) = \beta_j
-    $$
+- Der Logit, wenn $x_j$ um 1 erhöht wird:
 
--   Das Verhältnis der Odds (Odds Ratio) ist somit:
-    $$
-    \text{OR}_j = \frac{\text{Odds}_{\text{neu}}}{\text{Odds}} = e^{\beta_j}
-    $$
+  $$
+  \ln(\text{Odds}_{\text{neu}}) = \beta_0 + \dots + \beta_j (x_j+1) + \dots
+  $$
+
+- Die **Differenz der Log-Odds** ist exakt der Koeffizient:
+
+  $$
+  \ln(\text{Odds}_{\text{neu}}) - \ln(\text{Odds}) = \beta_j
+  $$
+
+- Das Verhältnis der Odds (Odds Ratio) ist somit:
+  $$
+  \text{OR}_j = \frac{\text{Odds}_{\text{neu}}}{\text{Odds}} = e^{\beta_j}
+  $$
 
 ### Umsetzung der Berechnung in R: {.unlisted}
 
@@ -296,30 +305,28 @@ $$
 #| echo: true
 # Berechnung der Odds Ratios
 exp(cbind(OR = coef(model_1)[-1]))
+
 model_wm_only <- glm(mode ~ geschlecht, data = data_vkm, family = binomial())
 exp(cbind(OR = coef(model_wm_only)[-1]))
-```
 
+```
 
 ### Interpretation: {.unlisted}
 
--   **zeit:** Pro zusätzlicher Einheit Fahrzeitdifferenz (ÖV minus Auto)
-    steigen die modellierten Auto-vs.-ÖV-Odds um den Faktor 1,10, unter
-    Konstanthaltung der anderen Variablen. Eine Zeiteinheit ist im
-    Studienbrief nicht angegeben.
--   **geschlecht:** Die adjustierten Auto-vs.-ÖV-Odds sind bei Männern
-    2,84-mal so hoch wie bei Frauen.
--   **kosten:** Pro zusätzlicher Einheit der Kostendifferenz werden die
-    Auto-vs.-ÖV-Odds mit 0,989 multipliziert. Der Effekt ist nicht signifikant
-    ($p=0.652$).
--   **umsteigen:** Pro zusätzlichem Umstieg bei Nutzung des ÖV werden die
-    Auto-vs.-ÖV-Odds mit 1,249 multipliziert. Der Effekt ist nicht signifikant
-    ($p=0.691$).
--   Im Modell nur mit **geschlecht** sind die Auto-vs.-ÖV-Odds bei Männern
-    2,287-mal so hoch wie bei Frauen. Das ist die unadjustierte Odds Ratio aus
-    dem vorherigen Rechenbeispiel.
-
-
+- **zeit:** Pro zusätzlicher Einheit Fahrzeitdifferenz (ÖV minus Auto) steigen
+  die modellierten Auto-vs.-ÖV-Odds um den Faktor 1,10, unter Konstanthaltung
+  der anderen Variablen.
+- **geschlecht:** Die adjustierten Auto-vs.-ÖV-Odds sind bei Männern 2,84-mal so
+  hoch wie bei Frauen.
+- **kosten:** Pro zusätzlicher Einheit der Kostendifferenz werden die
+  Auto-vs.-ÖV-Odds mit 0,989 multipliziert. Der Effekt ist nicht signifikant
+  ($p=0.652$).
+- **umsteigen:** Pro zusätzlichem Umstieg bei Nutzung des ÖV werden die
+  Auto-vs.-ÖV-Odds mit 1,249 multipliziert. Der Effekt ist nicht signifikant
+  ($p=0.691$).
+- Im Modell nur mit **geschlecht** sind die Auto-vs.-ÖV-Odds bei Männern
+  2,287-mal so hoch wie bei Frauen. Das ist die unadjustierte Odds Ratio aus dem
+  vorherigen Rechenbeispiel.
 
 ## Modellgüte: Pseudo-$R^2$
 
