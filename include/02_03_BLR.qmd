@@ -333,40 +333,35 @@ exp(cbind(OR = coef(model_wm_only)[-1]))
 Im Folgenden betrachten wir weitere Bestimmtheitsmaße, die ähnlich zu $R^2$
 interpretiert werden können, die sogenannten **Pseudo-**$R^2$ Maße:
 
--   **Cox & Snell $R^2$:** erreicht im Allgemeinen nicht den Wert 1; sein
-    erreichbares Maximum hängt von den Daten ab.
--   **Nagelkerke $R^2$:** skaliert Cox-Snell-$R^2$ auf ein mögliches Maximum
-    von 1. Es ist nicht als erklärter Varianzanteil wie das klassische
-    $R^2$ der linearen Regression zu lesen.
+- **Cox & Snell \( R^2 \):** erreicht im Allgemeinen nicht den Wert 1; sein
+  erreichbares Maximum hängt von den Daten ab.
+- **Nagelkerke \( R^2 \):** skaliert Cox-Snell-\( R^2 \) auf ein mögliches
+  Maximum von 1. Es ist nicht als erklärter Varianzanteil wie das klassische
+  \( R^2 \) der linearen Regression zu lesen.
 
--   **R-Umsetzung:**
+- **R-Umsetzung:**
 
-    ```{r}
-    #| cache: true
-    #| echo: true
-    # Berechnung von Pseudo-R2;  install.packages("DescTools")
-    n <- length(model_1$residuals)
-    R2_cox_snell <- 1 - exp((model_1$deviance - model_1$null.deviance) / n)
-    R2_nagelkerke <- R2_cox_snell / (1 - exp(-(model_1$null.deviance / n)))
-    cbind(R2_cox_snell = R2_cox_snell, R2_nagelkerke = R2_nagelkerke)
-    DescTools::PseudoR2(model_1, which = "all")
-    ```
+  ```{r}
+  #| cache: true
+  #| echo: true
+  # Berechnung von Pseudo-R2;  install.packages("DescTools")
+  n <- length(model_1$residuals)
+  R2_cox_snell <- 1 - exp((model_1$deviance - model_1$null.deviance) / n)
+  R2_nagelkerke <- R2_cox_snell / (1 - exp(-(model_1$null.deviance / n)))
+  cbind(R2_cox_snell = R2_cox_snell, R2_nagelkerke = R2_nagelkerke)
+  DescTools::PseudoR2(model_1, which = "all")
+  ```
 
--   Beispielwerte: $R^2_{\text{Cox-Snell}} = 0.308$ und
-    $R^2_{\text{Nagelkerke}} = 0.411$.
--   **Didaktische Faustregel aus dem Studienbrief:**
-    -   < 0.2: Gering
-    -   0.2 - 0.4: Akzeptabel
-    -   0.4 - 0.5: Gut
-    -   $>=$ 0.5: Sehr gut
+- Beispielwerte: $R^2_{\text{Cox-Snell}} = 0.308$ und
+  $R^2_{\text{Nagelkerke}} = 0.411$.
+- **Faustregel aus dem Studienbrief:**
+  - < 0.2: Gering
+  - 0.2 - 0.4: Akzeptabel
+  - 0.4 - 0.5: Gut
+  - $>=$ 0.5: Sehr gut
 
-    Diese Grenzwerte sind keine allgemeingültigen statistischen Schwellenwerte.
-    Pseudo-$R^2$ sollte im Kontext und zusammen mit weiteren Maßen beurteilt
-    werden.
-
-
-
-
+  Diese Grenzwerte sind keine allgemeingültigen Schwellenwerte. Die Pseudo-$R^2$
+  sollte im Kontext und zusammen mit weiteren Maßen beurteilt werden.
 
 ## Modellgüte: Klassifizierungstabelle
 
