@@ -131,8 +131,11 @@
     \quad \forall (i_1, t_1) \neq (i_2, t_2)
     $$
 
-  - Falls verletzt $\ra$ **Autokorrelation** $\ra$ verschlechtert Effizienz 
-    (nicht mehr BLUE)
+  - Die zufällige Abweichung einer Beobachtung soll also nicht mit der einer
+    anderen Beobachtung zusammenhängen.
+  - Sind die Fehlerterme voneinander abhängig, spricht man von
+    **Autokorrelation**. Dadurch können Standardfehler und statistische Tests
+    unzuverlässig werden.
 
 - **(A3) Homoskedastizität:**  
 
@@ -142,14 +145,18 @@
     \text{Var}(\epsilon_{it}) = \sigma^2 \quad \forall i, t
     $$
 
-  - Falls verletzt $\ra$ **Heteroskedastizität** $\ra$ verschlechtert Effizienz 
-    (nicht mehr BLUE)
+  - Ist die Varianz nicht konstant, spricht man von **Heteroskedastizität**.
+    Die Koeffizientenschätzungen sind dadurch nicht automatisch falsch, aber
+    Konfidenzintervalle und statistische Tests können unzuverlässig werden.
 
-- **(A4) Keine Multikollinearität:** Einzelne Kovariate, also Komponenten aus  
-  $X_{it}=(x_{it}^{(1)}, \ldots, x_{it}^{(D)})^\top$, sind nicht kollinear, 
-  d. h. kein $x_{it}^{(d)}$ ist Linearkombination der (einer) anderen — 
-  Informationswert einer Variablen lässt sich nicht durch die anderen 
-  ausdrücken — falls verletzt $\ra$ **hohe Standardfehler**
+- **(A4) Keine Multikollinearität:** Die Komponenten von
+  $X_{it}=(x_{it}^{(1)}, \ldots, x_{it}^{(D)})^\top$ sollen unterschiedliche
+  Informationen liefern. Keine unabhängige Variable darf sich exakt aus den
+  anderen berechnen lassen.
+  - Bei perfekter Multikollinearität lassen sich die betroffenen Koeffizienten
+    nicht eindeutig schätzen.
+  - Bei starker, aber nicht perfekter Multikollinearität entstehen häufig hohe
+    Standardfehler. Die einzelnen Einflüsse sind dann schwer zu trennen.
 
 - FE-Modell **(A5F):** $\alpha_i$ deterministisch  
   RE-Modell **(A5R):** $\text{Cov}(\alpha_i,X_{it})=0$ und  

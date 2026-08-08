@@ -14,7 +14,7 @@
 
     $$
     \alpha_i \sim \mathcal{N}(\alpha, \sigma_{\alpha}^2) \quad\quad 
-    \epsilon_{it} \sim \mathcal{N}(1, \sigma_{\epsilon}^2)
+    \epsilon_{it} \sim \mathcal{N}(0, \sigma_{\epsilon}^2)
     $$
 
 - **Varianzstruktur der Fehler:** Kovarianzmatrix der Fehler für $i$ und alle 
