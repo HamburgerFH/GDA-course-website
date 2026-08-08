@@ -100,6 +100,7 @@ data_vkm$geschlecht <- factor(
   levels = c(1, 2),
   labels = c("Frau", "Mann")
 )
+
 # Nullmodell: 'mode' regressiert auf Konstante '1'
 model_0 <- glm(
   mode ~ 1,
@@ -111,18 +112,24 @@ model_1 <- glm(
   data = data_vkm,
   family = binomial()
 )
+
 ```
 
--   `glm()`: generalisiertes lineares Modell (vorher: `lm` $\ra$ lineares
-    Modell)
--   `geschlecht` wird explizit als Faktor mit **Frau als Referenzkategorie**
-    definiert. So ist eindeutig, welchen Vergleich der Koeffizient beschreibt.
--   Das Nullmodell verwendet für jede Person denselben geschätzten Anteil:
-    $\bar{Y}=n_1/n$. Im Datensatz sind 55 von 119 Beobachtungen als
-    `mode = 1` codiert. Das Nullmodell schätzt daher für alle Personen eine
-    Auto-Wahrscheinlichkeit von $55/119 \approx 46{,}2\%$.
+- `glm()`: generalisiertes lineares Modell (vorher: `lm` $\ra$ lineares Modell)
 
-Die Zusammenfassung des Nullmodells zeigt diesen Mittelwert.
+- Nullmodell: ein Modell mit nur Achsenabschnitt; es wird für jede Person die
+  gleiche Wahrscheinlichkeit geschätzt, und implizit eine Mittelwertsregression
+  durchgeführt: $\bar{Y}=\frac{1}{n}\sum_{i=1}^n Y_i$
+  $=\frac{1}{n} (n_{1} \times 1 + n_{0}\times 0)=\frac{n_1}{n}$; Anteil Einsen
+  an gesamten Beobachtungen; sind im Datensatz 25-Einsen und 75-Nullen dann
+  ergibt die Nullmodell-Regression $0.25= 25\%$ der $n=100$ Personen nutzen das
+  Auto.
+- Das Nullmodell verwendet für jede Person denselben geschätzten Anteil:
+  $\bar{Y}=n_1/n$. Im Datensatz sind 55 von 119 Beobachtungen als `mode = 1`
+  codiert. Das Nullmodell schätzt daher für alle Personen eine
+  Auto-Nutzungswahrscheinlichkeit von $55/119 \approx 46{,}2\%$
+- `geschlecht` wird explizit als Faktor mit **Frau als Referenzkategorie**
+  definiert. So ist eindeutig, welchen Vergleich der Koeffizient beschreibt.
 
 ```{r}
 #| cache: true
