@@ -625,6 +625,17 @@
     ]
   },
   {
+    "objectID": "include/04_02_conjoint.html#weitere-formen-der-conjoint-analyse",
+    "href": "include/04_02_conjoint.html#weitere-formen-der-conjoint-analyse",
+    "title": "Grundlagen der Datenanalyse (GDA)",
+    "section": "Weitere Formen der Conjoint-Analyse",
+    "text": "Weitere Formen der Conjoint-Analyse\nDie Varianten unterscheiden sich vor allem darin, wie die Präferenzen der Befragten erhoben werden.\n\nMaximum-Difference-Conjoint-Analyse\n\nAuch MaxDiff, Maximum Difference Scaling oder Best-Worst Scaling genannt.\nBefragte wählen aus mehreren Elementen, z. B. Produktmerkmalen oder Produktvarianten, jeweils das beste und das schlechteste aus.\nAus den wiederholten direkten Vergleichen lässt sich eine robuste Rangfolge aller betrachteten Elemente erstellen.\nBesonders geeignet, wenn Merkmale als vorhanden oder nicht vorhanden betrachtet werden. Die direkte Best-Worst-Entscheidung ist meist leichter als die Bewertung eines wenig eindeutigen Mittelfelds.\n\n\n\nAdaptive Conjoint-Analyse\n\nDie Fragen sind nicht vollständig vorbestimmt: Jede neue Frage passt sich an die vorherige Auswahl der befragten Person an.\nBesonders geeignet für Studien mit vielen Attributen, die sich nicht sinnvoll gemeinsam in einer Standard-Conjoint-Befragung abbilden lassen.\n\n\n\nDiscrete Choice Analysis\n\nAuch Choice-based Analysis oder Discrete Choice Experimentation genannt.\nBefragte wählen aus den dargebotenen Produktvarianten diejenige aus, die sie kaufen würden beziehungsweise bevorzugen.\nIm Studienbrief werden jeweils zwei Produktvarianten gegenübergestellt. Diese binäre Auswahl wird mit wechselnden Varianten wiederholt.",
+    "crumbs": [
+      "Studienbrief 4",
+      "Conjoint-Analyse"
+    ]
+  },
+  {
     "objectID": "include/05_05_RE_modell.html",
     "href": "include/05_05_RE_modell.html",
     "title": "Grundlagen der Datenanalyse (GDA)",
