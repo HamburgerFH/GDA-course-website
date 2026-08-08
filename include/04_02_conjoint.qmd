@@ -88,3 +88,37 @@ Auf Basis der empirisch ermittelten Rangdaten für die Stimuli werden mit der Co
 ### Implementierung in `R` {.unlisted}
 
 **_Hier nicht weiter betrachtet -> siehe Studienbrief 04, Kapitel 2.5 ff._**
+
+
+## Weitere Formen der Conjoint-Analyse
+
+Die Varianten unterscheiden sich vor allem darin, wie die Präferenzen der
+Befragten erhoben werden.
+
+### Maximum-Difference-Conjoint-Analyse {.unlisted}
+
+- Auch **MaxDiff**, **Maximum Difference Scaling** oder **Best-Worst Scaling**
+  genannt.
+- Befragte wählen aus mehreren Elementen, z. B. Produktmerkmalen oder
+  Produktvarianten, jeweils das beste und das schlechteste aus.
+- Aus den wiederholten direkten Vergleichen lässt sich eine robuste Rangfolge
+  aller betrachteten Elemente erstellen.
+- Besonders geeignet, wenn Merkmale als vorhanden oder nicht vorhanden
+  betrachtet werden. Die direkte Best-Worst-Entscheidung ist meist leichter als
+  die Bewertung eines wenig eindeutigen Mittelfelds.
+
+### Adaptive Conjoint-Analyse {.unlisted}
+
+- Die Fragen sind nicht vollständig vorbestimmt: Jede neue Frage passt sich an
+  die vorherige Auswahl der befragten Person an.
+- Besonders geeignet für Studien mit vielen Attributen, die sich nicht sinnvoll
+  gemeinsam in einer Standard-Conjoint-Befragung abbilden lassen.
+
+### Discrete Choice Analysis {.unlisted}
+
+- Auch **Choice-based Analysis** oder **Discrete Choice Experimentation**
+  genannt.
+- Befragte wählen aus den dargebotenen Produktvarianten diejenige aus, die sie
+  kaufen würden beziehungsweise bevorzugen.
+- Im Studienbrief werden jeweils zwei Produktvarianten gegenübergestellt. Diese
+  binäre Auswahl wird mit wechselnden Varianten wiederholt.
