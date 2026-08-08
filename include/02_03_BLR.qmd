@@ -6,81 +6,64 @@ execute:
   echo: true
 ---
 
-
 ## Idee und Einführung
 
--   **Idee:**
-    -   Abhängigkeit einer dichotomen Variablen von
-        **_unabhängigen Variablen / Regressoren_**
-    -   **_binär/dichotom:_** *ja/nein*, *trifft zu/ trifft nicht zu*,
-        *männlich/weiblich*, *Raucher/nicht Raucher*
+- **Idee:**
+  - Abhängigkeit einer dichotomen Variablen von **_unabhängigen Variablen /
+    Regressoren_**
+  - **_binär/dichotom:_** _ja/nein_, _trifft zu/ trifft nicht zu_,
+    _männlich/weiblich_, _Raucher/nicht Raucher_
 
--   **Dummy-Variable:**
-    -   Ebenfalls 0/1 codiert mit Bedeutung z.B. *ja/nein*
-    -   wird allgemein verwendet für unabhängige **und** abhängige Variablen
+- **Dummy-Variable:**
+  - Ebenfalls 0/1 codiert mit Bedeutung z.B. _ja/nein_
+  - wird allgemein verwendet für unabhängige **und** abhängige Variablen
 
--   **Beispiel: Studie zur Verkehrsmittelwahl**
-    -   Pendlerfahrten zwischen Wohnort und Arbeitsplatz
-    -   $\ra$ Privatauto vs. öffentlicher Nahverkehr (ÖV)
-    -   Datensatz `verkehrsmittel.csv` mit den Variablen
-    -   **mode:** Verkehrsmittel ($0=$ ÖV, $1=$ Privatauto)
-    -   **zeit:** Arbeitsdefinition: Fahrzeit ÖV minus Fahrzeit Auto. Ein
-        positiver Wert bedeutet dann, dass die Fahrt mit dem ÖV länger dauert.
-        Der Datensatz enthält ganzzahlige Werte von $-15$ bis $60$.
-    -   **kosten:** Arbeitsdefinition: Kosten Auto minus Kosten ÖV; der
-        Datensatz enthält ganzzahlige Werte von $10$ bis $50$.
-    -   **geschlecht:** $1=$ Frau, $2=$ Mann
-    -   **umsteigen:** Zahl notwendiger Umstiege bei Nutzung der ÖV;
-        ganzzahlige Zählvariable mit den Werten $0,\ldots,5$
+- **Beispiel: Studie zur Verkehrsmittelwahl**
+  - Pendlerfahrten zwischen Wohnort und Arbeitsplatz
+  - $\ra$ Privatauto vs. öffentlicher Nahverkehr (ÖV)
+  - Datensatz `verkehrsmittel.csv` mit den Variablen
+  - **mode:** Verkehrsmittel ($0=$ ÖV, $1=$ Privatauto)
+  - **zeit:** Fahrzeit ÖV minus Fahrzeit Auto: ein positiver Wert bedeutet dann,
+    dass die Fahrt mit dem ÖV länger dauert (Datensatz enthält ganzzahlige Werte
+    von $-15$ bis $60$)
+  - **kosten:** Kosten Auto minus Kosten ÖV; der Datensatz enthält ganzzahlige
+    Werte von $10$ bis $50$
+  - **geschlecht:** $1=$ Frau, $2=$ Mann
+  - **umsteigen:** Zahl notwendiger Umstiege bei Nutzung der ÖV; ganzzahlige
+    Zählvariable mit den Werten $0,\ldots,5$
 
-::: {.callout-warning title="Dokumentationslücke bei den Differenzen"}
-Der Studienbrief ist bei `zeit` widersprüchlich: Die spätere Interpretation
-des positiven Koeffizienten passt zu **ÖV minus Auto**. Der Hinweis in der
-Variablenliste, bei einem negativen Wert sei das Auto schneller, würde
-rechnerisch hingegen **Auto minus ÖV** voraussetzen. Für diese Seite wird die
-erste Richtung verwendet, weil sie zur Modellinterpretation passt. Ein
-eindeutiger Codeplan liegt nicht vor.
+Maßeinheiten im Studienbrief undokumentiert: Minuten für `zeit` und Euro für
+`kosten` wären plausibel, sind aber **nicht belegt**.
 
-Auch die Maßeinheiten sind nicht dokumentiert. Minuten für `zeit` und Euro für
-`kosten` wären plausibel, sind aber **nicht belegt**. Die Koeffizienten werden
-daher pro Einheit der jeweiligen Differenz interpretiert. Da der Studienbrief
-die Daten als fiktiv bezeichnet, lässt sich die Lücke nicht durch einen
-Originaldatensatz mit identischem Codeplan schließen.
-:::
-
--   **Fragestellung:** Von welchen Faktoren hängt die Wahl des
-    Verkehrsmittels ab?
-
-
-
-
+**Fragestellung:** Von welchen Faktoren hängt die Wahl des Verkehrsmittels ab?
 
 ## Binär logistische Regression - Herleitungen
 
 ### Modellgleichungen: {.unlisted}
 
 $$
-\begin{aligned}
-\eta_i
-  &= \beta_0 + \beta_1 x_{i1} + \cdots + \beta_k x_{ik}, \\
-P(Y_i=1 \mid \boldsymbol{x}_i)
-  &= \frac{e^{\eta_i}}{1+e^{\eta_i}}
-   = \frac{1}{1+e^{-\eta_i}}, \\
-P(Y_i=0 \mid \boldsymbol{x}_i)
-  &= 1-P(Y_i=1 \mid \boldsymbol{x}_i)
-   = \frac{1}{1+e^{\eta_i}}.
-\end{aligned}
+
+\begin{align*}
+P(Y_i = 1 \mid \boldsymbol{x}_i)&=\frac{e^{\eta_i}}{1+e^{\eta_i}}\text{~~mit~~}
+\eta_i = \beta_0 + \beta_1 x_{i1} + \ldots + \beta_k x_{ik} \\
+1 - P(Y_i = 1 \mid \boldsymbol{x}_i)&=1 - \frac{e^{\eta_i}}{1+e^{\eta_i}}=
+\frac{1+e^{\eta_i}}{1+e^{\eta_i}} - \frac{e^{\eta_i}}{1+e^{\eta_i}}
+= \frac{1}{1+e^{\eta_i}}
+\end{align*}
+
+
 $$
 
--   $P(Y_i=1)$ ist die Wahrscheinlichkeit, dass die abhängige Variable $Y_i$
-    für Beobachtung $i$ den Wert 1 annimmt; im Fallbeispiel ist dies die
-    Wahrscheinlichkeit der Autonutzung
--   $k$: Anzahl der unabhängigen Variablen
--   $x_{ik}$: Wert der $k$-ten unabhängigen Variablen für Beobachtung $i$
+- $P(Y_i=1)$ ist die Wahrscheinlichkeit, dass die abhängige Variable $Y_i$ für
+  Beobachtung $i$ den Wert 1 annimmt; im Fallbeispiel ist dies die
+  Wahrscheinlichkeit der Autonutzung
+- $k$: Anzahl der unabhängigen Variablen
+- $x_{ik}$: Wert der $k$-ten unabhängigen Variablen für Beobachtung $i$
 
 ### Odds (Oddsratio) und logarithmierte Odds (log-odds / logits): {.unlisted}
 
 $$
+
 \begin{aligned}
 \operatorname{Odds}_{1/0,i}
   &= \frac{P(Y_i=1 \mid \boldsymbol{x}_i)}
@@ -93,23 +76,20 @@ $$
    = \eta_i
    = \beta_0 + \beta_1x_{i1} + \cdots + \beta_kx_{ik}.
 \end{aligned}
+
+
 $$
 
-::: {.callout-warning}
-Etwas andere Notation als im Studienbrief, aber derselbe Grundgedanke.
-:::
-
-
-
-
+::: {.callout-warning} Etwas andere Notation als im Studienbrief, aber derselbe
+Grundgedanke. :::
 
 ## Binär logistische Regression - Umsetzung in `R`
 
-Zuerst laden wir die Daten und schätzen zwei Modelle: ein Nullmodell, das
-nur den Achsenabschnitt enthält, und ein Vollmodell, das alle relevanten
+Zuerst laden wir die Daten und schätzen zwei Modelle: ein Nullmodell, das nur
+den Achsenabschnitt enthält, und ein komplettes Modell, das alle relevanten
 unabhängigen Variablen berücksichtigt.
 
-### Nullmodell und Vollmodell {.unlisted}
+### Nullmodell und komplettes Modell {.unlisted}
 
 ```{r}
 #| cache: true
