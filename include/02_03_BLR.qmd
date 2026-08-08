@@ -423,13 +423,15 @@ Confounding sind ebenfalls zu berücksichtigen.
 
 ### Modellvalidierung {.unlisted}
 
--   Wie gut sagt mein Modell tatsächlich die abhängige Variable voraus?
--   *Cross-Validation:* Man unterteilt den Datensatz k-fach in Test- und
-    Trainingsdatensätze.
--   Das Modell wird mit dem Trainingsdatensatz geschätzt und die Vorhersage
-    auf dem Testdatensatz evaluiert.
--   Dieser Prozess wird für verschiedene Modelle wiederholt und die Ergebnisse
-    werden verglichen.
+- Wie gut sagt mein Modell tatsächlich die abhängige Variable voraus?
+- _Cross-Validation:_ Man unterteilt den Datensatz k-fach in Test- und
+  Trainingsdatensätze.
+- Das Modell wird mit dem Trainingsdatensatz geschätzt und die Vorhersage auf
+  dem Testdatensatz evaluiert.
+- Dieser Prozess wird für verschiedene Modelle wiederholt und die Ergebnisse
+  werden verglichen.
 
-[r-anova-glm]: https://stat.ethz.ch/R-manual/R-devel/library/stats/html/anova.glm.html
-[r-chisquare]: https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Chisquare.html
+[r-anova-glm]:
+  https://stat.ethz.ch/R-manual/R-devel/library/stats/html/anova.glm.html
+[r-chisquare]:
+  https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Chisquare.html
