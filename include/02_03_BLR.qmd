@@ -147,24 +147,20 @@ summary(model_1)
 
 ### Interpretation {.unlisted}
 
--   **Signifikanz:** Zeitdifferenz ($p = 0.04$) und Geschlecht ($p = 0.02$)
-    sind auf dem 5-%-Niveau signifikant. Umsteigezahl und Kosten sind es
-    nicht.
--   **Vorzeichen:** Ein positiver Koeffizient erhöht den Logit und damit die
-    Odds für Auto (`mode = 1`); ein negativer Koeffizient senkt sie.
--   **Dummy-Variable Geschlecht:** Durch die oben festgelegten Faktorstufen
-    ist Frau die Referenzkategorie. Der positive Koeffizient
-    $\beta_{\text{Mann}}=1.04516$ bedeutet: Beim Wechsel von Frau zu Mann
-    steigt der Logit für `mode = 1` um 1.04516.
--   Die Wahrscheinlichkeit $P(Y_i =1)$, dass eine Person $i$ das Privatauto
-    nutzt, erhöht sich bei Männern.
--   **AIC-Vergleich:** $AIC_0 = 166.29 > AIC_1 = 130.55$: Je kleiner der
-    AIC, desto besser der Modellfit. Der absolute Wert ist nicht
-    interpretierbar, nur der Vergleich zwischen Modellen ist aussagekräftig.
+- **Signifikanz:** Zeitdifferenz ($p = 0.04$) und Geschlecht ($p = 0.02$) sind
+  auf dem 5-%-Niveau signifikant. Umsteigezahl und Kosten sind es nicht.
+- **Vorzeichen:** Ein positiver Koeffizient erhöht den Logit und damit die Odds
+  für Auto (`mode = 1`); ein negativer Koeffizient senkt sie.
+- **Dummy-Variable Geschlecht:** Durch die oben festgelegten Faktorstufen ist
+  Frau ($=1$) die Referenzkategorie. Der positive Koeffizient
+  $\beta_{\text{Mann}}=1.04516$ bedeutet: Beim Wechsel von Frau ($=1$) zu Mann
+  ($=2$) steigt der Logit für `mode = 1` um 1.04516.
 
-
-
-
+- Die Wahrscheinlichkeit $P(Y_i =1)$, dass eine Person $i$ das Privatauto nutzt,
+  erhöht sich bei Männern.
+- **AIC-Vergleich:** $AIC_0 = 166.29 > AIC_1 = 130.55$: Je kleiner der AIC,
+  desto besser der Modellfit. Der absolute Wert ist nicht interpretierbar, nur
+  der Vergleich zwischen Modellen ist aussagekräftig.
 
 ## Nullmodellabweichung: Omnibus-Test
 
