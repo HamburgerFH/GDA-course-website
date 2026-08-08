@@ -41,8 +41,6 @@ Maßeinheiten im Studienbrief undokumentiert: Minuten für `zeit` und Euro für
 
 ### Modellgleichungen: {.unlisted}
 
-$$
-
 \begin{align*}
 P(Y_i = 1 \mid \boldsymbol{x}_i)&=\frac{e^{\eta_i}}{1+e^{\eta_i}}\text{~~mit~~}
 \eta_i = \beta_0 + \beta_1 x_{i1} + \ldots + \beta_k x_{ik} \\
@@ -50,9 +48,6 @@ P(Y_i = 1 \mid \boldsymbol{x}_i)&=\frac{e^{\eta_i}}{1+e^{\eta_i}}\text{~~mit~~}
 \frac{1+e^{\eta_i}}{1+e^{\eta_i}} - \frac{e^{\eta_i}}{1+e^{\eta_i}}
 = \frac{1}{1+e^{\eta_i}}
 \end{align*}
-
-
-$$
 
 - $P(Y_i=1)$ ist die Wahrscheinlichkeit, dass die abhängige Variable $Y_i$ für
   Beobachtung $i$ den Wert 1 annimmt; im Fallbeispiel ist dies die
@@ -62,9 +57,7 @@ $$
 
 ### Odds (Oddsratio) und logarithmierte Odds (log-odds / logits): {.unlisted}
 
-$$
-
-\begin{aligned}
+\begin{align*}
 \operatorname{Odds}_{1/0,i}
   &= \frac{P(Y_i=1 \mid \boldsymbol{x}_i)}
            {P(Y_i=0 \mid \boldsymbol{x}_i)}
@@ -75,13 +68,11 @@ $$
   &= \log\!\left(\operatorname{Odds}_{1/0,i}\right)
    = \eta_i
    = \beta_0 + \beta_1x_{i1} + \cdots + \beta_kx_{ik}.
-\end{aligned}
+\end{align*}
 
-
-$$
-
-::: {.callout-warning} Etwas andere Notation als im Studienbrief, aber derselbe
-Grundgedanke. :::
+::: {.callout-warning}
+Etwas andere Notation als im Studienbrief, aber derselbe Grundgedanke.
+:::
 
 ## Binär logistische Regression - Umsetzung in `R`
 
@@ -182,7 +173,7 @@ summary(model_1)
     &= D_0-D_1 \\
     &= -2\log\!\left(\frac{L_0}{L_1}\right)
      = 2\bigl(\ell_1-\ell_0\bigr), \\
-  G^2 &\mathrel{\dot\sim} \chi^2_{\Delta df}, \\
+  G^2 &\sim \chi^2_{\Delta df}, \\
   \Delta df
     &= df_{\text{null}}-df_{\text{residual}}, \\
   p
@@ -242,13 +233,10 @@ summary(model_1)
 - **Odds Ratio -- Beispiel:**
 
   $$
-
   OR_{F/M}^{\text{ÖV/Auto}}
     = \frac{F\text{Ö}/FA}{M\text{Ö}/MA}
     = \frac{F\text{Ö}\cdot MA}{FA\cdot M\text{Ö}}
     = 2.287.
-
-
   $$
 
   wobei hier der erste Buchstabe Mann/Frau bezeichnet ($M$ oder $F$) und der
@@ -380,13 +368,11 @@ geschätzten Modell ergibt sich bei $\tau=0.5$ die konsistente Tabelle:
 | ÖV (0)     |             52 (TN) |               17 (FN) |
 | Auto (1)   |             12 (FP) |               38 (TP) |
 
-$$
 \begin{align*}
 \text{Sensitivität} &= \frac{\text{Richtig Positiv (TP)}}{\text{Richtig Positiv (TP)} + \text{Falsch Negativ (FN)}} = \frac{38}{38 + 17} = \frac{38}{55} \approx 0.6909\\
 \text{Spezifität} &= \frac{\text{Richtig Negativ (TN)}}{\text{Richtig Negativ (TN)} + \text{Falsch Positiv (FP)}} = \frac{52}{52 + 12} = \frac{52}{64} = 0.8125
 
 \end{align*}
-$$
 
 - Richtig Positive an Gesamt-Positiven: $38/55=69.09\%$
 - Richtig Negative an Gesamt-Negativen: $52/64=81.25\%$
