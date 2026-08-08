@@ -164,66 +164,61 @@ summary(model_1)
 
 ## Nullmodellabweichung: Omnibus-Test
 
--   **Idee:**
-    -   Vergleich zwischen **Nullmodell** (nur Achsenabschnitt) und
-        **Vollmodell** mit erklärenden Variablen.
-    -   Testet, ob das Modell insgesamt einen signifikanten
-        Erklärungsbeitrag leistet.
-    -   Basis: **Differenz der Abweichungen (Deviance)** zwischen den
-        Modellen.
-    -   Nullhypothese: $H_0\colon \beta_1=\cdots=\beta_k=0$.
+- **Idee:**
+  - Vergleich zwischen **Nullmodell** (nur Achsenabschnitt) und
 
--   **Teststatistik:**
+    **komplettes Modell** mit erklärenden Variablen.
 
-    $$
-    \begin{aligned}
-    G^2
-      &= D_0-D_1 \\
-      &= -2\log\!\left(\frac{L_0}{L_1}\right)
-       = 2\bigl(\ell_1-\ell_0\bigr), \\
-    G^2 &\mathrel{\dot\sim} \chi^2_{\Delta df}, \\
-    \Delta df
-      &= df_{\text{null}}-df_{\text{residual}}, \\
-    p
-      &= P\!\left(\chi^2_{\Delta df}\geq G^2\right).
-    \end{aligned}
-    $$
+  - Testet, ob das Modell insgesamt einen signifikanten Erklärungsbeitrag
+    leistet.
+  - Basis: **Differenz der Abweichungen (Deviance)** zwischen den Modellen.
+  - Nullhypothese: $H_0\colon \beta_1=\cdots=\beta_k=0$.
 
-    Dabei sind $D_0$ und $D_1$ die Devianzen des Null- und Vollmodells,
-    $L_0$ und $L_1$ deren Likelihoods und $\ell=\log L$. Die
-    Chi-Quadrat-Verteilung gilt asymptotisch. Die Modelle müssen geschachtelt
-    und auf denselben Beobachtungen geschätzt sein.
+- **Teststatistik:**
 
--   **R-Umsetzung:**
+  $$
+  \begin{aligned}
+  G^2
+    &= D_0-D_1 \\
+    &= -2\log\!\left(\frac{L_0}{L_1}\right)
+     = 2\bigl(\ell_1-\ell_0\bigr), \\
+  G^2 &\mathrel{\dot\sim} \chi^2_{\Delta df}, \\
+  \Delta df
+    &= df_{\text{null}}-df_{\text{residual}}, \\
+  p
+    &= P\!\left(\chi^2_{\Delta df}\geq G^2\right).
+  \end{aligned}
+  $$
 
-    ```{r}
-    #| cache: true
-    #| echo: true
-    # Berechnung der Omnibus-Teststatistik
-    model_chi2 <- model_1$null.deviance - model_1$deviance
-    chi2_df    <- model_1$df.null - model_1$df.residual
-    chi2_p     <- pchisq(model_chi2, chi2_df, lower.tail = FALSE)
-    print(cbind(model_chi2, chi2_df, chi2_p))
+  Dabei sind $D_0$ und $D_1$ die Devianzen des Null- und Vollmodells, $L_0$ und
+  $L_1$ deren Likelihoods und $\ell=\log L$. Die Chi-Quadrat-Verteilung gilt
+  asymptotisch. Die Modelle müssen geschachtelt und auf denselben Beobachtungen
+  geschätzt sein.
 
-    # Direkter Likelihood-Ratio-Test in R
-    anova(model_0, model_1, test = "Chisq")
-    ```
+- **R-Umsetzung:**
 
-    Die offizielle R-Dokumentation bezeichnet `test = "Chisq"` bei
-    binomialen GLMs als Likelihood-Ratio-Test; `"LRT"` ist synonym. Siehe
-    [`anova.glm`][r-anova-glm] und [`pchisq`][r-chisquare].
+  ```{r}
+  #| cache: true
+  #| echo: true
+  # Berechnung der Omnibus-Teststatistik
+  model_chi2 <- model_1$null.deviance - model_1$deviance
+  chi2_df    <- model_1$df.null - model_1$df.residual
+  chi2_p     <- pchisq(model_chi2, chi2_df, lower.tail = FALSE)
 
--   **Interpretation:**
-    -   Wenn $p < 0.05$: Das Vollmodell passt signifikant besser als das
-        Nullmodell.
-    -   Wenn $p \geq 0.05$: Es gibt keine ausreichende Evidenz für eine
-        Verbesserung gegenüber dem Nullmodell.
-    -   Beispielergebnis: $G^2 = 43.74$, $\Delta df = 4$,
-        $p = 7.27 \times 10^{-9}$.
+  print(cbind(model_chi2, chi2_df, chi2_p))
 
+  # Direkter Likelihood-Ratio-Test in R
+  anova(model_0, model_1, test = "Chisq")
 
+  ```
 
+- **Interpretation:**
 
+  - Wenn $p < 0.05$: das komplette Modell passt signifikant besser als das
+    Nullmodell
+  - Wenn $p \geq 0.05$: keine ausreichende Evidenz für eine Verbesserung
+    gegenüber dem Nullmodell
+  - Beispielergebnis: $G^2 = 43.74$, $\Delta df = 4$, $p = 7.27 \times 10^{-9}$.
 
 ## Effektinterpretation: Odds Ratios
 
