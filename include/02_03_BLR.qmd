@@ -22,13 +22,31 @@ execute:
 -   **Beispiel: Studie zur Verkehrsmittelwahl**
     -   Pendlerfahrten zwischen Wohnort und Arbeitsplatz
     -   $\ra$ Privatauto vs. öffentlicher Nahverkehr (ÖV)
-    -   Datensatz `verkersmittel.csv` mit den Variablen
-    -   **mode:** Verkehrsmittel ($0=$ Privatauto  vs. $1=$ ÖV)
-    -   **zeit:** Fahrzeitdifferenz zwischen ÖV und Auto
-    -   **kosten:** Kostendifferenz zwischen ÖV und Auto
-    -   **geschlecht:** 1 = weiblich $\ra$ 2 = männlich
-    -   **umsteigen:** Zahl notwendiger Umstiege bei Nutzung der ÖV
+    -   Datensatz `verkehrsmittel.csv` mit den Variablen
+    -   **mode:** Verkehrsmittel ($0=$ ÖV, $1=$ Privatauto)
+    -   **zeit:** Arbeitsdefinition: Fahrzeit ÖV minus Fahrzeit Auto. Ein
+        positiver Wert bedeutet dann, dass die Fahrt mit dem ÖV länger dauert.
+        Der Datensatz enthält ganzzahlige Werte von $-15$ bis $60$.
+    -   **kosten:** Arbeitsdefinition: Kosten Auto minus Kosten ÖV; der
+        Datensatz enthält ganzzahlige Werte von $10$ bis $50$.
+    -   **geschlecht:** $1=$ Frau, $2=$ Mann
+    -   **umsteigen:** Zahl notwendiger Umstiege bei Nutzung der ÖV;
         ganzzahlige Zählvariable mit den Werten $0,\ldots,5$
+
+::: {.callout-warning title="Dokumentationslücke bei den Differenzen"}
+Der Studienbrief ist bei `zeit` widersprüchlich: Die spätere Interpretation
+des positiven Koeffizienten passt zu **ÖV minus Auto**. Der Hinweis in der
+Variablenliste, bei einem negativen Wert sei das Auto schneller, würde
+rechnerisch hingegen **Auto minus ÖV** voraussetzen. Für diese Seite wird die
+erste Richtung verwendet, weil sie zur Modellinterpretation passt. Ein
+eindeutiger Codeplan liegt nicht vor.
+
+Auch die Maßeinheiten sind nicht dokumentiert. Minuten für `zeit` und Euro für
+`kosten` wären plausibel, sind aber **nicht belegt**. Die Koeffizienten werden
+daher pro Einheit der jeweiligen Differenz interpretiert. Da der Studienbrief
+die Daten als fiktiv bezeichnet, lässt sich die Lücke nicht durch einen
+Originaldatensatz mit identischem Codeplan schließen.
+:::
 
 -   **Fragestellung:** Von welchen Faktoren hängt die Wahl des
     Verkehrsmittels ab?
@@ -42,30 +60,39 @@ execute:
 ### Modellgleichungen: {.unlisted}
 
 $$
-\begin{align*}
-P(Y_i = 1)&=\frac{e^{\beta x_i}}{1+e^{\beta x_i}}\text{~~mit~~}
-\beta x_i = \beta_0 + \beta_1 x_{i1} + \ldots + \beta_k x_{ik} \\
-1 - P(Y_i = 1)&=1 - \frac{e^{\beta x_i}}{1+e^{\beta x_i}}=
-\frac{1+e^{\beta x_i}}{1+e^{\beta x_i}} - \frac{e^{\beta x_i}}{1+e^{\beta x_i}}
-= \frac{1}{1+e^{\beta x_i}}
-\end{align*}
+\begin{aligned}
+\eta_i
+  &= \beta_0 + \beta_1 x_{i1} + \cdots + \beta_k x_{ik}, \\
+P(Y_i=1 \mid \boldsymbol{x}_i)
+  &= \frac{e^{\eta_i}}{1+e^{\eta_i}}
+   = \frac{1}{1+e^{-\eta_i}}, \\
+P(Y_i=0 \mid \boldsymbol{x}_i)
+  &= 1-P(Y_i=1 \mid \boldsymbol{x}_i)
+   = \frac{1}{1+e^{\eta_i}}.
+\end{aligned}
 $$
 
--   $P(Y_i=1)$ ist die Wahrscheinlichkeit, dass abh. Variable $Y_i$ den Wert
-    1 annimmt, bezogen auf die Beobachtung $i$ der $i=1,\ldots,n$
-    Beobachtungen im Datensatz
+-   $P(Y_i=1)$ ist die Wahrscheinlichkeit, dass die abhängige Variable $Y_i$
+    für Beobachtung $i$ den Wert 1 annimmt; im Fallbeispiel ist dies die
+    Wahrscheinlichkeit der Autonutzung
 -   $k$: Anzahl der unabhängigen Variablen
--   $x_{ik}$ der $i-$te Wert der $k$-ten unabhängigen Variablen
+-   $x_{ik}$: Wert der $k$-ten unabhängigen Variablen für Beobachtung $i$
 
 ### Odds (Oddsratio) und logarithmierte Odds (log-odds / logits): {.unlisted}
 
 $$
-\begin{align*}
-Odds_{1/0}&=\frac{P(Y_i = 1)}{P(Y_i = 0)}=\frac{P(Y_i = 1)}{1-P(Y_i = 1)}
-=\frac{e^{\beta x_i}}{1+e^{\beta x_i}} \times 1+e^{\beta x_i}=e^{\beta x_i}\\
-LogOdds_{1/0}&=\log\left(Odds_{1/0}\right)=\beta x_i =
-\beta_0 + \beta_1 x_{i1} + \ldots + \beta_k x_{ik}
-\end{align*}
+\begin{aligned}
+\operatorname{Odds}_{1/0,i}
+  &= \frac{P(Y_i=1 \mid \boldsymbol{x}_i)}
+           {P(Y_i=0 \mid \boldsymbol{x}_i)}
+   = \frac{e^{\eta_i}/(1+e^{\eta_i})}
+           {1/(1+e^{\eta_i})}
+   = e^{\eta_i}, \\
+\operatorname{logit}\!\left[P(Y_i=1 \mid \boldsymbol{x}_i)\right]
+  &= \log\!\left(\operatorname{Odds}_{1/0,i}\right)
+   = \eta_i
+   = \beta_0 + \beta_1x_{i1} + \cdots + \beta_kx_{ik}.
+\end{aligned}
 $$
 
 ::: {.callout-warning}
@@ -78,34 +105,42 @@ Etwas andere Notation als im Studienbrief, aber derselbe Grundgedanke.
 
 ## Binär logistische Regression - Umsetzung in `R`
 
-Zuerst laden wir die Daten und schätzen zwei Modelle: Ein Nullmodell, das
+Zuerst laden wir die Daten und schätzen zwei Modelle: ein Nullmodell, das
 nur den Achsenabschnitt enthält, und ein Vollmodell, das alle relevanten
 unabhängigen Variablen berücksichtigt.
 
-### Nullmodell/Trainingsmodell vs. Testmodell {.unlisted}
+### Nullmodell und Vollmodell {.unlisted}
 
 ```{r}
 #| cache: true
 #| echo: true
 data_vkm <- read.csv("../data/verkehrsmittel.csv")
+data_vkm$geschlecht <- factor(
+  data_vkm$geschlecht,
+  levels = c(1, 2),
+  labels = c("Frau", "Mann")
+)
 # Nullmodell: 'mode' regressiert auf Konstante '1'
-model_0 <- glm(mode ~ 1,              # glm: generalisiertes lineares Modell
-                   data = data_vkm,
-                   family = binomial())   # logistische Regresion = Binomialmodell
-  model_1 <- glm(mode ~ zeit + kosten + umsteigen + geschlecht,
-                 data = data_vkm,
-                 family = binomial())
+model_0 <- glm(
+  mode ~ 1,
+  data = data_vkm,
+  family = binomial()
+)
+model_1 <- glm(
+  mode ~ zeit + kosten + umsteigen + geschlecht,
+  data = data_vkm,
+  family = binomial()
+)
 ```
 
 -   `glm()`: generalisiertes lineares Modell (vorher: `lm` $\ra$ lineares
     Modell)
--   Nullmodell: ein Modell mit nur Achsenabschnitt ist gleich einer
-    Mittelwertsregression:
-    $\bar{Y}=\frac{1}{n}\sum_{i=1}^n Y_i$
-    $=\frac{1}{n} (n_{1} \times 1 + n_{0}\times 0)=\frac{n_1}{n}$; Anteil
-    Einsen an gesamten Beobachtungen; sind im Datensatz 25-Einsen und
-    75-Nullen dann ergibt die Nullmodell-Regression $0.25= 25\%$ der $n=100$
-    Personen nutzen ÖV.
+-   `geschlecht` wird explizit als Faktor mit **Frau als Referenzkategorie**
+    definiert. So ist eindeutig, welchen Vergleich der Koeffizient beschreibt.
+-   Das Nullmodell verwendet für jede Person denselben geschätzten Anteil:
+    $\bar{Y}=n_1/n$. Im Datensatz sind 55 von 119 Beobachtungen als
+    `mode = 1` codiert. Das Nullmodell schätzt daher für alle Personen eine
+    Auto-Wahrscheinlichkeit von $55/119 \approx 46{,}2\%$.
 
 Die Zusammenfassung des Nullmodells zeigt diesen Mittelwert.
 
@@ -125,15 +160,15 @@ summary(model_1)
 
 ### Interpretation {.unlisted}
 
--   **Signifikanz:** Zeitdifferenz ($p = 0.04$) & Geschlecht ($p = 0.02$) sind
-    signifikant. Umsteigezeit & Kosten sind insignifikant.
--   **Vorzeichen:** Ein positives Vorzeichen deutet auf einen positiven Effekt
-    hin, ein negatives auf einen negativen Effekt.
--   **Dummy-Variable Geschlecht:** Die kleinere Codierung (Frau=1) ist die
-    Referenzkategorie zu Mann=2. Der positive Koeffizient
-    $\beta_{4}=1.04516 > 0$ zeigt einen positiven Effekt für Männer. Intern
-    codiert `R` dies als 0/1, sodass der Wechsel von $x_{4}=$Frau$=0$ zu
-    $x_{4}=$Mann$=1$ den Logit um $\beta_4 = 1.04516$ erhöht.
+-   **Signifikanz:** Zeitdifferenz ($p = 0.04$) und Geschlecht ($p = 0.02$)
+    sind auf dem 5-%-Niveau signifikant. Umsteigezahl und Kosten sind es
+    nicht.
+-   **Vorzeichen:** Ein positiver Koeffizient erhöht den Logit und damit die
+    Odds für Auto (`mode = 1`); ein negativer Koeffizient senkt sie.
+-   **Dummy-Variable Geschlecht:** Durch die oben festgelegten Faktorstufen
+    ist Frau die Referenzkategorie. Der positive Koeffizient
+    $\beta_{\text{Mann}}=1.04516$ bedeutet: Beim Wechsel von Frau zu Mann
+    steigt der Logit für `mode = 1` um 1.04516.
 -   Die Wahrscheinlichkeit $P(Y_i =1)$, dass eine Person $i$ das Privatauto
     nutzt, erhöht sich bei Männern.
 -   **AIC-Vergleich:** $AIC_0 = 166.29 > AIC_1 = 130.55$: Je kleiner der
@@ -148,16 +183,33 @@ summary(model_1)
 
 -   **Idee:**
     -   Vergleich zwischen **Nullmodell** (nur Achsenabschnitt) und
-        **Testmodell** mit erklärenden Variablen.
+        **Vollmodell** mit erklärenden Variablen.
     -   Testet, ob das Modell insgesamt einen signifikanten
         Erklärungsbeitrag leistet.
     -   Basis: **Differenz der Abweichungen (Deviance)** zwischen den
         Modellen.
+    -   Nullhypothese: $H_0\colon \beta_1=\cdots=\beta_k=0$.
 
 -   **Teststatistik:**
-    -   Chi-Quadrat-Wert: \( \chi^2 = \text{Null Deviance} - \text{Residual Deviance} \)
-    -   Freiheitsgrade: \( df = \text{df}_{\text{null}} - \text{df}_{\text{residual}} \)
-    -   Signifikanzbewertung: \( p = 1 - \text{pchisq}(\chi^2, df) \)
+
+    $$
+    \begin{aligned}
+    G^2
+      &= D_0-D_1 \\
+      &= -2\log\!\left(\frac{L_0}{L_1}\right)
+       = 2\bigl(\ell_1-\ell_0\bigr), \\
+    G^2 &\mathrel{\dot\sim} \chi^2_{\Delta df}, \\
+    \Delta df
+      &= df_{\text{null}}-df_{\text{residual}}, \\
+    p
+      &= P\!\left(\chi^2_{\Delta df}\geq G^2\right).
+    \end{aligned}
+    $$
+
+    Dabei sind $D_0$ und $D_1$ die Devianzen des Null- und Vollmodells,
+    $L_0$ und $L_1$ deren Likelihoods und $\ell=\log L$. Die
+    Chi-Quadrat-Verteilung gilt asymptotisch. Die Modelle müssen geschachtelt
+    und auf denselben Beobachtungen geschätzt sein.
 
 -   **R-Umsetzung:**
 
@@ -167,44 +219,71 @@ summary(model_1)
     # Berechnung der Omnibus-Teststatistik
     model_chi2 <- model_1$null.deviance - model_1$deviance
     chi2_df    <- model_1$df.null - model_1$df.residual
-    chi2_p     <- 1 - pchisq(model_chi2, chi2_df)
+    chi2_p     <- pchisq(model_chi2, chi2_df, lower.tail = FALSE)
     print(cbind(model_chi2, chi2_df, chi2_p))
+
+    # Direkter Likelihood-Ratio-Test in R
+    anova(model_0, model_1, test = "Chisq")
     ```
 
+    Die offizielle R-Dokumentation bezeichnet `test = "Chisq"` bei
+    binomialen GLMs als Likelihood-Ratio-Test; `"LRT"` ist synonym. Siehe
+    [`anova.glm`][r-anova-glm] und [`pchisq`][r-chisquare].
+
 -   **Interpretation:**
-    -   Wenn \( p < 0.05 \): Modell signifikant besser als das Nullmodell.
-    -   Wenn \( p \geq 0.05 \): Modell verbessert sich **nicht** signifikant.
-    -   Beispielergebnisse: \( \chi^2 = 43.74, df = 4, p = 7.26 \times 10^{-9} \)
+    -   Wenn $p < 0.05$: Das Vollmodell passt signifikant besser als das
+        Nullmodell.
+    -   Wenn $p \geq 0.05$: Es gibt keine ausreichende Evidenz für eine
+        Verbesserung gegenüber dem Nullmodell.
+    -   Beispielergebnis: $G^2 = 43.74$, $\Delta df = 4$,
+        $p = 7.27 \times 10^{-9}$.
 
 
 
 
 
-## Modellgüte: Odds Ratio
+## Effektinterpretation: Odds Ratios
 
 -   **Problem und Motivation:**
-    -   **Problem:** bisherige Schätzparameter nicht aussagekräftig, bis auf VZ
-    -   **Grund:** keine lineare Funktion (wo der Effekt direkt ablesbar
-        ist), sondern $logits$
-    -   **Ziel:** wie stark beeinflusst unabh. Variable Ergebnis --
-        Chancenverhältnis zwischen den Modellen
+    -   Die Koeffizienten wirken linear auf die Log-Odds und sind deshalb
+        nicht unmittelbar als Chancenverhältnisse ablesbar.
+    -   Durch Exponenzieren entsteht für einen Anstieg des Prädiktors um
+        eine Einheit die Odds Ratio $e^{\beta_j}$.
+    -   Odds Ratios beschreiben Effektstärken; sie sind kein Maß der
+        Modellgüte.
 
 -   **Odds Ratio (OR): Begriffe und Interpretation**
-    -   **Odds:** Chance -- **Oddsratio:** Chancenverhältnis, im
-        Beispiel unten Chance für Verkehrsmittelwahl ÖV vs. Auto bei Frauen im
-        vgl. zu Männern -- **Logit:** logarithmierte Odds
-    -   [\( OR > 1 \)]{.crd} [steigert Wahrscheinlichkeit,]{.ctl} [\( OR < 1 \)]{.crd}
-        [ senkt sie,]{.ctl} [\( OR = 1 \)]{.crd} [bedeutet keine Veränderung]{.ctl}
+    -   **Odds:** Chance -- **Odds Ratio:** Chancenverhältnis --
+        **Logit:** logarithmierte Odds
+    -   [$OR > 1$]{.crd} [erhöht die Odds,]{.ctl} [$OR < 1$]{.crd}
+        [ senkt die Odds,]{.ctl} [$OR = 1$]{.crd} [lässt sie unverändert.]{.ctl}
+        Eine Odds Ratio ist nicht mit einem Verhältnis von
+        Wahrscheinlichkeiten gleichzusetzen.
 
 -   **Odds Ratio -- Beispiel:**
     $$
-    OR=\frac{M\text{Ö} / MA}{F\text{Ö} / FA} = \frac{M\text{Ö} \cdot FA}{MA \cdot F\text{Ö}}
+    OR_{F/M}^{\text{ÖV/Auto}}
+      = \frac{F\text{Ö}/FA}{M\text{Ö}/MA}
+      = \frac{F\text{Ö}\cdot MA}{FA\cdot M\text{Ö}}
+      = 2.287.
     $$
     wobei hier der erste Buchstabe Mann/Frau bezeichnet ($M$ oder $F$) und
     der zweite das gewählte Verkehrsmittel $Ö$ für ÖV und $A$ für Auto, z.B.
     FÖ für Frauen und öffentliche Verkehrsmittel.
 
 ![Beispiel für Odds Ratio](/figs/02_03_odds_bsp_01.png){#fig-02_03_odds_bsp_01}
+
+Das Bild betrachtet die Odds **ÖV versus Auto** bei Frauen relativ zu
+Männern. Das Regressionsmodell betrachtet dagegen wegen `mode = 1` die Odds
+**Auto versus ÖV** bei Männern relativ zu Frauen. Zähler und Nenner werden
+also beide vertauscht; daher ergibt sich im reinen Geschlechtermodell derselbe
+Zahlenwert:
+
+$$
+OR_{M/F}^{\text{Auto/ÖV}}
+  = \frac{MA/M\text{Ö}}{FA/F\text{Ö}}
+  = 2.287.
+$$
 
 ## Odds ratio: Idee der Berechnung und Umsetzung in `R`:
 ### Idee der Berechnung: {.unlisted}
@@ -238,22 +317,29 @@ summary(model_1)
 #| cache: true
 #| echo: true
 # Berechnung der Odds Ratios
-exp(cbind(OR = coef(model_1)))
+exp(cbind(OR = coef(model_1)[-1]))
 model_wm_only <- glm(mode ~ geschlecht, data = data_vkm, family = binomial())
-exp(cbind(OR = coef(model_wm_only)))
+exp(cbind(OR = coef(model_wm_only)[-1]))
 ```
 
 
 ### Interpretation: {.unlisted}
 
--   **zeit:** 1,1-fache höhere Chance zugunsten von Auto pro marg. höherer
-    Zeit
--   **geschlecht:** 2,84-fache höhere Wskt./Chance dass ein Mann das Auto nimmt
-    statt einer Frau
--   **andere Variablen:** nicht signifikant, aber Interpretation sonst wäre
-    ähnlich
--   im Modell mit nur **geschlecht:** 2,287-fache höhere Wskt./Chance
-    zugunsten von Mann siehe vorheriges Rechenbeispiel !
+-   **zeit:** Pro zusätzlicher Einheit Fahrzeitdifferenz (ÖV minus Auto)
+    steigen die modellierten Auto-vs.-ÖV-Odds um den Faktor 1,10, unter
+    Konstanthaltung der anderen Variablen. Eine Zeiteinheit ist im
+    Studienbrief nicht angegeben.
+-   **geschlecht:** Die adjustierten Auto-vs.-ÖV-Odds sind bei Männern
+    2,84-mal so hoch wie bei Frauen.
+-   **kosten:** Pro zusätzlicher Einheit der Kostendifferenz werden die
+    Auto-vs.-ÖV-Odds mit 0,989 multipliziert. Der Effekt ist nicht signifikant
+    ($p=0.652$).
+-   **umsteigen:** Pro zusätzlichem Umstieg bei Nutzung des ÖV werden die
+    Auto-vs.-ÖV-Odds mit 1,249 multipliziert. Der Effekt ist nicht signifikant
+    ($p=0.691$).
+-   Im Modell nur mit **geschlecht** sind die Auto-vs.-ÖV-Odds bei Männern
+    2,287-mal so hoch wie bei Frauen. Das ist die unadjustierte Odds Ratio aus
+    dem vorherigen Rechenbeispiel.
 
 
 
@@ -262,9 +348,11 @@ exp(cbind(OR = coef(model_wm_only)))
 Im Folgenden betrachten wir weitere Bestimmtheitsmaße, die ähnlich zu $R^2$
 interpretiert werden können, die sogenannten **Pseudo-**$R^2$ Maße:
 
--   **Cox & Snell \( R^2 \):** Begrenzung auf \( [0, 0.75] \)
--   **Nagelkerke \( R^2 \):** normiert, interpretiert wie klassisches \( R^2 \).
-    Die Berechnung ist im `R`-Code unten dargestellt.
+-   **Cox & Snell $R^2$:** erreicht im Allgemeinen nicht den Wert 1; sein
+    erreichbares Maximum hängt von den Daten ab.
+-   **Nagelkerke $R^2$:** skaliert Cox-Snell-$R^2$ auf ein mögliches Maximum
+    von 1. Es ist nicht als erklärter Varianzanteil wie das klassische
+    $R^2$ der linearen Regression zu lesen.
 
 -   **R-Umsetzung:**
 
@@ -279,12 +367,17 @@ interpretiert werden können, die sogenannten **Pseudo-**$R^2$ Maße:
     DescTools::PseudoR2(model_1, which = "all")
     ```
 
--   Beispielwerte: $R^2_{\text{Cox-Snell}} = 0.308, R^2_{\text{Nagelkerke}} = 0.411$
-    $\hra$ **Faustregel für $R^2_{\text{Nagelkerke}}$:**
+-   Beispielwerte: $R^2_{\text{Cox-Snell}} = 0.308$ und
+    $R^2_{\text{Nagelkerke}} = 0.411$.
+-   **Didaktische Faustregel aus dem Studienbrief:**
     -   < 0.2: Gering
     -   0.2 - 0.4: Akzeptabel
     -   0.4 - 0.5: Gut
     -   $>=$ 0.5: Sehr gut
+
+    Diese Grenzwerte sind keine allgemeingültigen statistischen Schwellenwerte.
+    Pseudo-$R^2$ sollte im Kontext und zusammen mit weiteren Maßen beurteilt
+    werden.
 
 
 
@@ -298,17 +391,33 @@ Ein Schwellenwert (meist $\tau=0.5$) entscheidet über die Klassifikation:
 Falls die logistische Regression eine Wahrscheinlichkeit größer als 0.5
 liefert, wird die Beobachtung als 1 klassifiziert, sonst als 0.
 
-![Klassifizierungstabelle / Wahrheitsmatrix / confusion matrix](/figs/02_03_confusion_matrix.png){#fig-02_03_confusion_matrix}
+Im vorliegenden Datensatz ist **Auto** das positive Ereignis (`mode = 1`). Die
+Abbildung im Studienbrief vertauscht an dieser Stelle Auto und ÖV. Aus dem oben
+geschätzten Modell ergibt sich bei $\tau=0.5$ die konsistente Tabelle:
+
+| Vorhersage       | Tatsächlich: ÖV (0) | Tatsächlich: Auto (1) |
+|------------------|---------------------:|-----------------------:|
+| ÖV (0)           | 52 (TN)              | 17 (FN)                |
+| Auto (1)         | 12 (FP)              | 38 (TP)                |
 
 $$
 \begin{align*}
-\text{Sensitivität} &= \frac{\text{Richtig Positiv (TP)}}{\text{Richtig Positiv (TP)} + \text{Falsch Negativ (FN)}} = \frac{52}{52 + 17} = \frac{52}{69} \approx 0.7536232\\
-\text{Spezifität} &= \frac{\text{Richtig Negativ (TN)}}{\text{Richtig Negativ (TN)} + \text{Falsch Positiv (FP)}} = \frac{38}{38 + 12} = \frac{38}{50} = 0.76
+\text{Sensitivität}
+  &= \frac{TP}{TP+FN}
+   = \frac{38}{38+17}
+   = \frac{38}{55}
+   \approx 0.691, \\
+\text{Spezifität}
+  &= \frac{TN}{TN+FP}
+   = \frac{52}{52+12}
+   = \frac{52}{64}
+   = 0.8125, \\
+\text{Genauigkeit}
+  &= \frac{TP+TN}{n}
+   = \frac{38+52}{119}
+   \approx 0.756.
 \end{align*}
 $$
-
--   Richtig Positive an Gesamt-Positiven: $52/64=81.25\%$
--   Richtig Negative an Gesamt-Negativen: $38/55=69.09\%$
 
 
 
@@ -318,19 +427,25 @@ $$
 
 ### Systematischer Ein- oder Ausschluss von Variablen {.unlisted}
 
-Nicht signifikante Variablen können aus dem Modell entfernt werden. Neben dem
-p-Wert aus der Modellzusammenfassung kann hierfür auch ein Wald-Test
-herangezogen werden.
+Der Koeffiziententest in `summary(model_1)` ist bereits ein asymptotischer
+Wald-Test. Für `umsteigen` lässt er sich direkt nachvollziehen:
 
 ```{r}
 #| cache: true
 #| echo: true
-# install.packages("survey")
-survey::regTermTest(model_1, "umsteigen")
+beta_umsteigen <- coef(model_1)["umsteigen"]
+se_umsteigen <- sqrt(vcov(model_1)["umsteigen", "umsteigen"])
+wald_z <- beta_umsteigen / se_umsteigen
+wald_chi2 <- wald_z^2
+wald_p <- pchisq(wald_chi2, df = 1, lower.tail = FALSE)
+cbind(wald_z, wald_chi2, wald_p)
 ```
 
-Sowohl der Regressionsoutput ($p=0.690680$) als auch das
-Wald-Testergebnis sollten in eine Gesamtevaluation einfließen.
+Das Ergebnis $p\approx0.691$ ist derselbe Test, der in der Modellzusammenfassung
+für diesen einzelnen Koeffizienten erscheint. Es liefert keine Evidenz gegen
+$H_0\colon\beta_{\text{umsteigen}}=0$. Eine Variable sollte dennoch nicht allein
+aufgrund eines p-Wertes entfernt werden; Theorie, Modellzweck und mögliches
+Confounding sind ebenfalls zu berücksichtigen.
 
 ### Modellvalidierung {.unlisted}
 
@@ -341,3 +456,6 @@ Wald-Testergebnis sollten in eine Gesamtevaluation einfließen.
     auf dem Testdatensatz evaluiert.
 -   Dieser Prozess wird für verschiedene Modelle wiederholt und die Ergebnisse
     werden verglichen.
+
+[r-anova-glm]: https://stat.ethz.ch/R-manual/R-devel/library/stats/html/anova.glm.html
+[r-chisquare]: https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Chisquare.html
