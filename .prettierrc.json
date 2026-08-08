@@ -1,0 +1,12 @@
+{
+  "overrides": [
+    {
+      "files": "*.qmd",
+      "options": {
+        "parser": "markdown",
+        "printWidth": 80,
+        "proseWrap": "always"
+      }
+    }
+  ]
+}

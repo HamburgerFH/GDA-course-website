@@ -4,6 +4,7 @@ _site/
 .Rproj.user/
 .DS_Store
 /.quarto/
+node_modules/
 password-protection-notes.md
 
 **/*.quarto_ipynb

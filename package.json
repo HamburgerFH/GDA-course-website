@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "prettier": "3.9.6"
+  },
+  "scripts": {
+    "check:qmd": "prettier --check \"**/*.qmd\"",
+    "format:qmd": "prettier --write \"**/*.qmd\""
+  }
+}
